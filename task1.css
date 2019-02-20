@@ -1,0 +1,23 @@
+*{
+  padding:0px;
+  margin:0px;
+}
+
+html,body{
+  width:100%;
+}
+
+.Nineboxes{
+}
+
+
+
+.box1{
+	border-radius:10%;/*圆角处理*/
+	margin:1vw;
+	background-color:orange;
+	width:30vw;
+	height:30vw;
+	float:right;	
+}
+
