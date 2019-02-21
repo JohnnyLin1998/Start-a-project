@@ -1,20 +1,19 @@
-
 html,body{
   width:100%;
 }
 
 .Nineboxes{
-	text-align: center;
+  text-align: center;
 }
 
 
 
 .box1{
-	border-radius:10%;/*圆角处理*/
-	margin:1vw;
-	background-color:orange;
-	width:30vw;
-	height:30vw;
-	float:left;	
-}
+  background-color:orange;
+  border-radius:10%;
+  margin:1vw;
+  width:30vw;
+  height:30vw;
+  float:left;
+} 
 
