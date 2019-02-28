@@ -56,7 +56,6 @@ html body{
   height: 3em;
   text-indent: 3.5em;
   border-style: none;
-
 }
 
 
@@ -65,7 +64,6 @@ html body{
   height: 3em;
   text-indent: 3.8em;
   border-style: none;
-
   }
 
 
@@ -88,7 +86,6 @@ html body{
 }
 
 
-
 .login{
 	display: flex;
 	justify-content: center;
@@ -98,7 +95,7 @@ html body{
 
 .login>p{
   color: #fff;
-  font-size: 1.5em;
+  font-size: 1.8em;
   line-height: 3.5em;
 }
 
