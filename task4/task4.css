@@ -12,52 +12,84 @@ html body{
   width: 100%;
 }
 
-
-.header{
+/* 我这里用的是flex，把左右两边弹性布局，挤过去了，但是删掉其中一个后，抬头会发生变化
+没有达到验收标准 */
+/* .header{
   background-color: rgb(95,192,205);
   display: flex;
   justify-content: space-between;
+} */
+
+
+/*以下是抬头的布局，按照固定的fixed*/
+.header{
+  background-color: rgb(95,192,205);
+  position:fixed;
+  width: 100%;
+  height: 5.8em;
+  top: 0em;/*使用了fixed后如果不设 top left就不会出现了！ 因为这是头顶第一块框框，没有margin给它撑着*/
+  left: 0em;
+  z-index: 5;
 }
 
-
-.header>p{
-  color: #fff;
-  font-size: 1.5em;
-  margin: 1em;
+.close{
+  position: absolute;/*左右的文字，给它固定死*/
+  left: 2em;
+  top: 2em;
 }
 
+.enter{
+  margin-top: 2em;
+  text-align: center;/*这里本来也用了absolute，但是发现没法一直居中，移动框框就会动了，所以用text-align*/
+}
 
-.header>span{
+.signin{
+  position: absolute;
+  right: 2em;;
+  top: 2em;
+}
+
+.close>p{
   color: #fff;
   font-size: 1.8em;
-  margin-top: 0.7em;
+}
+
+.signin>p{
+  color: #fff;
+  font-size: 1.8em;
+}
+
+.enter>span{
+  color: #fff;
+  font-size: 2em;
 }
 
 
+/*以下是输入框的布局*/
 .main{
+  margin-top: 4.5em;
 }
-
 
 .phone{
   position: relative;
-  border-top: 1.4em solid rgb(239,240,244);
-  border-bottom: 1.4em solid rgb(239,240,244);
+  border-top: 2.5em solid rgb(239,240,244);/*输入框上边的灰色边框*/
+  border-bottom: 1.3em solid rgb(239,240,244);/*下边框*/
 }
-
 
 .lock{
   position: relative;
-  border-bottom: 1.4em solid rgb(239,240,244);
+  border-bottom: 3em solid rgb(239,240,244);/*下灰色边框*/
 }
 
 
+
+/*给输入框加样式*/
 .phone input{
-   width: 100%;
+   width: 100%;/*保证输入框在宽度变化下，一直有颜色存在，故用100%*/
   height: 3em;
   text-indent: 3.5em;
   border-style: none;
 }
-
 
 .lock input{
   width: 100%;
@@ -66,49 +98,58 @@ html body{
   border-style: none;
   }
 
-
+  /*这是手机小图标*/
 .phone img{
   position: absolute;
   width: 1.2em;
-  margin-top: 1em;
+  margin-top: 1.8em;
   margin-left: 1em;
-  padding-right: 1.5em;
-  border-right: 0.1em solid rgb(239,240,244);
+  padding-right: 1.5em;/*把小图标右侧的竖线往右边移动*/
+  border-right: 0.1em solid rgb(239,240,244);/*生成右侧竖线，非常细*/
 }
 
+/*这是锁小图标，效果同上*/
 .lock img{
   position: absolute;
   width: 1.2em;
-  margin-top: 1em;
+  margin-top: 1.8em;
   margin-left: 1em;
   padding-right: 1.5em;
   border-right: 0.1em solid rgb(239,240,244);
 }
 
 
+/*最初用的是flex，但是无法固定这个框，高度缩到很小就会发现会出现滚轮，
+所以换成fixed*/
 .login{
-	display: flex;
-	justify-content: center;
+	/* display: flex;
+  justify-content: center; */
+  position: fixed;
+  left: 0;
+  width: 100%;
+  height: 5.8em;
   background-color: rgb(95,192,205)
 }
 
 
 .login>p{
   color: #fff;
-  font-size: 1.8em;
-  line-height: 3.5em;
+  font-size: 2em;
+  font-weight: 300;
+  line-height: 3em;
+  text-align: center;
 }
 
-
-.forget{
+/*这里还是把forget盒子放在了login里面，因为绝对定位跟着它走比较符合逻辑*/
+.login>.forget{
   position: absolute;
-  right: 0.2em;
-  top: 24em;
+  right: 1.2em;
+  top: 7em;
 }
 
 
 .forget>a{
   color: rgb(95,192,205);
   padding:1em;
-  font-size: 1em;
+  font-size: 1.7em;
 }
