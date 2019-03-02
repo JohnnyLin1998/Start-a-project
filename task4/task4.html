@@ -27,7 +27,9 @@
   
   <div class="main">
     <div class="phone"><img src="phone1.png">
-      <input type="text" placeholder=" 请输入手机号" / value="">
+      <input type="text" placeholder=" 请输入手机号" 
+      oninput = "value=value.replace(/[^\d]/g,'')"
+      maxlength="11">
     </div>
 
     <div class="lock"><img src="lock2.png">
@@ -35,7 +37,7 @@
     </div>
 
     <div class="login">
-      <p>登&nbsp;&nbsp;&nbsp;陆</p>
+      <input type="button" value="登&nbsp;陆">
       <div class="forget"><a href="">忘记密码</a></div>
     </div>
 

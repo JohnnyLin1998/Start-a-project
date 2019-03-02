@@ -102,8 +102,8 @@ html body{
 .phone img{
   position: absolute;
   width: 1.2em;
-  margin-top: 1.8em;
-  margin-left: 1em;
+  margin-top: 1.3em;
+  margin-left: 1.2em;
   padding-right: 1.5em;/*把小图标右侧的竖线往右边移动*/
   border-right: 0.1em solid rgb(239,240,244);/*生成右侧竖线，非常细*/
 }
@@ -112,8 +112,8 @@ html body{
 .lock img{
   position: absolute;
   width: 1.2em;
-  margin-top: 1.8em;
-  margin-left: 1em;
+  margin-top: 1.3em;
+  margin-left: 1.2em;
   padding-right: 1.5em;
   border-right: 0.1em solid rgb(239,240,244);
 }
@@ -126,18 +126,24 @@ html body{
   justify-content: center; */
   position: fixed;
   left: 0;
-  width: 100%;
-  height: 5.8em;
-  background-color: rgb(95,192,205)
+   width: 100%; 
+  /* height: 5.8em;
+  background-color: rgb(95,192,205);  */
 }
 
 
-.login>p{
+/*给input表单加了botton按钮*/
+.login>input{
   color: #fff;
   font-size: 2em;
   font-weight: 300;
   line-height: 3em;
+  background-color: rgb(95,192,205);
+  border-style: none;/*把按钮的外边框取消*/
+  width: 100%;
+  height: 3em;
   text-align: center;
+  outline: none;/*把点击后的发光效果取消*/
 }
 
 /*这里还是把forget盒子放在了login里面，因为绝对定位跟着它走比较符合逻辑*/
