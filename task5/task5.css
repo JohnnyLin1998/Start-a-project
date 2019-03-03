@@ -1,0 +1,264 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+html {
+  font-size: 20px;
+  /*1rem= 20px*/
+}
+
+body {
+  margin-bottom: 5rem;
+}
+
+
+.header {
+  position: fixed;
+  height: 2.8rem;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 5;
+  background-color: rgba(95, 192, 205, 1);
+  text-align: center;
+}
+
+
+.user {
+  margin: 0.8rem;
+  color: #fff;
+}
+
+
+/*个人主页*/
+.header span {
+  color: #fff;
+  font-size: 0.9rem;
+  margin: auto 0;
+  letter-spacing: 0.1rem;
+  /* line-height: 2.2rem; */
+}
+
+
+/*抬头左侧的< 用代码实现*/
+.arrow-left {
+  position: absolute;
+  border-left: 0.09rem white solid;
+  /*控制箭头的粗细 颜色*/
+  border-top: 0.09rem white solid;
+  transform: rotate(-45deg);
+  /*旋转方形两条border，形成小三角*/
+  margin-top: 1.2rem;
+  /*控制箭头的位置*/
+  margin-left: 0.9rem;
+  width: 0.5rem;
+  /*控制箭头的长度*/
+  height: 0.5rem;
+}
+
+
+
+/* 下面是用background怎样实现，熟悉background的属性用法 */
+.main {
+  height: 9rem;
+  margin-top: 2.75rem;
+  background-image: url(back.png);
+  background-clip: content-box;
+  /*确定图片的显示范围*/
+  background-repeat: no-repeat;
+  /*避免图片重复出现*/
+  background-size: cover;
+  /*拉伸图片--填满盒子*/
+}
+
+
+/*人像*/
+.headshot {
+  position: relative;
+  width: 5rem;
+  float: left;
+  margin-top: 2rem;
+  margin-left: 1rem;
+}
+
+.headshot img {
+  width: 100%;
+}
+
+
+/*人名 岁数*/
+.text {
+  position: absolute;
+  top: 6rem;
+  left: 6.5rem;
+}
+
+.name {
+  margin-left: 1rem;
+}
+
+.text span {
+  color: #fff;
+  font-size: 0.85rem;
+}
+
+
+
+/*地标*/
+.local {
+  margin-left: 1rem;
+}
+
+.local span {
+  color: #fff;
+  font-size: 0.7rem;
+  left: 7.5rem;
+  top: 6rem;
+}
+
+.local img {
+  width: 0.5rem;
+  padding-top: 0.6rem;
+
+}
+
+
+/*“专业技能”*/
+.title {
+  border-bottom: 0.05rem solid rgba(225, 229, 231, 1);
+  padding-left: 1rem;
+  line-height: 2.5rem;
+}
+
+.title span {
+  font-size: 0.9rem;
+  font-weight: 500;
+  align-items: center;
+}
+
+/*蓝色小竖条*/
+.title .blue{
+  margin-right: 0.7rem;
+  border-left: 0.1rem solid rgba(95, 192, 205, 1);
+}
+
+/*文字后的小竖条，不用伪类，用盒子实现*/
+.separate {
+  display: inline-block;
+  padding: 0.4rem;
+  margin-left: 0.4rem;
+  border-left: 0.05rem solid rgba(225, 229, 231, 1);
+
+}
+
+/*住家 星标*/
+.condition {
+  display: flex;
+  border-bottom: 0.05rem solid rgba(225, 229, 231, 1);
+  padding-left: 1rem;
+  line-height: 3rem;
+}
+
+.condition span {
+  font-size: 0.8rem;
+}
+
+.condition img {
+  height: 0.8rem;
+}
+
+
+/* 左侧所有信息的用span实现，并且全部加上flex+垂直居中 */
+ul span {
+  line-height: 3rem;
+  padding-left: 1rem;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+  flex: 0 0 auto;
+  /*精髓--保证了右侧信息不会挤压左侧*/
+  /* flex-shrink: 0也可以同样实现，flex 0 0 就是指放大、缩小0 */
+}
+
+li {
+  display: flex;
+  align-items: center;
+  border-bottom: 0.05rem solid rgba(225, 229, 231, 1);
+}
+
+
+
+/*25/小时--由于是特殊红色，所以单独一个class*/
+.red-text {
+  text-decoration: none;
+  font-size: .8rem;
+  color: red;
+}
+
+
+/*每行右侧的内容*/
+ul i {
+  font-size: 0.8rem;
+  font-weight: 500;
+  font-style: normal;
+  color: black;
+  margin: auto 0;
+}
+
+
+
+
+
+/*最后一行自我介绍，字数较多，使用父元素自适应*/
+.content {
+  display: flex;
+  align-content: center;
+}
+
+.me {
+  padding-right: 0.3rem;
+}
+
+
+.footer {
+  position: fixed;
+  display: flex;
+  height: 2.8rem;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  z-index: 5;
+  text-align: center;
+  background-color: #fff;
+  padding-top: 0.4rem;
+}
+
+.footer div{
+  /* display: inline-block;有flex就不要用这个 */
+  width: 45%;
+  height: 2rem;
+  margin: auto;
+  text-align: center;
+}
+
+
+.left {
+  background-color: #fff;
+  color: rgba(95, 192, 205, 1);
+  border: 0.1rem solid rgba(95, 192, 205, 1);
+  font-size: 0.9rem;
+  border-radius: 10px;
+  line-height: 2rem;
+}
+
+
+.right {
+  background-color: rgba(95, 192, 205, 1);
+  color: #fff;
+  border: 0.1rem solid rgba(95, 192, 205, 1);
+  font-size: 0.9rem;
+  border-radius: 10px;
+  line-height: 2rem;
+}

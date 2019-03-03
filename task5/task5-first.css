@@ -1,0 +1,340 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+
+html{
+  font-size: 20px; /*1rem= 20px*/
+}
+
+
+.header{
+  position: fixed;
+  height: 2.8rem;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 5;
+  background-color:rgba(95,192,205,1);
+}
+
+
+.person{
+  text-align: center;
+  color: #fff;
+  margin: -1rem;
+}
+
+.header .arrow-left{
+  position: absolute;
+  border-left: 0.09rem white solid;/*控制箭头的粗细*/
+  border-top: 0.09rem white solid;/*第一个数据控制的是线条粗细*/
+  transform: rotate(-45deg);/*用来旋转方形两条border，形成小三角的效果*/
+
+  margin-top: 1.2rem;/*控制箭头的位置*/
+  margin-left: 0.9rem;
+  width: 0.5rem;/*控制箭头的长度*/
+  height: 0.5rem;
+}
+
+
+/*.arrow-left{
+  position: absolute;
+  border-left: 0.09rem white solid;/
+  border-top: 0.09rem white solid;/
+  transform: rotate(-45deg);/
+ */
+
+.header span{
+  color: #fff;
+  font-size: 0.9rem;
+  margin: auto 0;
+  letter-spacing: 0.1rem;
+  line-height: 2.2rem;/*用来撑起抬头的高度*/
+}
+
+
+/* 此方法给图片加盒子+100%填充+flex实现，然而并没有成功 */
+
+/* /.main{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  height: 9rem;
+  width: 18rem;
+} */
+
+
+/* 下面是用background怎样实现，熟悉background的属性用法 */
+.main{
+  height: 9rem;
+  margin-top: 2.75rem;
+  background-image: url(back.png);
+  background-clip: content-box;/*确定图片的显示范围*/
+  background-repeat: no-repeat;/*避免图片重复出现*/
+  background-size: cover;/*拉伸图片--填满盒子*/
+}
+
+.headshot{
+  position: relative;
+  width: 5rem;
+  float: left;
+  margin-top: 2rem;
+  margin-left: 1rem;
+}
+
+.headshot img{
+  width: 100%;
+}
+
+.text p{
+  position: absolute;
+  color: #fff;
+  font-size: 0.85rem;
+  left: 7.5rem;
+  top:6rem;
+}
+
+.text h4{
+  position: absolute;
+  font-weight: normal;
+  color: #fff;
+  font-size: 0.75rem;
+  left: 10.5rem;
+  top:6.08rem;
+}
+
+
+.location span{
+  position: absolute;
+  color: #fff;
+  font-size: 0.7rem;
+  left: 7.5rem;
+  top: 8rem;
+}
+
+.logo img{
+  position: absolute;
+  width: 0.6rem;
+  left: 6.5rem;
+  top: 8.1rem;
+} 
+
+
+
+/*接下来是“专业技能”版块*/
+.title{
+  border-bottom: 0.05rem solid rgba(225,229,231,1);
+  padding-left: 1rem;
+  line-height: 2.5rem;
+}
+
+
+.title span{
+  font-size: 0.9rem;
+  font-weight: 500;
+  display: flex; /*这里用弹性元素是为了下面的伪元素*/
+  align-items: center;
+}
+
+/* 用伪类来实现小竖条 */
+.title span::before{
+  float: left;
+  content: '';/*由于内容为空，所以必须要父子盒子的弹性盒子或者position*/
+  border-left: 0.08rem solid rgba(95,192,205,1);
+  width: 0.5rem;
+  height: 0.9rem;
+}
+
+
+.house{
+  border-bottom: 0.05rem solid rgba(225,229,231,1);
+  line-height: 3rem;
+  padding-left: 1rem;
+  /* position:absolute; */  /*下面的star盒子已经设了relative所以不需要这个*/
+  width: 100%;
+  /* font-size: 0.9rem; */
+}
+
+/* .house>span i{
+  font-size: 0.9rem;
+  font-weight: 400;
+  margin: 1rem;
+  position: absolute; 
+   display: flex;
+  align-content: center;
+}  */
+
+.star{
+  position: relative;
+  font-size: 0.8rem;
+}
+
+.star i{
+  font-style: normal;
+  padding-left: 1rem;
+}
+
+.star span{
+  padding-left: 1.4rem;
+}
+
+
+/* 这里用伪元素做的，但是必须要设父级元素的浮动或定位，显得太麻烦 */
+/*我再尝试了一次*/
+
+/*最后还是用伪类做出来了，注意额外加一个absolute，不然效果出不来*/
+
+.star i::before{
+  content: '';/*一开始没加这个，效果还是出不来*/
+  background: url(star.png)no-repeat;/*注意不能用background-image 不然没法设置no repeat*/
+  background-size: 0.8rem;
+  position: absolute;/*！！！*/  
+  width: 2rem;/*这是控制伪类这个虚拟格子的大小，用来包裹图形，这个图很小，所以给这个值就够用了*/
+  height: 2rem;
+  top: 1rem;/*用来控制图形绝对定位出来的位置*/
+  left: 0rem;
+}
+
+
+/*这个用伪类把小竖条 做出来了，还是那个问题，用伪类做出来的话，不能控制竖条的长度，
+除非用盒子的border-right，控制盒子边的长度，来控制竖条的长度*/
+.star i::after{
+  content: '';
+  border-right: 0.05rem solid rgba(225,229,231,1);
+  padding-right: 0.7rem;
+  height: 2rem;
+}
+
+
+.star span::before{
+  content: '';/*注意，伪类一定要设置为空，不然效果出不来*/
+  background: url(star.png)no-repeat; 
+  background-size: 0.8rem;
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  top:1rem;
+  left:4rem;
+}
+
+
+
+/* 以下是住家的CSS */
+
+.whole{
+  position: relative;
+}
+
+
+/* 左侧所有信息的用span实现 */
+.whole span{
+  line-height: 3rem;
+  padding-left: 1rem;
+  /* width: 100%; */
+  font-size: 0.9rem; 
+  font-weight: 400;
+  padding-right: 1rem;
+  color:rgba(153, 153, 153, 1);
+  flex:0 0 auto;
+}
+
+
+/* .whole .content{
+  display: inline;
+  font-size: 0.8rem;
+  font-weight: 500;
+} */
+
+
+/*服务价格--由于是特殊红色，所以单独一个盒子*/
+.service a{
+  text-decoration: none;
+  font-size: 1rem;
+  color: red;
+}
+
+
+/*每行右侧的内容*/
+.whole i{
+  font-size: 0.8rem;
+  font-weight: 500;
+  font-style: normal;
+  color: black;
+  margin: auto;
+}
+
+
+.year{
+border-bottom: 0.05rem solid rgba(225,229,231,1);
+}
+
+
+.worktime{
+border-bottom: 0.05rem solid rgba(225,229,231,1);
+}
+
+
+.service{
+border-bottom: 0.05rem solid rgba(225,229,231,1);
+display:flex;
+align-items: center;
+}
+
+
+/*最后一行自我介绍，字数较多，使用父元素自适应*/
+.my{
+display: flex;
+align-content: center;
+}
+
+
+
+
+
+
+
+
+
+
+/*因为最后一行“自我介绍”自动换行有问题，所以放弃了伪元素的用法*/
+/* .whole span::after{
+  content: '';
+  border-right: 0.05rem solid rgba(225,229,231,1);
+  padding-right: 0.7rem;
+  height: 2rem;
+} */
+
+
+/*伪类做小竖条*/
+/* .year{
+  border-bottom: 0.05rem solid rgba(225,229,231,1);
+  position: relative;
+}
+
+.worktime{
+  border-bottom: 0.05rem solid rgba(225,229,231,1);
+  position: relative;
+}
+
+.service{
+  border-bottom: 0.05rem solid rgba(225,229,231,1);
+  position: relative;
+}
+
+.my{
+  border-bottom: 0.05rem solid rgba(225,229,231,1);
+  position: relative;
+} */
+
+
+
+
+
+
+
+
+
+

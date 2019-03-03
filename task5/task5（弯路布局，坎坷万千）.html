@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <html lang="zh-CN">
+    <title>my task five</title>
+    <meta name="viewport" content="width=view width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="task5.css">
+  </head>
+  <body>
+
+
+    <div class="header">
+      <div class="arrow-left">
+        <p></p>
+      </div>
+      <div class="person">
+        <span>个人主页</span>
+      </div>
+    </div>
+
+
+    <div class="main">
+      <div class="headshot">
+        <img src="head.png" alt="head shot">
+      </div>
+
+      <div class="text">
+        <p>高素雅</p> 
+        <h4>51岁</h4>
+      </div>
+
+      <div class="location">
+        <span>北京.通州.果园</span>
+      </div>
+
+      <div class="logo">
+        <img src="shape.png" alt="location">
+      </div>
+    </div>
+
+
+    <!-- skill是最大的祖父级盒子，title就是第一行文本的盒子 -->
+    <div class="skill">
+      <div class="title">
+        <span>专业技能</span>
+      </div>
+     
+      <!-- House盒子来把整一行的框架固定好，并呈现上下边框条 -->
+      <!-- star盒子把两个文本框柱，并且伪类必须要把它作为父级元素做relative -->
+      <!-- 由于两组文本的字体大小不一样，所以只能分两个文本标签，并且已经绝对定位了，
+        不用担心div下面这两个标签不能同处一行 -->
+      <div class="house"> 
+        <div class="star">
+          <i>住家</i> 
+          <span>不含餐</span>
+        </div>
+     </div>
+
+
+      <!-- 住家以下的信息 -->
+
+      <div class="whole">
+<!-- 
+      一行文字需要三个盒子 1.整一行一个 2.左边文字一个，用来做后面的竖条，我先用了
+      伪类做，但是最后一行的效果，自动换行没了  3.右边盒子一个 -->
+
+        <!-- 从业盒子第一行 -->
+         <div class="year">                
+             <span>从业年限</span>         
+             <i>0-3年</i>          
+         </div>
+
+
+         <!-- 工作时间第二行 -->
+        <div class="worktime">
+            <span>工作时间</span>
+            <i>全天</i>    
+        </div>
+
+
+        <!-- 服务价格第三行 -->
+        <div class="service">
+            <span>服务价格</span> 
+            <a>25元/小时</a>
+        </div>
+
+
+
+        <!-- 自我介绍第四行 -->
+        <div class="my">        
+            <span>自我介绍</span>        
+            <i>可以洗衣、做饭、照顾老人。在护工方面有5年的经验，经验丰富</i>       
+        </div> 
+
+
+      </div>
+
+    </div>
+
+
+
+ <!-- <p>从业年限 </p>
+        
+        <div class="line">
+          <span>0-3年</span>
+        </div>
+
+        <p>工作时间</p>
+        
+        <div class="line"> 
+          <span>全天</span>
+        </div>
+
+        <p>服务价格</p>
+
+        <div class="line">
+          <i>25元/小时</i>
+        </div>
+
+        <p>自我介绍</p>
+
+        <div class="line">
+          <span>可以洗衣、做饭、照顾老人。在护工方面有5年的经验，经验丰富</span>
+        </div> -->
+
+
+
+
+  </body>
+</html>
+
+
