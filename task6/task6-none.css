@@ -73,163 +73,7 @@ header .local {
 
 
 
-
-
-
-
-nav{
-    position: fixed;
-    width: 100%;
-    margin-top: -.5rem;
-    background-color: #fff;
-    border-bottom: .015rem solid rgba(225, 229, 231, 1);
-    z-index: 5;
-
-    font-size: .15rem;
-
- 
- /*调整字体颜色*/
-}
-nav .introduce{
-    text-decoration: none;
-    color: rgba(153, 153, 153, 1);
-}
-nav .nav-content{
-    color: rgba(153, 153, 153, 1);
-}
-
-
-
-
-.nav-list{
-    position: relative;
-    display: flex;
-    justify-content: center;
-    height: .2rem;
-}
-
-
-
-/*下拉菜单的显示---必须使用block才能显示*/
-.nav-list-fir:hover .nav-content{
-    display: block;
-}
-
-.nav-list-fir:hover{
-    overflow: visible;
-}
-
-.nav-list-sec:hover .nav-content{
-    display: block;
-}
-
-.nav-list-sec:hover{
-    overflow: visible;
-}
-
-.nav-list-thir:hover .nav-content{
-    display: block;
-}
-
-.nav-list-thir:hover{
-    overflow: visible;
-}
-
-
-
-
-/*三个内容的位置*/
-.nav-list-fir{
-    position: absolute;
-    width: 33%;
-    height: .35rem;
-    line-height: .35rem;
-    top: -.05rem;
-    left: 0;
-    text-align: center;
-    background-color: #fff;
-}
-
-.nav-list-sec{
-    position: absolute;
-    width: 31%;
-    height: .35rem;
-    line-height: .35rem;
-    top: -.05rem;
-    left: 50%;
-    text-align: center;
-    transform: translateX(-50%);
-    background-color: #fff;
-    border-left: .011rem solid  rgba(153, 153, 153, 1);
-    border-right: .011rem solid  rgba(153, 153, 153, 1);
-    z-index: 5;
-}
-
-.nav-list-thir{
-    position: absolute;
-    width: 33%;
-    height: .35rem;
-    line-height: .35rem;
-    top: -.05rem;
-    right: 2%;
-    text-align: center;
-    background-color: #fff;
-}
-
-
-
-
-/*用hover实现鼠标移到字上，出现变色效果*/
-.nav-content li:hover{
-    color: #fff;
-    background-color: rgba(85, 168, 179, 1);
-}
-
-
-
-
-
-/*清除 ul 自带的小黑点*/
- nav ul{
-    display: none;
-}
-
-/*隐藏下拉菜单*/
-nav ul{
-    list-style: none;
-}
-
-
-
-/*小三角的位置-----必须绝对定位+padding，不然设margin影响了下拉框和文字的居中位置*/
-nav img{
-    position: absolute;
-    width: .1rem;
-    bottom: .14rem;
-    padding-left: .13rem;
-}
-
-
-
-
-
-nav .nav-content{
-    padding: .1rem;
-}
-
-nav .nav-content li{
-    text-align: center;
-    color:rgba(85, 168, 179, 1);
-    background-color:  #fff;
-
-}
-
-
-
-
-
-
-/* 模拟下拉框，没有带hover效果的
+/*模拟下拉框*/
 .title {
     position: fixed;
     display: flex;
@@ -241,8 +85,12 @@ nav .nav-content li{
     background-color: #fff;
     border-bottom: .015rem solid rgba(225, 229, 231, 1);
     z-index: 5;
-    让主题部分的字，不会透视
+    /*让主题部分的字，不会透视*/
 }
+
+
+
+
 
 .title div {
     position: relative;
@@ -251,7 +99,7 @@ nav .nav-content li{
     width: 33%;
 }
 
-左右竖条
+/*左右竖条*/
 .title .middle {
     border-left: .0075rem solid rgba(225, 229, 231, 1);
     border-right: .0075rem solid rgba(225, 229, 231, 1);
@@ -268,23 +116,7 @@ nav .nav-content li{
     width: .1rem;
     top: -.03rem;
     left: -.2rem;
-} */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
 
 
 
@@ -298,12 +130,12 @@ main {
 
 
 /*给下拉框留位置，因为上面fixed脱离了，所以必须我手动给出空间*/
-.main-row {
+ul {
     margin-top: 2rem;
 }
 
 /*表格的底边线条*/
-.main-line {
+li {
     display: flex;
     position: relative;
     border-bottom: .0075rem solid rgba(225, 229, 231, 1);
@@ -456,30 +288,9 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: -0.4rem;
+    margin-top: -0.35rem;
     right: 0.8rem;
 }
-
-
-/*添加按钮的效果*/
-button{
-    border-style: none;
-    background-color: rgba(248, 250, 251, 1);
-    margin-top: -.06rem;
-    outline: none;
-}
-
-.write .mid{
-    border-style: none;
-    background-color: rgba(248, 250, 251, 1);
-    margin-top: -.01rem;
-    outline: none;
-}
-
-
-
-
-
 
 .page img {
     width: 60%
