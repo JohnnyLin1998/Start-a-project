@@ -1,0 +1,360 @@
+html {
+    font-size: 100px;
+}
+
+body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #29BDE0;
+    height: 6rem;
+    /*为了整体能够拉动*/
+}
+
+header {
+    position: fixed;
+    top: 0;
+    text-align: center;
+    width: 100%;
+    height: .5rem;
+    font-size: .18rem;
+    color: #ffffff;
+    background-color: #29BDE0;
+    z-index: 5;
+}
+
+header .left-logo {
+    position: absolute;
+    left: .1rem;
+    top: .2rem;
+    height: .2rem;
+    width: .2rem;
+}
+
+.left-logo img {
+    width: 100%;
+}
+
+header .right-logo {
+    position: absolute;
+    top: .2rem;
+    right: .13rem;
+    height: .2rem;
+    width: .2rem;
+    /* border: */
+    z-index: 5;
+}
+
+
+/* .right-logo img {
+    width: 100%;
+} */
+
+/*XXXX的制作*/
+.right-logo {
+    width: 20px;
+    height: 20px;
+    margin: auto;
+    position: relative;
+}
+
+.right-logo::before,
+.right-logo::after {
+    content: "";
+    position: absolute;
+    /*方便进行定位*/
+    height: 20px;
+    width: 1.5px;
+    top: 2px;
+    right: 9px;
+    /*设置top和right使图像在20*20框中居中*/
+    background: #ffffff;
+}
+
+.right-logo::before {
+    transform: rotate(45deg);
+    /*进行旋转*/
+}
+
+.right-logo::after {
+    transform: rotate(-45deg);
+}
+
+
+/* 下面是游戏主页面 */
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: .55rem;
+}
+
+/*因为上面把抬头的图片引进了main，所以不能采用整体main往下移动，
+只能再在内容区外建立一个盒子，巧用各个盒子*/
+article {
+    margin-top: .1rem;
+}
+
+/*保证拉伸到最小的时候，不会自动换行，一行三个固定死*/
+section {
+    display: flex;
+    /* flex-direction: column; */
+    flex-wrap: nowrap;
+}
+
+
+/*背景图的添加*/
+main .star {
+    position: relative;
+    width: 100%;
+    height: .48rem;
+    line-height: .48rem;
+    background: url('rectangle.png') no-repeat;
+    background-size: cover;
+    font-size: .15rem;
+    color: black;
+    opacity: 0.7;
+}
+
+.star span {
+    float: left;
+    margin-left: .3rem;
+}
+
+
+.star i {
+    position: absolute;
+    top: .25rem;
+    left: .4rem;
+    width: .2rem;
+    height: .2rem;
+    opacity: 0.8;
+}
+
+main .audio {
+    position: absolute;
+    width: 0.3rem;
+    top: .68rem;
+    right: .18rem;
+}
+
+/* .audio img {
+    width: 100%;
+} */
+
+
+/*纯手工CSS打造三角，不用图片*/
+.audio-triangle {
+    position: relative;
+}
+
+.audio-triangle::after {
+    content: '';
+    position: absolute;
+    top: -.35rem;
+    right: .2rem;
+    width: 0;
+    height: 0;
+    border: 0.1rem solid transparent;
+    border-left: 0.1rem solid white;
+}
+
+.star .words {
+    position: absolute;
+    font-size: .14rem;
+    font-weight: 400;
+    color: #ffffff;
+    top: .4rem;
+    left: .5rem;
+}
+
+
+
+/*flex控制game box*/
+.game {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    /* flex-wrap: wrap; 加了之后上下层就分开了 */
+    margin-top: .5rem;
+    margin-left: .1rem;
+    margin-right: .1rem;
+    width: 23vw;
+    height: 23vw;
+    z-index: 5;
+}
+
+main .box-1 {
+    flex-basis: 80%;
+    background-color: #F5C97B;
+    border-top: .025rem solid white;
+    border-left: .025rem solid white;
+    border-right: .025rem solid white;
+    z-index: 2;
+}
+
+main .box-2 {
+    flex-basis: 20%;
+    background-color: #1A99B7;
+    border-bottom: .025rem solid white;
+    border-left: .025rem solid white;
+    border-right: .025rem solid white;
+    z-index: 2;
+}
+
+main .man {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: .5rem;
+    font-size: .16rem;
+    color: black;
+    z-index: 5;
+}
+
+
+main .num {
+    position: absolute;
+    top: 86%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: .5rem;
+    font-size: .14rem;
+    color: white;
+    z-index: 5;
+}
+
+
+
+.sprit {
+    display: none;
+    position: absolute;
+    flex-direction: row;
+    justify-content: center;
+    width: 23vw;
+    height: 9.5vw;
+}
+
+
+
+.sprit-fir {
+    width: 2.8vw;
+    height: 2.8vw;
+    margin-top: 16.6vw;
+    margin-right: 1vw;
+    background: url('css_sprites.png')no-repeat 8% 50%/930%;
+}
+
+.sprit-sec {
+    width: 2.8vw;
+    height: 2.8vw;
+    margin-top: 16.6vw;
+    background: url('css_sprites.png')no-repeat 36% 50%/930%;
+}
+
+.sprit-thir {
+    width: 2.8vw;
+    height: 2.8vw;
+    margin-top: 16.6vw;
+    margin-left: 1vw;
+    background: url('css_sprites.png')no-repeat 64% 50%/930%;
+}
+
+.sprit-four {
+    width: 2.8vw;
+    height: 2.8vw;
+    margin-top: 16.6vw;
+    margin-left: 1vw;
+    background: url('css_sprites.png')no-repeat 92% 50%/930%;
+
+}
+
+
+
+.game:hover .sprit {
+    display: flex;
+}
+
+
+/* 这个效果还达不到要求。用hover的话，鼠标放上去就跳出来，但是需要点击后出现效果 */
+/* .player:hover::after {
+    position: absolute;
+    content: '';
+    width: .72rem;
+    height: .15rem;
+    background: url('css_sprites.png');
+    background-size: 70px 17px;
+    margin-top: 105%;
+} */
+
+/* .logo-group {
+    position: absolute;
+    width: .3rem;
+    height: .2rem;
+    margin: .02rem;
+    list-style: none; */
+/* display: none; */
+
+
+/* .logo-group img{
+    width: 5vw;
+} */
+
+/* 
+.logo-group i {
+    width: 3vw;
+    height: 3vw;
+    margin: .05rem;
+} */
+
+/* .logo-group:hover img {
+    display: block;
+} */
+
+/* .game:hover::after {
+    position: absolute;
+    content: '';
+    width: .72rem;
+    height: .15rem;
+    background: url('css_sprites.png')no-repeat;
+    background-size: 70px 17px;
+    /* margin-top: 105%; */
+
+
+
+
+
+
+
+/* 尾页 */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 1rem;
+    background-color: #29BDE0;
+    border-top: .0075rem solid white;
+    z-index: 8;
+}
+
+footer .end {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    line-height: .5rem;
+    width: 75vw;
+    font-size: .18rem;
+    background-color: #FBB435;
+    color: #ffffff;
+}
+
+.end a {
+    text-decoration: none;
+    color: #ffffff;
+}

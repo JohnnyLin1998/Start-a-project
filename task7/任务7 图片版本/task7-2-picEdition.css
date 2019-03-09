@@ -1,0 +1,196 @@
+html {
+    font-size: 100px;
+}
+
+body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #29BDE0;
+    overflow: hidden;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    text-align: center;
+    width: 100%;
+    height: .5rem;
+    font-size: .18rem;
+    color: #ffffff;
+    background-color: #29BDE0;
+    z-index: 5;
+}
+
+header .left-logo {
+    position: absolute;
+    left: .1rem;
+    top: .2rem;
+    height: .2rem;
+    width: .2rem;
+}
+
+.left-logo img {
+    width: 100%;
+}
+
+header .right-logo {
+    position: absolute;
+    top: .2rem;
+    right: .13rem;
+    height: .2rem;
+    width: .2rem;
+    border: 
+    z-index: 5;
+}
+
+
+/* .right-logo img {
+    width: 100%;
+} */
+
+
+/*叉叉的制作*/
+.right-logo{
+	width: 20px;
+	height: 20px;
+	margin: auto;
+	position: relative; 
+}
+.right-logo::before,
+.right-logo::after{
+  content: "";
+  position: absolute;  /*方便进行定位*/
+  height: 20px;
+  width: 1.5px;
+  top: 2px;
+  right: 9px;  /*设置top和right使图像在20*20框中居中*/
+ background: #ffffff;
+}
+.right-logo::before{
+  transform: rotate(45deg);  /*进行旋转*/
+}
+.right-logo::after{
+  transform: rotate(-45deg);
+}
+
+
+
+
+
+header .star {
+    position: relative;
+    width: 100%;
+    height: .48rem;
+    line-height: .48rem;
+    background: url('rectangle.png') no-repeat;
+    background-size: cover;
+    font-size: .15rem;
+    color: black;
+    opacity: 0.8;
+}
+
+.star span {
+    float: left;
+    margin-left: .3rem;
+}
+
+
+.star i {
+    position: absolute;
+    top: .25rem;
+    left: .4rem;
+    width: .2rem;
+    height: .2rem;
+    opacity: 0.8;
+}
+
+header .audio {
+    position: absolute;
+    width: 0.3rem;
+    top: .68rem;
+    right: .18rem;
+}
+
+.audio img {
+    width: 100%;
+}
+
+
+.star .words {
+    position: absolute;
+    font-size: .14rem;
+    font-weight: 400;
+    color: #ffffff;
+    top: .4rem;
+    left: .5rem;
+}
+
+
+
+/* 下面是游戏主页面 */
+
+main {
+    position: relative;
+    margin-top: 1.2rem;
+    overflow-y: scroll;
+    height: 8rem;
+}
+
+
+.section {
+    display: flex;
+    position: relative;
+    justify-content: center;
+}
+
+.player {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    width: 1.5rem;
+    margin: .20rem;
+
+}
+
+.game img {
+    width: 100%;
+}
+
+
+
+/* 这个效果还达不到要求。用hover的话，鼠标放上去就跳出来，但是需要点击后出现效果 */
+.player:hover::after {
+    position: absolute;
+    content: '';
+    width: .72rem;
+    height: .15rem;
+    background: url('css_sprites.png');
+    background-size: 70px 17px;
+    margin-top: 105%;
+}
+
+
+/* 尾页 */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 1rem;
+    background-color: #29BDE0;
+    border-top: .0075rem solid white;
+}
+
+footer .end {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    line-height: .5rem;
+    width: 2.8rem;
+    font-size: .18rem;
+    background-color: #FBB435;
+    color: #ffffff;
+}

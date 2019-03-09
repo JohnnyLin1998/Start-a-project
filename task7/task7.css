@@ -1,0 +1,166 @@
+html{
+    font-size: 100px;
+}
+
+body{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(240, 240, 240, 1);
+}
+
+header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: .5rem;
+    background-color: rgba(41, 189, 224, 1);
+    z-index: 5;
+}
+
+.headlogo{
+    position: absolute;
+    left: .1rem;
+    bottom: .98rem;
+    height: .2rem;
+    width: .2rem;
+}
+
+.headlogo img{
+    width: 100%
+}
+
+main{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    margin-top: .5rem;
+
+   
+}
+
+/*上次游戏*/
+main .star{
+    position: relative;
+    width: 80%;
+    height: .5rem;
+    line-height: .5rem;
+    text-align: center;
+    margin-top: .15rem;
+    font-size: .17rem;
+    color: rgba(154, 154, 154, 1);
+    background-color: #ffffff;
+    border:.01rem solid #C9C9C9;
+}
+
+
+/*做出向右箭头*/
+.star .arrow{
+    position: absolute;
+    top: 35%;
+    right: 3%;
+    width: .13rem;
+    height: .13rem;
+    border-top: .03rem solid rgba(231, 231, 231, 1);
+    border-right: .03rem solid rgba(231, 231, 231, 1);
+    transform: rotate(45deg)
+}
+
+
+/*捉鬼游戏标题开始*/
+
+/*大整体*/
+main .game{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    height: 4.5rem;
+    margin-top: .2rem;
+    background-color: #ffffff;
+    border: .01rem solid #C9C9C9;
+  
+}
+
+.game .intro {
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    padding: .15rem;
+    border-bottom: .011rem solid #FBB435; 
+}
+
+
+.game .easy{
+    position: relative;
+    width: 80%;
+    height: 15%;
+    background-color: #69D1E9;
+    margin-top: .2rem;
+}
+
+.game .guess{
+    position: relative;
+    width:80%;
+    height: 15%;
+    background-color: #69D1E9;
+}
+
+.game .idiot{
+    position: relative;
+    width: 80%;
+    height: 15%;
+    background-color: #69D1E9;
+}
+
+.game .triangle{
+    position: absolute;
+    top: 1.25rem;
+    right: .1rem;
+}
+
+
+/*主体的各个字体颜色*/
+.text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: .16rem;
+    color: #ffffff;
+}
+.intro a{
+    text-decoration: none;
+    font-size:.19rem;
+    color: #FBB435; 
+}
+h3{
+    font-size: .12rem;
+    color: #787878;
+}
+
+.bottom{
+    display: flex;
+    justify-content: center;
+    height: .3rem;
+    width: .6rem;
+}
+
+.round{
+    width: .1rem;
+    height: .1rem;
+    border-radius: 50%;
+    margin-left: .03rem;
+    background-color: #F0F0F0;
+}
+
+.round:hover{
+    background-color: #69D1E9;
+}
+
+
+
+
