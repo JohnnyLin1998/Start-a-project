@@ -23,46 +23,62 @@ header {
     z-index: 5;
 }
 
-header .left-logo {
+
+/* 左上方形logo */
+
+header .square-logo {
+    position: fixed;
+    top: 18px;
+    left: 10px;
+    width: 23px;
+    height: 25px;
+    border: 1.5px solid #ffffff;
+}
+
+.square-small {
     position: absolute;
-    left: .1rem;
-    top: .2rem;
-    height: .2rem;
-    width: .2rem;
+    top: 4.5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 6px;
+    border-top: 1.5px solid #ffffff;
+    border-bottom: 1.5px solid #ffffff;
 }
 
-.left-logo img {
-    width: 100%;
+.square-small-2 {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    border-top: 1.5px solid #ffffff;
 }
 
-header .right-logo {
+
+/*右上X型logo*/
+
+header .x-logo {
     position: absolute;
     top: .2rem;
     right: .13rem;
     height: .2rem;
     width: .2rem;
-    /* border: */
     z-index: 5;
 }
 
-
-/* .right-logo img {
-    width: 100%;
-} */
-
-/*XXXX的制作*/
-.right-logo {
+.x-logo {
+    position: relative;
+    margin: auto;
     width: 20px;
     height: 20px;
-    margin: auto;
-    position: relative;
 }
 
-.right-logo::before,
-.right-logo::after {
+/*前后各做一个长方形，*/
+.x-logo::before,
+.x-logo::after {
     content: "";
     position: absolute;
-    /*方便进行定位*/
     height: 20px;
     width: 1.5px;
     top: 2px;
@@ -71,22 +87,25 @@ header .right-logo {
     background: #ffffff;
 }
 
-.right-logo::before {
+.x-logo::before {
     transform: rotate(45deg);
     /*进行旋转*/
 }
 
-.right-logo::after {
+.x-logo::after {
     transform: rotate(-45deg);
 }
 
 
-/* 下面是游戏主页面 */
+
+
+/* 下面是抬头方框和游戏主页面 */
 main {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin-top: .55rem;
+    margin-bottom: 1.5rem;
 }
 
 /*因为上面把抬头的图片引进了main，所以不能采用整体main往下移动，
@@ -98,7 +117,6 @@ article {
 /*保证拉伸到最小的时候，不会自动换行，一行三个固定死*/
 section {
     display: flex;
-    /* flex-direction: column; */
     flex-wrap: nowrap;
 }
 
@@ -131,16 +149,51 @@ main .star {
     opacity: 0.8;
 }
 
-main .audio {
+
+
+/* main .audio-triangle {
     position: absolute;
     width: 0.3rem;
     top: .68rem;
     right: .18rem;
+
+} */
+
+/*播放控制器*/
+audio{
+    position: absolute;
+    transform: rotate(180deg);
+    top: 47px;
+    right: 3px;
+    opacity: 0;
+    z-index: 5;
 }
 
-/* .audio img {
-    width: 100%;
-} */
+/*播放器的Logo*/
+main .audio-logo{
+    position: absolute;
+    top: 64px;
+    right: 5px;
+    width: 30px;
+    height: 30px;
+    background-color: orange;
+    border-radius: 50%;
+    z-index: 4;
+}
+
+.audio-logo-tri{
+    position: absolute;
+    top: 5px;
+    right: 8px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid white;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    z-index: 5;
+}
+
+
 
 
 /*纯手工CSS打造三角，不用图片*/
