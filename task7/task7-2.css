@@ -20,7 +20,7 @@ header {
     font-size: .18rem;
     color: #ffffff;
     background-color: #29BDE0;
-    z-index: 5;
+    z-index: 8;
 }
 
 
@@ -30,8 +30,8 @@ header .square-logo {
     position: fixed;
     top: 18px;
     left: 10px;
-    width: 23px;
-    height: 25px;
+    width: 21px;
+    height: 23px;
     border: 1.5px solid #ffffff;
 }
 
@@ -40,18 +40,18 @@ header .square-logo {
     top: 4.5px;
     left: 50%;
     transform: translateX(-50%);
-    width: 20px;
-    height: 6px;
+    width: 18px;
+    height: 5.5px;
     border-top: 1.5px solid #ffffff;
     border-bottom: 1.5px solid #ffffff;
 }
 
 .square-small-2 {
     position: absolute;
-    top: 20px;
+    top: 18px;
     left: 50%;
     transform: translateX(-50%);
-    width: 20px;
+    width: 18px;
     border-top: 1.5px solid #ffffff;
 }
 
@@ -262,8 +262,8 @@ main .man {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    width: .5rem;
-    font-size: .16rem;
+    width: 2rem;
+    font-size: 4vw;
     color: black;
     z-index: 5;
 }
@@ -271,12 +271,12 @@ main .man {
 
 main .num {
     position: absolute;
-    top: 86%;
+    top: 87%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    width: .5rem;
-    font-size: .14rem;
+    width: 1rem;
+    font-size: 3vw;
     color: white;
     z-index: 5;
 }
@@ -295,34 +295,38 @@ main .num {
 
 
 .sprit-fir {
-    width: 2.8vw;
-    height: 2.8vw;
+    width: 4vw;
+    height: 4vw;
     margin-top: 16.6vw;
-    margin-right: 1vw;
+    margin-right: 2vw;
     background: url('css_sprites.png')no-repeat 8% 50%/930%;
+    border-radius: 5px;
 }
 
 .sprit-sec {
-    width: 2.8vw;
-    height: 2.8vw;
+    width: 4vw;
+    height:4vw;
     margin-top: 16.6vw;
     background: url('css_sprites.png')no-repeat 36% 50%/930%;
+    border-radius: 5px;
 }
 
 .sprit-thir {
-    width: 2.8vw;
-    height: 2.8vw;
+    width: 4vw;
+    height:4vw;
     margin-top: 16.6vw;
-    margin-left: 1vw;
+    margin-left: 2vw;
     background: url('css_sprites.png')no-repeat 64% 50%/930%;
+    border-radius: 5px;
 }
 
 .sprit-four {
-    width: 2.8vw;
-    height: 2.8vw;
+    width: 4vw;
+    height: 4vw;
     margin-top: 16.6vw;
-    margin-left: 1vw;
+    margin-left: 2vw;
     background: url('css_sprites.png')no-repeat 92% 50%/930%;
+    border-radius: 5px;
 
 }
 
@@ -381,8 +385,6 @@ main .num {
 
 
 
-
-
 /* 尾页 */
 footer {
     position: fixed;
@@ -394,7 +396,7 @@ footer {
     z-index: 8;
 }
 
-footer .end {
+footer button {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -405,9 +407,11 @@ footer .end {
     font-size: .18rem;
     background-color: #FBB435;
     color: #ffffff;
+    border-style: none;
 }
 
 .end a {
     text-decoration: none;
     color: #ffffff;
 }
+
