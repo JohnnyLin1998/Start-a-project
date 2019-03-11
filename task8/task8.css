@@ -1,0 +1,387 @@
+html {
+    /* font-size: 100px; */
+}
+
+body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+header {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    /* background-color: green; */
+    margin-bottom: 31px;
+}
+
+
+/* 
+.head-top{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 25px;
+    background-color: #ffffff;
+    margin-bottom: 15px;
+
+} */
+
+
+.head-top .tel {
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    margin-top: 3px;
+    font-size: 8px;
+    color: #29B078;
+}
+
+.head-img {
+    position: absolute;
+    right: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+.head-down {
+    position: absolute;
+    top: 27px;
+    left: 0;
+    width: 100%;
+    height: 54px;
+    background-color: #29B078;
+}
+
+
+main {
+    background-color: #fafafa;
+}
+
+
+.head-down-text {
+    display: flex;
+    position: absolute;
+    top: 59%;
+    right: 15%;
+    transform: translatey(-50%);
+    font-size: 11px;
+    color: #ffffff;
+}
+
+section .head-text {
+    text-align: center;
+    width: 45px;
+    height: 44px;
+    line-height: 34px;
+    margin-left: 10px;
+    border-bottom: 2px solid white;
+}
+
+main .showpic {
+    position: relative;
+    display: flex;
+    justify-items: center;
+    margin-bottom: 120px;
+    width: 100%;
+    height: 330px;
+    background: url("background.png") no-repeat;
+    background-size: cover;
+}
+
+.showpic .text {
+    position: absolute;
+    top: 40%;
+    left: 56%;
+    transform: translateX(-50%);
+    width: 90%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    color: #ffffff;
+}
+
+
+.showpic .text-2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    color: #ffffff;
+}
+
+
+.showpic .text-2 span {
+
+    font-size: 40px;
+    color: #ffffff;
+
+}
+
+.container-intro {
+
+    margin-bottom: 120px;
+}
+
+
+
+h3 {
+    text-align: center;
+}
+
+
+
+
+
+
+
+main .row {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
+.container-intro .col-mid-3 {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    margin: 2%;
+
+}
+
+.container-intro .pic {
+    text-align: center;
+}
+
+.container-intro p {
+    text-align: center;
+}
+
+.container-intro .text {
+    width: 250px;
+}
+
+
+.container-intro .count-people img {
+    height: 15%;
+}
+
+
+.container-learn .col-md-3 {
+    position: relative;
+    float: left;
+}
+
+.container-learn .round {
+    float: left;
+    width: 45px;
+    height: 45px;
+    margin-right: 20px;
+    text-align: center;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0px 1px 2px 0px rgba(8, 1, 3, 0.15);
+    border-radius: 50%;
+}
+
+.container-learn .round span {
+    line-height: 2.7;
+}
+
+
+.container-learn .text {
+    float: left;
+    line-height: 2.5;
+    color: #999999;
+}
+
+
+.container-learn .text img {
+    width: 10%;
+}
+
+
+.container-learn .col-md-3 {
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+
+
+
+.container-learn {
+    margin-bottom: 120px;
+}
+
+
+
+.container-stu-show {
+    margin-bottom: 120px;
+}
+
+
+
+
+
+
+
+.container-corpor {
+    margin-bottom: 120px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer {
+    position: relative;
+    display: flex;
+    height: 200px;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    color: #ffffff;
+    background-color: #26A26F;
+  
+
+}
+
+footer .row{
+    align-items: center;
+}
+
+
+
+
+
+.row-bottom {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    height: 20px;
+    border-top: 1px solid white;
+
+
+}
+
+.row-bottom span{
+    font-size: 13px;
+}
+
+
+
+
+/* 
+.container-footer .row span {
+
+    margin: auto;
+    background-color: #26A26F;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*五列，强制20%*/
+/* 
+.contaniner-corpor .col-md-3{
+    max-width: 20%; */
+
+
+
+@media (min-width:768px) {
+    .container-corpor .col-zdmd-2 {
+
+        width: 20%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* 
+
+@media screen and (min-width:1200px) {
+    div{
+        
+
+    }
+ }
+ @media screen and (min-width:992px) and (max-width: 1199px) {
+    div{
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    }
+ }
+ @media screen and (min-width: 768px) and (max-width:991px ){
+    div{
+
+
+    }
+ }
+
+     @media screen and (max-width:767px) {
+        div{
+
+
+   }
+ } */
