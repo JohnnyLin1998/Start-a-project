@@ -15,7 +15,6 @@ header {
     left: 0;
     width: 100%;
     height: 50px;
-    /* background-color: green; */
     margin-bottom: 31px;
 }
 
@@ -36,18 +35,24 @@ header {
 .head-top .tel {
     position: absolute;
     top: 5px;
-    left: 10px;
+    left: 50px;
     margin-top: 3px;
-    font-size: 8px;
+    font-size: 12px;
     color: #29B078;
 }
 
 .head-img {
     position: absolute;
-    right: 10%;
-    top: 50%;
+    right: 5%;
+    top: 34%;
     transform: translateY(-50%);
 }
+
+.head-img img {
+    width: 20px;
+    margin-left: 8px;
+}
+
 
 
 .head-down {
@@ -81,8 +86,14 @@ section .head-text {
     height: 44px;
     line-height: 34px;
     margin-left: 10px;
-    border-bottom: 2px solid white;
+    /* border-bottom: 2px solid white; */
 }
+
+.head-text:hover {
+    border-bottom: 1.5px solid #ffffff;
+}
+
+
 
 main .showpic {
     position: relative;
@@ -90,7 +101,7 @@ main .showpic {
     justify-items: center;
     margin-bottom: 120px;
     width: 100%;
-    height: 330px;
+    height: 350px;
     background: url("background.png") no-repeat;
     background-size: cover;
 }
@@ -98,12 +109,12 @@ main .showpic {
 .showpic .text {
     position: absolute;
     top: 40%;
-    left: 56%;
+    left: 50%;
     transform: translateX(-50%);
     width: 90%;
     text-align: center;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 30px;
     color: #ffffff;
 }
 
@@ -116,118 +127,300 @@ main .showpic {
     width: 80%;
     text-align: center;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 40px;
+    letter-spacing: 2px;
     color: #ffffff;
 }
 
 
 .showpic .text-2 span {
-
-    font-size: 40px;
+    font-size: 60px;
+    letter-spacing: 2px;
     color: #ffffff;
-
 }
 
-.container-intro {
 
+
+.showpic .left-arrow {
+    position: absolute;
+    top: 50%;
+    left: 11%;
+
+    width: 25px;
+    height: 25px;
+    border-top: 4px solid rgba(255, 255, 255, 0.28);
+    border-left: 4px solid rgba(255, 255, 255, 0.28);
+    transform: rotate(-45deg);
+}
+
+
+.showpic .right-arrow {
+    position: absolute;
+    top: 50%;
+    right: 13%;
+
+    width: 25px;
+    height: 25px;
+    border-top: 4px solid rgba(255, 255, 255, 0.28);
+    border-right: 4px solid rgba(255, 255, 255, 0.28);
+    transform: rotate(45deg);
+}
+
+.round-roller {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+
+    transform: translateY(-50%);
+}
+
+.showpic.roller {
+    float: left;
+    width: 13px;
+    height: 13px;
+    margin-left: 5px;
+    border: 1px solid rgba(255, 255, 255, 1);
+    border-radius: 50%;
+}
+
+.showpic.roller:hover {
+    background-color: #ffffff;
+}
+
+
+
+
+.container.intro {
     margin-bottom: 120px;
 }
 
 
-
 h3 {
+    padding-bottom: 50px;
     text-align: center;
 }
-
-
-
-
-
 
 
 main .row {
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+
+.container.intro {
+    padding-right: 100px;
 }
 
 
-
-
-.container-intro .col-mid-3 {
+.container.intro .col-mid-3 {
     display: flex;
     flex-direction: column;
     justify-items: center;
-    margin: 2%;
-
+    padding: 20px 35px 20px 35px;
 }
 
-.container-intro .pic {
+
+.container.intro .col-mid-3adjust {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    padding-left: 50px;
+}
+
+
+.container.intro .col-mid-3:hover {
+    box-shadow: 1px 1px 2px 1px rgba(128, 128, 128, 0.15);
+}
+
+
+.container.intro .col-mid-3adjust:hover {
+    box-shadow: 1px 1px 2px 1px rgba(128, 128, 128, 0.15);
+}
+
+
+.container.intro .pic {
     text-align: center;
 }
 
-.container-intro p {
+
+.container.intro .pic-2 {
+    /* margin-top: 25px; */
     text-align: center;
 }
 
-.container-intro .text {
+
+
+.container.intro .pic-3 {
+    margin-top: 15px;
+    text-align: center;
+}
+
+
+.container.intro .count-people-adjust {
+    margin-top: 40px;
+}
+
+
+
+
+.container.intro .pic img {
+    width: 40px;
+}
+
+.container.intro .pic-2 img {
+    width: 40px;
+}
+
+
+.container.intro .pic-3 img {
+    width: 40px;
+}
+
+
+
+.container.intro .bold {
+    font-size: 17px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.container.intro .text {
+    text-align: center;
     width: 250px;
 }
 
+.container.intro .col-mid-3adjust {
+    border-left: 1px solid rgba(222, 222, 222, 1);
+}
 
-.container-intro .count-people img {
+
+
+.container.intro .col-mid-3adjust img {
     height: 15%;
 }
 
 
-.container-learn .col-md-3 {
+
+.container.learn .row {
     position: relative;
-    float: left;
+    margin-bottom: 40px;
+
 }
 
-.container-learn .round {
-    float: left;
+
+.container.learn .col-md-3 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 12px;
+}
+
+
+.container.learn .round {
+    position: absolute;
     width: 45px;
     height: 45px;
     margin-right: 20px;
     text-align: center;
+    color: #29B078;
+    font-weight: bold;
     background: rgba(255, 255, 255, 1);
     box-shadow: 0px 1px 2px 0px rgba(8, 1, 3, 0.15);
     border-radius: 50%;
 }
 
-.container-learn .round span {
-    line-height: 2.7;
+.container.learn .round span {
+    line-height: 3.2;
 }
 
 
-.container-learn .text {
-    float: left;
-    line-height: 2.5;
+.container.learn .text {
+    margin-left: 60px;
+    margin-right: 15px;
+    line-height: 1.8;
+    font-weight: bold;
     color: #999999;
 }
 
 
-.container-learn .text img {
+.container.learn .text img {
     width: 10%;
 }
 
 
-.container-learn .col-md-3 {
+.container.learn .col-md-3 {
     /* display: flex;
     justify-content: center;
     align-items: center; */
 }
 
 
+.container.learn {
+    margin-bottom: 120px;
+    font-size: 14px;
+}
 
-.container-learn {
+
+.container.stu-show {
     margin-bottom: 120px;
 }
 
 
+.container.stu-show .col-md-3 {
+    padding: 30px;
+    padding-bottom: 80px;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0px 1px 2px 0px rgba(8, 1, 3, 0.15);
+}
 
-.container-stu-show {
-    margin-bottom: 120px;
+
+.container.stu-show .head-pic {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.container.stu-show .head-pic img {
+    border-radius: 50%;
+}
+
+.container.stu-show .word {
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+
+.container.stu-show .intro {
+    color: #999999;
+    letter-spacing: 2.5px;
+}
+
+
+
+
+.container-company {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 90%;
+    height: 180px;
+    margin-bottom: 200px;
+    margin: 0 auto;
+}
+
+
+.container-company .row-com {
+    width: 250px;
+    height: 150px;
+    margin: 0 5px;
+    background-color: #ffffff;
+    text-align: center;
+    line-height: 150px;
+
+}
+
+.container-company img {
+    width: 100px;
 }
 
 
@@ -236,16 +429,31 @@ main .row {
 
 
 
-.container-corpor {
-    margin-bottom: 120px;
+
+@media (min-width:768px) {
+    .container-corpor .row {
+
+        width: 23%;
+    }
 }
 
 
 
 
+@media screen and (min-width:1200px) {
+    div {}
+}
+
+@media screen and (min-width:992px) and (max-width: 1199px) {
+    div {}
+}
 
 
 
+@media screen and (min-width: 768px) and (max-width:991px) {
+        {}
+
+}
 
 
 
@@ -263,13 +471,35 @@ footer {
     font-size: 13px;
     color: #ffffff;
     background-color: #26A26F;
-  
-
 }
 
-footer .row{
-    align-items: center;
+
+footer .row .col-md-3{
+    text-align: center;
 }
+
+
+footer .inform{
+    margin-top: 30%;
+}
+
+.foot-text-mid{
+    margin-top: 2%;
+}
+
+
+.foot-text-mid div{
+    margin-top: 10%;
+}
+
+footer .row .col-md-3 img{
+    width: 70px;
+    margin-top: 10px;
+}
+
+
+
+
 
 
 
@@ -282,106 +512,45 @@ footer .row{
     width: 100%;
     height: 20px;
     border-top: 1px solid white;
-
-
 }
 
-.row-bottom span{
+.row-bottom span {
     font-size: 13px;
 }
 
 
 
-
-/* 
-.container-footer .row span {
-
-    margin: auto;
-    background-color: #26A26F;
-} */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*五列，强制20%*/
-/* 
-.contaniner-corpor .col-md-3{
-    max-width: 20%; */
-
-
-
-@media (min-width:768px) {
-    .container-corpor .col-zdmd-2 {
-
-        width: 20%;
-    }
+/*整体内容区的外围边框*/
+article {
+    margin: 6%;
 }
 
 
+@media screen and (min-width: 300px) and (max-width:768px) {
+    footer{
 
-
-
-
-
-
-
-
-
-/* 
-
-@media screen and (min-width:1200px) {
-    div{
-        
+        height: 250px;
 
     }
- }
- @media screen and (min-width:992px) and (max-width: 1199px) {
-    div{
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
+    .foot-text-mid{
+        margin-top: -35%;
     }
- }
- @media screen and (min-width: 768px) and (max-width:991px ){
-    div{
 
-
+    .container.footer .row{
+        display: flex;
+        flex-wrap: nowrap;
     }
- }
 
-     @media screen and (max-width:767px) {
-        div{
+    .container.footer .foot-text-mid{
+        margin-top: 2px;
+    }
 
+    .container-company{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 700px;
+    }
 
-   }
- } */
+}
