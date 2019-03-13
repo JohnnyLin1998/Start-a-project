@@ -20,11 +20,14 @@ footer .row .col-md-3 img {
     margin-top: 10px;
 }
 
-
-footer .inform {
-    margin-top: 10%;
+.col-md-4 p{
+    margin-top: 5px;
 }
 
+
+footer .inform {
+    margin-top: 17%;
+}
 .foot-text-mid {
     margin-top: 2%;
 }

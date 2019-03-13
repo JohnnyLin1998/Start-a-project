@@ -154,7 +154,7 @@ main .showpic {
     position: absolute;
     bottom: 10px;
     left: 50%;
-    transform: translateY(-50%);
+    transform: translateX(-50%);
 }
 
 .showpic .roller {
@@ -211,6 +211,7 @@ main .row {
     flex-direction: column;
     justify-items: center;
     padding-left: 80px;
+    border-left: 1px solid rgba(128, 128, 128, 0.15);
 }
 
 
@@ -407,6 +408,7 @@ main .row {
     width: 250px;
     height: 150px;
     margin: 0 5px;
+    border: 1px solid rgba(120, 120, 120, 0.3);
     background-color: #ffffff;
     text-align: center;
     line-height: 150px;
@@ -468,8 +470,15 @@ footer .row .col-md-3 img {
     margin-top: 10px;
 }
 
+
+.col-md-4 p{
+    margin-top: 5px;
+}
+
+
+
 footer .inform {
-    margin-top: 10%;
+    margin-top: 17%;
 }
 
 .foot-text-mid {
@@ -516,5 +525,101 @@ footer .inform {
     .container.footer .foot-text-mid {
         margin-top: 2px;
     }
+
+    .container.intro .col-md-3{
+        text-align: center;
+    }
+
+    .container-company{
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    .container-company .row-com{
+        margin-bottom: 15px;
+        width: 550px;
+        height: 200px;
+        line-height: 200px;
+    }
+
+    .container-company .row-com img{
+        width: 150px;
+    }
+
+
+    .container.intro .col-md-3.adjust{
+        padding-left: 29px;
+    }
+
+
+    .col-md-3.adjust .count-people{
+        margin-top: 50px;
+    }
+
+}
+
+
+@media screen and (min-width: 665px) and (max-width:880px){
+
+.link-total{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.link-total ul{
+    margin-left: 35px;
+}
+
+.link-bottom,
+.link-top{
+    margin-right: 55px;
+    line-height: 2;
+}
+
+}
+
+
+@media screen and (min-width: 400px) and (max-width:665px){
+
+    .link-bottom,
+    .link-top{
+        display: block;
+
+}
+
+    .link-total{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .link-bottom{
+        margin-left: 70px;
+        margin-right: 0px;
+    }
+
+    .link-top{
+        margin-right: 70px;
+        margin-left: 0px;
+    }
+
+}
+
+
+@media screen and (min-width: 400px) and (max-width:665px){
+
+    .container-company .row-com{
+        margin-bottom: 15px;
+        width: 550px;
+        height: 200px;
+        line-height: 200px;
+    }
+
+    .container-company .row-com img{
+        width: 150px;
+    }
+
 
 }
