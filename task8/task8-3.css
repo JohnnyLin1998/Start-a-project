@@ -1,0 +1,16 @@
+main {
+    background-color: #fafafa;
+}
+
+
+
+.fir-page{
+    margin-left: 8%;
+    margin-top: 2%;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.fir-page span{
+    color: #29B078;
+}

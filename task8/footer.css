@@ -1,0 +1,76 @@
+footer {
+    position: relative;
+    display: flex;
+    height: 150px;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    color: #ffffff;
+    background-color: #26A26F;
+}
+
+/*居中二维码-字体*/
+footer .row .col-md-3 {
+    text-align: center;
+}
+
+/*调整二维码的大小和距离*/
+footer .row .col-md-3 img {
+    width: 70px;
+    margin-top: 10px;
+}
+
+
+footer .inform {
+    margin-top: 10%;
+}
+
+.foot-text-mid {
+    margin-top: 2%;
+}
+
+
+.foot-text-mid div {
+    margin-top: 3.5%;
+
+}
+
+
+/*底部说明文字*/
+.row-bottom {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    height: 20px;
+    border-top: 1px solid white;
+}
+
+.row-bottom span {
+    font-size: 13px;
+}
+
+
+/*媒体查询，底部适应不同大小屏*/
+
+@media screen and (min-width: 300px) and (max-width:768px) {
+    footer {
+        height: 250px;
+    }
+
+    .foot-text-mid {
+        margin-top: -35%;
+    }
+
+    .container.footer .row {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    .container.footer .foot-text-mid {
+        margin-top: 2px;
+    }
+
+}
+
+
