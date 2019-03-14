@@ -52,6 +52,30 @@ header {
 }
 
 
+.head-down-text {
+    display: flex;
+    position: absolute;
+    top: 59%;
+    right: 15%;
+    transform: translatey(-50%);
+    font-size: 11px;
+    color: #ffffff;
+}
+
+section .head-text {
+    text-align: center;
+    width: 45px;
+    height: 44px;
+    line-height: 34px;
+    margin-left: 10px;
+}
+
+.head-text:hover {
+    border-bottom: 1.5px solid #ffffff;
+}
+
+
+
 /*技能树logo*/
 .head-down-pic{
     position: absolute;

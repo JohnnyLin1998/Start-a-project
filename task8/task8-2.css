@@ -88,8 +88,8 @@ main{
 }
 
 .fir-page{
-    margin-left: 8%;
-    margin-top: 2%;
+    margin-left: 1vw;
+    margin-top: 2vw;
     font-weight: bold;
     font-size: 14px;
 }
@@ -182,12 +182,19 @@ nav .outer div:hover{
 }
 
 
+
 .col-md-9 .intro img{
     float: left;
+    width: 140px;
 }
 
+.col-md-9 .intro p{
+    margin-top: 30px;
+}
 
-
+.col-md-9 .words p{
+    margin-top: 40px;
+}
 
 
 

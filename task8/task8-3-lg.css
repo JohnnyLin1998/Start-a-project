@@ -5,6 +5,7 @@ body {
 
 main {
     position: relative;
+    margin-bottom: 100px;
 }
 
 
@@ -40,7 +41,8 @@ main {
     height: 50px;
     font-weight: bold;
     line-height: 50px;
-    margin-bottom: 35px;
+    margin-top: 13px;
+    margin-bottom: 40px;
     border-bottom: 1px solid rgba(208, 214, 217, 1);
 }
 
@@ -106,6 +108,7 @@ table td {
 
 .salary .per-salary {
     float: right;
+    margin-right: 5px;
 }
 
 
@@ -171,28 +174,114 @@ table .grey {
 }
 
 
-.container .col-md-4.four,
-.container .col-md-4.fif {
+.container .col-lg-4.four,
+.container .col-lg-4.fif {
     margin-top: 25px;
+}
+
+
+.container .col-lg-4 {
+    width: 370px;
+}
+
+
+table {
+    width: 300px;
+}
+
+
+.container .inform{
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+
+}
+
+.back{
+    position: absolute;
+    top: 2px;
+    left: 3.8px;
+    width: 320px;
+    height: 465px;
+    text-align: center;
+    font-size: 14px;
+    transform: rotate(360deg);
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 10px;
+    background-color: rgba(0,0,0,0.7);
+    /* visibility: hidden; */
+    /* display: none; */
+}
+
+.back .inner{
+    margin: auto;
+    padding: 41px;
+    width: 282px;
+    height: 350px;
+    text-align: justify;/*文字一列整齐排*/
+}
+
+.inner-cen{
+    text-align: center;
+}
+
+.container .inform:hover .back{
+    transform: rotateX(360deg);
 }
 
 
 
 
 
+/* 下面的媒体查询原本是因为我设了col-md，导致在变化屏幕大小的时候出现挤压，我想用media来
+微调各个盒子的位置，但是最终越调整越离谱，因为倒L型，我还竟然用absolute来调整。。。结果
+可想而知。最后经过观察分辨率的变化，找到了992这个关键，在经过更改 col-md ——> col lg后，一切
+都正常了，不用媒体查询大动干戈！ */
+
+
+@media screen and (min-width: 200px) and (max-width:992px) {
+
+
+    /*在小于992px的时候变成了数列，所以我把宽度变大，更协调*/
+    table {
+        width: 400px;
+    }
+
+
+    /*由于table表单宽度变大了，我想居中表格，所以这里把容器的宽度也设为table一样
+    400，为了满足margin: 0 auto 居中*/
+
+    .container .col-lg-4 {
+        width: 400px;
+        margin-top: 50px;
+        margin: 0 auto;
+    }
+
+    /*在垂直状态，把介绍职位的文字居中*/
+    .container .intro {
+        text-align: center;
+    }
+
+    /*垂直状态下，将上下各出间隙*/
+    .container .col-lg-4.fir,
+    .container .col-lg-4.sed {
+        margin-top: 25px;
+    }
 
 
 
+}
 
-
+/* 
 @media screen and (min-width: 1000px) and (max-width:1200px) {
     table {
         width: 300px;
     }
 
-}
+} */
 
-
+/* 
 @media screen and (min-width: 700px) and (max-width:1000px) {
 
 
@@ -210,7 +299,7 @@ table .grey {
         bottom: 620px;
     }
 }
-}
+
 
 
 @media screen and (min-width: 500px) and (max-width:770px) {
@@ -228,4 +317,4 @@ table .grey {
 
 
 
-}
+} */
