@@ -1,0 +1,580 @@
+body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    font-family:  Arial, "Times New Roman", "Microsoft YaHei", SimSun, SimHei;
+}
+
+
+header {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    margin-bottom: 31px;
+}
+
+
+.head-top .tel {
+    position: absolute;
+    top: 5px;
+    left: 50px;
+    margin-top: 3px;
+    font-size: 12px;
+    color: #29B078;
+}
+
+.head-img {
+    position: absolute;
+    right: 5%;
+    top: 26%;
+    transform: translateY(-50%);
+}
+
+.head-img img {
+    width: 20px;
+    margin-left: 8px;
+}
+
+
+.head-down {
+    position: absolute;
+    top: 27px;
+    left: 0;
+    width: 100%;
+    height: 54px;
+    background-color: #29B078;
+}
+
+main {
+    background-color: #fafafa;
+}
+
+
+.head-down-text {
+    display: flex;
+    position: absolute;
+    top: 59%;
+    right: 15%;
+    transform: translatey(-50%);
+    font-size: 11px;
+    color: #ffffff;
+}
+
+section .head-text {
+    text-align: center;
+    width: 45px;
+    height: 44px;
+    line-height: 34px;
+    margin-left: 10px;
+    /* border-bottom: 2px solid white; */
+}
+
+.head-text:hover {
+    border-bottom: 1.5px solid #ffffff;
+}
+
+
+
+/*下面是轮播图的Boot4组件*/
+
+/*这个类，组件里自带了absolute，我这里修改的是文字上移的位置*/
+.carousel-caption {
+    bottom: 32% !important;
+}
+
+/* Make the image fully responsive 让图片全屏展示*/
+.carousel-inner img {
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-inner .text {
+    text-align: center;
+    font-weight: bold;
+    font-size: 2.5vw;
+    color: #ffffff;
+}
+
+.carousel-inner .text-2 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 3vw;
+    letter-spacing: 2px;
+    color: #ffffff;
+}
+
+.carousel-inner .text-2 span {
+    font-size: 4.5vw;
+    letter-spacing: 2px;
+    color: #ffffff;
+}
+
+
+
+
+
+.carousel-inner .text-3 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 6.5vw;
+    font-family: MicrosoftJhengHei;
+    color: #ffffff;
+}
+
+
+
+.carousel-inner .text-4 {
+    text-align: center;
+    font-size: 5.5vw;
+    font-family: MicrosoftJhengHei;
+    letter-spacing: 2px;
+    color: #ffffff;
+}
+
+
+
+.container.intro {
+    margin-bottom: 120px;
+}
+
+
+h3 {
+    padding-bottom: 35px;
+    text-align: center;
+}
+
+.link-h {
+    padding-bottom: 5px;
+    text-align: center;
+}
+
+
+main .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+}
+
+
+
+.container.intro .col-md-3 {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    padding: 29px;
+}
+
+
+.container.intro .col-md-3.adjust {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    padding-left: 80px;
+    border-left: 1px solid rgba(128, 128, 128, 0.15);
+}
+
+
+.container.intro .col-md-3:hover {
+    box-shadow: 1px 1px 2px 1px rgba(128, 128, 128, 0.15);
+}
+
+
+.container.intro .col-md-3.adjust:hover {
+    box-shadow: 1px 1px 2px 1px rgba(128, 128, 128, 0.15);
+}
+
+
+.container.intro .pic {
+    text-align: center;
+}
+
+
+.container.intro .pic-2 {
+    /* margin-top: 25px; */
+    text-align: center;
+}
+
+
+
+.container.intro .pic-3 {
+    margin-top: 15px;
+    text-align: center;
+}
+
+
+.container.intro .count-people-adjust {
+    margin-top: 40px;
+}
+
+
+
+.container.intro .pic img {
+    width: 40px;
+}
+
+.container.intro .pic-2 img {
+    width: 40px;
+}
+
+
+.container.intro .pic-3 img {
+    width: 40px;
+}
+
+
+.container.intro .bold {
+    font-size: 17px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.container.intro .text {
+    width: 100%;
+    color: #999999;
+}
+
+.container.intro .col-md-3adjust {
+    border-left: 1px solid rgba(222, 222, 222, 1);
+}
+
+
+
+.container.intro .col-md-3adjust img {
+    height: 15%;
+}
+
+
+
+.container.learn .row {
+    position: relative;
+    margin-bottom: 40px;
+
+}
+
+
+.container.learn .col-md-3 {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+}
+
+
+.container.learn .round {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    margin-right: 20px;
+    text-align: center;
+    color: #29B078;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0px 1px 2px 0px rgba(8, 1, 3, 0.15);
+    border-radius: 50%;
+}
+
+.container.learn .round span {
+    line-height: 3.2;
+}
+
+
+.container.learn .text {
+    margin-left: 60px;
+    margin-right: 15px;
+    line-height: 1.8;
+    font-weight: bold;
+    color: #999999;
+}
+
+
+.container.learn .text img {
+    width: 10%;
+}
+
+
+.container.learn .col-md-3 {
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+
+
+.container.learn {
+    margin-bottom: 120px;
+    font-size: 14px;
+}
+
+
+.container.stu-show {
+    margin-bottom: 120px;
+}
+
+
+.container.stu-show .col-md-3 {
+    padding: 8px;
+}
+
+
+.container.stu-show .box-gap {
+    background: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(120, 120, 120, 0.3);
+    padding: 40px 10px 40px 10px;
+}
+
+.container.stu-show .box-gap:hover {
+    box-shadow: 0px 1px 2px 0px rgba(8, 1, 3, 0.15);
+}
+
+
+
+.container.stu-show .head-pic {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.container.stu-show .head-pic img {
+    border-radius: 50%;
+}
+
+.container.stu-show .word {
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+
+.container.stu-show .intro {
+    color: #999999;
+    letter-spacing: 2.5px;
+}
+
+
+.container-company {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 50px;
+    margin-bottom: 200px;
+    margin: 0 auto;
+}
+
+
+.container-company .row-com {
+    width: 250px;
+    height: 150px;
+    margin: 0 5px;
+    border: 1px solid rgba(120, 120, 120, 0.3);
+    background-color: #ffffff;
+    text-align: center;
+    line-height: 150px;
+}
+
+
+.container-company img {
+    width: 100px;
+    vertical-align: middle;
+}
+
+.container-company .row-com:hover {
+    box-shadow: 0px 1px 2px 0px rgba(8, 1, 3, 0.15);
+}
+
+
+.link-total {
+    display: flex;
+    justify-content: center;
+    font-size: 12px;
+    color: #999999;
+}
+
+
+.link-top {
+    display: flex;
+    line-height: 2;
+}
+
+.link-bottom {
+    display: flex;
+    line-height: 2;
+}
+
+.link-total li:hover {
+    border-bottom: 1.2px solid #29B078;
+}
+
+
+
+footer {
+    position: relative;
+    display: flex;
+    height: 150px;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    color: #ffffff;
+    background-color: #26A26F;
+}
+
+/*居中二维码-字体*/
+footer .row .col-md-2 {
+    margin-top: 1%;
+    text-align: center;
+}
+
+/*调整二维码的大小和距离*/
+footer .row .col-md-2 img {
+    width: 70px;
+    margin-top: 10px;
+}
+
+footer .col-md-5 {
+    margin-top: 2%;
+}
+
+
+
+/*占位子的p友人*/
+footer .visi {
+    visibility: hidden;
+}
+
+
+/*底部说明文字*/
+.row-bottom {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    height: 20px;
+    border-top: 1px solid white;
+}
+
+.row-bottom span {
+    font-size: 13px;
+}
+
+
+/*媒体查询，底部适应不同大小屏*/
+
+@media screen and (min-width: 300px) and (max-width:778px) {
+
+    /*边垂直后，把底部的绿色地皮抬高，更协调*/
+    footer {
+        height: 250px;
+    }
+
+    /*把绿色部分三块大佬往下降降*/
+
+    footer .col-md-5 {
+        margin-top: 9%;
+    }
+
+    footer .col-md-2 {
+        margin-top: 9% !important;
+    }
+
+    /*把大佬横过来*/
+    .container.footer .row {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    .container.intro .col-md-3 {
+        text-align: center;
+    }
+
+
+    .container-company {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container-company .row-com {
+        margin-bottom: 15px;
+        width: 550px;
+        height: 200px;
+        line-height: 200px;
+    }
+
+    .container-company .row-com img {
+        width: 150px;
+    }
+
+    .container.intro .col-md-3.adjust {
+        padding-left: 29px;
+    }
+
+
+    .col-md-3.adjust .count-people {
+        margin-top: 50px;
+    }
+
+}
+
+/* 调整友情链接一大排的文字，在拉窄屏幕时的变化 */
+@media screen and (min-width: 665px) and (max-width:880px) {
+
+    .link-total {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .link-total ul {
+        margin-left: 35px;
+    }
+
+    .link-bottom,
+    .link-top {
+        margin-right: 55px;
+        line-height: 2;
+    }
+
+}
+
+
+@media screen and (min-width: 400px) and (max-width:665px) {
+
+    .link-bottom,
+    .link-top {
+        display: block;
+    }
+
+    .link-total {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .link-bottom {
+        margin-left: 70px;
+        margin-right: 0px;
+    }
+
+    .link-top {
+        margin-right: 70px;
+        margin-left: 0px;
+    }
+
+}
+
+
+@media screen and (min-width: 400px) and (max-width:665px) {
+
+    .container-company .row-com {
+        margin-bottom: 15px;
+        width: 550px;
+        height: 200px;
+        line-height: 200px;
+    }
+
+    .container-company .row-com img {
+        width: 150px;
+    }
+
+
+}

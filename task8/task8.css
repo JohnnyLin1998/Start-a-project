@@ -1,11 +1,8 @@
-html {
-    /* font-size: 100px; */
-}
-
 body {
     margin: 0;
     width: 100%;
     height: 100%;
+    font-family:  Arial, "Times New Roman", "Microsoft YaHei", SimSun, SimHei;
 }
 
 
@@ -31,7 +28,7 @@ header {
 .head-img {
     position: absolute;
     right: 5%;
-    top: 34%;
+    top: 26%;
     transform: translateY(-50%);
 }
 
@@ -49,6 +46,22 @@ header {
     height: 54px;
     background-color: #29B078;
 }
+
+
+/*加跳转链接*/
+.head-text a{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.carousel-caption .text-4 a{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+
+
+
 
 main {
     background-color: #fafafa;
@@ -80,36 +93,27 @@ section .head-text {
 
 
 
-main .showpic {
-    position: relative;
-    display: flex;
-    justify-items: center;
-    margin-bottom: 120px;
-    width: 100%;
-    height: 32vw;
-    background: url("background.png") no-repeat;
-    background-size: cover;
+/*下面是轮播图的Boot4组件*/
+
+/*这个类，组件里自带了absolute，我这里修改的是文字上移的位置*/
+.carousel-caption {
+    bottom: 32% !important;
 }
 
-.showpic .text {
-    position: absolute;
-    top: 34%;
-    left: 51%;
-    transform: translateX(-50%);
-    width: 90%;
+/* Make the image fully responsive 让图片全屏展示*/
+.carousel-inner img {
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-inner .text {
     text-align: center;
     font-weight: bold;
     font-size: 2.5vw;
     color: #ffffff;
 }
 
-
-.showpic .text-2 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80%;
+.carousel-inner .text-2 {
     text-align: center;
     font-weight: bold;
     font-size: 3vw;
@@ -117,8 +121,7 @@ main .showpic {
     color: #ffffff;
 }
 
-
-.showpic .text-2 span {
+.carousel-inner .text-2 span {
     font-size: 4.5vw;
     letter-spacing: 2px;
     color: #ffffff;
@@ -126,51 +129,25 @@ main .showpic {
 
 
 
-.showpic .left-arrow {
-    position: absolute;
-    top: 50%;
-    left: 11%;
-    width: 25px;
-    height: 25px;
-    border-top: 4px solid rgba(255, 255, 255, 0.28);
-    border-left: 4px solid rgba(255, 255, 255, 0.28);
-    transform: rotate(-45deg);
+
+
+.carousel-inner .text-3 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 6.5vw;
+    font-family: MicrosoftJhengHei;
+    color: #ffffff;
 }
 
 
-.showpic .right-arrow {
-    position: absolute;
-    top: 50%;
-    right: 13%;
 
-    width: 25px;
-    height: 25px;
-    border-top: 4px solid rgba(255, 255, 255, 0.28);
-    border-right: 4px solid rgba(255, 255, 255, 0.28);
-    transform: rotate(45deg);
+.carousel-inner .text-4 {
+    text-align: center;
+    font-size: 5.5vw;
+    font-family: MicrosoftJhengHei;
+    letter-spacing: 2px;
+    color: #ffffff;
 }
-
-.round-roller {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.showpic .roller {
-    float: left;
-    width: 13px;
-    height: 13px;
-    margin-left: 5px;
-    border: 1px solid rgba(255, 255, 255, 1);
-    border-radius: 50%;
-}
-
-
-.showpic .roller:hover {
-    background-color: #ffffff;
-}
-
 
 
 
@@ -194,11 +171,12 @@ main .row {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: justify;
 }
 
 
 
-.container.intro .col-md-3 {
+.container.intro .col-lg-3.col-md-6 {
     display: flex;
     flex-direction: column;
     justify-items: center;
@@ -206,7 +184,7 @@ main .row {
 }
 
 
-.container.intro .col-md-3.adjust {
+.container.intro .col-lg-3.col-md-6.adjust {
     display: flex;
     flex-direction: column;
     justify-items: center;
@@ -215,12 +193,12 @@ main .row {
 }
 
 
-.container.intro .col-md-3:hover {
+.container.intro .col-lg-3.col-md-6:hover {
     box-shadow: 1px 1px 2px 1px rgba(128, 128, 128, 0.15);
 }
 
 
-.container.intro .col-md-3.adjust:hover {
+.container.intro .col-lg-3.col-md-6.adjust:hover {
     box-shadow: 1px 1px 2px 1px rgba(128, 128, 128, 0.15);
 }
 
@@ -249,7 +227,6 @@ main .row {
 
 
 
-
 .container.intro .pic img {
     width: 40px;
 }
@@ -264,7 +241,6 @@ main .row {
 }
 
 
-
 .container.intro .bold {
     font-size: 17px;
     font-weight: bold;
@@ -276,13 +252,13 @@ main .row {
     color: #999999;
 }
 
-.container.intro .col-md-3adjust {
+.container.intro .col-lg-3.col-md-6.adjust {
     border-left: 1px solid rgba(222, 222, 222, 1);
 }
 
 
 
-.container.intro .col-md-3adjust img {
+.container.intro .col-lg-3.col-md-6.adjust img {
     height: 15%;
 }
 
@@ -295,7 +271,7 @@ main .row {
 }
 
 
-.container.learn .col-md-3 {
+.container.learn .col-lg-3.col-md-6 {
     position: relative;
     display: flex;
     justify-content: space-between;
@@ -333,13 +309,6 @@ main .row {
 
 .container.learn .text img {
     width: 10%;
-}
-
-
-.container.learn .col-md-3 {
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
 }
 
 
@@ -443,10 +412,18 @@ main .row {
     line-height: 2;
 }
 
+.link-total li{
+    border: 1.2px solid white;
+}
+
 
 .link-total li:hover {
     border-bottom: 1.2px solid #29B078;
 }
+
+
+
+
 
 footer {
     position: relative;
@@ -460,34 +437,25 @@ footer {
 }
 
 /*居中二维码-字体*/
-footer .row .col-md-3 {
+footer .row .col-md-2 {
+    margin-top: 1%;
     text-align: center;
 }
 
 /*调整二维码的大小和距离*/
-footer .row .col-md-3 img {
+footer .row .col-md-2 img {
     width: 70px;
     margin-top: 10px;
 }
 
-
-.col-md-4 p{
-    margin-top: 5px;
-}
-
-
-
-footer .inform {
-    margin-top: 17%;
-}
-
-.foot-text-mid {
+footer .col-md-5 {
     margin-top: 2%;
 }
 
 
-.foot-text-mid div {
-    margin-top: 3.5%;
+/*占位子的p友人*/
+footer .visi {
+    visibility: hidden;
 }
 
 
@@ -506,101 +474,144 @@ footer .inform {
 }
 
 
+
 /*媒体查询，底部适应不同大小屏*/
 
-@media screen and (min-width: 300px) and (max-width:768px) {
-    footer {
-        height: 250px;
-    }
 
-    .foot-text-mid {
-        margin-top: -35%;
-    }
+/* @media screen and (min-width: 778px) and (max-width:992px) {
 
-    .container.footer .row {
-        display: flex;
-        flex-wrap: nowrap;
-    }
+} */
 
-    .container.footer .foot-text-mid {
-        margin-top: 2px;
-    }
 
-    .container.intro .col-md-3{
+
+
+/*控制 高效 规范 人脉居中*/
+@media screen and (min-width: 300px) and (max-width:1199px) {
+
+    .col-lg-3.col-md-6{
         text-align: center;
     }
 
-    .container-company{
+}
+
+
+
+@media screen and (min-width: 300px) and (max-width:778px) {
+
+    /*边垂直后，把底部的绿色地皮抬高，更协调*/
+    footer {
+        height: 313px;
+    }
+
+
+    .container.intro .col-lg-3.col-md-6.adjust {
+        text-align: center;
+    }
+
+
+    .container-company {
         display: flex;
         flex-direction: column;
     }
 
-
-    .container-company .row-com{
+    .container-company .row-com {
         margin-bottom: 15px;
         width: 550px;
         height: 200px;
         line-height: 200px;
     }
 
-    .container-company .row-com img{
+    .container-company .row-com img {
         width: 150px;
     }
 
-
-    .container.intro .col-md-3.adjust{
+    .container.intro .col-lg-3.col-md-6.adjust {
         padding-left: 29px;
     }
 
 
-    .col-md-3.adjust .count-people{
+    .col-lg-3.col-md-6.adjust .count-people {
         margin-top: 50px;
+    }
+
+    footer .visi{
+        display: none;
+    }
+
+    footer .row .col-md-2{
+        margin-top: 0;
+        text-align: left;
+    }
+
+
+    footer .row .col-md-2 img{
+        margin-top: 0;
+    }
+
+    footer .container.footer{
+        margin-left: 0;
+    }
+
+    footer .col-md-2 div{
+        margin-top: 5px;
+    }
+
+    footer .col-md-5 {
+        margin-top: 1%;
+    }
+        
+    .link-total ul{
+        margin-bottom: 4px;
     }
 
 }
 
 
-@media screen and (min-width: 665px) and (max-width:880px){
 
-.link-total{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+/* 调整友情链接一大排的文字，在拉窄屏幕时的变化 */
+@media screen and (min-width: 665px) and (max-width:880px) {
 
+    .link-total {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-.link-total ul{
-    margin-left: 35px;
-}
-
-.link-bottom,
-.link-top{
-    margin-right: 55px;
-    line-height: 2;
-}
-
-}
-
-
-@media screen and (min-width: 400px) and (max-width:665px){
+    .link-total ul {
+        margin-left: 35px;
+    }
 
     .link-bottom,
-    .link-top{
-        display: block;
+    .link-top {
+        margin-right: 55px;
+        line-height: 2;
+    }
+
+    .link-total ul{
+        margin-bottom: 3px;
+    }
 
 }
 
-    .link-total{
+
+@media screen and (min-width: 400px) and (max-width:665px) {
+
+    .link-bottom,
+    .link-top {
+        display: block;
+    }
+
+    .link-total {
         display: flex;
         flex-direction: row;
     }
 
-    .link-bottom{
+    .link-bottom {
         margin-left: 70px;
         margin-right: 0px;
     }
 
-    .link-top{
+    .link-top {
         margin-right: 70px;
         margin-left: 0px;
     }
@@ -608,16 +619,16 @@ footer .inform {
 }
 
 
-@media screen and (min-width: 400px) and (max-width:665px){
+@media screen and (min-width: 400px) and (max-width:665px) {
 
-    .container-company .row-com{
+    .container-company .row-com {
         margin-bottom: 15px;
         width: 550px;
         height: 200px;
         line-height: 200px;
     }
 
-    .container-company .row-com img{
+    .container-company .row-com img {
         width: 150px;
     }
 

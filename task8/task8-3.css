@@ -1,10 +1,18 @@
 body {
-    background-color: #fafafa;
+    background-color: #fafafa !important;
 }
 
 
 main {
     position: relative;
+    margin-bottom: 100px;
+}
+
+
+/*加跳转链接*/
+.head-text a {
+    text-decoration: none;
+    color: #ffffff;
 }
 
 
@@ -32,23 +40,23 @@ main {
     border-bottom: 1px solid rgba(237, 241, 242, 1);
     line-height: 46px;
     font-size: 15px;
-
 }
+
 
 .intro {
     width: 100%;
     height: 50px;
     font-weight: bold;
     line-height: 50px;
-    margin-bottom: 35px;
+    margin-top: 13px;
+    margin-bottom: 40px;
     border-bottom: 1px solid rgba(208, 214, 217, 1);
 }
 
 
 .direction i {
     font-style: normal;
-
-    color: rgba(153, 153, 153, 1);
+    color: rgb(230, 191, 191);
 }
 
 .direction span {
@@ -64,7 +72,7 @@ main {
 
 
 
-/*表单*/
+/*表单线条合并*/
 table {
     border-collapse: collapse;
 }
@@ -80,9 +88,8 @@ table {
 
 table td {
     border: 1px solid rgba(8, 1, 3, -0.85);
-    box-shadow: 0px 1px 2px 0px rgba(8, 1, 3, 0.15);
+    box-shadow: 0px 1px 0px 0px rgba(8, 1, 3, 0.15);
 }
-
 
 
 /*调整表格格子*/
@@ -103,25 +110,22 @@ table td {
     width: 160px;
 }
 
-
 .salary .per-salary {
     float: right;
+    margin-right: 5px;
 }
-
 
 .count {
     height: 80px;
 }
-
 
 .fir-line .pic img {
     float: left;
     width: 110px;
     margin-top: 8px;
     margin-right: 10px;
-    border-radius: 50%;
+    border-radius: 15%;
 }
-
 
 .fir-line .pic-word p {
     margin-top: 15px;
@@ -130,13 +134,10 @@ table td {
 }
 
 
-
 /*表格字体颜色*/
 table {
-
     background-color: #ffffff;
 }
-
 
 table .red {
     font-weight: bold;
@@ -155,12 +156,10 @@ table .grey {
     font-weight: bold;
 }
 
-
 .count-fir {
     font-weight: bold;
     text-indent: 8px;
 }
-
 
 .salary .fir-line {
     text-align: center;
@@ -170,62 +169,119 @@ table .grey {
     text-indent: 10px;
 }
 
-
-.container .col-md-4.four,
-.container .col-md-4.fif {
+/* .container .col-lg-4.four,
+.container .col-lg-4.fif {
     margin-top: 25px;
+} */
+
+.container .col-lg-4 {
+    width: 370px;
+}
+
+
+table {
+    width: 100%;
+}
+
+
+
+.container .row .inform:hover .back {
+    text-align: center;
+    font-size: 14px;
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    transform: rotate(360deg);
+    visibility: visible;
+}
+
+
+.back {
+    position: absolute;
+    top: 2px;
+    left: 3.8px;
+    margin: auto;
+    text-align: justify;
+    visibility: hidden;
+    padding: 41px;
+    height: 100%;
+    transition: 1.5s;
+    /* transform-style: preserve-3d; */
+}
+
+
+.cen {
+    margin-bottom: 19%;
+    text-align: center;
+}
+
+
+.just {
+    text-align: justify;
+    text-indent: 20px;
 }
 
 
 
 
+/* 下面的媒体查询原本是因为我设了col-md，导致在变化屏幕大小的时候出现挤压，我想用media来
+微调各个盒子的位置，但是最终越调整越离谱，因为倒L型，我还竟然用absolute来调整。。。结果
+可想而知。最后经过观察分辨率的变化，找到了992这个关键，在经过更改 col-md ——> col lg后，一切
+都正常了，不用媒体查询大动干戈！ */
 
 
 
 
 
+@media screen and (min-width: 200px) and (max-width:992px) {
 
-@media screen and (min-width: 1000px) and (max-width:1200px) {
+
+    /*在小于992px的时候变成了数列，所以我把宽度变大，更协调*/
     table {
-        width: 300px;
+        width: 100%;
+    }
+
+
+    /*由于table表单宽度变大了，我想居中表格，所以这里把容器的宽度也设为table一样
+    400，为了满足margin: 0 auto 居中*/
+
+    .container .col-lg-4 {
+        width: 400px;
+        margin-top: 50px;
+        /* margin: 0 auto; */
+    }
+
+    /*在垂直状态，把介绍职位的文字居中*/
+    .container .intro {
+        text-align: center;
+    }
+
+    /*垂直状态下，将上下各出间隙*/
+    .container .col-lg-4.fir,
+    .container .col-lg-4.sed {
+        margin-top: 25px;
     }
 
 }
 
+@media screen and (min-width: 992px) and (max-width:1500px) {
 
-@media screen and (min-width: 700px) and (max-width:1000px) {
-
-
-    .container .col-md-4.sed {
-        margin-left: 166px;
+    .col-lg-4.col-md-6.four,
+    .col-lg-4.col-md-6.fif {
+        margin-top: 30px;
     }
 
-    .container .col-md-4.fir {
-        margin-bottom: 50px;
-    }
 
-    .container .col-md-4.fif {
-        position: absolute;
-        left: 520px;
-        bottom: 620px;
-    }
-}
 }
 
-
-@media screen and (min-width: 500px) and (max-width:770px) {
-
-    .container .col-md-4.sed {
-        margin-bottom: 30px;
-        margin-left: 0;
+@media screen and (min-width: 200px) and (max-width:768px) {
+    .container .col-lg-4 {
+        width: 100%;
     }
 
-    .container .col-md-4.fir {
-        margin-bottom: 30px;
-
+    table {
+        width: 100%;
     }
-
-
-
 
 }

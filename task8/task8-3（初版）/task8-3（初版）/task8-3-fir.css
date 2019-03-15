@@ -1,0 +1,231 @@
+body {
+    background-color: #fafafa;
+}
+
+
+main {
+    position: relative;
+}
+
+
+.fir-page {
+    /* margin-left: 8%;
+    margin-top: 2%; */
+    font-weight: bold;
+    font-size: 14px;
+    margin-top: 53px;
+    margin-bottom: 20px;
+}
+
+
+.fir-page span {
+    color: #29B078;
+}
+
+
+.direction {
+
+    width: 100%;
+    height: 46px;
+    margin-top: 10px;
+    border-top: 1px solid rgba(208, 214, 217, 1);
+    border-bottom: 1px solid rgba(237, 241, 242, 1);
+    line-height: 46px;
+    font-size: 15px;
+
+}
+
+.intro {
+    width: 100%;
+    height: 50px;
+    font-weight: bold;
+    line-height: 50px;
+    margin-bottom: 35px;
+    border-bottom: 1px solid rgba(208, 214, 217, 1);
+}
+
+
+.direction i {
+    font-style: normal;
+
+    color: rgba(153, 153, 153, 1);
+}
+
+.direction span {
+    color: black;
+    margin-left: 8px;
+
+}
+
+.direction span:hover {
+    color: #ffffff;
+    background-color: rgba(41, 176, 120, 1);
+}
+
+
+
+/*表单*/
+table {
+    border-collapse: collapse;
+}
+
+
+table {
+    width: 355px;
+    height: 50px;
+    font-size: 13px;
+    /* border: 1px solid black; */
+    /*table设边框无效，需要到td*/
+}
+
+table td {
+    border: 1px solid rgba(8, 1, 3, -0.85);
+    box-shadow: 0px 1px 2px 0px rgba(8, 1, 3, 0.15);
+}
+
+
+
+/*调整表格格子*/
+.job .fir-line {
+    height: 130px;
+}
+
+.job .sed-line {
+    height: 50px;
+    width: 53px;
+}
+
+.salary {
+    height: 150px;
+}
+
+.salary .fir-line {
+    width: 160px;
+}
+
+
+.salary .per-salary {
+    float: right;
+}
+
+
+.count {
+    height: 80px;
+}
+
+
+.fir-line .pic img {
+    float: left;
+    width: 110px;
+    margin-top: 8px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+
+.fir-line .pic-word p {
+    margin-top: 15px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+
+/*表格字体颜色*/
+table {
+
+    background-color: #ffffff;
+}
+
+
+table .red {
+    font-weight: bold;
+    color: rgba(240, 20, 0, 1);
+}
+
+table .grey {
+    font-weight: bold;
+    color: rgba(153, 153, 153, 1);
+}
+
+.count .count-grey {
+    text-indent: 8px;
+    color: rgba(153, 153, 153, 1);
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+.count-fir {
+    font-weight: bold;
+    text-indent: 8px;
+}
+
+
+.salary .fir-line {
+    text-align: center;
+}
+
+.salary .sed-line {
+    text-indent: 10px;
+}
+
+
+.container .col-md-4.four,
+.container .col-md-4.fif {
+    margin-top: 25px;
+}
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 1000px) and (max-width:1200px) {
+    table {
+        width: 300px;
+    }
+
+}
+
+
+@media screen and (min-width: 700px) and (max-width:1000px) {
+
+
+    .container .col-md-4.sed {
+        margin-left: 166px;
+    }
+
+    .container .col-md-4.fir {
+        margin-bottom: 50px;
+    }
+
+    .container .col-md-4.fif {
+        position: absolute;
+        left: 520px;
+        bottom: 620px;
+    }
+}
+}
+
+
+@media screen and (min-width: 500px) and (max-width:770px) {
+
+    .container .col-md-4.sed {
+        margin-bottom: 30px;
+        margin-left: 0;
+    }
+
+    .container .col-md-4.fir {
+        margin-bottom: 30px;
+
+    }
+
+
+
+
+}

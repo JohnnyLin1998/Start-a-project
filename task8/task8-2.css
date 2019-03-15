@@ -25,6 +25,13 @@ section .head-text {
     border-bottom: 1.5px solid #ffffff;
 }
 
+/*加跳转链接*/
+.head-text a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+
 main .showpic {
     position: relative;
     display: flex;
@@ -32,11 +39,11 @@ main .showpic {
     margin-bottom: 10px;
     width: 100%;
     height: 13vw;
-    background: url("background2.png") no-repeat;
+    background: url("task8-img/background2.png") no-repeat;
     background-size: cover;
 }
 
-main .recom{
+main .recom {
     position: absolute;
     width: 17vw;
     height: 10vw;
@@ -48,24 +55,24 @@ main .recom{
     color: #ffffff;
 }
 
-.recom .cn{
+.recom .cn {
     font-size: 3vw;
     font-weight: bold;
 }
 
 
-.recom .en{
+.recom .en {
     font-weight: bold;
     font-size: 1.3vw;
 }
 
 
-.recom p{
+.recom p {
     margin: 0;
 }
 
 
-.showpic .cn-2{
+.showpic .cn-2 {
     position: absolute;
     width: 18vw;
     height: 5vw;
@@ -81,26 +88,26 @@ main .recom{
 
 /*正文开始*/
 
-main{
+main {
     position: relative;
 
-    background-color:  #fafafa;
+    background-color: #fafafa;
 }
 
-.fir-page{
+.fir-page {
     margin-left: 1vw;
     margin-top: 2vw;
     font-weight: bold;
     font-size: 14px;
 }
 
-.fir-page span{
+.fir-page span {
     color: #29B078;
 }
 
 
 
-nav{
+nav {
     display: flex;
     flex-direction: column;
     margin-top: 40px;
@@ -108,64 +115,79 @@ nav{
 }
 
 
-nav .gap{
+nav .gap {
     background-color: #ffffff;
-    border: 1px solid rgba(230,230,230,1);
+    border: 1px solid rgba(230, 230, 230, 1);
 
 }
 
 
-nav .corpor{
+nav .corpor {
     height: 55px;
     line-height: 55px;
     text-align: center;
     font-size: 14px;
     font-weight: bold;
     color: black;
-    border-bottom: 1px solid rgba(230,230,230,1);
+    border-bottom: 1px solid rgba(230, 230, 230, 1);
 }
 
 
-nav  ul{
+nav ul {
     padding: 0;
     list-style: none;
     color: #29B078;
 }
 
-nav  ul span:hover{
+/* nav ul span:hover {
     color: rgba(255, 101, 14, 1);
-}
+} */
 
 
-nav .list{
+nav .list {
     line-height: 3;
- 
     font-size: 13px;
     font-weight: 600;
 }
 
 
-nav .outer{
+nav .outer {
     width: 80px;
     margin: auto;
 }
 
 
-nav .outer div{
-    display: inline-block;
+/*设置企业字体前的橙色圆点，需要同时点亮*/
+
+/*注意，伪元素绝对定位了，本尊也必须relative，不然就飞了*/
+.list-hover{
+    position: relative;
+}
+
+.corpor .list-hover::before{
+    content: "";
+    position: absolute;
+    bottom:13px;
+    left: -13px;
     width: 8.5px;
     height: 8.5px;
     border: 1.5px solid rgba(249, 163, 114, 1);
     border-radius: 50%;
 }
 
+.corpor .list:hover {
+   color: rgba(255, 101, 14, 1);
+}
 
-nav .outer div:hover{
-    background-color: rgba(255, 101, 14, 1);;
+/*这一步是关键， hover+before的组合，之前没见过*/
+.list-hover:hover::before{
+    background-color: rgba(255, 101, 14, 1);
 }
 
 
-.col-md-9{
+
+
+.col-md-9 {
     margin-top: 40px;
     margin-bottom: 150px;
     padding-bottom: 130px;
@@ -175,29 +197,23 @@ nav .outer div:hover{
 }
 
 
-.col-md-9 .intro{
-    border-bottom: 1px solid rgba(230,230,230,1);
+.col-md-9 .intro {
+    border-bottom: 1px solid rgba(230, 230, 230, 1);
     margin-bottom: 70px;
     padding-bottom: 20px;
 }
 
 
 
-.col-md-9 .intro img{
+.col-md-9 .intro img {
     float: left;
     width: 140px;
 }
 
-.col-md-9 .intro p{
+.col-md-9 .intro p {
     margin-top: 30px;
 }
 
-.col-md-9 .words p{
+.col-md-9 .words p {
     margin-top: 40px;
 }
-
-
-
-
-
-
