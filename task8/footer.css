@@ -11,6 +11,7 @@ footer {
 
 /*居中二维码-字体*/
 footer .row .col-md-2 {
+    margin-top: 1%;
     text-align: center;
 }
 
@@ -20,6 +21,9 @@ footer .row .col-md-2 img {
     margin-top: 10px;
 }
 
+footer .col-md-5 {
+    margin-top: 2%;
+}
 
 
 /*占位子的p友人*/
@@ -42,36 +46,73 @@ footer .visi {
     font-size: 13px;
 }
 
+/*抬头的修真院微调--boot组件自带的位置*/
+.navbar-brand {
+    margin-left: 2%;
+}
+
+/*给底部文字加hover效果*/
+.container.footer p a {
+    border: 1px solid #26A26F;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.container.footer a:hover {
+    border-bottom: 1px solid white;
+}
+
+.container.footer .row{
+    padding-bottom: 13px;
+}
+
+
+
 
 /*媒体查询，底部适应不同大小屏*/
 
-@media screen and (min-width: 300px) and (max-width:778px) {
+@media screen and (min-width: 200px) and (max-width:1000px) {
+    .container.learn .row {
+        margin-bottom: 0px;
+    }
+}
+
+
+
+/*控制 高效 规范 人脉居中*/
+@media screen and (min-width: 200px) and (max-width:1199px) {
+
+    .col-lg-3 {
+        text-align: center;
+    }
+}
+
+
+@media screen and (min-width: 768px) and (max-width:3300px) {
+
+    .navbar.navbar-expand-md.bg-dark.navbar-dark {
+        background-color: #26a26f !important;
+    }
+
+    .navbar-nav {
+        position: absolute;
+        right: 12%;
+    }
+
+}
+
+
+
+@media screen and (min-width: 100px) and (max-width:778px) {
 
     /*边垂直后，把底部的绿色地皮抬高，更协调*/
     footer {
-        height: 250px;
+        height: 313px;
     }
 
-    /*把绿色部分三块大佬往下降降*/
-
-    footer .col-md-5 {
-        margin-top: 9%;
-    }
-
-    footer .col-md-2 {
-        margin-top: 9% !important;
-    }
-
-    /*把大佬横过来*/
-    .container.footer .row {
-        display: flex;
-        flex-wrap: nowrap;
-    }
-
-    .container.intro .col-md-3 {
+    .container.intro .col-lg-3.col-md-6.adjust {
         text-align: center;
     }
-
 
     .container-company {
         display: flex;
@@ -89,13 +130,122 @@ footer .visi {
         width: 150px;
     }
 
-    .container.intro .col-md-3.adjust {
+    .container.intro .col-lg-3.col-md-6.adjust {
         padding-left: 29px;
     }
 
-
-    .col-md-3.adjust .count-people {
+    .col-lg-3.col-md-6.adjust .count-people {
         margin-top: 50px;
     }
 
+    footer .visi {
+        display: none;
+    }
+
+    footer .row .col-md-2 {
+        margin-top: 0;
+        text-align: left;
+    }
+
+
+    footer .row .col-md-2 img {
+        margin-top: 0;
+    }
+
+    footer .container.footer {
+        margin-left: 0;
+    }
+
+    footer .col-md-2 div {
+        margin-top: 5px;
+    }
+
+    footer .col-md-5 {
+        margin-top: 1%;
+    }
+
+    .link-total ul {
+        margin-bottom: 4px;
+    }
+
+    /*768px以下，原header隐藏*/
+
+    header .head-down-text {
+        display: none;
+    }
+
+
+    .navbar.navbar-expand-md.bg-dark.navbar-dark {
+        background-color: #26a26f !important;
+    }
+
+    .navbar-nav {
+        text-align: center;
+    }
+
+}
+
+
+
+/* 调整友情链接一大排的文字，在拉窄屏幕时的变化 */
+@media screen and (min-width: 665px) and (max-width:880px) {
+
+    .link-total {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .link-total ul {
+        margin-left: 35px;
+    }
+
+    .link-bottom,
+    .link-top {
+        margin-right: 55px;
+        line-height: 2;
+    }
+
+    .link-total ul {
+        margin-bottom: 3px;
+    }
+}
+
+
+@media screen and (min-width: 400px) and (max-width:665px) {
+
+    .link-bottom,
+    .link-top {
+        display: block;
+    }
+
+    .link-total {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .link-bottom {
+        margin-left: 70px;
+        margin-right: 0px;
+    }
+
+    .link-top {
+        margin-right: 70px;
+        margin-left: 0px;
+    }
+}
+
+
+@media screen and (min-width: 400px) and (max-width:665px) {
+
+    .container-company .row-com {
+        margin-bottom: 15px;
+        width: 550px;
+        height: 200px;
+        line-height: 200px;
+    }
+
+    .container-company .row-com img {
+        width: 150px;
+    }
 }

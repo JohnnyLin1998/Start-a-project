@@ -16,11 +16,23 @@ main {
 }
 
 
+/*首页 职业 推荐--hover效果*/
+.navbar-nav .nav-item .nav-link {
+    padding: 15px;
+    border: 1px solid #26a26f;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    border-bottom: 1px solid white;
+}
+
+
+
 .fir-page {
     /* margin-left: 8%;
     margin-top: 2%; */
     font-weight: bold;
-    font-size: 14px;
+    font-size: 16px;
     margin-top: 53px;
     margin-bottom: 20px;
 }
@@ -42,6 +54,17 @@ main {
     font-size: 15px;
 }
 
+.direction a{
+    margin-left: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+a:visited{
+    text-decoration: none;
+    color: black;
+}
+
 
 .intro {
     width: 100%;
@@ -55,8 +78,10 @@ main {
 
 
 .direction i {
+    font-size: 16px;
+    font-weight: bold;
     font-style: normal;
-    color: rgb(230, 191, 191);
+    color: black;
 }
 
 .direction span {
@@ -222,6 +247,23 @@ table {
     text-indent: 20px;
 }
 
+/*抬头的修真院微调--boot组件自带的位置*/
+.navbar-brand {
+    margin-left: 2%;
+}
+
+/*给底部文字加hover效果*/
+.container.footer p a{
+    border: 1px solid #26A26F;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.container.footer a:hover{
+    border-bottom: 1px solid white;
+}
+
+
 
 
 
@@ -265,7 +307,7 @@ table {
 
 }
 
-@media screen and (min-width: 992px) and (max-width:1500px) {
+@media screen and (min-width: 992px) and (max-width:3000px) {
 
     .col-lg-4.col-md-6.four,
     .col-lg-4.col-md-6.fif {

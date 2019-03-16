@@ -1,0 +1,95 @@
+html {
+    /* font-size: 100px; */
+}
+
+body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+header {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    margin-bottom: 31px;
+}
+
+/*客服热线*/
+.head-top .tel {
+    position: absolute;
+    top: 5px;
+    left: 50px;
+    margin-top: 3px;
+    font-size: 12px;
+    color: #29B078;
+}
+
+/*微信微博qq图标*/
+.head-img {
+    position: absolute;
+    right: 5%;
+    top: 26%;
+    transform: translateY(-50%);
+}
+
+.head-img img {
+    width: 20px;
+    margin-left: 8px;
+}
+
+
+/*首页 职业 推荐 关于*/
+.head-down {
+    position: absolute;
+    top: 27px;
+    left: 0;
+    width: 100%;
+    height: 54px;
+    background-color: #29B078;
+}
+
+
+.head-down-text {
+    display: flex;
+    position: absolute;
+    top: 59%;
+    right: 15%;
+    transform: translatey(-50%);
+    font-size: 11px;
+    color: #ffffff;
+}
+
+section .head-text {
+    text-align: center;
+    width: 45px;
+    height: 44px;
+    line-height: 34px;
+    margin-left: 10px;
+}
+
+.head-text:hover {
+    border-bottom: 1.5px solid #ffffff;
+}
+
+
+
+/*技能树logo*/
+.head-down-pic{
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+}
+
+.head-down-pic img{
+    width: 100%;
+}
+
+
+
+
+

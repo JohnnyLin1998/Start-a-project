@@ -2,35 +2,37 @@ body {
     margin: 0;
     width: 100%;
     height: 100%;
-    font-family:  Arial, "Times New Roman", "Microsoft YaHei", SimSun, SimHei;
+    font-family: Arial, "Times New Roman", "Microsoft YaHei", SimSun, SimHei;
 }
 
+
+main {
+    background-color: #fafafa;
+}
 
 header {
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 50px;
-    margin-bottom: 31px;
+    /* height: 50px;   神坑定高！下拉出不来   */
 }
 
+.head-top {
+    display: flex;
+    justify-content: space-between;
+}
 
-.head-top .tel {
-    position: absolute;
-    top: 5px;
-    left: 50px;
+/*客服热线*/
+.tel {
+    margin-top: 0.5%;
+    margin-left: 2%;
     margin-top: 3px;
     font-size: 12px;
     color: #29B078;
 }
 
+/*微信微博qq图标*/
 .head-img {
-    position: absolute;
-    right: 5%;
-    top: 26%;
-    transform: translateY(-50%);
+    margin-right: 2%;
 }
+
 
 .head-img img {
     width: 20px;
@@ -38,57 +40,27 @@ header {
 }
 
 
-.head-down {
-    position: absolute;
-    top: 27px;
-    left: 0;
-    width: 100%;
-    height: 54px;
-    background-color: #29B078;
-}
-
-
 /*加跳转链接*/
-.head-text a{
-    text-decoration: none;
-    color: #ffffff;
-}
-
-.carousel-caption .text-4 a{
+.head-text a {
     text-decoration: none;
     color: #ffffff;
 }
 
 
-
-
-
-main {
-    background-color: #fafafa;
-}
-
-
-.head-down-text {
-    display: flex;
-    position: absolute;
-    top: 59%;
-    right: 15%;
-    transform: translatey(-50%);
-    font-size: 11px;
+.carousel-caption .text-4 a {
+    text-decoration: none;
     color: #ffffff;
 }
 
-section .head-text {
-    text-align: center;
-    width: 45px;
-    height: 44px;
-    line-height: 34px;
-    margin-left: 10px;
-    /* border-bottom: 2px solid white; */
+
+.navbar-nav .nav-item .nav-link {
+    padding: 15px;
+    border: 1px solid #26a26f;
 }
 
-.head-text:hover {
-    border-bottom: 1.5px solid #ffffff;
+
+.navbar-nav .nav-item .nav-link:hover {
+    border-bottom: 1px solid white;
 }
 
 
@@ -128,9 +100,6 @@ section .head-text {
 }
 
 
-
-
-
 .carousel-inner .text-3 {
     text-align: center;
     font-weight: bold;
@@ -140,7 +109,6 @@ section .head-text {
 }
 
 
-
 .carousel-inner .text-4 {
     text-align: center;
     font-size: 5.5vw;
@@ -148,7 +116,6 @@ section .head-text {
     letter-spacing: 2px;
     color: #ffffff;
 }
-
 
 
 .container.intro {
@@ -173,7 +140,6 @@ main .row {
     align-items: center;
     text-align: justify;
 }
-
 
 
 .container.intro .col-lg-3.col-md-6 {
@@ -214,7 +180,6 @@ main .row {
 }
 
 
-
 .container.intro .pic-3 {
     margin-top: 15px;
     text-align: center;
@@ -224,7 +189,6 @@ main .row {
 .container.intro .count-people-adjust {
     margin-top: 40px;
 }
-
 
 
 .container.intro .pic img {
@@ -257,26 +221,23 @@ main .row {
 }
 
 
-
 .container.intro .col-lg-3.col-md-6.adjust img {
     height: 15%;
 }
 
 
-
 .container.learn .row {
     position: relative;
     margin-bottom: 40px;
-
 }
 
 
-.container.learn .col-lg-3.col-md-6 {
+.container.learn .col-lg-3 {
     position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 12px;
+    padding: 23px;
 }
 
 
@@ -339,7 +300,6 @@ main .row {
 }
 
 
-
 .container.stu-show .head-pic {
     text-align: center;
     padding-bottom: 20px;
@@ -376,8 +336,7 @@ main .row {
 .container-company .row-com {
     width: 250px;
     height: 150px;
-    margin: 0 5px;
-    border: 1px solid rgba(120, 120, 120, 0.3);
+    border: 1px solid rgba(159, 156, 149, 0.2);
     background-color: #ffffff;
     text-align: center;
     line-height: 150px;
@@ -412,7 +371,7 @@ main .row {
     line-height: 2;
 }
 
-.link-total li{
+.link-total li {
     border: 1.2px solid white;
 }
 
@@ -420,8 +379,6 @@ main .row {
 .link-total li:hover {
     border-bottom: 1.2px solid #29B078;
 }
-
-
 
 
 
@@ -473,41 +430,70 @@ footer .visi {
     font-size: 13px;
 }
 
+/*抬头的修真院微调--boot组件自带的位置*/
+.navbar-brand {
+    margin-left: 2%;
+}
+
+/*给底部文字加hover效果*/
+.container.footer p a {
+    border: 1px solid #26A26F;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.container.footer a:hover {
+    border-bottom: 1px solid white;
+}
+
+
+
+
 
 
 /*媒体查询，底部适应不同大小屏*/
 
-
-/* @media screen and (min-width: 778px) and (max-width:992px) {
-
-} */
-
-
-
-
-/*控制 高效 规范 人脉居中*/
-@media screen and (min-width: 300px) and (max-width:1199px) {
-
-    .col-lg-3.col-md-6{
-        text-align: center;
+@media screen and (min-width: 200px) and (max-width:1000px) {
+    .container.learn .row {
+        margin-bottom: 0px;
     }
 
 }
 
 
+/*控制 高效 规范 人脉居中*/
+@media screen and (min-width: 200px) and (max-width:1199px) {
 
-@media screen and (min-width: 300px) and (max-width:778px) {
+    .col-lg-3 {
+        text-align: center;
+    }
+}
+
+
+@media screen and (min-width: 768px) and (max-width:3300px) {
+
+    .navbar.navbar-expand-md.bg-dark.navbar-dark {
+        background-color: #26a26f !important;
+    }
+
+    .navbar-nav {
+        position: absolute;
+        right: 12%;
+    }
+
+}
+
+
+@media screen and (min-width: 100px) and (max-width:778px) {
 
     /*边垂直后，把底部的绿色地皮抬高，更协调*/
     footer {
         height: 313px;
     }
 
-
     .container.intro .col-lg-3.col-md-6.adjust {
         text-align: center;
     }
-
 
     .container-company {
         display: flex;
@@ -529,43 +515,56 @@ footer .visi {
         padding-left: 29px;
     }
 
-
     .col-lg-3.col-md-6.adjust .count-people {
         margin-top: 50px;
     }
 
-    footer .visi{
+    footer .visi {
         display: none;
     }
 
-    footer .row .col-md-2{
+    footer .row .col-md-2 {
         margin-top: 0;
         text-align: left;
     }
 
 
-    footer .row .col-md-2 img{
+    footer .row .col-md-2 img {
         margin-top: 0;
     }
 
-    footer .container.footer{
+    footer .container.footer {
         margin-left: 0;
     }
 
-    footer .col-md-2 div{
+    footer .col-md-2 div {
         margin-top: 5px;
     }
 
     footer .col-md-5 {
         margin-top: 1%;
     }
-        
-    .link-total ul{
+
+    .link-total ul {
         margin-bottom: 4px;
     }
 
-}
+    /*768px以下，原header隐藏*/
 
+    header .head-down-text {
+        display: none;
+    }
+
+
+    .navbar.navbar-expand-md.bg-dark.navbar-dark {
+        background-color: #26a26f !important;
+    }
+
+    .navbar-nav {
+        text-align: center;
+    }
+
+}
 
 
 /* 调整友情链接一大排的文字，在拉窄屏幕时的变化 */
@@ -587,14 +586,13 @@ footer .visi {
         line-height: 2;
     }
 
-    .link-total ul{
+    .link-total ul {
         margin-bottom: 3px;
     }
-
 }
 
 
-@media screen and (min-width: 400px) and (max-width:665px) {
+@media screen and (min-width: 400px) and (max-width:670px) {
 
     .link-bottom,
     .link-top {
@@ -615,7 +613,6 @@ footer .visi {
         margin-right: 70px;
         margin-left: 0px;
     }
-
 }
 
 
@@ -631,6 +628,4 @@ footer .visi {
     .container-company .row-com img {
         width: 150px;
     }
-
-
 }

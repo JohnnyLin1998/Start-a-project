@@ -8,20 +8,29 @@ body {
     height: 100%;
 }
 
-header {
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 50px;
-    margin-bottom: 31px;
+main {
+    background-color: #fafafa;
 }
 
+header {
+    /* position: relative;
+    top: 0;
+    left: 0;
+    width: 100%; */
+    /* height: 50px;   神坑定高！   */
+}
+
+
+.head-top {
+    display: flex;
+    justify-content: space-between;
+}
+
+
 /*客服热线*/
-.head-top .tel {
-    position: absolute;
-    top: 5px;
-    left: 50px;
+.tel {
+    margin-top: 0.5%;
+    margin-left: 2%;
     margin-top: 3px;
     font-size: 12px;
     color: #29B078;
@@ -29,38 +38,15 @@ header {
 
 /*微信微博qq图标*/
 .head-img {
-    position: absolute;
-    right: 5%;
-    top: 26%;
-    transform: translateY(-50%);
+    margin-right: 2%;
 }
+
 
 .head-img img {
     width: 20px;
     margin-left: 8px;
 }
 
-
-/*首页 职业 推荐 关于*/
-.head-down {
-    position: absolute;
-    top: 27px;
-    left: 0;
-    width: 100%;
-    height: 54px;
-    background-color: #29B078;
-}
-
-
-.head-down-text {
-    display: flex;
-    position: absolute;
-    top: 59%;
-    right: 15%;
-    transform: translatey(-50%);
-    font-size: 11px;
-    color: #ffffff;
-}
 
 section .head-text {
     text-align: center;
@@ -77,7 +63,7 @@ section .head-text {
 
 
 /*技能树logo*/
-.head-down-pic{
+.head-down-pic {
     position: absolute;
     left: 10%;
     top: 50%;
@@ -85,6 +71,184 @@ section .head-text {
     width: 60px;
 }
 
-.head-down-pic img{
+.head-down-pic img {
     width: 100%;
+}
+
+
+
+
+/*控制 高效 规范 人脉居中*/
+@media screen and (min-width: 300px) and (max-width:1199px) {
+
+    .col-lg-3.col-md-6 {
+        text-align: center;
+    }
+}
+
+
+@media screen and (min-width: 768px) and (max-width:3300px) {
+
+    .navbar.navbar-expand-md.bg-dark.navbar-dark {
+        background-color: #26a26f !important;
+    }
+
+    .navbar-nav {
+        position: absolute;
+        right: 12%;
+    }
+
+}
+
+
+
+@media screen and (min-width: 100px) and (max-width:778px) {
+
+    /*边垂直后，把底部的绿色地皮抬高，更协调*/
+    footer {
+        height: 313px;
+    }
+
+
+    .container.intro .col-lg-3.col-md-6.adjust {
+        text-align: center;
+    }
+
+
+    .container-company {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container-company .row-com {
+        margin-bottom: 15px;
+        width: 550px;
+        height: 200px;
+        line-height: 200px;
+    }
+
+    .container-company .row-com img {
+        width: 150px;
+    }
+
+    .container.intro .col-lg-3.col-md-6.adjust {
+        padding-left: 29px;
+    }
+
+
+    .col-lg-3.col-md-6.adjust .count-people {
+        margin-top: 50px;
+    }
+
+    footer .visi {
+        display: none;
+    }
+
+    footer .row .col-md-2 {
+        margin-top: 0;
+        text-align: left;
+    }
+
+
+    footer .row .col-md-2 img {
+        margin-top: 0;
+    }
+
+    footer .container.footer {
+        margin-left: 0;
+    }
+
+    footer .col-md-2 div {
+        margin-top: 5px;
+    }
+
+    footer .col-md-5 {
+        margin-top: 1%;
+    }
+
+    .link-total ul {
+        margin-bottom: 4px;
+    }
+
+
+
+    /*768px以下，原header隐藏*/
+
+    header .head-down-text {
+        display: none;
+    }
+
+
+    .navbar.navbar-expand-md.bg-dark.navbar-dark {
+        background-color: #26a26f !important;
+    }
+
+    .navbar-nav {
+        text-align: center;
+    }
+
+}
+
+
+/* 调整友情链接一大排的文字，在拉窄屏幕时的变化 */
+@media screen and (min-width: 665px) and (max-width:880px) {
+
+    .link-total {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .link-total ul {
+        margin-left: 35px;
+    }
+
+    .link-bottom,
+    .link-top {
+        margin-right: 55px;
+        line-height: 2;
+    }
+
+    .link-total ul {
+        margin-bottom: 3px;
+    }
+}
+
+
+@media screen and (min-width: 400px) and (max-width:665px) {
+
+    .link-bottom,
+    .link-top {
+        display: block;
+    }
+
+    .link-total {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .link-bottom {
+        margin-left: 70px;
+        margin-right: 0px;
+    }
+
+    .link-top {
+        margin-right: 70px;
+        margin-left: 0px;
+    }
+}
+
+
+@media screen and (min-width: 400px) and (max-width:665px) {
+
+    .container-company .row-com {
+        margin-bottom: 15px;
+        width: 550px;
+        height: 200px;
+        line-height: 200px;
+    }
+
+    .container-company .row-com img {
+        width: 150px;
+    }
 }

@@ -39,34 +39,36 @@
             </div>
         </section>
 
-        </section>
 
-        <section class="head-down">
-            <div class="head-down-text">
 
-                <div class="head-text">
+        <!-- bootstrap组件——折叠导航栏 -->
 
-                    <a href="task8.html">首页</a>
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+            <a class="navbar-brand" href="http://www.jnshu.com/home">修真院</a>
 
-                </div>
-                <div class="head-text">
 
-                    <a href="task8-3.html">职业</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="task8.html">首页</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="task8-3.html">职业</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="task8-2.html">推荐</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="task8-2.html">关于</a>
+                    </li>
 
-                </div>
-                <div class="head-text">
 
-                    <a href="task8-2.html">推荐</a>
-
-                </div>
-                <div class="head-text">
-
-                    <a href="task8-2.html">关于</a>
-
-                </div>
+                </ul>
             </div>
-        </section>
-
+        </nav>
 
     </header>
 
@@ -76,25 +78,23 @@
         <div class="container">
 
             <div class="fir-page">
-                首页><span>职业</span>
+                首页 >><span>职业</span>
             </div>
 
             <div class="direction">
                 <i>方向:</i>
-                <span>全部</span>
-                <span>前端开发</span>
-                <span>后端开发</span>
-                <span>移动开发</span>
-                <span>整站开发</span>
-                <span>运营维护</span>
-            </div>
+                <a href="#前端">前端开发</a>
+                <a href="#后端">后端开发</a>
+                <a href="#后端">移动开发</a>
+                <a href="#运维">整站开发</a>
+                <a href="#运维">运营维护</a>
 
+            </div>
 
 
             <div class="intro">
-                <div>前端开发方向</div>
+                <div id="前端">前端开发方向</div>
             </div>
-
 
 
             <div class="row">
@@ -194,7 +194,7 @@
 
                         </table>
 
-
+                        <!-- 黑色翻转效果 -->
                         <div class="back">
                             <div class="inner">
                                 <p class="cen">Web前端工程师</p>
@@ -208,26 +208,6 @@
                     </div>
 
                 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
                 <div class="col-lg-4 col-md-6 sed">
@@ -458,11 +438,9 @@
         </div>
 
 
-
-
         <div class="container">
             <div class="intro">
-                <span>后端开发方向</span>
+                <div id="后端">后端开发方向</div>
             </div>
 
 
@@ -919,7 +897,6 @@
 
 
 
-
                 <div class="col-lg-4 col-md-6 fif">
                     <div class="inform">
 
@@ -1036,12 +1013,9 @@
 
 
 
-
-
-
         <div class="container">
             <div class="intro">
-                <span>运维方向</span>
+                <div id="运维">运维方向</div>
             </div>
 
             <div class="row">
@@ -1377,12 +1351,7 @@
 
                 </div>
 
-
-
             </div>
-
-
-
 
 
         </div>
@@ -1392,7 +1361,7 @@
 
         <div class="container">
             <div class="intro">
-                <span>运维方向</span>
+                <div id="运维">运维方向</div>
             </div>
 
 
@@ -1506,30 +1475,28 @@
 
             </div>
 
-
-
         </div>
-
-
 
     </main>
 
 
 
-
     <footer>
-
 
         <div class="container footer">
 
             <div class="row">
                 <div class="col-md-5">
 
-                    <p>技能树 —— 改变你我</p>
+                    <p><a href="http://www.jnshu.com/home">技能树 —— 改变你我</a></p>
 
                     <p class="visi">我是一个占位符</p>
 
-                    <p class="inform">关于我们 |联系我们 |合作企业</p>
+                    <p class="inform">
+
+                        <a>关于我们</a><a>|联系我们</a><a>|合作企业</a>
+
+                    </p>
 
                 </div>
 
@@ -1537,11 +1504,11 @@
 
                     <div class="foot-text-mid">
 
-                        <p>旗下网站</p>
+                        <p><a href="http://www.jnshu.com/home">旗下网站</a></p>
 
-                        <p>草船云孵化器&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;最强IT特训营</p>
+                        <p><a href="">草船云孵化器</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="">最强IT特训营</a></p>
 
-                        <p>葡萄藤轻游戏&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;桌游精灵</p>
+                        <p><a href="">葡萄藤轻游戏</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="">桌游精灵</a></p>
 
                     </div>
 

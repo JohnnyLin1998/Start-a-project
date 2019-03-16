@@ -32,6 +32,18 @@ section .head-text {
 }
 
 
+/*首页 职业 推荐--hover效果*/
+.navbar-nav .nav-item .nav-link {
+    padding: 15px;
+    border: 1px solid #26a26f;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    border-bottom: 1px solid white;
+}
+
+
+
 main .showpic {
     position: relative;
     display: flex;
@@ -42,6 +54,7 @@ main .showpic {
     background: url("task8-img/background2.png") no-repeat;
     background-size: cover;
 }
+
 
 main .recom {
     position: absolute;
@@ -98,21 +111,14 @@ main {
     margin-left: 1vw;
     margin-top: 2vw;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 16px;
+    margin-bottom: 2%;
 }
 
 .fir-page span {
     color: #29B078;
 }
 
-
-
-nav {
-    display: flex;
-    flex-direction: column;
-    margin-top: 40px;
-
-}
 
 
 nav .gap {
@@ -126,7 +132,7 @@ nav .corpor {
     height: 55px;
     line-height: 55px;
     text-align: center;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: bold;
     color: black;
     border-bottom: 1px solid rgba(230, 230, 230, 1);
@@ -134,7 +140,6 @@ nav .corpor {
 
 
 nav ul {
-    padding: 0;
     list-style: none;
     color: #29B078;
 }
@@ -146,7 +151,7 @@ nav ul {
 
 nav .list {
     line-height: 3;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 600;
 }
 
@@ -160,15 +165,16 @@ nav .outer {
 /*设置企业字体前的橙色圆点，需要同时点亮*/
 
 /*注意，伪元素绝对定位了，本尊也必须relative，不然就飞了*/
-.list-hover{
+
+.list-hover {
     position: relative;
 }
 
-.corpor .list-hover::before{
+.corpor .list-hover::before {
     content: "";
     position: absolute;
-    bottom:13px;
-    left: -13px;
+    bottom: 17px;
+    left: -12px;
     width: 8.5px;
     height: 8.5px;
     border: 1.5px solid rgba(249, 163, 114, 1);
@@ -176,11 +182,11 @@ nav .outer {
 }
 
 .corpor .list:hover {
-   color: rgba(255, 101, 14, 1);
+    color: rgba(255, 101, 14, 1);
 }
 
 /*这一步是关键， hover+before的组合，之前没见过*/
-.list-hover:hover::before{
+.list-hover:hover::before {
     background-color: rgba(255, 101, 14, 1);
 }
 
@@ -188,7 +194,6 @@ nav .outer {
 
 
 .col-md-9 {
-    margin-top: 40px;
     margin-bottom: 150px;
     padding-bottom: 130px;
     font-size: 15px;
@@ -207,7 +212,7 @@ nav .outer {
 
 .col-md-9 .intro img {
     float: left;
-    width: 140px;
+    width: 125px;
 }
 
 .col-md-9 .intro p {
@@ -216,4 +221,20 @@ nav .outer {
 
 .col-md-9 .words p {
     margin-top: 40px;
+}
+
+/*抬头的修真院微调--boot组件自带的位置*/
+.navbar-brand {
+    margin-left: 2%;
+}
+
+/*给底部文字加hover效果*/
+.container.footer p a {
+    border: 1px solid #26A26F;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.container.footer a:hover {
+    border-bottom: 1px solid white;
 }
