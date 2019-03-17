@@ -158,10 +158,9 @@ section .head-text {
         margin-left: 0;
     }
 
-    footer .col-md-2 div {
-        margin-top: 5px;
-    }
 
+
+    
     footer .col-md-5 {
         margin-top: 1%;
     }
@@ -252,3 +251,4 @@ section .head-text {
         width: 150px;
     }
 }
+
