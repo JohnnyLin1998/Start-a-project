@@ -1,0 +1,756 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* 
+header {
+    position: relative;
+    width: 100%;
+    background-color: (249, 249, 249, 1);
+}
+ */
+
+section {
+    width: 100%;
+    height: 125px;
+}
+
+
+header {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 42px;
+    background-color: rgba(29, 122, 217, 1);
+}
+
+
+header .tel {
+    color: #ffffff;
+    font-size: 14px;
+}
+
+header .sign {
+
+    font-size: 14px;
+    cursor: pointer;
+    color: #ffffff;
+    background-color: rgba(29, 122, 217, 1);
+}
+
+
+header .sign-left,
+header .sign-right {
+    width: 50px;
+    text-align: center;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+
+
+header .sign-left:hover {
+    color: black;
+    background-color: #ffffff;
+}
+
+header .sign-right:hover {
+    color: black;
+    background-color: #ffffff;
+}
+
+
+.sign {
+    margin-right: 15%;
+}
+
+
+
+.navbar.navbar-expand-md {
+
+    background-color: rgba(249, 249, 249, 1);
+}
+
+.nav-item {
+    margin-left: 30px;
+}
+
+
+
+.nav-item a {
+    background-color: rgba(249, 249, 249, 1);
+    color: black;
+}
+
+
+.nav-item a:hover {
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: rgba(29, 122, 217, 1);
+    color: #ffffff;
+}
+
+
+.navbar-toggler {
+    background-color: rgba(104, 104, 104, 0.1) !important;
+}
+
+
+.collapse.navbar-collapse {
+    flex-direction: row-reverse;
+}
+
+.collapse.navbar-collapse .navbar-nav {
+    margin-right: 14%;
+}
+
+
+
+/*收缩导航icon*/
+.navbar-toggler-icon {
+    position: relative;
+    width: 36px;
+    height: 38px;
+    background-color: #26a26f;
+    border-radius: 6px;
+    border-style: none;
+    outline: none;
+}
+
+.navbar-toggler-icon .menu-fir {
+    position: absolute;
+    top: 6px;
+    left: 1px;
+    width: 30px;
+    height: 11px;
+    border-top: 2px solid rgba(56, 56, 56, 0.5);
+    border-bottom: 2px solid rgba(56, 56, 56, 0.5);
+}
+
+.navbar-toggler-icon .menu-sed {
+    position: absolute;
+    top: 22px;
+    left: 1px;
+    width: 30px;
+    height: 5px;
+    border-bottom: 2px solid rgba(56, 56, 56, 0.5);
+}
+
+
+
+
+
+/*主体部分*/
+
+main {
+    margin: 5%;
+    margin-top: 0;
+}
+
+article {
+    margin-bottom: 100px;
+}
+
+.container {
+    padding: 0 !important;
+}
+
+
+.start {
+    padding-left: 5px;
+    margin-bottom: 10px;
+    border-left: 3px solid rgba(29, 122, 217, 1);
+    font-size: 18px;
+}
+
+
+
+
+/*做出左右亮条*/
+.make-step {
+    display: flex;
+    float: right;
+    flex-direction: row;
+    margin-top: 30px;
+    margin-right: 9%;
+}
+
+.make-step .step {
+    margin-right: 43px;
+    width: 80px;
+    height: 65px;
+    text-align: center;
+}
+
+.step .line {
+    height: 34px;
+}
+
+.step .line-content {
+    position: relative;
+    margin: auto;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    color: #ffffff;
+    background-color: rgba(204, 204, 204, 1);
+}
+
+.step .line-content::before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: -52px;
+    width: 53px;
+    border: 2px solid rgba(204, 204, 204, 1);
+    border-radius: 50px;
+}
+
+.step .line-content::after {
+    content: "";
+    position: absolute;
+    top: 8px;
+    right: -52px;
+    width: 53px;
+    border: 2px solid rgba(204, 204, 204, 1);
+    border-radius: 50px;
+}
+
+
+
+.step .words {
+    font-size: 15px;
+    color: rgba(204, 204, 204, 1);
+}
+
+
+/*字体，背景、线条一起变色*/
+/*现在无法同时变色，要处理一下----hover摆放*/
+
+
+.step:hover .line-content::before {
+    border: 2px solid orange;
+}
+
+.step:hover .line-content::after {
+    border: 2px solid orange;
+}
+
+
+.step:hover .line-content {
+    background-color: rgba(255, 127, 2, 1);
+}
+
+.step:hover .words {
+    color: rgba(255, 127, 2, 1);
+}
+
+
+
+
+
+
+.col-sm-12.col-md-3.form {
+    padding: 0;
+}
+
+.row.box {
+    position: relative;
+    display: flex;
+    height: 72px;
+    margin-left: 20px;
+    align-items: center;
+}
+
+.row.material {
+    position: relative;
+    display: flex;
+    margin-top: 10px;
+    margin-left: 19px;
+    align-items: center;
+    height: 80px;
+}
+
+.row.rule {
+    position: relative;
+    display: flex;
+    margin-left: 19px;
+    align-items: center;
+    height: 50px;
+}
+
+
+.rule-form input {
+    width: 65px;
+    margin-left: 3px;
+    border: 1px solid rgba(232, 232, 232, 1);
+}
+
+
+.choose {
+    display: flex;
+    height: 40px;
+    align-items: center;
+    color: rgba(29, 122, 217, 1);
+    background-color: rgba(244, 244, 244, 1);
+}
+
+.choose img {
+    width: 17px;
+}
+
+.chooseText {
+    margin-left: 8px;
+}
+
+.chooseImg {
+    text-indent: 10px;
+}
+
+
+.next-step {
+    display: flex;
+    height: 178px;
+    width: 100%;
+    margin-top: 50px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(232, 232, 232, 1);
+    background-color: #ffffff;
+}
+
+
+.next-step button {
+    width: 124px;
+    height: 36px;
+    margin-top: 30px;
+    text-align: center;
+    font-size: 14px;
+    border-style: none;
+    border-radius: 8px;
+    outline: none !important;
+    color: #ffffff;
+    background-color: rgba(225, 80, 83, 1);
+}
+
+
+input[type="radio"] {
+    visibility: hidden;
+}
+
+
+input[type="checkbox"] {
+    visibility: hidden;
+}
+
+.stuff {
+    display: inline-block;
+}
+
+
+/*把radio的圆点隐藏，利用伪元素在文字前做出一个圆点*/
+input[type="radio"]+label::before {
+    content: "";
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border: 1px solid rgba(213, 213, 213, 1);
+    border-radius: 50%;
+    position: absolute;
+    top: 4px;
+    left: -8px;
+}
+
+
+/*做出默认显示效果----关键点在 checked*/
+/*:check很关键---html里面的Input表单里有一个checked*/
+input[type="radio"]:checked+label::before {
+    background-color: rgba(29, 122, 217, 1);
+    border: 8px solid rgba(29, 122, 217, 1);
+}
+
+/*做出中心的白点*/
+input[type="radio"]:checked+label::after {
+    content: "";
+    position: absolute;
+    top: 37%;
+    left: 0;
+    width: 2px;
+    height: 2px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+
+
+
+
+/*把内径 外径，改成多选框*/
+
+input[type="checkbox"]+label::before {
+    content: "";
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border: 1px solid rgba(213, 213, 213, 1);
+    border-radius: 50%;
+    position: absolute;
+    top: 4px;
+    left: -8px;
+}
+
+
+input[type="checkbox"]:checked+label::before {
+    background-color: rgba(29, 122, 217, 1);
+    border: 8px solid rgba(29, 122, 217, 1);
+}
+
+
+input[type="checkbox"]:checked+label::after {
+    content: "";
+    position: absolute;
+    top: 37%;
+    left: 0;
+    width: 2px;
+    height: 2px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+
+
+
+
+
+
+footer {
+    position: relative;
+    height: 180px;
+    ;
+    font-size: 12px;
+    color: rgba(153, 153, 153, 1);
+    background-color: rgba(249, 249, 249, 1);
+}
+
+
+
+footer .text-1 a,
+footer .text-2 a {
+    cursor: pointer;
+    color: rgba(153, 153, 153, 1);
+    text-decoration: none;
+}
+
+
+footer .left-text {
+    font-size: 13px;
+}
+
+
+footer .col-sm-12.col-md-4 a:hover {
+    color: rgba(29, 122, 217, 1);
+}
+
+
+.foot-right {
+    display: flex;
+    float: right;
+}
+
+
+.code-box {
+    margin-left: 5px;
+    width: 91px;
+}
+
+.code-box img {
+    width: 100%;
+}
+
+
+.foot-bottom {
+    margin-top: 34px;
+    width: 100%;
+    font-size: 13px;
+    text-align: center;
+    color: #ffffff;
+    background-color: rgba(29, 122, 217, 1);
+}
+
+
+.col-sm-12.col-md-4.footMid,
+.col-sm-12.col-md-4.footLeft {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.container .none {
+    visibility: hidden;
+}
+
+
+.row.foot {
+    padding-top: 43px;
+}
+
+
+
+/*下拉菜单*/
+.menu {
+    z-index: 55;
+    position: absolute;
+    top: 3px;
+    right: 16px;
+    width: 86px;
+    height: 27px;
+    line-height: 27px;
+    cursor: pointer;
+    border: 1px solid rgba(232, 232, 232, 1);
+}
+
+.menu span {
+    margin-left: 6px;
+    font-size: 13px;
+    color: rgba(153, 153, 153, 1);
+}
+
+.menu-cont {
+    position: absolute;
+    top: 4px;
+    right: 2px;
+    width: 17px;
+    height: 19px;
+    background-color: rgba(29, 122, 217, 1);
+}
+
+.menu-cont .triangle::after {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 4px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border: 4.5px solid transparent;
+    border-top: 4.5px solid white;
+}
+
+.menu-drop {
+    z-index: 555;
+    display: none;
+    /*关键啊！*/
+    margin-top: 0;
+    width: 80px;
+    height: 80px;
+    padding: 2px;
+    border: 1px solid rgba(232, 232, 232, 1);
+    cursor: pointer;
+    list-style: none;
+    text-align: center;
+    color: rgba(153, 153, 153, 1);
+}
+
+.menu-drop li {
+    cursor: pointer;
+    font-size: 13px;
+    border-bottom: 1px solid rgba(232, 232, 232, 1);
+    background-color: #ffffff;
+}
+
+
+.menu:hover .menu-drop {
+    display: block;
+}
+
+.menu-drop li:hover {
+    background-color: rgba(29, 122, 217, 1);
+    color: #ffffff;
+}
+
+
+.row.box {
+    height: 150px;
+}
+
+.row.rule {
+    height: 150px;
+}
+
+.row.material {
+    height: 220px;
+}
+
+
+.col-sm-12.col-md-4.footMid,
+.col-sm-12.col-md-4.footLeft {
+    display: flex;
+}
+
+
+
+.nav-link {
+    text-align: center;
+    background-color: rgba(29, 122, 217, 1);
+}
+
+
+article {
+    margin-bottom: 0;
+}
+
+.code-box img {
+    margin-left: 20px;
+}
+
+.foot-right {
+    float: left;
+}
+
+.next-step {
+    margin-top: 20px;
+}
+
+
+
+@media screen and (min-width: 992px) {
+
+    .col-sm-12.col-md-4.col-lg-3.material {
+        flex: 0 0 19% !important;
+        max-width: 18% !important;
+    }
+
+    .row.rule {
+        height: 85px;
+    }
+
+    .row.material {
+        height: 155px;
+    }
+}
+
+
+
+/*保证了在768--998的时候不会变两行*/
+@media screen and (min-width: 768px) and (max-width:998px) {
+
+    .col-sm-12.col-md-3.form {
+        flex: 0 0 20% !important;
+        max-width: 20% !important;
+    }
+
+    .row.rule {
+        height: 85px;
+    }
+
+    .row.material {
+        height: 155px;
+    }
+}
+
+
+
+@media screen and (min-width: 100px) and (max-width:768px) {
+
+
+    section {
+        display: flex !important;
+        height: 300px;
+        justify-content: center;
+    }
+
+    .make-step {
+        display: block;
+    }
+
+    .make-step .step {
+        margin: auto;
+    }
+
+    .collapse.navbar-collapse .navbar-nav {
+        margin-right: 0;
+    }
+
+    .make-step {
+        margin-right: 0;
+    }
+
+
+    footer {
+        height: 270px;
+    }
+
+    .row.foot {
+        margin-left: 5%;
+    }
+
+    .none {
+        display: none;
+    }
+
+}
+
+
+
+@media screen and (min-width: 358px) and (max-width:768px) {
+
+
+    .step .line-content::before {
+        content: "";
+        position: absolute;
+        top: 8px;
+        left: -150px;
+        width: 150px;
+        border: 2px solid rgba(204, 204, 204, 1);
+        border-radius: 50px;
+    }
+
+    .step .line-content::after {
+        content: "";
+        position: absolute;
+        top: 8px;
+        right: -150px;
+        width: 150px;
+        border: 2px solid rgba(204, 204, 204, 1);
+        border-radius: 50px;
+    }
+
+}
+
+
+
+@media screen and (max-width:358px) {
+
+
+    .step .line-content::before {
+        content: "";
+        position: absolute;
+        top: 8px;
+        left: -100px;
+        width: 100px;
+        border: 2px solid rgba(204, 204, 204, 1);
+        border-radius: 50px;
+    }
+
+    .step .line-content::after {
+        content: "";
+        position: absolute;
+        top: 8px;
+        right: -100px;
+        width: 100px;
+        border: 2px solid rgba(204, 204, 204, 1);
+        border-radius: 50px;
+    }
+
+    .sign {
+        margin-right: 0;
+    }
+
+}
