@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Shopping list</title>
+	<style type="">
+		#purchases li{
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<h1>What to buy</h1>
+	<p title="a gentle reminder"> Don't forget to buy this stuff</p>  
+	<ul id="purchases">
+		<li>A tin of beans</li>
+		<li class="sale">cheese</li>
+		<li class="sale important">Milk</li>
+	</ul>
+
+
+
+	<script>
+		// alert(typeof document.getElementById("purchases"));
+		// alert(document.getElementsByTagName("li").length; 
+
+
+		// for (var i = 0; i < document.getElementsByName("li").length; i++){
+		// 	alter(typeof document.getElementsByTagName("li")[i]);
+		// }
+
+		// 赋值
+		// var items = document.getElementsByTagName("li");
+		// for (var i = 0; i < items.length; i++) {
+		// 	alter(typeof items)[i];
+		// }
+
+
+		// alter(document.getElementsByTagName("*").length);
+
+		var shopping = document.getElementById("purchases");
+		var items = shopping.getElementsByTagName("*");
+		alter(items.length);
+		for(var i=0; i < items.length; i++){
+			alter(typeof items[i]);
+		}
+
+
+
+
+
+
+// document.getElementById()
+// document.getElementsByClass()
+// document.getElementsByTagName()
+	</script>
+
+
+
+</body>
+</html>
+
+
+
+<!--  title——属性节点  （属性节点包含在元素节点内，这里就包含在了p标签内。但并非所有元素都包含属性）
+
+ Don't forget xxx——文本节点 -->
