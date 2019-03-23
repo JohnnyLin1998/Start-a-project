@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <html lang="zh-CN">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DEMO</title>
+ 
+  
+  <style>
+    .par {
+    border: 5px solid #fcc;
+    width: 300px;
+    /*height:110px;  注意这里给外层元素设置相应高度，外层元素会包裹内层元素，并占用文档流*/
+    float:left;   或者给外层元素设置浮动，外层元素也会包裹内层元素，但不会占用文档流空间
+    }
+
+    .child {
+      border: 5px solid #f66;
+      width:100px;
+      height: 100px;
+      float: left;
+    }
+  </style>
+
+
+</head>
+
+
+  <body>
+  <div class="par">
+    <div class="child"></div>
+    <div class="child"></div>
+  </div>
+  </body>
+</html>

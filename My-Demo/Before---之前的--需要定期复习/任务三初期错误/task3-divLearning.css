@@ -1,0 +1,118 @@
+*{
+  margin: 0px;
+}
+
+
+html,body{
+  font-size: 100%;
+  width: 100%;
+}
+
+body{
+  background-color: rgb(104,205,213)
+}
+
+
+.header{
+}
+
+.header>img{
+  height: 2em;
+  padding: 0.4em;
+}
+
+/*这个header盒子一开始没想到安置到main盒子之上，导致两个logo
+打架了！ 和主干分开，独立一个抬头，是多么重要！*/
+
+
+
+.main{
+
+  text-align: center;
+}
+/*
+这里的main就体现出了一个大框架的作用，并不需要给它设
+宽高，只需要静静的呆着，起着支撑整体布局的作用*/
+
+
+.title{
+  margin: 2.5em auto;
+/*  width:10% ;
+  height: 10%;*/
+/*  text-align: center;*/
+/*  margin:0 auto;*/
+}
+
+
+/*这里体现出了我对于盒模型和盒子内容的操控混乱，不知道
+应该给哪个设置宽高，乱射！ 现在体会到了盒子的用处了，
+盒子只需要把骨架撑起来，其余的交给内容来办！*/
+
+
+.title>img{
+  width: 8em;
+/*  width: 100%;
+  height: 100%;
+*/
+/*  margin:0 -140px;
+  padding-top: 200px;*/
+}
+
+
+
+.text{
+  margin: 10em 6em;
+  font-size:0.6em;
+  font-weight: bold;
+  font-family: sans-serif;
+  color: #fff;
+  text-align: center;
+}
+
+.text>p{
+  color: #fff;
+  font-family: sans-serif;
+  font-size: 1.2em;
+}
+
+.logo{
+}
+
+
+.left{
+  float: left;
+  margin-left: 2em;
+}
+
+
+.right{
+  float: right;
+  margin-right: 2em;
+}
+
+
+.left>img{
+  width: 45%;
+}
+
+.right>img{
+  width: 45%;
+}
+
+/*上面的width百分比，影响到了p内容的文字大小，本来和text里面的p可以共用
+还有，这个 > 只能隔一代，从logo下来是无效的！
+*/
+.left>p{
+  color: #fff;
+  font-family: sans-serif;
+  font-size: 0.8em;
+  margin:0.5em;
+}
+
+
+.right>p{
+  color: #fff;
+  font-family: sans-serif;
+  font-size: 0.8em;
+  margin:0.5em;
+}

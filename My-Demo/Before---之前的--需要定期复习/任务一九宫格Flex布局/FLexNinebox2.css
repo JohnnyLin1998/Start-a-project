@@ -1,0 +1,33 @@
+*{
+  margin: 0px;
+  padding: 0px;
+
+}
+
+{
+  width: 100%;
+}
+
+
+.box
+{
+  display: flex;
+  flex-direction: row;
+}
+
+
+
+.collection
+{
+  justify-content: center;
+}
+
+
+.box1
+{
+  background-color: orange;
+  width: 31vw;
+  padding-bottom: 31vw;
+  border-radius: 10%;
+  margin: 1vw;
+}

@@ -1,0 +1,202 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BFC demo</title>
+    <style>
+        /* 
+   DEMO: 1 
+    .container{
+        background-color: black;
+        width: 200px;
+        height: 250px;
+    }
+
+
+    .box{
+        float: left;
+        background-color: green;
+        width: 100px;
+        height: 150px;
+        margin: 20px;
+
+    }
+  */
+
+        /* DEMO2  验证上下margin合并
+p{
+    width: 200px;
+    height: 150px;
+}
+
+.bfc{
+    float: left;
+} */
+
+
+        /* DEMO: 3 验证BFC的包裹性
+.container{
+    background-color: grey;
+    width: 500px;
+    height: 300px;
+}
+
+
+
+.box1{
+    background-color: red;
+    width: 200px;
+    height: 100px;
+
+
+}
+
+.box2{
+    background-color: greenyellow;
+    width: 300px;
+    height: 200px;
+}
+
+
+.box3{
+    background-color: goldenrod;
+    width: 100px;
+    height: 200px;
+} */
+
+
+        /*  4. BFCD的文字环绕特性
+.container{
+    border: 2px solid black;
+    width: 500px;
+    height: 400px;
+}
+
+.box{
+    float: left;
+    background-color: red;
+    width: 50px;
+    height: 100px;
+}
+
+p{
+    font-size: 15px;
+    overflow: hidden;
+}
+     */
+
+
+/*   5.hidden触发的裁剪弊端。 这个也是包裹性的demo,也可以称为清除父级盒子里面子级的浮动
+        .outer {
+            width: 300px;
+            height: 100px;
+            border: 1px solid #666;
+            padding: 10px;
+        }
+
+        .innerLeft {
+            height: 100px;
+            width: 100px;
+            float: left;
+            background: #f00;
+        }
+
+        .innerRight {
+            height: 100px;
+            width: 100px;
+            float: right;
+            background: #090;
+        } */
+    </style>
+</head>
+
+<body>
+    <!-- DEMO1
+         <div class="container">
+
+        <div class="box">
+
+        </div>
+
+        <div class="box">
+
+        </div>
+    </div> -->
+
+
+    <!--DEMO2
+     
+    <div class="bfc">
+
+<p>FC中，每一个盒子的左外边缘（margin-lef子 Line Box 可能由于浮动而变窄），除非盒子创建了一个新的BFC（在这种情况下盒子本身可能由于浮动而变窄）。</p>
+
+
+<p>FC中，每一个盒子的左外边缘（mar能由于浮动而变窄），除非盒子创建了一个新的BFC（在这种情况下盒子本身可能由于浮动而变窄）。</p>
+
+</div> -->
+
+
+
+    <!-- DEMO3
+    <div class="container">
+    <div class="box1">
+
+    </div>
+
+    <div class="box2">
+
+    </div>
+
+    <div class="box3">
+
+    </div>
+
+</div>
+ -->
+
+
+
+
+    <!--  DEMO4
+<div class="container">
+
+<div class="box">
+
+</div>
+
+    
+<p>如上图所示，对于浮动元素，可能会造成文字环绕的情况(Figure1)，但这并不是我们想要的布局(Figure2才是想要的)。要解决这个问题，我们可以用外边距，但也可以用BFC。
+
+        First let us understand why the text wraps. For this we have to understand how the box model works when an element is floated. This is the part I left earlier while discussing the alig
+
+        如上图所示，对于浮动元素，可能会造成文字环绕的情况(Figure1)，但这并不是我们想要的布局(Figure2才是想要的)。要解决这个问题，我们可以用外边距，但也可以用BFC。
+
+        First let us understand why the text wraps. For this we have to understand how the box model works when an element is floated. This is the part I left earlier while discussing the alig
+        如上图所示，对于浮动元素，可能会造成文字环绕的情况(Figure1)，但这并不是我们想要的布局(Figure2才是想要的)。要解决这个问题，我们可以用外边距，但也可以用BFC。
+
+        First let us understand why the text wraps. For this we have to understand how the box model works when an element is floated. This is the part I left earlier while discussing the alig
+        如上图所示，对于浮动元素，可能会造成文字环绕的情况(Figure1)，但这并不是我们想要的布局(Figure2才是想要的)。要解决这个问题，我们可以用外边距，但也可以用BFC。
+
+        First let us understand why the text wraps. For this we have to understand how the box model works when an element is floated. This is the part I left earlier while discussing the alig</p>
+
+
+</div> -->
+
+<!-- DEMO5
+
+    <div class="outer">
+        <div class="innerLeft"></div>
+        <div class="innerRight"></div>
+    </div>
+    </div>
+ -->
+
+
+
+
+
+</body>
+
+</html>

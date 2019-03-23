@@ -1,0 +1,37 @@
+*{
+  margin: 0px;
+  padding: 0px;
+
+
+}
+
+
+
+html,body{
+  width:100%;
+}
+
+.Nineboxes{
+  text-align: center;
+  position: relative;
+  float: left;
+  left: 50%;
+}
+
+
+
+.box1{
+  position: relative;
+  left: -50%;
+
+
+
+
+  border-radius:10%;/*圆角处理*/
+  margin:1vw;
+  background-color:orange;
+  width:30vw;
+  height:30vw;
+  float:left;
+} 
+

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HTML5 DEMO</title>
+	<meta charset="utf-8">
+	<style type="">
+
+.triangle{
+	position: relative;
+}
+.triangle::after {
+    content: '';
+    width: 0;
+    height: 0;
+    border: 0.5rem solid transparent;
+    border-bottom: 0.5rem solid red;
+    position: absolute;
+    top: -1rem;
+    left: 48%;
+    transform: translateX(-50%);
+    z-index: 100;
+}
+
+	</style>
+
+
+
+</head>
+<body>
+	<div class="triangle"> </div>
+
+</body>
+</html>
+
+

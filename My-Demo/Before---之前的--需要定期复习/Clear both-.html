@@ -1,0 +1,62 @@
+<html>
+
+<head>
+    <style>
+        .ob-title {
+            background-color: orange;
+        }
+
+
+
+        .ob-body {
+            background-color: #ddd;
+        }
+
+        .ob-body .menu {
+            float: left;
+            width: 200px;
+            background-color: pink;
+        }
+
+        .ob-body .content {
+            float: left;
+            background-color: aquamarine;
+            /* clear: both; */    
+            
+            
+            /*这里就涉及到了 float:both 清除浮动的核心+ float的属性特征  
+            1.float后面的div块级元素会跟随前面的块，失去块级换行特征  2.如过加了清除浮动，那么久恢复自动换行特征*/
+        }
+
+
+
+             /* 先不用这个style */
+     /*  .clearfix:after {
+            /*在.clearfix后边追加一个隐藏的block,带一个clear:both属性*/
+     /*       content: "";
+            display: block;
+            /*block宽度会横向填充满屏幕，在父元素的最后追加一个height:0，占满屏幕的看不见的细长条*/
+       /*     line-height: 0;
+            clear: both;
+            /*这个最下边细长条左右两边都清除float*/
+        }
+
+
+               
+
+
+
+    </style>
+</head>
+
+<body style="margin: 10px">
+
+    <div class=" ob-title ">头部信息</div>
+    <div class="ob-body clearfix">
+        <!--此处调用尾类-->
+        <div class="menu">左侧菜单</div>
+        <div class="content">右侧内容</div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,183 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>BACKGROUND</title>
+  <style>
+    body {
+      background-color: #FA8072;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      width: 30vw;
+      height: 30vw;
+
+      position: relative;
+      /*为了文字*/
+    }
+
+    /*与本demo无关，纯粹无聊添加*/
+    .text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      text-align: center;
+      transform: translate(-50%, -50%);
+      font-size: 5vw;
+      color: #ffffff;
+    }
+
+    .boxup {
+      /* display: flex;
+      flex-direction: column; */
+      flex-basis: 80%;
+      background: blueviolet;
+    }
+
+    .boxdown {
+      /* display: flex;
+      flex-direction: column; */
+      flex-basis: 20%;
+      background: #6A5ACD;
+    }
+
+    /*包裹下面四位神仙的老父亲*/
+    .logo {
+      height: 30vw;
+      width: 30vw;
+
+      display: flex;
+
+    }
+
+
+
+    /*DEMO的重点来了！ 背景小图的移动位置摆放。  缩写怎么写？*/
+    .pic1 {
+
+      display: block !important;
+      /*这里比较特殊，因为我还没搞明白，什么时候<i>会被浏览器默认为block，
+        什么时候又回到本尊inline，而这里我遇到了本尊，所以只能强行把它的display改掉*/
+
+      width: 8vw;
+      height: 8vw;
+      background: url(small1.png) no-repeat 50% 50%/65%;
+
+      /* background: url(small1.png) no-repeat center 50%/65%; */
+      /*这里可以添加center top left 取代back-position*/
+
+
+
+      /* background-size: 50%;
+      background-position: 50%, 50%; */
+
+
+
+      background-color: #808080;
+      /*我给pic小盒子加上背景色，这样就很清楚的可以看见background背景图的位置变化了！*/
+
+    }
+
+    .pic2 {
+      display: block !important;
+
+      width: 8vw;
+      height: 8vw;
+      background: url(small2.png) no-repeat;
+      background-size: 50%;
+      background-position: 50%, 50%;
+
+      background-color: #A9A9A9;
+
+    }
+
+    .pic3 {
+      display: block !important;
+
+      width: 8vw;
+      height: 8vw;
+      background: url(small3.png) no-repeat;
+      background-size: 50%;
+      background-position: 50%, 50%;
+
+      background-color: #CD853F;
+
+    }
+
+
+    .pic4 {
+      display: block !important;
+
+      width: 8vw;
+      height: 8vw;
+      background: url(small4.png) no-repeat;
+      background-size: 50%;
+      background-position: 50%, 50%;
+
+      background-color: #FFD700;
+
+    }
+
+
+
+
+
+
+    .big .logo {
+      /* display: none; */
+      opacity: 0;
+    }
+
+
+    .big:hover .logo {
+      /* display: flex; */
+      opacity: 1;
+
+    }
+
+
+  </style>
+</head>
+
+<body>
+
+    <!-- 要hover必须有一个共同的父级盒子，所以big大叔来了 -->
+  <div class="big">   
+
+    <div class="container">
+
+
+      <span class="text">LZY</span>
+
+      <span class="boxup"> </span>
+
+      <span class="boxdown"></span>
+
+
+    </div>
+
+
+
+
+    <div class="logo">
+      <i class="pic1"></i>
+      <i class="pic2"></i>
+      <i class="pic3"></i>
+      <i class="pic4"></i>
+    </div>
+
+
+
+  </div>
+
+
+
+
+</body>
+
+</html>

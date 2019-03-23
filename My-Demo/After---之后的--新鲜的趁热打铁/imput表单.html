@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <form>
+        First name:<br>
+        <input type="text" name="firstname">
+        <br>
+        Last name:<br>
+        <input type="text" name="lastname">
+    </form>
+
+    <p>请注意表单本身是不可见的。</p>
+
+    <p>同时请注意文本字段的默认宽度是 20 个字符。</p>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+
+    <div>
+        <input type="radio" name="sex" value="male" checked>Male
+        <br>
+        <input type="radio" name="sex" value="female">Female
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <form action="/demo/demo_form.asp">
+        First name:<br>
+        <input type="text" name="firstname" value="Mickey">
+        <br>
+        Last name:<br>
+        <input type="text" name="lastname" value="Mouse">
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <p>如果您点击提交，表单数据会被发送到名为 demo_form.asp 的页面。</p>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+    <form action="/demo/demo_form.asp">
+        First name:<br>
+        <input type="text" value="Mickey">
+        <br>
+        Last name:<br>
+        <input type="text" name="lastname" value="Mouse">
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <p>如果您点击提交，表单数据会被发送到名为 demo_form.asp 的页面。</p>
+
+    <p>first name 不会被提交，因为此 input 元素没有 name 属性。</p>
+</body>
+
+</html>

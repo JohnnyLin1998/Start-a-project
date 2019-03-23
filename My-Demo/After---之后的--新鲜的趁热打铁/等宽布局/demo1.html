@@ -1,0 +1,79 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    
+    
+
+    
+    /* (1)float + margin 理解:其实就是左边盒子给了宽度，右边没给宽度。然后让左边浮动靠左，右边就会自动根据屏幕调整宽度。当然，如果宽度设置百分比也是可以的
+    .son{
+        float: left;
+        width: 100px;
+        height: 50px;
+        background-color: aquamarine;
+    }
+    
+    .daught{
+        margin-left: 200px;
+        height：50px;
+        width:80%;
+        background-color: blueviolet;
+    }
+     */
+    
+/* 
+    （2）float + overflow:hidden 理解： （父级的存在，无关结果，可忽视）右边盒子虽然宽度，给了overflow hidden的属性，
+    .parent{
+        width: 80%;
+        height: 80px;
+    } 
+
+    .son{
+        float: left;
+        width: 100px;
+        height: 50px;
+        margin-right:30px;
+        background-color: orangered;
+    }
+    
+    .daught{
+        overflow: hidden;
+        
+        height:50px;
+    
+        background-color: blueviolet;
+    }
+ */
+
+
+    
+
+
+
+
+    
+    </style>
+</head>
+<body>
+
+    <div class="parent">
+
+        <div class="son">
+            <span>左列等宽</span>
+        </div>
+
+        <div class="daught">
+            <span>右列自适应</span>
+        </div>
+
+    </div>
+
+
+
+    
+</body>
+</html>

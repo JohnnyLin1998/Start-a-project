@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+
+
+
+        *{margin:0;padding:0;}
+
+        html,body{height:100%; flex-wrap:wrap;} /*flex-wrap:wrap;因为后面有设width：100%*/
+        
+        body{display:flex;}
+
+        .box1{background: #888888;}
+        .box2{background: #FFFFCC;}
+        .box3{background: #CCCC99;}
+
+
+        @media screen and (min-width:1100px){ /*三栏布局*/
+            .box1{width: 100px;} /*没有写高度，由内容撑起来*/
+            .box2{flex:1; }
+            .box3{width: 100px;}
+        }
+        @media screen and (min-width:800px) and (max-width:1100px){ /*二栏布局*/
+            .box1{width: 100px;}
+            .box2{flex:1; }
+            .box3{width: 100%;}
+        }
+        @media screen and (max-width:800px) { /*一栏布局*/
+            .box1,.box2,.box3{width: 100%;}
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">首先，不要用链接的方式发简历，直接发附件，再有“rar”是windows的压缩格式，现在大部分设计师用的都是苹果电脑，面试官不可能为了你专门去找个插件来解压你的文件，所以最好压缩成“.zip"格式的。首先，不要用链接的方式发简历，直接发附件，再有“rar”是windows的压缩格式，现在大部分设计师用的都是苹果电脑，面试官不可能为了你专门去找个插件来解压你的文件，所以最好压缩成“.zip"格式的。</div>
+    <div class="box2">首先，不要用链接的方式发简历，直接发附件，再有“rar”是windows的压缩格式，现在大部分设计师用的都是苹果电脑，面试官不可能为了你专门去找个插件来解压你的文件，所以最好压缩成“.zip"格式的。首先，不要用链接的方式发简历，直接发附件，再有“rar”是windows的压缩格式，现在大部分设计师用的都是苹果电脑，面试官不可能为了你专门去找个插件来解压你的文件，所以最好压缩成“.zip"格式的。</div>
+    <div class="box3">首先，不要用链接的方式发简历，直接发附件，再有“rar”是windows的压缩格式，现在大部分设计师用的都是苹果电脑，面试官不可能为了你专门去找个插件来解压你的文件，所以最好压缩成“.zip"格式的。首先，不要用链接的方式发简历，直接发附件，再有“rar”是windows的压缩格式，现在大部分设计师用的都是苹果电脑，面试官不可能为了你专门去找个插件来解压你的文件，所以最好压缩成“.zip"格式的。</div>
+</body>
+</html>

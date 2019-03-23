@@ -1,0 +1,114 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+
+    <style>
+        .menu {
+            position: relative;
+            width: 86px;
+            height: 27px;
+            line-height: 27px;
+            border: 1px solid rgba(232, 232, 232, 1);
+        }
+
+        .menu span {
+            margin-left: 6px;
+            font-size: 13px;
+            color: rgba(153, 153, 153, 1);
+        }
+
+        .menu-cont {
+            position: absolute;
+            top: 4px;
+            right: 2px;
+            width: 17px;
+            height: 19px;
+            background-color: rgba(29, 122, 217, 1);
+        }
+
+        .menu-cont .triangle::after {
+            content: "";
+            position: absolute;
+            top: 8px;
+            left: 4px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border: 4.5px solid transparent;
+            border-top: 4.5px solid white;
+        }
+
+        .menu-drop {
+            /* position: absolute;
+            top: 11px;
+            left: -1px; */
+            display: none;
+            /*关键啊！*/
+            margin-top: 0;
+            width: 80px;
+            height: 80px;
+            padding: 2px;
+            border: 1px solid rgba(232, 232, 232, 1);
+            cursor: pointer;
+            list-style: none;
+            text-align: center;
+            color: rgba(153, 153, 153, 1);
+        }
+
+        .menu-line {
+            border-top: 1px solid rgba(232, 232, 232, 1);
+            border-bottom: 1px solid rgba(232, 232, 232, 1);
+        }
+
+
+        .menu:hover .menu-drop {
+            display: block;
+        }
+
+
+        .menu-drop li:hover {
+            background-color: rgba(29, 122, 217, 1);
+            color: #ffffff;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+
+
+    <div class="menu">
+
+        <span>查看详情</span>
+
+        <div class="menu-cont">
+
+            <div class="triangle"></div>
+
+        </div>
+
+        <ul class="menu-drop">
+            <li>11111</li>
+            <li class="menu-line">22222</li>
+            <li>333333</li>
+        </ul>
+    </div>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>三角形制作 DEMO</title>
+    <meta charset="utf-8">
+    <style type="">
+
+    
+/*原理是 border其实是由四个三角形组成的*/
+
+    .triangle{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    /*把中心的内容去掉*/
+    width: 0px;
+    height: 0px;
+
+    border-width: 20px; /*调整整个大小*/
+    
+    border-style: solid;/*必须设style，否则无形状*/
+    
+    border-color:transparent transparent transparent red;
+        /*根据上右下左的顺序，把需要的方形调颜色*/
+    }
+
+
+	</style>
+
+
+</head>
+
+<body>
+
+    <div class="triangle"></div>
+
+</body>
+
+</html>
