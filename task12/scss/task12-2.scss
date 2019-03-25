@@ -1,0 +1,307 @@
+html {
+  font-size: 625%;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  /*给外部的滚动条隐藏，并在main中添加内部滚动条，为了适配手机端*/
+}
+
+
+header {
+  z-index: 5;
+  position: fixed;
+  display: flex;
+  top: 0;
+  width: 100%;
+  height: .6rem;
+  align-content: center;
+  justify-content: center;
+  font-size: .19rem;
+  background-color: rgba(95, 192, 205, 1);
+
+  .icon {
+    position: absolute;
+    right: .2rem;
+    top: 50%;
+    transform: translateY(-50%);
+
+    img {
+      width: .25rem;
+    }
+  }
+
+  input {
+    display: none;
+  }
+
+  label {
+    margin-top: .1rem;
+    width: .8rem;
+    height: .4rem;
+    line-height: .4rem;
+    cursor: pointer;
+    border-radius: 10px;
+    text-align: center;
+    font-size: .16rem;
+    color: #fff;
+    background-color: rgba(85, 168, 179, 1);
+  }
+
+  //由于之前的逻辑错误，所以现在下面的不需要了，左右按钮的底色都是相同的，只不过是checked默认颜色改变了初始显示颜色
+  //继承选择器，把上面相同的直接引过来，还可以在下面+新的
+  // .right-label {
+  //   @extend.left-label;
+  // margin-top: .1rem;
+  // width: .8rem;
+  // height: .4rem;
+  // line-height: .4rem;
+  // border-radius: 10px;
+  // text-align: center;
+  // font-size: .16rem;
+  // color: rgba(95, 192, 205, 1);
+  // background-color: #fff;
+  //     {
+  //   color: rgba(95, 192, 205, 1);
+  //   background-color: #fff;
+  // }
+
+  // 注意这里，html里，input在labe之上，而这里，label是不能在前面的
+  input[type="radio"]:checked+label {
+    color: rgba(95, 192, 205, 1);
+    background-color: #fff;
+  }
+
+}
+
+/*导航栏+点击效果*/
+nav {
+  z-index: 5;
+  position: fixed;
+  display: flex;
+  margin-top: .6rem;
+  width: 100%;
+  font-size: .15rem;
+  color: rgba(153, 153, 153, 1);
+  background-color: #fff;
+
+  .nav-fir {
+    position: relative;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+
+    input[type="radio"] {
+      display: none;
+    }
+
+    label {
+      width: 100%;
+      height: .3rem;
+      line-height: .3rem;
+      text-align: center;
+      cursor: pointer;
+
+      &:hover {
+        color: #fff;
+        background-color: rgba(136, 136, 136, 0.4)
+      }
+    }
+
+    ul {
+      display: none;
+      width: 100%;
+      padding: 0;
+      text-align: center;
+      list-style: none;
+      cursor: pointer;
+      color: rgba(85, 168, 179, 1);
+
+      li {
+        height: .28rem;
+        line-height: .28rem;
+      }
+
+      li:hover {
+        color: #fff;
+        background-color: rgba(85, 168, 179, 1);
+      }
+
+      //成功使用child选择器——————ul下面的li的第二个孩子
+      li:nth-child(2) {
+        margin: 10px 0 10px 0;
+      }
+    }
+
+    //关键步骤：语义——：checked默认就是点击后的效果，~就是选中input后面所有的ul，
+    //然后变成block，就成功显示下拉框
+    input[type="radio"]:checked~ul {
+      display: block;
+    }
+  }
+
+  //选择第二个mav-fir的label进行添加border
+  .nav-fir:nth-child(2) label:nth-child(1) {
+    border-left: 1px solid rgba(153, 153, 153, 0.5);
+    border-right: 1px solid rgba(153, 153, 153, 0.5);
+  }
+
+}
+
+
+article {
+  padding-top: 1rem;
+  font-size: .16rem;
+
+  width: 100%;
+  height: 8rem;
+  overflow-y: scroll;
+
+
+  ul {
+    list-style: none;
+    border-bottom: .0075rem solid rgba(225, 229, 231, 1);
+  }
+
+
+  li {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    line-height: .25rem;
+    clear: both;
+
+
+    //小图标
+    .calen {
+      position: absolute;
+      top: .05rem;
+      left: -.15rem;
+      width: 12px;
+      height: 12px;
+      background: url("../pic/css_sprites.png") -92px -62px no-repeat;
+      background-size: 117px 87px;
+    }
+
+    //小图标
+    .local {
+      position: absolute;
+      top: .06rem;
+      left: -.15rem;
+      width: 20px;
+      height: 20px;
+      background: url("../pic/css_sprites.png") -60px -37px no-repeat;
+      background-size: 117px 87px;
+    }
+
+
+
+    .date {
+      font-size: .14rem;
+      color: rgba(153, 153, 153, 1);
+    }
+
+    .row-left {
+      color: rgba(51, 51, 51, 1);
+      font-size: .16rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      /*文本溢出显示省略号*/
+
+    }
+
+    .row-right {
+
+      margin-right: 4%;
+      white-space: nowrap;
+      font-size: .17rem;
+      font-weight: bold;
+      color: rgba(230, 59, 14, 1);
+      background-color: #fff;
+    }
+
+    .arrow {
+      display: inline-block;
+      margin-top: .06rem;
+      margin-left: .05rem;
+      width: .1rem;
+      height: .1rem;
+      border-top: .02rem solid rgba(85, 168, 179, 1);
+      border-right: .02rem solid rgba(85, 168, 179, 1);
+      transform: rotate(45deg);
+    }
+
+
+    .spot {
+      color: rgba(153, 153, 153, 1);
+      font-size: .12rem;
+    }
+
+  }
+
+}
+
+
+footer {
+  display: flex;
+  position: fixed;
+  flex-direction: row;
+  bottom: 0;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+  font-size: .13rem;
+  border-top: 0.0075rem solid rgba(219, 229, 231, 1);
+  background-color: rgba(248, 250, 251, 1);
+
+  .page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgba(85, 168, 179, 1);
+
+    img {
+      width: 60%;
+    }
+  }
+
+
+  .write {
+    display: flex;
+
+    .mid {
+      margin-top: 0;
+
+      img {
+        width: .5rem;
+        height: .5rem;
+      }
+    }
+  }
+
+
+  .mine {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgba(153, 153, 153, 1);
+
+    img {
+      width: 60%;
+    }
+  }
+
+
+  //添加按钮的效果
+  button {
+    outline: none;
+    border-style: none;
+    background-color: rgba(248, 250, 251, 1);
+  }
+
+}

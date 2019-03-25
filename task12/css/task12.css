@@ -1,0 +1,234 @@
+@charset "UTF-8";
+html {
+  font-size: 20px;
+}
+
+body {
+  margin: 0;
+  margin-bottom: 5rem;
+}
+
+header {
+  z-index: 5;
+  position: fixed;
+  height: 2.8rem;
+  width: 100%;
+  top: 0;
+  left: 0;
+  color: #ffffff;
+  text-align: center;
+  background-color: #5fc0cd;
+  /*抬头小箭头*/
+}
+
+header .left-logo {
+  position: absolute;
+  left: 0;
+  border-left: 0.09rem white solid;
+  border-top: 0.09rem white solid;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  margin-top: 1.2rem;
+  margin-left: 0.9rem;
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+header .homepage {
+  margin: auto 0;
+  line-height: 2.8rem;
+  letter-spacing: 0.1rem;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+main {
+  height: 9rem;
+  margin-top: 2.75rem;
+  background: url(../pic/back.png) no-repeat center/cover;
+}
+
+main .intro {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+main .intro-pic {
+  margin-top: 1.5rem;
+  margin-left: 1rem;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  background: url(../pic/stu.png) no-repeat center/100%;
+}
+
+main .intro-word {
+  margin-top: 2.5rem;
+  margin-left: 1.5rem;
+  color: #fff;
+}
+
+main .intro-word .name {
+  font-size: 0.85rem;
+}
+
+main .intro-word .age {
+  font-style: normal;
+  font-size: .75rem;
+}
+
+main .intro-word .spot {
+  font-size: .65rem;
+}
+
+main .intro-word p {
+  position: relative;
+  margin-left: .8rem;
+}
+
+main .intro-word p::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: -17px;
+  width: 15px;
+  height: 15px;
+  background: url(../pic/icon.png) no-repeat center/80%;
+}
+
+main .detail {
+  overflow-y: scroll;
+  margin-top: 3.4rem;
+  height: 20rem;
+  font-size: .85rem;
+}
+
+main .detail ul {
+  padding-left: 0;
+  line-height: 2.5rem;
+  list-style: none;
+}
+
+main .detail ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid #e1e5e7;
+}
+
+main .detail ul li img {
+  width: .8rem;
+}
+
+main .detail ul li .separate {
+  margin-right: .5rem;
+  height: 1rem;
+  border-left: 1.5px solid #e1e5e7;
+}
+
+main .detail ul li .separate-start {
+  margin-left: .6rem;
+  margin-right: .5rem;
+  height: 1rem;
+  border-left: 1.5px solid #e1e5e7;
+}
+
+main .detail ul li .separate-end {
+  margin-right: .5rem;
+  height: 1rem;
+  border-left: 1.5px solid #e1e5e7;
+}
+
+main .detail .top-line {
+  border-top: 1px solid #e1e5e7;
+}
+
+main .detail .food {
+  margin-left: .3rem;
+}
+
+main .detail .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+main .detail .home {
+  margin-left: .8rem;
+}
+
+main .detail .left-word {
+  width: 4rem;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+main .detail .last-word {
+  line-height: 1.5;
+}
+
+main .detail .left-word {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: .8rem;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #999999;
+}
+
+main .detail .separate-color {
+  margin-left: .5rem;
+  margin-right: .5rem;
+  border-left: 2px solid #5fc0cd;
+}
+
+footer {
+  z-index: 5;
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 0.4rem;
+  height: 2.8rem;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  text-align: center;
+  background-color: #fff;
+}
+
+footer button {
+  width: 45%;
+  height: 2.5rem;
+  margin: auto;
+  text-align: center;
+  outline: none;
+}
+
+footer .msg {
+  border: 0.1rem solid #5fc0cd;
+  font-size: 0.9rem;
+  border-radius: 10px;
+  line-height: 2.5rem;
+  color: #5fc0cd;
+  background-color: #fff;
+}
+
+footer .call {
+  border: 0.1rem solid #5fc0cd;
+  font-size: 0.9rem;
+  border-radius: 10px;
+  line-height: 2.5rem;
+  color: #fff;
+  background-color: #5fc0cd;
+}

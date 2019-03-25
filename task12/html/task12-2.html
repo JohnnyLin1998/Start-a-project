@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh=-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../css/task12-2.css">
+  <title>I Want U</title>
+
+</head>
+
+<body>
+
+
+  <header>
+
+    <!-- input必须放在label之上，因为触发开关是input:checked -->
+    <input type="radio" name="btn" id="host" checked>
+    <label for="host">找雇主</label>
+
+
+    <input type="radio" name="btn" id="worker">
+    <label for="worker"> 找护工</label>
+
+
+    <div class="icon">
+      <img src="../pic/localbig.png" alt="">
+    </div>
+  </header>
+
+  <main>
+
+    <nav>
+
+      <div class="nav-fir">
+
+        <label for="local">所在地</label>
+        <input type="radio" name="mouse" id="local" onclick="doSelect(document.all.cat.value)">
+        <input type="hidden" name="cat">
+
+        <ul>
+          <li>杭州</li>
+          <li>上海</li>
+          <li>北京</li>
+        </ul>
+      </div>
+
+
+
+
+      <div class="nav-fir">
+
+        <label for="house">食宿</label>
+        <input type="radio" name="fly" id="house" onclick="doSelect_2(document.all.run.value)">
+        <input type="hidden" name="run">
+
+        <ul>
+          <li>五星酒店</li>
+          <li>四星酒店</li>
+          <li>吹西北风</li>
+        </ul>
+      </div>
+
+
+      <div class="nav-fir">
+
+        <label for="patient">病人情况</label>
+        <input type="radio" name="open" id="patient" onclick="doSelect_3(document.all.close.value)">
+        <input type="hidden" name="close">
+
+        <ul>
+          <li>活蹦乱跳</li>
+          <li>半身不遂</li>
+          <li>上吐下泻</li>
+        </ul>
+      </div>
+
+    </nav>
+
+    <article>
+      <ul>
+
+        <li>
+          <i class="calen"></i>
+          <span class="date">服务日期</span>
+        </li>
+
+
+        <li class="sed-row">
+          <span class="row-left"> 2015-7-5 至 2015-7-12</span>
+
+          <span class="row-right">
+            25元/小时
+            <i class="arrow"></i>
+          </span>
+        </li>
+
+
+        <li>
+          <i class="local"></i>
+          <span class="spot">北京.通州.果园</span>
+        </li>
+
+      </ul>
+
+      <ul>
+
+        <li>
+          <i class="calen"></i>
+          <span class="date">服务日期</span>
+        </li>
+
+
+        <li class="sed-row">
+          <span class="row-left"> 2015-7-5 至 2015-7-12</span>
+
+          <span class="row-right">
+            25元/小时
+            <i class="arrow"></i>
+          </span>
+        </li>
+
+
+        <li>
+          <i class="local"></i>
+          <span class="spot">北京.通州.果园</span>
+        </li>
+
+      </ul>
+      <ul>
+
+        <li>
+          <i class="calen"></i>
+          <span class="date">服务日期</span>
+        </li>
+
+
+        <li class="sed-row">
+          <span class="row-left"> 2015-7-5 至 2015-7-12</span>
+
+          <span class="row-right">
+            25元/小时
+            <i class="arrow"></i>
+          </span>
+        </li>
+
+
+        <li>
+          <i class="local"></i>
+          <span class="spot">北京.通州.果园</span>
+        </li>
+
+      </ul>
+
+      <ul>
+
+        <li>
+          <i class="calen"></i>
+          <span class="date">服务日期</span>
+        </li>
+
+
+        <li class="sed-row">
+          <span class="row-left"> 2015-7-5 至 2015-7-12</span>
+
+          <span class="row-right">
+            25元/小时
+            <i class="arrow"></i>
+          </span>
+        </li>
+
+
+        <li>
+          <i class="local"></i>
+          <span class="spot">北京.通州.果园</span>
+        </li>
+
+      </ul>
+
+      <ul>
+
+        <li>
+          <i class="calen"></i>
+          <span class="date">服务日期</span>
+        </li>
+
+        <li class="sed-row">
+          <span class="row-left"> 2015-7-5 至 2015-7-12</span>
+
+          <span class="row-right">
+            25元/小时
+            <i class="arrow"></i>
+          </span>
+        </li>
+
+
+        <li>
+          <i class="local"></i>
+          <span class="spot">北京.通州.果园</span>
+        </li>
+
+      </ul>
+      <ul>
+
+        <li>
+          <i class="calen"></i>
+          <span class="date">服务日期</span>
+        </li>   
+
+        <li class="sed-row">
+          <span class="row-left"> 2015-7-5 至 2015-7-12</span>
+
+          <span class="row-right">
+            25元/小时
+            <i class="arrow"></i>
+          </span>
+        </li>
+
+        <li>
+          <i class="local"></i>
+          <span class="spot">北京.通州.果园</span>
+        </li>
+
+      </ul>
+    </article>
+  </main>
+
+
+  <footer>
+    <div class="page">
+
+      <button>
+        <img src="../pic/home.png" alt="点击这是首页">
+      </button>
+      <span class="blue">首页</span>
+    </div>
+
+    <div class="write">
+      <button class="mid">
+        <img src="../pic/write.png" alt="点击这是编辑">
+      </button>
+    </div>
+
+    <div class="mine">
+      <button>
+        <img src="../pic/man.png" alt="查看我的个人资料">
+      </button>
+      <span class="grey">我的</span>
+    </div>
+  </footer>
+
+
+
+
+  <script>
+    function doSelect(mm) {
+      if (mm == "selected") {
+        document.all.mouse.checked = false;
+        document.all.cat.value = "unselected";
+      } else {
+        document.all.mouse.checked = true;
+        document.all.cat.value = "selected";
+      }
+
+    }
+
+    function doSelect_2(mm) {
+      if (mm == "selected") {
+        document.all.fly.checked = false;
+        document.all.run.value = "unselected";
+      } else {
+        document.all.fly.checked = true;
+        document.all.run.value = "selected";
+      }
+
+    }
+
+    function doSelect_3(mm) {
+      if (mm == "selected") {
+        document.all.open.checked = false;
+        document.all.close.value = "unselected";
+      } else {
+        document.all.open.checked = true;
+        document.all.close.value = "selected";
+      }
+
+    }
+  </script>
+</body>
+
+</html>
