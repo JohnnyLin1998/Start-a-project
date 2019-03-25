@@ -207,8 +207,12 @@ footer {
   background-color: #fff;
 }
 
+footer a {
+  width: 100%;
+}
+
 footer button {
-  width: 45%;
+  width: 80%;
   height: 2.5rem;
   margin: auto;
   text-align: center;

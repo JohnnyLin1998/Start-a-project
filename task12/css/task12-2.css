@@ -1,5 +1,4 @@
 @charset "UTF-8";
-
 html {
   font-size: 625%;
 }
@@ -8,7 +7,6 @@ body {
   margin: 0;
   width: 100%;
   height: 100%;
-  overflow: hidden;
   /*给外部的滚动条隐藏，并在main中添加内部滚动条，为了适配手机端*/
 }
 
@@ -22,10 +20,10 @@ header {
   width: 100%;
   height: .6rem;
   -ms-flex-line-pack: center;
-  align-content: center;
+      align-content: center;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   font-size: .19rem;
   background-color: #5fc0cd;
 }
@@ -35,7 +33,7 @@ header .icon {
   right: .2rem;
   top: 50%;
   -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
 header .icon img {
@@ -59,7 +57,7 @@ header label {
   background-color: #55a8b3;
 }
 
-header input[type="radio"]:checked+label {
+header input[type="radio"]:checked + label {
   color: #5fc0cd;
   background-color: #fff;
 }
@@ -84,15 +82,15 @@ nav .nav-fir {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 nav .nav-fir input[type="radio"] {
@@ -136,7 +134,7 @@ nav .nav-fir ul li:nth-child(2) {
   margin: 10px 0 10px 0;
 }
 
-nav .nav-fir input[type="radio"]:checked~ul {
+nav .nav-fir input[type="radio"]:checked ~ ul {
   display: block;
 }
 
@@ -149,7 +147,7 @@ article {
   padding-top: 1rem;
   font-size: .16rem;
   width: 100%;
-  height: 8rem;
+  height: 6rem;
   overflow-y: scroll;
 }
 
@@ -164,8 +162,8 @@ article li {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   line-height: .25rem;
   clear: both;
 }
@@ -222,7 +220,7 @@ article li .arrow {
   border-top: 0.02rem solid #55a8b3;
   border-right: 0.02rem solid #55a8b3;
   -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 
 article li .spot {
@@ -237,15 +235,15 @@ footer {
   position: fixed;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
   bottom: 0;
   width: 100%;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -ms-flex-pack: distribute;
-  justify-content: space-around;
+      justify-content: space-around;
   font-size: .13rem;
   border-top: 0.0075rem solid #dbe5e7;
   background-color: #f8fafb;
@@ -257,16 +255,31 @@ footer .page {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   color: #55a8b3;
 }
 
 footer .page img {
   width: 60%;
+}
+
+footer .page a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-decoration: none;
+  color: #999999;
 }
 
 footer .write {
@@ -290,11 +303,11 @@ footer .mine {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   color: #999999;
 }
 
