@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>大厅首页</title>
+  <link rel="stylesheet" href="../css/task13(1).css">
+
+</head>
+
+<body>
+  <div class="menu" id="a">
+
+    <ul>
+      <li>
+        <img src="../pic/logo1.png" alt="">
+        <span>公告</span>
+        <span class="menu-arrow"></span>
+      </li>
+
+      <li>
+        <img src="../pic/logo2.png" alt="">
+        <span>设置</span>
+        <span class="menu-arrow"></span>
+      </li>
+
+      <li>
+        <img src="../pic/logo3.png" alt="">
+        <span>帮助</span>
+        <span class="menu-arrow"></span>
+      </li>
+
+      <li>
+        <img src="../pic/logo4.png" alt="">
+        <span>关于</span>
+        <span class="menu-arrow"></span>
+      </li>
+
+    </ul>
+
+  </div>
+
+  <article>
+
+    <header>
+      <!-- 
+            1.这里改成手写
+            2.增加需求，需要加横向菜单 -->
+
+      <div class="head-logo" onclick="showme()">
+        <i class="logo-line-1"></i>
+
+        <i class="logo-line-2"></i>
+      </div>
+
+    </header>
+
+    <section class="last-game">
+
+      <span>上次游戏： 捉鬼猜词版</span>
+      <i></i>
+
+    </section>
+
+    <main>
+
+      <div class="game-begin">
+        <button class="game-btn">
+          捉鬼游戏
+        </button>
+      </div>
+
+      <button class="edition">
+        <span>简化版</span>
+      </button>
+
+
+      <h3>有1133个用户正在玩此款游戏</h3>
+
+      <button class="edition">
+        <span>猜词版</span>
+      </button>
+
+      <h3>有1133个用户正在玩此款游戏</h3>
+
+      <button class="edition">
+        <span>白痴版</span>
+      </button>
+
+      <h3>有1133个用户正在玩此款游戏</h3>
+
+      <a href="../html/task13(2).html">
+        <div class="arrow"></div>
+      </a>
+
+      <div class="bottom-circle">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+      </div>
+
+    </main>
+
+  </article>
+
+  <script>
+    // function showme(){
+    //   var bc = document.getElementById("a")
+    //   bc.style.display = "block";
+    // }
+
+
+    function showme() {
+      if (ccc = document.getElementById("a").style.display == "block") {
+        document.getElementById("a").style = "none";
+      } else {
+        document.getElementById("a").style.display = "block";
+      }
+    }
+  </script>
+</body>
+
+</html>
