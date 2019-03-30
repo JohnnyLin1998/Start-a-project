@@ -3,38 +3,35 @@ html {
 }
 
 body {
-  position: relative;
   display: flex;
   flex-direction: row;
+
+
   margin: 0;
   background-color: rgba(240, 240, 240, 1);
 
-
-  input {
-    display: none; //隐藏单选框
-  }
-
-
   /*左拉菜单*/
-  .inner {
-    // flex-basis: 70%;
-    // flex-shrink: 0;
-    // flex: 0 0 50%; 放弃flex控制宽度，无法满足“彻底消失”
-    // display: none;
-    position: absolute;
-    left: -45%;  //起始状态把菜单往右移动，隐藏
-    width: 45%;
+  .menu {
+    flex-basis: 70%;
+    flex-shrink: 0;
+    // transition: all 10ms;
+
+    display: none;
+    // visibility: hidden;
+
+    transition: all 20ms linear 0s ;
+
     height: 6.2rem;
-    transition: all 1s;  //过度效果
-    opacity: 0;  //起始状态隐藏菜单
     font-size: .16rem;
     color: rgba(41, 189, 224, 1);
     background-color: #fff;
+
 
     ul {
       padding: 0;
       text-indent: 8px;
       list-style: none;
+
 
       li {
         line-height: 2.2;
@@ -59,61 +56,53 @@ body {
     }
   }
 
-
-  input[type="checkbox"]:checked+label {
-    // display: block；
-    // flex: 0 0 50%;
-    left: 0; //起始状态是-45%，点击后回到原位，把主页面再往右边挪
-    opacity: 1; //点击后显示
-    transition: all 1s; //添加过渡效果
-  }
-
 }
 
 article {
-  position: absolute;
+  position: relative;
   display: flex;
-  width: 100%;
-  // flex-basis: 100%;
+  flex-basis: 100%;
+  flex-shrink: 0;
+
   flex-direction: column;
   justify-items: center;
   align-items: center;
-  transition: all 1s;   //与菜单过渡效果同步
- 
 
-  header {
-    z-index: 5;
-    width: 100%;
-    height: .5rem;
-    background-color: rgba(41, 189, 224, 1);
+  
+header {
+  z-index: 5;
+  width: 100%;
+  height: .5rem;
+  background-color: rgba(41, 189, 224, 1);
 
-    .head-logo {
-      position: relative;
+  .head-logo {
+    position: relative;
 
-      i {
-        display: block;
-      }
+    i {
+      display: block;
+    }
 
-      .logo-line-1 {
-        position: absolute;
-        top: 17px;
-        left: 20px;
-        width: 23px;
-        height: 5px;
-        border-top: 2px solid #fff;
-        border-bottom: 2px solid #fff;
-      }
+    .logo-line-1 {
+      position: absolute;
+      top: 17px;
+      left: 20px;
+      width: 23px;
+      height: 5px;
+      border-top: 2px solid #fff;
+      border-bottom: 2px solid #fff;
+    }
 
-      .logo-line-2 {
-        position: absolute;
-        top: 33px;
-        left: 20px;
-        width: 23px;
-        height: 5px;
-        border-top: 2px solid #fff;
-      }
+    .logo-line-2 {
+      position: absolute;
+      top: 33px;
+      left: 20px;
+      width: 23px;
+      height: 5px;
+      border-top: 2px solid #fff;
     }
   }
+}
+
 
   .last-game {
     position: relative;
@@ -138,6 +127,7 @@ article {
       transform: rotate(45deg)
     }
   }
+
 
 
   main {
@@ -188,7 +178,7 @@ article {
 
     .arrow {
       position: absolute;
-      right: -1px;
+      right: -7px;
       top: 47%;
       height: 0;
       width: 0;
@@ -222,9 +212,4 @@ article {
 
   }
 
-}
-
-//触发点击后，让主菜单移位
-input[type="checkbox"]:checked~article {
-  margin-left: 45%;
 }

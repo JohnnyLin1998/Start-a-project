@@ -4,6 +4,7 @@ html {
 }
 
 body {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -16,33 +17,40 @@ body {
   /*左拉菜单*/
 }
 
-body .menu {
-  -ms-flex-preferred-size: 55%;
-      flex-basis: 55%;
+body input {
   display: none;
+}
+
+body .inner {
+  position: absolute;
+  left: -45%;
+  width: 45%;
   height: 6.2rem;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  opacity: 0;
   font-size: .16rem;
   color: #29bde0;
   background-color: #fff;
 }
 
-body .menu ul {
+body .inner ul {
   padding: 0;
   text-indent: 8px;
   list-style: none;
 }
 
-body .menu ul li {
+body .inner ul li {
   line-height: 2.2;
   border-bottom: 1px solid #e1e5e7;
 }
 
-body .menu ul li img {
+body .inner ul li img {
   height: .22rem;
   vertical-align: -.05rem;
 }
 
-body .menu ul li .menu-arrow {
+body .inner ul li .menu-arrow {
   float: right;
   margin-top: .12rem;
   margin-right: .3rem;
@@ -54,13 +62,19 @@ body .menu ul li .menu-arrow {
           transform: rotate(45deg);
 }
 
+body input[type="checkbox"]:checked + label {
+  left: 0;
+  opacity: 1;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
 article {
-  position: relative;
+  position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-preferred-size: 100%;
-      flex-basis: 100%;
+  width: 100%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -69,6 +83,8 @@ article {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-transition: all 1s;
+  transition: all 1s;
 }
 
 article header {
@@ -188,7 +204,7 @@ article main .edition {
 
 article main .arrow {
   position: absolute;
-  right: -7px;
+  right: -1px;
   top: 47%;
   height: 0;
   width: 0;
@@ -218,4 +234,8 @@ article main .bottom-circle .circle {
 
 article main .bottom-circle .circle:hover {
   background-color: #69D1E9;
+}
+
+input[type="checkbox"]:checked ~ article {
+  margin-left: 45%;
 }
