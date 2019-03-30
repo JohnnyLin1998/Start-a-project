@@ -96,6 +96,7 @@ article header {
 
 article header .head-logo {
   position: relative;
+  cursor: pointer;
 }
 
 article header .head-logo i {
