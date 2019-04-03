@@ -1,0 +1,146 @@
+main .container:nth-child(2) .career-intro,
+main .container:nth-child(3) .career-intro,
+main .container:nth-child(4) .career-intro {
+  margin-top: 8%;
+}
+
+main .container:nth-child(4) .row.total {
+  margin-bottom: 50px;
+}
+
+.career-intro {
+  margin-top: 13px;
+  margin-bottom: 40px;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  font-weight: bold;
+  border-bottom: 1px solid #d0d6d9;
+}
+
+article .col-lg-4.col-md-6 {
+  margin-top: 40px;
+}
+
+article .inform table {
+  width: 100%;
+  font-size: 13px;
+  border-collapse: collapse;
+  background-color: #fff;
+}
+
+article .inform table td {
+  border: 1px solid rgba(8, 1, 3, 0);
+  -webkit-box-shadow: 0px 1px 0px 0px rgba(8, 1, 3, 0.15);
+          box-shadow: 0px 1px 0px 0px rgba(8, 1, 3, 0.15);
+}
+
+.row-job .fir-line {
+  height: 130px;
+}
+
+.row-job .fir-line img {
+  float: left;
+  width: 110px;
+  margin-top: 8px;
+  margin-right: 10px;
+  border-radius: 15%;
+}
+
+.row-job .fir-line p {
+  margin-top: 15px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.row-job .sed-line {
+  height: 50px;
+  width: 53px;
+}
+
+.row-job .sed-line .grey {
+  font-weight: bold;
+  color: #999999;
+}
+
+.row-job .sed-line .red {
+  font-weight: bold;
+  color: #f01400;
+}
+
+.row-salary {
+  height: 150px;
+}
+
+.row-salary .fir-line {
+  width: 160px;
+  text-align: center;
+}
+
+.row-salary .sed-line {
+  text-indent: 10px;
+}
+
+.row-salary .per-salary {
+  float: right;
+  margin-right: 5px;
+}
+
+.row-count {
+  height: 80px;
+}
+
+.row-count .count-fir {
+  font-weight: bold;
+  text-indent: 8px;
+}
+
+.row-count .grey {
+  text-indent: 8px;
+  color: #999999;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.row-count .red {
+  font-weight: bold;
+  color: #f01400;
+}
+
+.card-back {
+  position: absolute;
+  top: 2px;
+  left: 3.8px;
+  margin: auto;
+  padding: 41px;
+  height: 100%;
+  text-align: justify;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  visibility: hidden;
+}
+
+.card-back .inner-title {
+  margin-bottom: 15%;
+  text-align: center;
+}
+
+.card-back .inner-text {
+  text-align: justify;
+  text-indent: 32px;
+  letter-spacing: 3px;
+}
+
+.container .inform:hover .card-back {
+  text-align: center;
+  font-size: 14px;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-transform: translateZ(180px) rotateY(360deg);
+          transform: translateZ(180px) rotateY(360deg);
+  visibility: visible;
+  -webkit-transition: 1.3s;
+  transition: 1.3s;
+}

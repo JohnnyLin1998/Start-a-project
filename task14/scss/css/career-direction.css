@@ -1,0 +1,39 @@
+.container .fir-page {
+  padding-top: 53px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.container .fir-page span {
+  color: #29B078;
+}
+
+.container .direction {
+  width: 100%;
+  height: 46px;
+  margin-top: 10px;
+  border-top: 1px solid #d0d6d9;
+  border-bottom: 1px solid #edf1f2;
+  line-height: 46px;
+  font-size: 15px;
+}
+
+.container .direction i {
+  font-size: 16px;
+  font-weight: bold;
+  font-style: normal;
+  color: black;
+}
+
+.container .direction a {
+  margin-left: 8px;
+  text-decoration: none;
+  color: black;
+}
+
+.container .direction a:hover {
+  text-decoration: none;
+  color: #fff;
+  background-color: #29b078;
+}

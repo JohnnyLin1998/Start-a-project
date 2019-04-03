@@ -1,0 +1,59 @@
+
+//轮播图下标
+.carousel-indicator {
+  position: absolute;
+  display: flex;
+  bottom: 5%;
+  left: 0;
+  right: 0;
+  align-items: center;
+  justify-content: center;
+
+  li {
+    width: 35px;
+    height: 4px;
+    margin: 0 10px;
+    background-color: rgba(255, 255, 255, .5);
+    cursor: pointer;
+
+    &:hover{
+      background-color: #fff;
+    }
+  }
+
+}
+
+//左右小箭头
+@mixin link-arrow {
+  position: absolute;
+  display: block;
+  width: 17px;
+  height: 17px;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  opacity: 0.5;
+}
+
+.carousel .right-arrow{
+@include link-arrow;
+  right: 5%;
+  transform: rotate(45deg);
+  border-top: 4px solid #fff;
+  border-right: 4px solid #fff;
+  &:hover{
+    opacity: 1;
+  }
+}
+
+
+.carousel .left-arrow{
+  @include link-arrow;
+  left: 5%;  
+  border-top: 4px solid #fff;
+  border-left: 4px solid #fff;
+  transform: rotate(-45deg);
+  &:hover{
+    opacity: 1;
+  }
+}

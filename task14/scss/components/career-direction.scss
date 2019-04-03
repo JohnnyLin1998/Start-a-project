@@ -1,0 +1,44 @@
+//第三个页面的职业方向 小抬头
+
+.container {
+
+  .fir-page {
+    padding-top: 53px; //为了下拉菜单下来的过渡效果不露出原色，把margin改成padding
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 16px;
+
+    span {
+      color: #29B078;
+    }
+  }
+
+  .direction {
+    width: 100%;
+    height: 46px;
+    margin-top: 10px;
+    border-top: 1px solid rgba(208, 214, 217, 1);
+    border-bottom: 1px solid rgba(237, 241, 242, 1);
+    line-height: 46px;
+    font-size: 15px;
+
+    i {
+      font-size: 16px;
+      font-weight: bold;
+      font-style: normal;
+      color: black;
+    }
+
+    a {
+      margin-left: 8px;
+      text-decoration: none;
+      color: black;
+
+      &:hover {
+        text-decoration: none;
+        color: #fff;
+        background-color: rgba(41, 176, 120, 1);
+      }
+    }
+  }
+}

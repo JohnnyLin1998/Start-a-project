@@ -1,0 +1,56 @@
+//第二个页面的 内部直推抬头
+
+main {
+
+  .showpic {
+    position: relative;
+    display: flex;
+    justify-items: center;
+    margin-bottom: 10px;
+    width: 100%;
+    height: 13vw;
+    background: url("../../pic/background4.png") no-repeat;
+    background-size: cover;
+
+    .recom {
+      position: absolute;
+      width: 17vw;
+      height: 10vw;
+      top: 56%;
+      left: 50%;
+      transform: translateY(-50%);
+      text-align: center;
+      font-family: MFLangQian_Noncommercial-Regular;
+      color: #fff;
+
+
+      //可优化
+      p {
+        margin: 0;
+      }
+
+      .cn {
+        font-size: 3vw;
+        font-weight: bold;
+      }
+
+      .en {
+        font-weight: bold;
+        font-size: 1.3vw;
+      }
+    }
+
+    .cn-2 {
+      position: absolute;
+      width: 18vw;
+      height: 5vw;
+      top: 57%;
+      left: 67%;
+      transform: translateY(-50%);
+      font-size: 3.8vw;
+      font-weight: bold;
+      font-family: MFLangQian_Noncommercial-Regular;
+      color: #fff;
+    }
+  }
+}

@@ -1,0 +1,84 @@
+//第二个页面的左侧 企业合作导航
+
+
+.container.corpor {
+
+  //头标
+  .fir-page {
+    margin-left: 1vw;
+    font-weight: bold;
+    font-size: 16px;
+
+    span {
+      color: #29B078;
+    }
+  }
+
+  .row .intro p {
+    overflow: hidden;
+  }
+
+}
+
+
+
+.container.corpor {
+
+  .gap {
+    background-color: #fff;
+    border: 1px solid rgba(230, 230, 230, 1);
+
+    .corpor {
+      height: 55px;
+      line-height: 55px;
+      text-align: center;
+      font-size: 13px;
+      font-weight: bold;
+      color: black;
+      border-bottom: 1px solid rgba(230, 230, 230, 1);
+    }
+
+    ul {
+      color: #29B078;
+
+      .list {
+        line-height: 3;
+        font-size: 14px;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+
+
+
+.container.corpor .list .outer {
+  width: 80px;
+  margin: auto;
+
+  //注意，伪元素绝对定位了，本尊也必须relative，不然就飞了
+  .list-hover {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 17px;
+      left: -22px;
+      width: 8.5px;
+      height: 8.5px;
+      border: 1.5px solid rgba(249, 163, 114, 1);
+      border-radius: 50%;
+    }
+
+    &:hover {
+      color: rgba(255, 101, 14, 1);
+    }
+
+    //这一步是关键， hover+before的组合，之前没见过
+    &:hover::before {
+      background-color: rgba(255, 101, 14, 1);
+    }
+  }
+}

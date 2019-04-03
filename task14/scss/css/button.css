@@ -1,0 +1,67 @@
+.carousel-indicator {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  bottom: 5%;
+  left: 0;
+  right: 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.carousel-indicator li {
+  width: 35px;
+  height: 4px;
+  margin: 0 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+}
+
+.carousel-indicator li:hover {
+  background-color: #fff;
+}
+
+.carousel .right-arrow {
+  position: absolute;
+  display: block;
+  width: 17px;
+  height: 17px;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  opacity: 0.5;
+  right: 5%;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  border-top: 4px solid #fff;
+  border-right: 4px solid #fff;
+}
+
+.carousel .right-arrow:hover {
+  opacity: 1;
+}
+
+.carousel .left-arrow {
+  position: absolute;
+  display: block;
+  width: 17px;
+  height: 17px;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  opacity: 0.5;
+  left: 5%;
+  border-top: 4px solid #fff;
+  border-left: 4px solid #fff;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.carousel .left-arrow:hover {
+  opacity: 1;
+}

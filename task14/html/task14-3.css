@@ -1,0 +1,329 @@
+body {
+    background-color: #fafafa !important;
+}
+
+
+main {
+    position: relative;
+    margin-bottom: 100px;
+}
+
+
+/*加跳转链接*/
+.head-text a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+
+/*首页 职业 推荐--hover效果*/
+.navbar-nav .nav-item .nav-link {
+    padding: 15px;
+    border: 1px solid #26a26f;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    border-bottom: 1px solid white;
+}
+
+
+
+.fir-page {
+    /* margin-left: 8%;
+    margin-top: 2%; */
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 53px;
+    margin-bottom: 20px;
+}
+
+
+.fir-page span {
+    color: #29B078;
+}
+
+
+.direction {
+
+    width: 100%;
+    height: 46px;
+    margin-top: 10px;
+    border-top: 1px solid rgba(208, 214, 217, 1);
+    border-bottom: 1px solid rgba(237, 241, 242, 1);
+    line-height: 46px;
+    font-size: 15px;
+}
+
+.direction i {
+    font-size: 16px;
+    font-weight: bold;
+    font-style: normal;
+    color: black;
+}
+
+
+.direction a {
+    color: #000;
+    margin-left: 8px;
+}
+
+.direction a:hover {
+    color: #ffffff;
+    text-decoration: none;
+    background-color: rgba(41, 176, 120, 1);
+}
+
+
+
+
+
+
+.intro {
+    width: 100%;
+    height: 50px;
+    font-weight: bold;
+    line-height: 50px;
+    margin-top: 13px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid rgba(208, 214, 217, 1);
+}
+
+
+
+/*表单线条合并*/
+table {
+    border-collapse: collapse;
+}
+
+
+table {
+    width: 355px;
+    height: 50px;
+    font-size: 13px;
+    /* border: 1px solid black; */
+    /*table设边框无效，需要到td*/
+}
+
+table td {
+    border: 1px solid rgba(8, 1, 3, -0.85);
+    box-shadow: 0px 1px 0px 0px rgba(8, 1, 3, 0.15);
+}
+
+
+/*调整表格格子*/
+.job .fir-line {
+    height: 130px;
+}
+
+.job .sed-line {
+    height: 50px;
+    width: 53px;
+}
+
+.salary {
+    height: 150px;
+}
+
+.salary .fir-line {
+    width: 160px;
+}
+
+.salary .per-salary {
+    float: right;
+    margin-right: 5px;
+}
+
+.count {
+    height: 80px;
+}
+
+.fir-line .pic img {
+    float: left;
+    width: 110px;
+    margin-top: 8px;
+    margin-right: 10px;
+    border-radius: 15%;
+}
+
+.fir-line .pic-word p {
+    margin-top: 15px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+/*表格字体颜色*/
+table {
+    background-color: #ffffff;
+}
+
+table .red {
+    font-weight: bold;
+    color: rgba(240, 20, 0, 1);
+}
+
+table .grey {
+    font-weight: bold;
+    color: rgba(153, 153, 153, 1);
+}
+
+.count .count-grey {
+    text-indent: 8px;
+    color: rgba(153, 153, 153, 1);
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.count-fir {
+    font-weight: bold;
+    text-indent: 8px;
+}
+
+.salary .fir-line {
+    text-align: center;
+}
+
+.salary .sed-line {
+    text-indent: 10px;
+}
+
+/* .container .col-lg-4.four,
+.container .col-lg-4.fif {
+    margin-top: 25px;
+} */
+
+.container .col-lg-4 {
+    width: 370px;
+}
+
+
+table {
+    width: 100%;
+}
+
+
+
+.container .row .inform:hover .back {
+    text-align: center;
+    font-size: 14px;
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    transform: rotate(360deg);
+    visibility: visible;
+}
+
+
+.back {
+    position: absolute;
+    top: 2px;
+    left: 3.8px;
+    margin: auto;
+    text-align: justify;
+    visibility: hidden;
+    padding: 41px;
+    height: 100%;
+    transition: 1.5s;
+    /* transform-style: preserve-3d; */
+}
+
+
+.cen {
+    margin-bottom: 19%;
+    text-align: center;
+}
+
+
+.just {
+    text-align: justify;
+    text-indent: 20px;
+}
+
+
+
+
+
+
+
+
+/*抬头的修真院微调--boot组件自带的位置*/
+.navbar-brand {
+    margin-left: 2%;
+}
+
+/*给底部文字加hover效果*/
+.container.footer p a {
+    border: 1px solid #26A26F;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.container.footer a:hover {
+    border-bottom: 1px solid white;
+}
+
+
+
+
+
+/* 下面的媒体查询原本是因为我设了col-md，导致在变化屏幕大小的时候出现挤压，我想用media来
+微调各个盒子的位置，但是最终越调整越离谱，因为倒L型，我还竟然用absolute来调整。。。结果
+可想而知。最后经过观察分辨率的变化，找到了992这个关键，在经过更改 col-md ——> col lg后，一切
+都正常了，不用媒体查询大动干戈！ */
+
+
+
+
+
+@media screen and (min-width: 200px) and (max-width:992px) {
+
+
+    /*在小于992px的时候变成了数列，所以我把宽度变大，更协调*/
+    table {
+        width: 100%;
+    }
+
+
+    /*由于table表单宽度变大了，我想居中表格，所以这里把容器的宽度也设为table一样
+    400，为了满足margin: 0 auto 居中*/
+
+    .container .col-lg-4 {
+        width: 400px;
+        margin-top: 50px;
+        /* margin: 0 auto; */
+    }
+
+    /*在垂直状态，把介绍职位的文字居中*/
+    .container .intro {
+        text-align: center;
+    }
+
+    /*垂直状态下，将上下各出间隙*/
+    .container .col-lg-4.fir,
+    .container .col-lg-4.sed {
+        margin-top: 25px;
+    }
+
+}
+
+@media screen and (min-width: 992px) and (max-width:3000px) {
+
+    .col-lg-4.col-md-6.four,
+    .col-lg-4.col-md-6.fif {
+        margin-top: 30px;
+    }
+
+
+}
+
+@media screen and (min-width: 200px) and (max-width:768px) {
+    .container .col-lg-4 {
+        width: 100%;
+    }
+
+    table {
+        width: 100%;
+    }
+
+}

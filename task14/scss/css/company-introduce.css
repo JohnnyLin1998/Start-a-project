@@ -1,0 +1,46 @@
+@charset "UTF-8";
+.col-md-9 {
+  margin-bottom: 150px;
+  padding-bottom: 130px;
+  font-size: 15px;
+  color: #999999;
+  background-color: #fff;
+}
+
+.col-md-9 .intro {
+  border-bottom: 1px solid #e6e6e6;
+  margin-bottom: 70px;
+  padding-bottom: 20px;
+}
+
+.col-md-9 .intro img {
+  float: left;
+  width: 125px;
+}
+
+.col-md-9 .intro p {
+  margin-top: 30px;
+}
+
+.col-md-9 .words p {
+  margin-top: 40px;
+}
+
+/*
+//抬头的修真院微调--boot组件自带的位置
+.navbar-brand {
+  margin-left: 2%;
+}
+
+//给底部文字加hover效果
+.container.footer p a {
+  border: 1px solid #26A26F;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.container.footer a:hover {
+  border-bottom: 1px solid white;
+}
+
+*/

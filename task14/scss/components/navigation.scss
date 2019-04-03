@@ -1,0 +1,119 @@
+body{
+  position: relative;
+}
+
+header{
+  transition: all 1s;//为了在收回导航栏的过渡效果--必须和nav-bar-down 内容区一起添加才能起作用 
+}
+
+.nav-top {
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  height: 53px;
+  background-color: #26a26f !important;
+
+
+  .nav-pic {
+    display: inline-block;
+    width: 80px;
+    margin-top: 1%;
+    margin-left: 4%;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .nav-bar {
+    position: absolute;
+    display: flex;
+    right: 3%;
+    flex-direction: row;
+
+    li {
+      a {
+        padding: 15px;
+        &:hover {
+          border-bottom: 2px solid #fff;
+        }
+      }
+    }
+  }
+}
+
+
+.nav-btn {//下拉菜单按钮图形
+  z-index: 20;
+  display: none;//在大于768时默认隐藏
+  position: absolute;
+  top: 31px;
+  right: 3%;
+  width: 36px;
+  height: 38px;
+  border-radius: 6px;
+  border-style: none;
+  cursor: pointer;
+  outline: none;
+  background-color: #29B081;
+  
+
+  .btn-line {
+    position: absolute;
+    top: 9px;
+    left: 6px;
+    width: 24px;
+    height: 11px;
+    border-top: 2px solid #308964;
+    border-bottom: 2px solid #308964;
+  }
+
+  .btn-line2 {
+    position: absolute;
+    top: 21px;
+    left: 6px;
+    width: 24px;
+    height: 8px;
+    border-bottom: 2px solid #308964;
+  }
+}
+
+
+input {
+  display: none;
+}
+
+.nav-bar-down {
+  position: absolute;
+  top: 72px;
+  width: 100%;
+  height: 169px;//确定了下拉菜单的高度
+  background-color: #26a26f;
+  visibility: hidden;//默认隐藏下拉菜单
+  transition: all 1s;
+  
+
+  li {
+    text-align: center;
+    line-height: 2.5;
+
+    &:hover {
+      border-bottom: 0.5px solid #fff;
+    }
+    a{
+      color: rgba(255,255,255,.5) !important;
+    }
+  }
+}
+
+
+input[type="checkbox"]:checked+label~.nav-bar-down {
+  visibility: visible ;//点击按钮后显示菜单
+}
+
+//为了这一步，能让触发时把header往下推，在html布局中，把菜单放在了header之前，不然无法触发
+input[type="checkbox"]:checked+label~header {
+  margin-bottom: 161px;
+  transition: all 1s;  
+}

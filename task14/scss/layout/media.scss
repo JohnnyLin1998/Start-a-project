@@ -1,0 +1,251 @@
+/*控制 高效 规范 人脉居中*/
+@media screen and (min-width: 300px) and (max-width:1199px) {
+
+	.col-lg-3.col-md-6 {
+		text-align: center;
+	}
+}
+
+
+@media screen and (min-width: 768px) and (max-width:3300px) {
+
+
+	.navbar-nav {
+		position: absolute;
+		right: 12%;
+	}
+
+	.nav-bar-down {
+		display: none;
+	}
+
+	header {
+		margin-bottom: 0 !important;
+	}
+
+	.link-bottom,
+	.link-top {
+		display: flex;
+		line-height: 2;
+	}
+
+}
+
+@media screen and (max-width:768px) {
+
+	.container.corpor .col-md-3 {
+		//居中第一个页面的
+		padding: 0 !important;
+	}
+
+
+
+}
+
+@media screen and (min-width: 768px) and (max-width:992px) {
+
+	.container.corpor .col-md-3 {
+		flex: 0 0 25%;
+		max-width: 25%;
+	}
+
+}
+
+
+
+@media screen and (min-width: 100px) and (max-width:778px) {
+
+
+	.container.intro .col-lg-3.col-md-6 {
+		text-align: center;
+	}
+
+	.container-company {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.container-company .row-com {
+		margin-bottom: 15px;
+		width: 80%;
+		height: 200px;
+		line-height: 200px;
+
+		img {
+			width: 150px;
+		}
+	}
+
+	.container.corpor{//调试页面二，土豆介绍页面
+		max-width: 700px !important;
+
+		.row {
+			margin: 0 !important;
+		}
+	}
+
+
+	.container.intro .col-lg-3.col-md-6.adjust {
+		padding-left: 29px !important;
+	}
+
+
+	.col-lg-3.col-md-6.adjust .count-people {
+		margin-top: 50px;
+	}
+
+	footer .visi {
+		//隐藏占位符
+		display: none;
+	}
+
+	footer .row .col-md-5:nth-child(2) .foot-text-mid p:first-child {
+		//调整文字的位置
+		margin-top: 0;
+	}
+
+
+	footer .row .col-md-2 {
+		//调整footer的图片位置
+		margin-top: 0;
+		text-align: left;
+
+		img {
+			margin-top: 8px;
+		}
+	}
+
+	footer .row .col-md-5 {
+		//调整footer的文字信息
+		margin-top: 0;
+	}
+
+	footer .container.footer {
+		margin-left: 0;
+	}
+
+	.link-total ul {
+		//友情链接
+		margin-bottom: 4px;
+	}
+
+	.nav-bar {
+		//在768px以下把原菜单隐藏
+		display: none !important;
+	}
+
+	.nav-btn {
+		//768px以上，开启小按钮+下拉菜单
+		display: inline-block !important;
+	}
+
+	main .fir-page {
+		text-align: center;
+	}
+
+	main .direction {
+		display: flex;
+		margin-bottom: 220px;
+		flex-direction: column;
+		text-align: center;
+	}
+
+}
+
+
+
+/* 调整友情链接一大排的文字，在拉窄屏幕时的变化 */
+@media screen and (min-width: 670px) and (max-width:880px) {
+
+	.link-total {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.link-total ul {
+		margin-left: 35px;
+	}
+
+	.link-bottom,
+	.link-top {
+		display: flex;
+		margin-right: 55px;
+		line-height: 2;
+	}
+
+	.link-total ul {
+		margin-top: 0;
+		margin-bottom: 3px;
+	}
+}
+
+//友情链接
+@media screen and (min-width: 100px) and (max-width:670px) {
+
+
+	.link-total {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+
+		ul {
+			padding: 0;
+			margin-top: 0;
+		}
+
+		li {
+			line-height: 2;
+		}
+	}
+
+	.link-bottom {
+		margin-left: 80px;
+		margin-right: 0px;
+	}
+
+	.link-top {
+		margin-right: 80px;
+		margin-left: 0px;
+	}
+
+	.link-bottom,
+	.link-top {
+		display: block;
+	}
+
+}
+
+
+
+//第一个页面，战略合作企业
+@media screen and (min-width: 400px) and (max-width:670px) {
+
+	.container-company .row-com {
+		margin-bottom: 15px;
+		// width: 550px;
+		height: 200px;
+		line-height: 200px;
+	}
+
+	.container-company .row-com img {
+		width: 150px;
+	}
+}
+
+
+@media screen and (max-width:992px) {
+	.container.learn .row:first-child {
+		margin-bottom: 0;
+	}
+}
+
+
+@media screen and (min-width:1200px) {
+
+	.container.stu-show {
+		max-width: 1210px;
+	}
+
+
+}

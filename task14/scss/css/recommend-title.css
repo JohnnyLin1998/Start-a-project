@@ -1,0 +1,53 @@
+main .showpic {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-items: center;
+  margin-bottom: 10px;
+  width: 100%;
+  height: 13vw;
+  background: url("../../pic/background4.png") no-repeat;
+  background-size: cover;
+}
+
+main .showpic .recom {
+  position: absolute;
+  width: 17vw;
+  height: 10vw;
+  top: 56%;
+  left: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  text-align: center;
+  font-family: MFLangQian_Noncommercial-Regular;
+  color: #fff;
+}
+
+main .showpic .recom p {
+  margin: 0;
+}
+
+main .showpic .recom .cn {
+  font-size: 3vw;
+  font-weight: bold;
+}
+
+main .showpic .recom .en {
+  font-weight: bold;
+  font-size: 1.3vw;
+}
+
+main .showpic .cn-2 {
+  position: absolute;
+  width: 18vw;
+  height: 5vw;
+  top: 57%;
+  left: 67%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  font-size: 3.8vw;
+  font-weight: bold;
+  font-family: MFLangQian_Noncommercial-Regular;
+  color: #fff;
+}

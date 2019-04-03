@@ -1,0 +1,75 @@
+main{
+  position: relative;
+  // margin-bottom: 100px;
+}
+
+
+
+footer {
+  position: relative;
+  display: flex;
+  // height: 150px;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  color: #ffffff;
+  background-color: #26A26F;
+
+  .row{
+    padding-bottom: 39px;
+
+    .col-md-2 {  //居中二维码-字体
+      margin-top: 2%;
+      text-align: center;
+
+      img { //调整二维码的大小和距离
+        width: 70px;
+        margin-top: 10px;
+      }
+    }
+
+    .col-md-5 {
+      margin-top: 2%;
+
+      .visi {//占位子的p友人
+        visibility: hidden;
+      }
+    }
+  }
+
+
+.row-bottom {//底部说明文字
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+  border-top: 1px solid white;
+  span {
+    font-size: 13px;
+  }
+}
+
+p a {//给底部文字加hover效果的守护框
+  border: 1px solid #26A26F;
+  text-decoration: none;
+  color: #ffffff;
+
+  &:hover{
+
+    border-bottom: 1px solid white;
+  }
+}
+}
+
+
+
+//要放到nav导航里
+
+/*抬头的修真院微调--boot组件自带的位置*/
+.navbar-brand {
+  margin-left: 2%;
+}
+
+
+
+

@@ -1,0 +1,52 @@
+//第二个页面的土豆网介绍
+
+.col-md-9 {
+  margin-bottom: 150px;
+  padding-bottom: 130px;
+  font-size: 15px;
+  color: rgba(153, 153, 153, 1);
+  background-color: #fff;
+
+  .intro {
+    border-bottom: 1px solid rgba(230, 230, 230, 1);
+    margin-bottom: 70px;
+    padding-bottom: 20px;
+
+    img {
+      float: left;
+      width: 125px;
+    }
+
+    p {
+      margin-top: 30px;
+    }
+  }
+
+  .words {
+    p {
+      margin-top: 40px;
+    }
+  }
+}
+
+
+
+
+/*
+//抬头的修真院微调--boot组件自带的位置
+.navbar-brand {
+  margin-left: 2%;
+}
+
+//给底部文字加hover效果
+.container.footer p a {
+  border: 1px solid #26A26F;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.container.footer a:hover {
+  border-bottom: 1px solid white;
+}
+
+*/

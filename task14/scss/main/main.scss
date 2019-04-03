@@ -1,0 +1,24 @@
+
+
+//layout
+@import"../layout/header.scss","../layout/footer.scss","../layout/grid-me.scss";
+
+
+
+//components
+@import"../components/career-direction.scss","../components/career-introduce.scss","../components/carousel.scss","../components/circle.scss",
+"../components/company-introduce.scss","../components/company-strategic.scss","../components/excellent-stu.scss","../components/friendly-link.scss",
+"../components/homepage-intro.scss","../components/how-to-learn.scss","../components/nav-company-corpor.scss","../components/navigation.scss",
+"../components/recommend-title.scss","../components/button.scss";
+
+
+
+//base
+@import"../base/reset.scss";
+
+
+//media  因为媒体查询的优先级必须高于原来的设计，所以必须放在后面
+@import"../layout/media.scss";
+
+
+

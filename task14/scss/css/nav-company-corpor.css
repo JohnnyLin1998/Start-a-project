@@ -1,0 +1,66 @@
+.container.corpor .fir-page {
+  margin-left: 1vw;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.container.corpor .fir-page span {
+  color: #29B078;
+}
+
+.container.corpor .row .intro p {
+  overflow: hidden;
+}
+
+.container.corpor .gap {
+  background-color: #fff;
+  border: 1px solid #e6e6e6;
+}
+
+.container.corpor .gap .corpor {
+  height: 55px;
+  line-height: 55px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: bold;
+  color: black;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.container.corpor .gap ul {
+  color: #29B078;
+}
+
+.container.corpor .gap ul .list {
+  line-height: 3;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.container.corpor .list .outer {
+  width: 80px;
+  margin: auto;
+}
+
+.container.corpor .list .outer .list-hover {
+  position: relative;
+}
+
+.container.corpor .list .outer .list-hover::before {
+  content: "";
+  position: absolute;
+  bottom: 17px;
+  left: -22px;
+  width: 8.5px;
+  height: 8.5px;
+  border: 1.5px solid #f9a372;
+  border-radius: 50%;
+}
+
+.container.corpor .list .outer .list-hover:hover {
+  color: #ff650e;
+}
+
+.container.corpor .list .outer .list-hover:hover::before {
+  background-color: #ff650e;
+}

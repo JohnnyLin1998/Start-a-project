@@ -1,0 +1,127 @@
+body {
+  position: relative;
+}
+
+header {
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.nav-top {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 53px;
+  background-color: #26a26f !important;
+}
+
+.nav-top .nav-pic {
+  display: inline-block;
+  width: 80px;
+  margin-top: 1%;
+  margin-left: 4%;
+}
+
+.nav-top .nav-pic img {
+  width: 100%;
+}
+
+.nav-top .nav-bar {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  right: 3%;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.nav-top .nav-bar li a {
+  padding: 15px;
+}
+
+.nav-top .nav-bar li a:hover {
+  border-bottom: 2px solid #fff;
+}
+
+.nav-btn {
+  z-index: 20;
+  display: none;
+  position: absolute;
+  top: 31px;
+  right: 3%;
+  width: 36px;
+  height: 38px;
+  border-radius: 6px;
+  border-style: none;
+  cursor: pointer;
+  outline: none;
+  background-color: #29B081;
+}
+
+.nav-btn .btn-line {
+  position: absolute;
+  top: 9px;
+  left: 6px;
+  width: 24px;
+  height: 11px;
+  border-top: 2px solid #308964;
+  border-bottom: 2px solid #308964;
+}
+
+.nav-btn .btn-line2 {
+  position: absolute;
+  top: 21px;
+  left: 6px;
+  width: 24px;
+  height: 8px;
+  border-bottom: 2px solid #308964;
+}
+
+input {
+  display: none;
+}
+
+.nav-bar-down {
+  position: absolute;
+  top: 72px;
+  width: 100%;
+  height: 169px;
+  background-color: #26a26f;
+  visibility: hidden;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.nav-bar-down li {
+  text-align: center;
+  line-height: 2.5;
+}
+
+.nav-bar-down li:hover {
+  border-bottom: 0.5px solid #fff;
+}
+
+.nav-bar-down li a {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+input[type="checkbox"]:checked + label ~ .nav-bar-down {
+  visibility: visible;
+}
+
+input[type="checkbox"]:checked + label ~ header {
+  margin-bottom: 161px;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}

@@ -1,0 +1,36 @@
+.nav-bar-down {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.nav-bar-down a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.nav-bar {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.nav-bar a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.carousel-indicator {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.carousel-indicator a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.container.corpor ul {
+  list-style: none;
+}

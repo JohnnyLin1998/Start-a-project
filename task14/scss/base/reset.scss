@@ -1,0 +1,33 @@
+@mixin ul-a {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  a{
+  text-decoration: none;
+  color: #fff;
+  }
+}
+
+
+
+.nav-bar-down {
+@include ul-a;
+}
+
+
+.nav-bar {
+  @include ul-a;
+}
+
+
+.carousel-indicator {
+  @include ul-a;
+}
+
+//页面二，淘宝橙色高亮处
+.container.corpor{
+  ul{
+    list-style:none;
+  }
+}

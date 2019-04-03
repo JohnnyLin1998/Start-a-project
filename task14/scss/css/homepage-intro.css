@@ -1,0 +1,111 @@
+.container.intro {
+  margin-top: 30px;
+  margin-bottom: 100px;
+}
+
+.container.intro .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: justify;
+}
+
+.container.intro .row .col-lg-3.col-md-6 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  justify-items: center;
+  padding: 29px;
+}
+
+.container.intro .row .col-lg-3.col-md-6:hover {
+  -webkit-box-shadow: 1px 1px 2px 1px rgba(128, 128, 128, 0.15);
+          box-shadow: 1px 1px 2px 1px rgba(128, 128, 128, 0.15);
+}
+
+.container.intro .row .col-lg-3.col-md-6 .bold {
+  font-size: 17px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.container.intro .row .col-lg-3.col-md-6 .text {
+  width: 100%;
+  color: #999;
+}
+
+.container.intro .row .col-lg-3.col-md-6.adjust {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  justify-items: center;
+  border-left: 1px solid #dedede;
+}
+
+.container.intro .row .col-lg-3.col-md-6.adjust:hover {
+  -webkit-box-shadow: 1px 1px 2px 1px rgba(128, 128, 128, 0.15);
+          box-shadow: 1px 1px 2px 1px rgba(128, 128, 128, 0.15);
+}
+
+.container.intro .row .col-lg-3.col-md-6.adjust .count-people-adjust {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.container.intro .row .col-lg-3.col-md-6.adjust .count-people-adjust img {
+  height: 15%;
+}
+
+.container.intro .row .col-lg-3.col-md-6.adjust .count-people {
+  text-align: center;
+}
+
+.container.intro .row .pic {
+  text-align: center;
+}
+
+.container.intro .row .pic img {
+  width: 40px;
+}
+
+.container.intro .row .pic-2 {
+  /* margin-top: 25px; */
+  text-align: center;
+}
+
+.container.intro .row .pic-2 img {
+  width: 40px;
+}
+
+.container.intro .row .pic-3 {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.container.intro .row .pic-3 img {
+  width: 40px;
+}
+
+h3 {
+  padding-bottom: 35px;
+  text-align: center;
+}
+
+.link-h {
+  padding-bottom: 5px;
+  text-align: center;
+}

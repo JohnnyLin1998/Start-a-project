@@ -1,0 +1,111 @@
+//第一个页面 高效规范 介绍页面
+
+
+
+.container.intro {
+  margin-top: 30px;
+  margin-bottom: 100px;
+
+  .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+
+
+    .col-lg-3.col-md-6 {
+      display: flex;
+      flex-direction: column;
+      justify-items: center;
+      padding: 29px;
+
+      &:hover {
+        box-shadow: 1px 1px 2px 1px rgba(128, 128, 128, 0.15);
+      }
+
+      .bold {
+        font-size: 17px;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      .text {
+        width: 100%;
+        color: #999;
+      }
+    }
+
+
+    .col-lg-3.col-md-6.adjust {
+      display: flex;
+      flex-direction: column;
+      justify-items: center;
+      // padding-left: 80px;
+      // border-left: 1px solid rgba(128, 128, 128, 0.15);
+      border-left: 1px solid rgba(222, 222, 222, 1);
+
+      &:hover {
+        box-shadow: 1px 1px 2px 1px rgba(128, 128, 128, 0.15);
+      }
+
+      .count-people-adjust {
+        text-align: center;
+        margin-top: 40px;
+
+        img {
+          height: 15%;
+        }
+      }
+
+      .count-people {
+        text-align: center;
+      }
+    }
+
+    
+
+    .pic {
+      text-align: center;
+
+      img {
+        width: 40px;
+      }
+    }
+
+
+    .pic-2 {
+      /* margin-top: 25px; */
+      text-align: center;
+
+      img {
+        width: 40px;
+      }
+    }
+
+
+    .pic-3 {
+      margin-top: 15px;
+      text-align: center;
+
+      img {
+        width: 40px;
+      }
+    }
+  }
+}
+
+
+
+
+
+h3 {
+  padding-bottom: 35px;
+  text-align: center;
+}
+
+
+
+.link-h {
+  padding-bottom: 5px;
+  text-align: center;
+}

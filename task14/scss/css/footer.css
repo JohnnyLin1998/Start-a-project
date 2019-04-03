@@ -1,0 +1,69 @@
+@charset "UTF-8";
+main {
+  position: relative;
+}
+
+footer {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 13px;
+  color: #ffffff;
+  background-color: #26A26F;
+}
+
+footer .row {
+  padding-bottom: 39px;
+}
+
+footer .row .col-md-2 {
+  margin-top: 2%;
+  text-align: center;
+}
+
+footer .row .col-md-2 img {
+  width: 70px;
+  margin-top: 10px;
+}
+
+footer .row .col-md-5 {
+  margin-top: 2%;
+}
+
+footer .row .col-md-5 .visi {
+  visibility: hidden;
+}
+
+footer .row-bottom {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+  border-top: 1px solid white;
+}
+
+footer .row-bottom span {
+  font-size: 13px;
+}
+
+footer p a {
+  border: 1px solid #26A26F;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+footer p a:hover {
+  border-bottom: 1px solid white;
+}
+
+/*抬头的修真院微调--boot组件自带的位置*/
+.navbar-brand {
+  margin-left: 2%;
+}

@@ -1,0 +1,77 @@
+body {
+  margin: 0;
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.carousel .carousel-pic {
+  width: 300vw;
+  position: relative;
+  -webkit-animation: pic-scroll 12s linear infinite normal;
+          animation: pic-scroll 12s linear infinite normal;
+}
+
+.carousel .carousel-pic img {
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+}
+
+@-webkit-keyframes pic-scroll {
+  0% {
+    left: 0;
+  }
+  10% {
+    left: 0;
+  }
+  30% {
+    left: -100vw;
+  }
+  40% {
+    left: -100vw;
+  }
+  60% {
+    left: -200vw;
+  }
+  70% {
+    left: -200vw;
+  }
+  90% {
+    left: -300vw;
+  }
+  100% {
+    left: -300vw;
+  }
+}
+
+@keyframes pic-scroll {
+  0% {
+    left: 0;
+  }
+  10% {
+    left: 0;
+  }
+  30% {
+    left: -100vw;
+  }
+  40% {
+    left: -100vw;
+  }
+  60% {
+    left: -200vw;
+  }
+  70% {
+    left: -200vw;
+  }
+  90% {
+    left: -300vw;
+  }
+  100% {
+    left: -300vw;
+  }
+}
