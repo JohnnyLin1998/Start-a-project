@@ -1,0 +1,61 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .container{
+      width: 300px;
+      height: 300px;
+      border: 1px solid black;
+    }
+
+
+/* 
+发现用了这个，盒子就不具备块级的特性，无法设高度，变成了内联的弹性盒子，flex的某些特性比如flex-direction就没用了 */
+
+    .container>div{
+
+      display: inline-flex; 
+      flex-direction: column;
+      width: 50px;
+      height: 50px;
+      background-color: red;
+      margin: 3px;
+
+    }
+
+
+
+  
+  </style>
+</head>
+<body>
+  
+
+
+<div class="container">
+
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

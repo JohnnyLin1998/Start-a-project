@@ -1,0 +1,61 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+
+
+  <script>
+    /*
+    var myGlobalScope = 'Global scope value';
+
+    function myLocalScopeFunction() {
+      var myLocalScope = 'myLocalScope value';
+      console.log('myGlobalScope: ' + myGlobalScope);
+      console.log('myLocalScope: ' + myLocalScope);
+    }
+
+    myLocalScopeFunction();
+    console.log('myGlobalScope: ' + myGlobalScope);//这里访问的是，全局作用域的内容，ok
+    console.log('myLocalScope: ' + myLocalScope); //这里想访问上面函数里的值，无效 not defined
+  */
+
+
+
+
+    //在JS内，使用作用域，就可以在不同的作用域中，使用相同的变量名定义变量，它不会被重写
+    //如果想要改变变量的值，只需要直接改变，不用重新定义一遍
+
+    
+    (function () {
+      var var1 = "Hi! do you know? I like u！";
+
+      (function () {
+        var var1 = "Hi! do you know? I like u！22"; //我属于局部1号
+        console.log("I wannna say:" + var1);
+
+      })();  //关于每个函数后面，为什么要加( ) 《高程P185》
+
+      (function () {
+        var var1 = "Hi! do you know? I like u！33"; //我属于局部2号
+        console.log("I wanna saysaysay:" + var1);
+
+      })();
+
+
+      console.log("I wanna telltell:" + var1); //我属于全局NO.1
+
+
+    })();
+  </script>
+
+</body>
+
+</html>

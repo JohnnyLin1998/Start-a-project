@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .progress {
+            width: 500px;
+            height: 40px;
+            border: 1px solid #eeeeee;
+            overflow: hidden;
+            margin: 20% auto;
+        }
+
+        input {
+            width: 150px;
+        }
+
+        .progress span {
+            height: 40px;
+            background-color: red;
+            display: block;
+            width: 0;
+            line-height: 40px;
+            text-align: right;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <input type="number" min="0" max="100" id="input">
+    <div class="progress">
+        <span></span>
+    </div>
+
+
+
+    <script>
+        ~ function (document) {
+            var input = document.getElementById('input');
+            var progress = document.getElementsByClassName('progress')[0];
+            var span = progress.getElementsByTagName('span')[0];
+
+            input.addEventListener('input', function () {  //事件监听
+                span.style.width = span.textContent = this.value + '%';
+            }, false)
+            
+        }(document)
+    </script>
+</body>
+
+</html>

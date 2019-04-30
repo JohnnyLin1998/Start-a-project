@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>HTML5 DEMO</title>
+	<meta charset="utf-8">
+	<style type="">
+
+
+		.cha{
+	width: 20px;
+	height: 20px;
+	margin: auto;
+	position: relative; 
+}
+.cha::before,
+.cha::after{
+  content: "";
+  position: absolute;  /*方便进行定位*/
+  height: 20px;
+  width: 1.5px;
+  top: 2px;
+  right: 9px;  /*设置top和right使图像在20*20框中居中*/
+ background: #f39800;
+}
+
+
+.cha::before{
+  transform: rotate(45deg);  /*进行旋转*/
+}
+.cha::after{
+  transform: rotate(-45deg);
+}
+
+
+	</style>
+
+
+
+</head>
+
+<body>
+	<div class="cha"> </div>
+
+</body>
+
+</html>

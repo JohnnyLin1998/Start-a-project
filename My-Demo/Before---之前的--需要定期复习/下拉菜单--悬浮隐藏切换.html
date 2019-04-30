@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    ul {
+      list-style: none;
+    }
+
+    .nav>li {
+      float: left;
+    }
+
+    ul a {
+      display: block;
+      text-decoration: none;
+      width: 100px;
+      height: 50px;
+      text-align: center;
+      line-height: 50px;
+      color: white;
+      background-color: #2f3e45;
+    }
+
+    .nav>li:first-child a {
+      border-radius: 10px 0 0 10px;
+    }
+
+    .nav>li:last-child a {
+      border-radius: 0 10px 10px 0;
+    }
+
+    .drop-down {
+      /*position: relative;*/
+      height: 50px;
+      overflow: hidden;
+    }
+
+    .drop-down-content {
+      padding: 0;
+      /*position: absolute;*/
+    }
+
+    h3 {
+      font-size: 30px;
+      clear: both;
+      /*这个清楚浮动就很有意思，最基本的清除效果，但是我第一眼却不知道是什么
+      ————h3上面的ul li 由于浮动了，会把这个h3带上去，浮动对后面一位的盒子会有影响*/
+    }
+
+    .drop-down-content li:hover a {
+      background-color: red;
+    }
+
+    .nav .drop-down:hover {
+      overflow: visible;
+    }
+  </style>
+</head>
+
+<body>
+  <ul class="nav">
+    <li><a href="#">下拉菜单</a></li>
+    <li class="drop-down"><a href="#">下拉菜单</a>
+      <ul class="drop-down-content">
+        <li><a href="#">我是1</a></li>
+        <li><a href="#">我是2</a></li>
+        <li><a href="#">我是3</a></li>
+      </ul>
+    </li>
+    <li><a href="#">下拉菜单</a></li>
+    <li><a href="#">下拉菜单</a></li>
+    <li><a href="#">下拉菜单</a></li>
+  </ul>
+  <h3>我是测试文字</h3>
+  <h4>给悬浮的这个li设置一个固定高度，然后设置超出部分隐藏，悬浮时显示。类似于display:block 和 display:none切换，这里是overflow:hidden  overflow:visible切换  </h4>
+  <h4>方法（3）用opacity: 0 和 1的切换   方法（4） 绝对定位left:-999  left:0 </h4>
+
+</body>
+
+</html>
+
+

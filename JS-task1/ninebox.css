@@ -1,0 +1,63 @@
+.container{
+  margin-bottom: 3vw;
+}
+
+.row{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+.box {
+  margin: 1%;
+  width: 30%;
+  padding-top: 30%;
+  border-radius: 10%;
+  background-color: orange;
+}
+
+section{
+  display: flex;
+  height: 150px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+button:nth-child(1){
+  width: 80%;
+  height: 8vw;
+  font-size: 2.5vw;
+  font-weight: bold;
+  border-radius: 10px;
+  border-style: none;
+  outline: none;
+  cursor: pointer;
+  color: #fff;
+  background-color: blueviolet;
+}
+
+button:nth-child(2){
+  width: 80%;
+  height: 8vw;
+  margin-top: 1vw;
+  font-size: 2.5vw;
+  font-weight: bold;
+  border-radius: 10px;
+  border-style: none;
+  outline: none;
+  cursor: pointer;
+  color: #fff;
+  background-color: rgb(43, 153, 226);
+}
+
+
+/*限制在PC端全屏浏览，出现霸屏的现象*/
+@media screen and (min-width:480px){
+
+  body{
+    width: 400px;
+    margin: auto;
+  }
+
+}

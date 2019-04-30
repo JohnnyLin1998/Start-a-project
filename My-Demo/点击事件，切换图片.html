@@ -1,0 +1,140 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ 
+<html xmlns="http://www.w3.org/1999/xhtml">
+ 
+<head>
+ 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ 
+<title>实用的图片切换</title>
+ 
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.js"></script>
+ 
+<!--<script type="text/javascript" src="jquery_change.js"></script>-->
+ 
+<style type="text/css">
+ 
+ body,ul,li { padding:0; margin:0}
+ 
+ ul,li { list-style:none}
+ 
+ .img-scroll { position:relative; margin:20px auto; width:440px;}
+ 
+ .img-scroll .prev,.img-scroll .next { position:absolute; display:block; width:50px; height:100px; background-color:#000;
+ 
+ top:0; color:#FFF; text-align:center; line-height:100px}
+ 
+ .img-scroll .prev { left:0;cursor:pointer;}
+ 
+ .img-scroll .next { right:0;cursor:pointer;}
+ 
+ .img-list { position:relative; width:320px; height:100px; margin-left:60px; overflow:hidden}
+ 
+ .img-list ul { width:9999px;}
+ 
+ .img-list li { float:left; display:inline; width:100px; margin-right:10px; height:100px; background-color:#BDBDDF; text-align:center; line-height:100px;}
+ 
+</style>
+ 
+</head>
+ 
+<body>
+ 
+<div class="img-scroll">
+ 
+    <span class="prev">prev</span>
+ 
+    <span class="next">next</span>
+ 
+    <div class="img-list">
+ 
+        <ul>
+ 
+            <li><img style="width:100px;height:100px;" src="./img/cat.jpg"></li>
+ 
+            <li><img style="width:100px;height:100px;" src="./img/katong.jpg"></li>
+ 
+            <li><img style="width:100px;height:100px;" src="./img/meinv.jpg"></li>
+ 
+            <li><img style="width:100px;height:100px;" src="./img/mm.jpg"></li>
+ 
+            <li><img style="width:100px;height:100px;" src="./img/慢慢.jpg"></li>
+ 
+            <li><img style="width:100px;height:100px;" src="./img/美食杰-糖糖.jpg"></li>
+ 
+            <li><img style="width:100px;height:100px;" src="./img/未命名44.jpg"></li>
+ 
+        </ul>
+ 
+    </div>
+ 
+</div>
+ 
+<script type="text/javascript">
+ 
+ function DY_scroll(wraper,prev,next,img,speed,or)
+ 
+ { 
+ 
+  var wraper = $(wraper);
+ 
+  var prev = $(prev);
+ 
+  var next = $(next);
+ 
+  var img = $(img).find('ul');
+ 
+  var w = img.find('li').outerWidth(true);
+ 
+  var s = speed;
+ 
+  next.click(function()
+ 
+       {
+ 
+        img.animate({'margin-left':-w},function()
+ 
+                  {
+ 
+                   img.find('li').eq(0).appendTo(img);
+ 
+                   img.css({'margin-left':0});
+ 
+                   });
+ 
+        });
+ 
+  prev.click(function()
+ 
+       {
+ 
+        img.find('li:last').prependTo(img);
+ 
+        img.css({'margin-left':-w});
+ 
+        img.animate({'margin-left':0});
+ 
+        });
+ 
+  if (or == true)
+ 
+  {
+ 
+   ad = setInterval(function() { next.click();},s*1000);
+ 
+   wraper.hover(function(){clearInterval(ad);},function(){ad = setInterval(function() { next.click();},s*1000);});
+ 
+ 
+ 
+  }
+ 
+ }
+ 
+ DY_scroll('.img-scroll','.prev','.next','.img-list',3,false);// true为自动播放，不加此参数或false就默认不自动
+ 
+</script>
+ 
+</body>
+ 
+</html>

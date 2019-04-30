@@ -1,0 +1,70 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>洗牌算法--乱序</title>
+</head>
+
+<body>
+
+
+  <script>
+    // function shuffle(a){
+    //   var b = [];
+
+    //   while (a.length) {
+    //     var index = ~~(Math.random() * a.length);
+    //     b.push(a[index]);
+    //     a.splice(index, 1);
+    //   }
+    //     return b;
+    // }
+
+
+
+    //sort方法一，时间复杂度： 0（n）
+    var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+
+    /*function sort(arr) {
+
+      var newArr = [];
+
+      for (var i = 0, len = arr.length; i < len; i++) {
+
+        var j = Math.floor(Math.random() * (len - i));
+
+        newArr[i] = arr[j];
+
+        arr.splice(j, 1)
+      }
+
+      return newArr;
+    }
+
+    console.log(sort(arr));*/
+    
+
+
+    //sort方法二，时间复杂度:0（n二次方）   ！！此方案不是最佳的，网上一大片，非常不建议使用
+ /*   function shuffle(arr) {
+      var newArr = [];
+
+      newArr = arr.sort(function () {
+
+        return Math.random() - 0.5;
+
+      })
+      return newArr;
+    }
+
+    console.log(shuffle(arr));
+*/
+
+
+
+  </script>
+</body>
+
+</html>

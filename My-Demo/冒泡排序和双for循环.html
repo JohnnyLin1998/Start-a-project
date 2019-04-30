@@ -1,0 +1,56 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+
+
+        var num = [5, 12, 6, 16, 3, 15, 34, 19];
+        var temp = "";
+
+        for (var i = 0; i < num.length; i++) { 
+
+            for (var j = i; j < num.length; j++) { 
+
+                if (num[i] > num[j]) { 
+                    temp = num[i];
+                    num[i] = num[j];
+                    num[j] = temp;
+                }
+            }
+        }
+        
+        console.log(num)
+
+
+        //本次学习2019.4.19  继续学习----各大博客，还没找到比较好的资料
+
+        //疑问：  1.关于for双循环的执行过程， 我需要画图来帮助理解， 这个逻辑从一开始接触C语言就不太懂， 必须彻底搞懂
+        //        2.学习完 Fisher-Yates 洗牌的逻辑，感觉冒泡排序也是差不多的套路，  但是目前还没彻底搞懂，需要深入学习一下，再进行对比  
+
+        //ps:冒泡可是最最简单的算法！！ 学习这个只是算法的开端，我还要学习 快速排序 希尔 等等  ，瑞君那里有不错的参考，但是我更希望自己也动脑筋想想
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

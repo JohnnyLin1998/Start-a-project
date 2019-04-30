@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.cred{
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="getByClass" name="cdiv" id="getById">
+			<ul>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+		<div name="cdiv">
+			<ul class="secUl">
+				<li></li>
+				<li></li>
+                <li></li>
+                
+				<li></li>
+				<li></li>
+                <li></li>
+                
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+
+    var log = console.log;
+
+	var lis = document.querySelector(".secUl").firstChild;
+    // lis[2].classList.add("cred");
+    
+    log(lis)
+ 
+//	var ulHTMLCollection = document.getElementsByClassName("secUl");
+//	console.log(ulHTMLCollection);
+//	var ulDOM = document.getElementsByClassName("secUl")[0];
+//	console.log(ulDOM);
+ 
+//	var gbid = document.getElementById("getById");
+//	gbid.children[0].children[1].classList.add("cred");
+//	/获取gbid的第一个子元素的第二个子元素并为其添加cred类 （-_-注释不高亮，原谅我只为截个图）/
+//	var gbclass = document.getElementsByClassName("getByClass");
+//	gbclass.children[0].children[1].classList.add("cred");
+//	/同样的写法，但是却报错了/
+	
+//	var gbid = document.querySelector("#getById");
+//	var gbclass = document.querySelector(".getByClass");
+//	var tag = document.getElementsByTagName("div").children;
+//	var cname = document.getElementsByName("cdiv").children;
+//	console.log(gbid);
+//	console.log(gbclass);
+//	console.log(tag);
+//	console.log(cname);
+ 
+</script>

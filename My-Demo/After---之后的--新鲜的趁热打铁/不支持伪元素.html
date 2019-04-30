@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>虚伪的元素小哥</title>
+
+    <style>
+
+        a::before{
+            content: "HELLO";
+            /* display: table; */
+            width: 5px;
+            height: 5px;
+            background-color: aquamarine;
+
+        }
+
+        a::after{
+            content: "";
+             display: table-cell; 
+            width: 25px;
+            height: 5px;
+            background-color:blue;
+
+        }
+    
+    </style>
+</head>
+<body>
+
+
+
+    <div>
+        <a href="">你和我和他和它和塔塔塔塔塔塔塔塔</a>
+
+        <span>ooooooooooooooooooooooooooooo</span>
+
+        <p>js就是就是计算机就是就是就是</p>
+
+        <i>思考送到你家看见你家安到静安寺</i>
+
+
+        <input type="text" placeholder="nininini">
+
+        <img src="sssssssssssssssssss" alt="">
+
+
+
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,44 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../css/view-id.css">
+  <link rel="stylesheet" href="../css/header-id-judger.css">
+  <title>--查看身份--</title>
+</head>
+
+<body>
+  <header>
+    <div class="left-arrow" onclick="back_dealing()"></div>
+    <span>
+      查看身份
+    </span>
+    <div class="right-x"></div>
+  </header>
+
+  <main>
+    <div class="card-box">
+      <div class="round" id="id-num">1</div>
+    </div>
+    <div class="show-pic" id="show-pic" style="visibility: visible";>   <!-- 添加内联样式消除第一次点击为空的状态 --> 
+      <!-- 背景 --> 
+    </div>
+    <div class="hide-pic" id="hide-pic" style="visibility: hidden";>    <!-- 如果使用jquery-toggle()就不需要了 --> 
+      <span class="role-pic">
+        <!-- 背景 -->
+      </span>
+      <p class="role-word" id="role">角色：平民</p>
+    </div>
+  </main>
+
+  <footer>
+    <button  id="checkBtn" class="skipBtn">查看1号身份</button>
+  </footer>
+
+
+  <script src="../js/view-id.js"></script>
+</body>
+
+</html>

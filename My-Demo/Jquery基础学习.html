@@ -1,0 +1,60 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+
+  <style>
+    div {
+      width: 200px;
+      height: 250px;
+      line-height: 250px;
+      color: #fff;
+      font-size: 18px;
+      text-align: center;
+      background-color: red;
+      margin: 30px;
+    }
+  </style>
+
+</head>
+
+<body>
+  <button class="hidden">滚粗！</button>
+
+
+  <div>我是一个很帅的盒子</div>
+
+
+
+
+
+
+  <script>
+    //盒子滚出去了还能回来！！好神奇！   toggle后面可以调速度
+    $(document).ready(function () {
+      $("button").click(function () {
+        $("div").toggle(50);
+      });
+    });
+
+
+    //盒子从下往上消失
+    // $(document).ready(function(){
+    //   $(".hidden").click(function(){
+    //     $("div").hide(1000, "linear", function(){
+    //       alert("已经结束了！小伙子！")
+
+    //     });
+
+    //   });
+
+    // });
+  </script>
+
+</body>
+
+</html>

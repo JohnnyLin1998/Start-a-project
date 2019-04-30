@@ -1,0 +1,67 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>console只显示当前值</title>
+</head>
+
+<body>
+
+
+
+
+  <script>
+   var point = function () {//  this.a = 55 
+  }
+
+/*
+      var arr = [ new point(), new point() , new point ()];
+
+      //console.log(arr.length);
+
+      console.log("第一个数组", arr);
+
+      setTimeout(function () {
+
+        arr.push( new point () )
+
+        console.log("第二个数组", arr)
+
+      }, 1000 * 5);
+
+*/
+
+
+      var point = function(){}
+
+      var arr = [new point(), new point(), new point()];
+
+      console.log("第一个数组", arr);
+
+      setTimeout(function() {
+
+      arr.push(new point());
+
+      console.log("第二个数组",arr)
+
+      }, 5000);   //这个函数结尾的括号，不能包含5000，不然就没有延时的效果
+
+
+/*
+      setInterval(function(){
+        arr.push("haha");
+
+        console.log("循环器",arr)
+
+      },2000);  //无限循环  在下面可以加一个clearInterval清除，绑定点击事件的话，点击后就会停止循环
+*/
+
+    
+    
+
+  </script>
+</body>
+
+</html>

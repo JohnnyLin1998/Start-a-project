@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        /* entire container, keeps perspective */
+        .flip-container {
+            border: 1px solid black;
+            -webkit-perspective: 600px;
+            -moz-perspective: 600px;
+        }
+
+        /* flip the pane when hovered */
+        .flip-container:hover .flipper {
+            transform: rotateY(180deg);
+            -moz-transform: rotateY(180deg);
+            /* Firefox */
+        }
+
+        .flip-container,
+        .front,
+        .back {
+            width: 320px;
+            height: 320px;
+        }
+
+        /* flip speed goes here */
+        .flipper {
+            transition: 0.6s;
+            transform-style: preserve-3d;
+            -moz-transform-style: preserve-3d;
+            position: relative;
+        }
+
+        /* hide back of pane during swap */
+        .front,
+        .back {
+            line-height: 320px;
+            color: #ffffff;
+            text-align: center;
+            font-size: 24px;
+
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            /* Chrome 和 Safari */
+            -moz-backface-visibility: hidden;
+            /* Firefox */
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        /* front pane, placed above back */
+        .front {
+            background-color: #4cae4c;
+        }
+
+        /* back, initially hidden pane */
+        .back {
+            background-color: #5bc0de;
+            transform: rotateY(180deg);
+            -moz-transform: rotateY(180deg);
+            /* Firefox */
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="flip-container">
+        <div class="flipper">
+            <div class="front">
+                front
+            </div>
+            <div class="back">
+                back
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

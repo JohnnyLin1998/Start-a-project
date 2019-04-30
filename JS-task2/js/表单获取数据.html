@@ -1,0 +1,56 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>表单获取数据</title>
+    <style>
+        p {
+            margin: 15px 0;
+        }
+
+        p:nth-child(6) {
+            margin-bottom: 0;
+        }
+
+        .verify {
+            display: flex;
+            align-items: center;
+        }
+
+        .send {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <p>我要使用邮箱注册</p>
+    <p>用户名: <input type="text" id="name" maxlength="10"></p>
+    <p>密码: <input type="password" id="password" maxlength="18"></p>
+    <p>再次确认密码: <input type="password" id="checkPass" maxlength="18"></p>
+    <p>手机号: <input type="text" id="phoneNum" value="" maxlength="11" oninput="value=value.replace(/[^\d]/g,'')"></p>
+    <p>邮箱: <input type="text" id="mailNum" value="" maxlength="25"></p>
+    <div class="verify">
+        <p>验证码: <input type="text" id="code" maxlength="6"></p>
+        <button class="send" id="sendBtn">发送验证码</button>
+    </div>
+    <button>注册</button>
+
+    <script>
+        let sendBtn = document.getElementById('sendBtn'); //获取发送按钮
+        let phoneNum = document.getElementById('phoneNum'); //手机号
+        let mailNum = document.getElementById('mailNum'); //邮箱
+
+        sendBtn.onclick = function () {
+            var getPhone = phoneNum.value;
+            var getMail = mailNum.value;
+
+            console.log('获取到的手机号：', getPhone)
+            console.log('获取到的邮箱：', getMail)
+        }
+    </script>
+</body>
+
+</html>

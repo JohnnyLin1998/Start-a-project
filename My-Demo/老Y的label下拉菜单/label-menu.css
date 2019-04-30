@@ -1,0 +1,109 @@
+html {
+  font-size: 50px;
+}
+
+.nav-fixed {
+  position: fixed;
+  width: 100%;
+}
+
+.drop-nav {
+  display: flex;
+  height: 0.8rem;
+  color: #999;
+}
+
+.drop-nav label {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  font-size: 0.3rem;
+  border-bottom: 1px solid #e1e5e7;
+  background: #fff;
+}
+
+.drop-nav label:active {
+  background: #5fc0cd;
+  color: #fff;
+}
+
+.drop-nav label::after {
+  content: "";
+  position: absolute;
+  right: 0.16rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 0.08rem solid #afbac0;
+  border-right: 0.08rem solid transparent;
+  border-left: 0.08rem solid transparent;
+}
+
+.drop-nav .drop-container {
+  position: relative;
+  flex: 1;
+  font-size: 0;
+  line-height: .8rem;
+}
+
+.drop-nav .drop-container input {
+  width: 0;
+  height: 0;
+}
+
+.drop-nav .drop-container input:first-child:checked~ul {
+  display: block;
+}
+
+.drop-nav .drop-container input:first-child:checked~.la-1 {
+  display: none;
+}
+
+.drop-nav .drop-container input:first-child:checked~.la-2 {
+  display: inline-block;
+}
+
+.drop-nav .drop-container input:nth-child(2):checked~ul {
+  display: none;
+}
+
+.drop-nav .drop-container input:nth-child(2)~.la-2 {
+  display: none;
+}
+
+.drop-nav .drop-container input:nth-child(2):checked~.la-1 {
+  display: inline-block;
+}
+
+.drop-nav .drop-container input:nth-child(2):checked~.la-2 {
+  display: none;
+}
+
+.drop-nav .drop-container::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 80%;
+  background: #e1e5e7;
+}
+
+.drop-nav .drop-container ul {
+  /* display: none; */
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  margin-top: -.1rem;
+  padding: 0;
+  font-size: 0.3rem;
+  list-style: none;
+  text-align: center;
+  background: #fff;
+}
+
+.drop-nav .drop-container li:hover {
+  background: #d8d8d8;
+  color: #fff;
+}

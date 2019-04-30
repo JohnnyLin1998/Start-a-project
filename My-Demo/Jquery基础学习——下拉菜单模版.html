@@ -1,0 +1,133 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+
+  <title>Document</title>
+
+  <style>
+    article {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+    }
+
+    section {
+      width: 33%;
+    }
+
+
+    #flip,
+    #panel {
+
+      padding: 20px;
+      text-align: center;
+      background-color: #808080;
+      border: 0.5px solid #000000;
+      cursor: pointer;
+
+    }
+
+    #panel {
+      padding: 50px;
+      background-color: orange;
+      display: none;
+    }
+
+
+
+    #flip-2,
+    #panel-2 {
+
+      padding: 20px;
+      text-align: center;
+      background-color: #909090;
+      border: 0.5px solid #000000;
+      cursor: pointer;
+
+    }
+
+    #panel-2 {
+      padding: 50px;
+      background-color: orange;
+      display: none;
+    }
+
+
+
+    #flip-3,
+    #panel-3 {
+
+      padding: 20px;
+      text-align: center;
+      background-color: #909090;
+      border: 0.5px solid #000000;
+      cursor: pointer;
+    }
+
+    #panel-3 {
+      padding: 50px;
+      background-color: orange;
+      display: none;
+    }
+
+  </style>
+
+
+</head>
+
+<body>
+
+
+
+  <article>
+    <section>
+      <div id="flip">我是可爱的按钮</div>
+
+      <div id="panel">HELLO！</div>
+    </section>
+
+    <section>
+      <div id="flip-2">我是帅气的按钮</div>
+
+      <div id="panel-2">I LOVE U</div>
+    </section>
+
+    <section>
+      <div id="flip-3">我是美腻的按钮</div>
+
+      <div id="panel-3">I WISH U HAPPY</div>
+    </section>
+  </article>
+
+
+
+  <script>
+    $(document).ready(function () {
+      $("#flip").click(function () {
+        $("#panel").slideToggle("slow");
+
+      });
+    });
+
+    $(document).ready(function () {
+      $("#flip-2").click(function () {
+        $("#panel-2").slideToggle("slow");
+
+      });
+    });
+
+
+    $(document).ready(function () {
+      $("#flip-3").click(function () {
+        $("#panel-3").slideToggle("slow");
+
+      });
+    });
+  </script>
+</body>
+
+</html>

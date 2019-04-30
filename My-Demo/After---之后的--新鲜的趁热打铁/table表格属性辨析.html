@@ -1,0 +1,77 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Who are you? table?</title>
+  <style>
+    table,
+    tbody {
+      width: 300px;
+      height: 300px;
+      border-collapse: collapse;
+      border: 1px solid black;
+      color: black;
+
+
+    }
+
+
+
+    /*tabble row 有几列 */
+    tr {
+      border: 1px solid black;
+    }
+
+
+    /*控制着每个单元格，也可以理解为列*/
+    /* 改色也只能在td内改 */
+    td {
+      width: 30%;
+      border: 1px solid red;
+
+    }
+
+
+
+
+  </style>
+</head>
+
+<body>
+
+
+
+  <table>
+    <tbody>
+      <tr>
+        <td colspan="2" ></td>  <!-- 代表一个td格子，横向占据两个格子 -->
+        <td></td>
+        <!-- <td></td> -->
+      </tr>
+
+
+      <tr>
+        <td rowspan="2"></td><!-- 代表一个td格子，纵向占据两个格子   所以有一个格子必须咔嚓，不然就多出来 -->
+        <td></td>
+        <td></td>
+
+      </tr>
+
+
+      <tr>
+        <td></td>
+        <td></td>
+        <!-- <td></td> -->
+
+      </tr>
+
+    </tbody>
+
+
+  </table>
+
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //为什么不用round四舍五入？ 因为对于0的取值只有0-0.4，  而floor的范围在0-0.9，概率不同
+
+
+
+
+        //我想取1--10 怎么操作round和floor
+
+        // a = Math.round(Math.random() * 10);   //0--10
+        // b = Math.round(Math.random() * 10 + 1);   //  1--11
+        // c = Math.round(Math.random() * 9 + 1);   //  1--10
+
+        // console.log(a)
+        // console.log(b)
+        // console.log(c)
+
+
+        // d = Math.floor(Math.random() * 10);   //0--9 
+        // e = Math.floor(Math.random() * 10 + 1);   //  1--10
+        // f = Math.floor(Math.random() * 9 + 1);   //  1--9
+
+        // console.log(d)
+        // console.log(e)
+        // console.log(f)
+
+
+        r = Math.round(Math.random() * 9 + 1) - 1; // 1-10  ————————> 0-9（含9）
+        g = Math.floor(Math.random() * 9 + 1); //  1-10(不含10，因为向下取整)  ————————>  1-9(含9)
+
+        console.log("round:", r)
+        console.log("floor:", g)
+
+
+    </script>
+</body>
+
+</html>

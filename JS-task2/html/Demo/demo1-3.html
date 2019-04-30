@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>法官台本</title>
+    <link rel="stylesheet" type="text/css" href="../scss/version.css">
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/state-machine.js"></script>
+</head>
+
+<body>
+    <header>
+        <a class="return" href="./journal.html"></a>
+        <h4>法官台本</h4>
+        <a class="right" href="#">
+            <span></span>
+        </a>
+    </header>
+    <main>
+        <div class="itme">
+            <div class="day">
+                第<span class="dayss">一</span>天
+                <span class="dropdown"></span>
+            </div>
+            <div class="order">
+                <span class="triangle"></span>
+                <div class="box">
+                    <div class="one">
+                        <img src="../img/taiyang.png">
+                    </div>
+                    <div class="two">
+                        <img src="../img/yueliang.png">
+                    </div>
+                    <button class="killingg">杀手杀人</button>
+                    <p class="sha" id="shaa"></p>
+                    <button class="undeadspeakk">亡灵发表遗言</button>
+                    <button class="playerspeakingg">玩家依次发言</button>
+                    <button class="votingg">全民投票</button>
+                    <p class="tou"></p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <button id="end">结束游戏</button>
+        <button id="record">法官日志</button>
+    </footer>
+    <script>
+        //提取玩家数组
+        var playersArray = JSON.parse(sessionStorage.getItem("playersArray"));
+        console.log(playersArray);
+        var civilian = sessionStorage.getItem("civilian"); //平民
+        var killer = sessionStorage.getItem("killer"); //杀手
+        //定义天数
+        if (sessionStorage.getItem("days")) {
+            var days = sessionStorage.getItem("days");
+        } else {
+            var days = 1;
+        }
+        //提取杀死数组
+        if (sessionStorage.getItem("killDead")) {
+            var killDead = JSON.parse(sessionStorage.getItem("killDead"));
+        } else {
+            var killDead = [];
+        }
+        console.log(killDead);
+        //提取被投死的玩家信息
+        if (sessionStorage.getItem("voteDead")) {
+            var voteDead = JSON.parse(sessionStorage.getItem("voteDead"));
+        } else {
+            var voteDead = [];
+        }
+        console.log(voteDead);
+        //定义状态
+        if (sessionStorage.getItem("stateMachine")) {
+            var stateMachine = sessionStorage.getItem("stateMachine");
+        } else {
+            var stateMachine = null;
+        }
+        console.log(stateMachine)
+        //创建改变第几天数字的数组
+        var daysArray = ["十", "一", "二", "三", "四", "五", "六", "七", "八", "九"];
+        //切换天数,根据天数生成
+        for (let i = 1; i < days; i++) {
+            $(".itme").eq(0).clone().appendTo("main");
+            $(".dayss").eq(i).text(daysArray[i + 1]);
+        }
+        for (let i = 0; i < days - 1; i++) {
+            $(".sha").eq(i).text(killDead[i]) //显示杀人信息
+            $(".tou").eq(i).text(voteDead[i]) //显示投票信息
+        }
+        //修改当前杀人信息
+        $(".sha").eq(days - 1).text(killDead[days - 1]);
+        //第一天的样式
+        if (days == 1) { 
+            if (killDead[0] == undefined) {
+                $(".sha").eq(0).text("");
+            } else {
+                $(".sha").eq(0).text(killDead[0]);
+            }
+        }
+        //创建执行顺序状态机
+        var fsm = new StateMachine({
+            //当前状态
+            init: "kill",
+            //状态转换
+            transitions: [{
+                    name: "killing",
+                    from: "kill",
+                    to: "undead"
+                },
+                {
+                    name: "undeadspeak",
+                    from: "undead",
+                    to: "playerspeak"
+                },
+                {
+                    name: "playerspeaking",
+                    from: "playerspeak",
+                    to: "vote"
+                },
+                {
+                    name: "voting",
+                    from: "vote",
+                    to: "kill"
+                }
+            ],
+            //构造状态机的方法
+            methods: {
+                /* 如果状态转换不能正常转换就会触发下面的错误处理机制 */
+                onInvalidTransition: function (transitions, from, to) {
+                    switch (from) {
+                        case "kill":
+                            alert("请点击杀手杀人");
+                            break;
+                        case "undead":
+                            alert("请点击亡灵发表遗言");
+                            break;
+                        case "playerspeak":
+                            alert("请点击玩家依次发言");
+                            break;
+                        case "vote":
+                            alert("请点击请点击全民投票");
+                            break;
+                    }
+                }
+            }
+        });
+        $(function () {
+            if (days > 1) {
+                for (let i = 0; i < days - 1; i++) {
+                    $(".order").eq(i).css("display", "none");
+                    $(".itme").eq(i).find("button").css("background-color", "rgb(31, 186, 110)");
+                    $(".itme").eq(i).find("button").on("click", function () {
+                        alert("请返回当天的操作")
+                    })
+                }
+                
+
+            }
+            //判断步骤为第几步时运行哪一步
+            switch (stateMachine) {
+                case "1":
+                    fsm.killing();
+                    for (let i = 0; i < days; i++) {
+                        var after =
+                            "<style>.killingg::after{border-right: 10px solid #1fba6e !important;}</style>"
+                        $(".killingg").eq(i).css("background-color", "#1fba6e");
+                        $(".killingg").eq(i).append(after);
+                    }
+                    break;
+                case "2":
+                    fsm.killing();
+                    fsm.undeadspeak();
+                    for (let i = 0; i < days; i++) {
+                        var after =
+                            "<style>.killingg::after{border-right: 10px solid #1fba6e !important;}</style>"
+                        $(".killingg").eq(i).css("background-color", "#1fba6e");
+                        $(".killingg").eq(i).append(after);
+                    }
+                    for (let i = 0; i < days; i++) {
+                        var after =
+                            "<style>.undeadspeakk::after{border-right: 10px solid #1fba6e !important;}</style>"
+                        $(".undeadspeakk").eq(i).css("background-color", "#1fba6e");
+                        $(".undeadspeakk").eq(i).append(after);
+                    }
+                    break;
+                case "3":
+                    fsm.killing();
+                    fsm.undeadspeak();
+                    fsm.playerspeaking();
+                    for (let i = 0; i < days; i++) {
+                        var after =
+                            "<style>.killingg::after{border-right: 10px solid #1fba6e !important;}</style>"
+                        $(".killingg").eq(i).css("background-color", "#1fba6e");
+                        $(".killingg").eq(i).append(after);
+                    }
+                    for (let i = 0; i < days; i++) {
+                        var after =
+                            "<style>.undeadspeakk::after{border-right: 10px solid #1fba6e !important;}</style>"
+                        $(".undeadspeakk").eq(i).css("background-color", "#1fba6e");
+                        $(".undeadspeakk").eq(i).append(after);
+                    }
+                    for (let i = 0; i < days; i++) {
+                        var after =
+                            "<style>.playerspeakingg::after{border-right: 10px solid #1fba6e !important;}</style>"
+                        $(".playerspeakingg").eq(i).css("background-color", "#1fba6e");
+                        $(".playerspeakingg").eq(i).append(after);
+                    }
+                    break;
+                case "4":
+                    stateMachine = null;
+                    break;
+            }
+        })
+        //显示或隐藏按钮
+        $(function () {
+            for (let i = 0; i < days; i++) {
+                $(".day").eq(i).on("click", function () {
+                    $(".order").eq(i).toggle();
+                })
+            }
+        })
+        //杀人按钮
+        $(".killingg").eq(days - 1).on("click", function () {
+            if (fsm.can("killing")) {
+                stateMachine = 1;
+                sessionStorage.setItem("stateMachine", stateMachine);
+                location.href = ("killing.html");
+            }
+            fsm.killing();
+        })
+        //亡灵按钮
+        $(".undeadspeakk").eq(days - 1).on("click", function () {
+            if (fsm.can("undeadspeak")) {
+                stateMachine = 2;
+                sessionStorage.setItem("stateMachine", stateMachine);
+                for (let i = 0; i < days; i++) {
+                    var after =
+                        "<style>.undeadspeakk::after{border-right: 10px solid #1fba6e !important;}</style>"
+                    $(".undeadspeakk").eq(i).css("background-color", "#1fba6e");
+                    $(".undeadspeakk").eq(i).append(after);
+                }
+                alert("亡灵发表遗言");
+            }
+            fsm.undeadspeak();
+        })
+        //发言按钮     
+        $(".playerspeakingg").eq(days - 1).on("click", function () {
+            if (fsm.can("playerspeaking")) {
+                stateMachine = 3;
+                sessionStorage.setItem("stateMachine", stateMachine);
+                for (let i = 0; i < days; i++) {
+                    var after =
+                        "<style>.playerspeakingg::after{border-right: 10px solid #1fba6e !important;}</style>"
+                    $(".playerspeakingg").eq(i).css("background-color", "#1fba6e");
+                    $(".playerspeakingg").eq(i).append(after);
+                }
+                alert("玩家发言");
+            }
+            fsm.playerspeaking();
+        })
+        //投票按钮
+        $(".votingg").eq(days - 1).on("click", function () {
+            if (fsm.can("voting")) {
+                stateMachine = 0;
+                sessionStorage.setItem("stateMachine", stateMachine);
+                location.href = ("vote.html");
+            }
+            fsm.voting();
+        })
+
+        //存储
+        sessionStorage.setItem("days", days); //天数
+        sessionStorage.setItem("killer", killer); //杀手
+        sessionStorage.setItem("civilian", civilian); //平民
+        sessionStorage.setItem("voteDead", JSON.stringify(voteDead)); //投死信息
+        sessionStorage.setItem("killDead", JSON.stringify(killDead)); //杀人信息
+        sessionStorage.setItem("daysArray", JSON.stringify(daysArray)); //天数数组
+
+        // var buttonn = ".itme" + " .killingg"; // 请注意" .killingg"有个空格  
+        // console.log($(buttonn)) //获取后代节点的方法  
+        //退出游戏按钮
+        $(".right").on("click",function(){
+            if (confirm("确定退出游戏么？")) {
+                sessionStorage.clear();
+                location.href = ("homepage.html");
+            }
+        })
+         //法官日记按钮
+        $("#record").on("click",function(){
+            location.href = ("record.html");
+        })
+        //结束游戏按钮
+        $("#end").on("click",function(){
+            if (confirm("确定退出游戏么？")) {
+                location.href = ("result.html");
+            }
+        })
+    </script>
+    <!-- <script src="../js/version.js"></script> -->
+</body>
+
+</html>

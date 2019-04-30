@@ -1,0 +1,104 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>块级作用域---立即执行函数</title>
+</head>
+
+<body>
+
+
+    <script>
+        // 特性1. 防止内部变量被外部所覆盖
+
+        var temp = new Date();
+
+        function f() {
+            console.log(temp);
+            if (false) {
+                var temp = "Hello world";
+            }
+        }
+        f();
+
+        //1.首先，if语句是永远不会执行的
+        //2.log打印出来的并不是new Date()的值，而是undefined
+        //3.原因出在 if语句里面的temp，虽然flase没有执行，但是var temp在f()函数内部已经被变量提升了，
+        //也就是说，这个函数里，我只能访问到它，但是因为flase，所以最终值为undefined
+
+
+        //---------------------------------栗子分割线----------------------------------
+
+
+        //这里，我把if语句里面的 var替换成了 let块级作用域（块级作用域就没有变量提升了，很老实!）
+        //现在打印就没问题，是new date()
+
+
+        var temp = new Date();
+
+        function f() {
+            console.log(temp);
+            if (false) {
+                let temp = "Hello world";
+            }
+        }
+        f();
+
+        //---------------------------------特性1/2分割线----------------------------------
+
+        // 特性2. 内层作用域可以定义外层作用域的同名变量，而且外层读不到内层作用域的变量（比如我在父级里面定义了 let color = blue  ，
+        //然后在子级里还是let color = red ，这两者不影响）
+
+
+
+
+        //---------------------------------特性2/3分割线----------------------------------
+
+        // 特性3. 让立即执行函数（IIFE）退休
+
+        //先搞清楚，什么是立即执行函数？ 
+        //立即执行函数的作用： 创建一个独立的作用域，这个作用域里面的变量，外面访问不到（避免变量污染）
+
+
+        //如何建立立即执行函数？  简单来说就是 符号+括号   开头 + ！ - （） 都可以 ，结尾（）用来触发函数
+
+
+
+        //区分学习下面两个函数，一个是立即执行函数 另一个是普通函数。 能读取到的范围是不同的，关乎到作用域
+       function nifunction(){
+            var name4 = "ninin";
+            console.log(name4);//报错
+        };
+
+        console.log(name4);//无法读取
+
+        //--------------------
+
+        !function nifunction(){
+            var name4 = "ninin";
+            console.log(name4); //ninin
+        }();
+
+        console.log(name4);//无法读取
+
+
+
+
+        // (function fn(test){
+        //     console.log(test);
+        // })(123);
+
+
+        // !function fn(test){
+        //     console.log(test);
+        // }(12345);
+
+
+
+
+    </script>
+</body>
+
+</html>

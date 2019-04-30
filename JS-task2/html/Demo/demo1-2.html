@@ -1,0 +1,90 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>demo1-2</title>
+    <link rel="stylesheet" type="text/css" href="../scss/see.css">
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <a class="left" href="player.html"></a>
+        <h4>查看身份</h4>
+        <a class="right" href="#">
+            <span></span>
+        </a>
+    </header>
+    <main>
+        <div class="box">
+            <div id="number">1</div>
+            <span id="photo"></span>
+            <div class="box_p">
+                <span id="photo_p"></span>
+                <p id="player"></p>
+            </div>
+        </div>
+    </main>
+    <footer style="background: #69D1E9;">
+        <button>查看1号身份</button>
+    </footer>
+
+
+
+    
+    <script>
+        //提取存储的玩家数组
+        var playersArray = JSON.parse(sessionStorage.getItem("playersArray"));
+        console.log(playersArray);
+        //点击计数
+        var a = 0;
+        //按钮计数
+        var b = 2;
+        //角色计数
+        var c = 0;
+        $("button").eq(0).click(function () {
+            if (a % 1 == 0) {
+                $("#photo").css("display", "none"); //显示正面图
+                $(".box_p").eq(0).css("display", "inline-block"); //隐藏背面图
+                $("button").eq(0).text("隐藏并传递" + b + "号"); //修改按钮样式
+                //获取角色
+                if (playersArray[c] == "平民") {
+                    $("#player").text("平民");
+                    c = c + 1;
+                } else if (playersArray[c] == "杀手") {
+                    $("#player").text("杀手");
+                    c = c + 1;
+                }
+                a = a + 0.5;
+                b = b + 1;
+            } else if (a % 1 != 0) {
+                var number = b - 1;
+                $("#photo").css("display", "inline-block"); //影藏正面图
+                $(".box_p").eq(0).css("display", "none"); //显示背面图
+                $("button").eq(0).text("查看" + number + "号身份");
+                $("#number").text(b - 1);
+                a = a + 0.5;
+            }
+            console.log(playersArray.length);
+            if (b > playersArray.length + 1) {
+                $("button").eq(0).text("查看法官日志");
+            }
+            if (a > playersArray.length - 0.5) {
+                location.href = ('journal.html');
+
+            }
+        });
+        //退出游戏按钮
+        $(".right").eq(0).click(function () {
+            if (confirm("确定退出么")) {
+                sessionStorage.clear();
+                location.href = ('homepage.html');
+            }
+        })
+    </script>
+    <!-- <script src="../js/see.js"></script> -->
+</body>
+
+</html>

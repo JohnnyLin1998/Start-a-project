@@ -1,0 +1,17 @@
+
+// from ... through... 包括最后一项
+@for $i from 1 through 3{
+  .item-#{$i} {width: 2em * $i;}
+}
+
+
+
+//from ... to...  不包括最后一项
+@for $i from 1 to 10{
+  .container-col-md-#{$i}{  position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;}
+}
+
+

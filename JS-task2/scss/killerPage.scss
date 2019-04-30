@@ -1,0 +1,266 @@
+  html {
+    font-size: 20px;
+  }
+
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(41, 189, 224, 1);
+    height: 6rem;
+    /*为了整体能够拉动*/
+  }
+
+
+
+
+
+  main {
+    display: flex;
+    flex-wrap: wrap;
+
+    // margin-top: .55rem;
+    // margin-bottom: 20vw;
+
+
+    .start {
+      position: relative;
+      width: 100%;
+      height: 2rem;
+      line-height: 2rem;
+      font-size: .8rem;
+      color: black;
+      opacity: 0.7;
+      background: url('../pic/rectangle.png') no-repeat center/cover;
+
+
+      span {
+        float: left;
+        margin-left: 1.3rem;
+      }
+
+      i {
+        position: absolute;
+        top: 21px;
+        left: 37px;
+        width: .2rem;
+        height: .2rem;
+        opacity: 0.8;
+      }
+
+      .words {
+        position: absolute;
+        top: 36px;
+        left: 31px;
+        font-size: .65rem;
+        color: #fff;
+
+      }
+
+    }
+
+
+    //播放控制器
+    audio {
+      z-index: 5;
+      position: absolute;
+      transform: rotate(180deg);
+      top: 58px;
+      right: 3px;
+      opacity: 0;
+    }
+
+    //播放器的logo
+    .audio-logo {
+      z-index: 4;
+      position: absolute;
+      top: 61px;
+      right: 5px;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: orange;
+    }
+
+    //播放器的logo-小三角
+    .audio-trianle {
+      z-index: 5;
+      position: absolute;
+      top: 5px;
+      right: -2px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 10px;
+      border-color: transparent transparent transparent #fff;
+    }
+
+
+    // article {
+    //   margin-top: 6vw;
+
+    //     .game {
+    //       z-index: 5;
+    //       display: flex;
+    //       position: relative;
+    //       margin: 5.5vw 3vw 0; //注意：这种类型的都写在一起
+    //       width: 23vw;
+    //       height: 23vw;
+    //       flex-direction: column;
+    //       justify-content: center;
+    //       border: .025rem solid #fff;
+
+    //       //打包一个重复使用
+    //       @mixin link-box {
+    //         z-index: 2;
+    //         display: flex;
+    //         align-items: center;
+    //         justify-content: center;
+    //       }
+
+    //       .box-1 {
+    //         @include link-box;
+    //         flex-basis: 80%;
+    //         background-color: #F5C97B;
+    //         font-size: 4vw;
+    //         color: #000;
+    //       }
+
+    //       .box-2 {
+    //         @include link-box;
+    //         flex-basis: 20%;
+    //         background-color: #1A99B7;
+    //         font-size: 3vw;
+    //         color: #fff;
+    //       }
+
+
+    //       .sprit {
+    //         position: absolute;
+    //         display: flex;
+    //         top: 23.6vw;
+    //         width: 23vw;
+    //         height: 9.5vw;
+    //         justify-content: space-between;
+    //         flex-direction: row;
+    //         visibility: hidden;//这里隐藏，然后从game盒子引出hover到这里
+
+    //         //把下面雪碧图用到多次的属性打包
+    //         @mixin link-sprit {
+    //           width: 4vw;
+    //           height: 4vw;
+    //           border-radius: 5px;
+    //         }
+
+    //         .sprit-fir {
+    //           @include link-sprit;
+    //           background: url('../pic/css_sprites.png')no-repeat 8% 50%/930%;
+    //         }
+
+
+    //       }
+    //       //控制雪碧图的点击隐藏
+    //       &:hover .sprit {
+    //         visibility: visible;
+    //       }
+    //     }
+    //   }
+  }
+
+  article {
+    // display: flex;
+    // flex-wrap: wrap;
+    margin-top: .55rem;
+    width: 100%;
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      padding-top: 1rem;
+      margin-bottom: 3rem;
+
+      .row {
+
+        display: inline-block;
+        width: 31.3%;
+        margin: 1%;
+        margin-bottom: 1.5rem;
+        text-align: center;
+
+        //杀手图标
+        .kill-pic {
+          display: none;
+          margin-top: 1vw;
+        
+
+          img {
+            width: 5vw;
+            border-radius: 8px;
+          }
+        }
+      }
+
+      .game {
+        z-index: 5;
+        display: inline-flex;
+        position: relative;
+        // margin: 5.5vw 3vw 0; 
+        width: 22vw;
+        height: 22vw;
+        flex-direction: column;
+        justify-content: center;
+        border: .15rem solid #fff;
+
+        //打包一个重复使用
+        @mixin link-box {
+          z-index: 2;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .box-1 {
+          @include link-box;
+          flex-basis: 80%;
+          background-color: #F5C97B;
+          font-size: 4vw;
+          color: #000;
+        }
+
+        .box-2 {
+          @include link-box;
+          flex-basis: 20%;
+          background-color: #1A99B7;
+          font-size: 3vw;
+          color: #fff;
+        }
+      }
+    }
+
+  }
+
+
+  footer {
+    z-index: 55;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    bottom: 0;
+    width: 100%;
+    padding: 14px 0;
+    background-color: rgba(41, 189, 224, 1);
+
+    button {
+      width: 90%;
+      height: 45px;
+      outline: none;
+      border-style: none;
+      font-size: 1rem;
+      cursor: pointer;
+      outline: none;
+      color: rgba(255, 255, 255, 1);
+      background-color: rgba(250, 179, 68, 1)
+    }
+  }
+
+

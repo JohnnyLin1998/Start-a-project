@@ -1,0 +1,46 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+</head>
+
+<body>
+
+
+
+
+
+
+
+  <script>
+
+    //index（）小青蛙找妈妈函数，返回一个第几位
+    //substring（）是字符串的的 删除，增加，替换函数， 等同于 数组中的 splice
+
+    //一个邮箱的9位数 + @ + QQ + . +com 的提取，综合练习一下
+
+var email = "102379940@qq.com";
+
+    if(email.indexOf("@") != -1 && email.indexOf(".")!= -1){
+      var eName = email.substring(0, email.indexOf("@"));
+
+
+      var qq = email.substring(email.indexOf("@") +1, email.indexOf(".") );//体会一下 +1和不+1的区别
+
+      var com = email.substring(email.indexOf(".") +1 , email.length );
+      console.log(eName+ "@" + qq + "." + com);
+
+
+    }
+
+
+  </script>
+
+
+</body>
+
+</html>

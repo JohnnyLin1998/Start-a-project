@@ -1,0 +1,46 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>JS————display:none/block</title>
+</head>
+
+<body>
+
+
+
+  <div id="show" style="display:none;">
+
+    <p>显示内容</p>
+
+  </div>
+
+  <div id="switch" onclick="showdiv()">点击显示</div>
+
+
+
+
+
+
+
+
+  <script>
+    function showdiv() {
+
+      if (showdiv_display = document.getElementById('show').style.display == 'none') { //如果show是隐藏的
+
+        document.getElementById('show').style.display = 'block'; //show的display属性设置为block（显示）
+
+      } else { //如果show是显示的
+
+        document.getElementById('show').style.display = 'none'; //show的display属性设置为none（隐藏）
+
+      }
+
+    }
+  </script>
+</body>
+
+</html>

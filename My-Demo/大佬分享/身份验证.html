@@ -1,0 +1,500 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /**
+         * app.js中校验的工具文件
+         * 包括：身份证相关校验、年龄获取、邮箱、地址
+         */
+
+
+        var Wi = [7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2, 1]; // 加权因子
+        var ValideCode = [1, 0, 10, 9, 8, 7, 6, 5, 4, 3, 2]; // 身份证验证位值.10代表X   
+        function IdCardValidate(idCard) {
+            idCard = trim(idCard.replace(/ /g, "")); //去掉字符串头尾空格                     
+            if (idCard.length == 15) {
+                return isValidityBrithBy15IdCard(idCard); //进行15位身份证的验证    
+            } else if (idCard.length == 18) {
+                var a_idCard = idCard.split(""); // 得到身份证数组   
+                if (isValidityBrithBy18IdCard(idCard) && isTrueValidateCodeBy18IdCard(
+                    a_idCard)) { //进行18位身份证的基本验证和第18位的验证
+                    return true;
+                } else {
+                    return false;
+                }
+            } else {
+                return false;
+            }
+        }
+        /**  
+         * 判断身份证号码为18位时最后的验证位是否正确  
+         * @param a_idCard 身份证号码数组  
+         * @return  
+         */
+        function isTrueValidateCodeBy18IdCard(a_idCard) {
+            var sum = 0; // 声明加权求和变量   
+            if (a_idCard[17].toLowerCase() == 'x') {
+                a_idCard[17] = 10; // 将最后位为x的验证码替换为10方便后续操作   
+            }
+            for (var i = 0; i < 17; i++) {
+                sum += Wi[i] * a_idCard[i]; // 加权求和   
+            }
+            valCodePosition = sum % 11; // 得到验证码所位置   
+            if (a_idCard[17] == ValideCode[valCodePosition]) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        /**  
+         * 验证18位数身份证号码中的生日是否是有效生日  
+         * @param idCard 18位书身份证字符串  
+         * @return  
+         */
+        function isValidityBrithBy18IdCard(idCard18) {
+            var year = idCard18.substring(6, 10);
+            var month = idCard18.substring(10, 12);
+            var day = idCard18.substring(12, 14);
+            var temp_date = new Date(year, parseFloat(month) - 1, parseFloat(day));
+            // 这里用getFullYear()获取年份，避免千年虫问题   
+            if (temp_date.getFullYear() != parseFloat(year) ||
+                temp_date.getMonth() != parseFloat(month) - 1 ||
+                temp_date.getDate() != parseFloat(day)) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+        /**  
+         * 返回18位数身份证号码中的生日  
+         * @param idCard 18位书身份证字符串  
+         * @return  
+         */
+        function getBrithBy18IdCard(idCard18) {
+            if (isValidityBrithBy18IdCard(idCard18)) {
+                var year = idCard18.substring(6, 10);
+                var month = idCard18.substring(10, 12);
+                var day = idCard18.substring(12, 14);
+                //var temp_date = new Date(year,parseFloat(month)-1,parseFloat(day));
+                return year + "-" + month + "-" + day;
+            }
+            return null;
+        }
+        /**  
+         * 验证15位数身份证号码中的生日是否是有效生日  
+         * @param idCard15 15位书身份证字符串  
+         * @return  
+         */
+        function isValidityBrithBy15IdCard(idCard15) {
+            var year = idCard15.substring(6, 8);
+            var month = idCard15.substring(8, 10);
+            var day = idCard15.substring(10, 12);
+            var temp_date = new Date(year, parseFloat(month) - 1, parseFloat(day));
+            // 对于老身份证中的你年龄则不需考虑千年虫问题而使用getYear()方法   
+            if (temp_date.getYear() != parseFloat(year) ||
+                temp_date.getMonth() != parseFloat(month) - 1 ||
+                temp_date.getDate() != parseFloat(day)) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+        /**  
+         * 返回15位数身份证号码中的生日  
+         * @param idCard15 15位书身份证字符串  
+         * @return  
+         */
+        function getBrithBy15IdCard(idCard15) {
+            var bool = isValidityBrithBy15IdCard(idCard15);
+            if (bool) {
+                var year = idCard15.substring(6, 8);
+                var month = idCard15.substring(8, 10);
+                var day = idCard15.substring(10, 12);
+                //var temp_date = new Date(year,parseFloat(month)-1,parseFloat(day));
+                return year + "-" + month + "-" + day;
+            }
+            return null;
+        }
+        //去掉字符串头尾空格   
+        function trim(str) {
+            return str.replace(/(^\s*)|(\s*$)/g, "");
+        }
+        /**  
+         * 通过身份证判断是男是女  
+         * @param idCard 15/18位身份证号码   
+         * @return 'female'-女、'male'-男  
+         */
+        function maleOrFemalByIdCard(idCard) {
+            idCard = trim(idCard.replace(/ /g, "")); // 对身份证号码做处理。包括字符间有空格。   
+            if (idCard.length == 15) {
+                if (idCard.substring(14, 15) % 2 == 0) {
+                    return '女';
+                } else {
+                    return '男';
+                }
+            } else if (idCard.length == 18) {
+                if (idCard.substring(14, 17) % 2 == 0) {
+                    return '女';
+                } else {
+                    return '男';
+                }
+            } else {
+                return null;
+            }
+        }
+
+
+
+        /** 获取周岁年龄 */
+        function ageCf(val) {
+            var age = 0;
+            var nowdate = new Date();
+            var year = nowdate.getFullYear();
+            var mouth = nowdate.getMonth() + 1;
+            var day = nowdate.getDate();
+            var birth = val.split("-");
+            age = year - birth[0];
+            if (mouth - birth[1] < 0) {
+                age--;
+            } else if ((mouth - birth[1] == 0) && (day - birth[2] < 0)) {
+                age--;
+            } else {}
+            return age;
+        }
+
+
+        /** 获取距离当前日期的天数绝对值 */
+        function getCurrentDateDiffAbs(inputDate) {
+            var inputTime = new Date(Date.parse(inputDate.replace(/-/g, "/"))).getTime();
+            //var endTime = new Date(Date.parse(endDate.replace(/-/g,"/"))).getTime(); 
+            var nowTime = new Date().getTime();
+            var dates = Math.abs((inputTime - nowTime)) / (1000 * 60 * 60 * 24);
+            return dates;
+        }
+
+        /** 
+         * 获取距离当前日期的天数，分正负
+         *	正：晚于当前日期
+         * 	负：早于当前日期
+         */
+        function getCurrentDateDiff(inputDate) {
+            var inputTime = new Date(Date.parse(inputDate.replace(/-/g, "/"))).getTime();
+            //var endTime = new Date(Date.parse(endDate.replace(/-/g,"/"))).getTime(); 
+            var nowTime = new Date().getTime();
+            var dates = (inputTime - nowTime) / (1000 * 60 * 60 * 24);
+            return dates;
+        }
+
+        /** 获取日期间隔天数的绝对值*/
+        function getDateDiffAbs(startDate, endDate) {
+            var startTime = new Date(Date.parse(startDate.replace(/-/g, "/"))).getTime();
+            var endTime = new Date(Date.parse(endDate.replace(/-/g, "/"))).getTime();
+            //var endTime = new Date().getTime();
+            var dates = Math.abs((startTime - endTime)) / (1000 * 60 * 60 * 24);
+            return dates;
+        }
+
+        /**
+         * 获取日期间隔天数，分正负
+         * 正：开始日期晚于结束日期
+         * 负：开始日期早于结束日期
+         */
+        function getDateDiff(startDate, endDate) {
+            var startTime = new Date(Date.parse(startDate.replace(/-/g, "/"))).getTime();
+            var endTime = new Date(Date.parse(endDate.replace(/-/g, "/"))).getTime();
+            //var endTime = new Date().getTime();
+            var dates = (endTime - startTime) / (1000 * 60 * 60 * 24);
+            return dates;
+        }
+
+
+        /**
+         * 邮箱校验
+         */
+        function checkValidEmail(email) {
+            var regExp = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/;
+            if (!regExp.test(email)) {
+                return false;
+            }
+            return true;
+        }
+
+
+        /**
+         * 地址校验
+         * @param type 1,2,3,4,5 [省,市,区,详细,全部]
+         * @param addr
+         */
+        function addrCheck(addr, type) {
+            var ff = false; //非法字符校验
+            var ts = 0; //特殊字符长度
+            var le = 0; //字符串长度
+            if (type == "4") { //详细地址校验  中文、英文、数字包括下划线长度5-60
+                var reg = /^[\u4E00-\u9FA5_A-Za-z\d\-\_]{5,60}$/;
+                if (!reg.test(addr)) {
+                    return false;
+                }
+            }
+            if (type == "5") { //全部地址校验[非法字符,特殊字符]
+                for (var cl = 0; cl < addr.length; cl++) {
+                    var reg = /[\u4e00-\u9fa5]/;
+                    if (!(reg.test(addr[cl]) ||
+                            (addr[cl] >= '0' && addr[cl] <= '9') ||
+                            (addr[cl] >= 'a' && addr[cl] <= 'z') ||
+                            (addr[cl] >= 'A' && addr[cl] <= 'Z') ||
+                            (addr[cl] == '-') || (addr[cl] == '－') || (addr[cl] == '-') || (addr[cl] == '－') ||
+                            (addr[cl] == '#') || (addr[cl] == '＃') || (addr[cl] == '#') || (addr[cl] == '＃') ||
+                            (addr[cl] == '（') || (addr[cl] == '）') || (addr[cl] == '（') || (addr[cl] == '）') ||
+                            (addr[cl] == '(') || (addr[cl] == ')') || (addr[cl] == '（') || (addr[cl] == '）')
+                        )) {
+                        ff = true;
+                    }
+                    if ((addr[cl] >= '0' && addr[cl] <= '9') ||
+                        (addr[cl] >= 'a' && addr[cl] <= 'z') || (addr[cl] >= 'A' && addr[cl] <= 'Z') ||
+                        (addr[cl] == '-') || (addr[cl] == '－') || (addr[cl] == '-') || (addr[cl] == '－') ||
+                        (addr[cl] == '#') || (addr[cl] == '＃') || (addr[cl] == '#') || (addr[cl] == '＃') ||
+                        (addr[cl] == '（') || (addr[cl] == '）') || (addr[cl] == '（') || (addr[cl] == '）') ||
+                        (addr[cl] == '(') || (addr[cl] == ')') || (addr[cl] == '（') || (addr[cl] == '）')) {
+                        ts++;
+                    }
+                    if (reg.test(addr[cl])) {
+                        le = le + 2;
+                    } else {
+                        le++;
+                    } //汉字+2 其它+1
+                }
+                if (ff) {
+                    //mui.alert("地址包含非法字符，请返回修改");
+                    return false;
+                }
+                if (ts > 12) {
+                    //mui.alert("非汉字不能大于12位，请返回修改");
+                    return false;
+                }
+                if (le <= 24) {
+                    //mui.alert("地址填写不完整，请补充");
+                    return false;
+                }
+            }
+            return true;
+        }
+
+
+        /**
+         * 投保人手机号码校验
+         * @param mobile 输入手机号码
+         * @param idType 证件类型
+         */
+        function phoneCheck(mobile, idType) {
+            if (mobile != "" && idType != "G") {
+                if (mobile.length != 11) {
+
+                    //mui.alert("非港澳通行证时,手机号码必须是11位");
+                    return false;
+                }
+                var re = /^(0|86|17951)?(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57])[0-9]{8}$/;
+                if (!re.test(mobile)) {
+                    //mui.alert("投保人手机号不正确");
+                    return false;
+                }
+            } else if (mobile != "" && idType == "G") {
+                if (mobile.length == 11) {
+                    var re = /^(0|86|17951)?(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57])[0-9]{8}$/;
+                    if (!re.test(mobile)) {
+                        //mui.alert("投保人手机号不正确");
+                        return false;
+                    }
+                } else if (mobile.length == 13) {
+                    if (mobile.substring(0, 5) != "00852") {
+                        //mui.alert("投保人手机号不正确");
+                        return false;
+                    }
+                } else {
+                    //mui.alert("投保人手机号不正确");
+                    return false;
+                }
+            }
+        }
+
+        /**
+         * 邮编校验
+         * 
+         */
+        function postalCodeCheck(postalCode) {
+            var reg = /^[0-9][0-9]{5}$/;
+            if (!reg.test(postalCode)) {
+                //alert("邮编格式错误");
+                return false;
+            }
+            return true;
+        }
+
+        /**
+         * 正数校验
+         */
+        function positiveNumCheck(num) {
+            var reg = /^[0-9]+(\.[0-9]+)?$/;
+            if (!reg.test(num)) {
+                return false;
+            }
+            return true;
+        }
+
+
+        /**
+         * 姓名校验
+         */
+        function nameCheck(name) {
+            var reg = /^[\u4e00-\u9fa5_a-zA-Z.]+$/;
+            if (!reg.test(name)) {
+                return false;
+            }
+            return true;
+        }
+
+        /**
+         * 用户名（昵称）校验
+         * 只能是中文、英文字母、数字或下划线组成
+         */
+        function nickNameCheck() {
+            var reg = /^[\u4e00-\u9fa5_a-zA-Z0-9\_]+$/;
+            if (!reg.test(name)) {
+                return false;
+            }
+            return true;
+        }
+
+        /**
+         * 密码校验
+         * 必须是大于6位的字母与数字的组合
+         */
+        function passwordCheck() {
+            var reg = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,}$/;
+            if (!reg.test(name)) {
+                return false;
+            }
+            return true;
+        }
+
+        /**
+         * 日期格式校验
+         * @param {Object} date
+         */
+        function dateTypeCheck(date) {
+            //校验日期格式yyyy-mm-dd yyyy-m-d 间隔可"-","/","."之一  考虑平年闰年
+            var reg =
+                /^(?:(?:1[6-9]|[2-9][0-9])[0-9]{2}([-/.]?)(?:(?:0?[1-9]|1[0-2])\1(?:0?[1-9]|1[0-9]|2[0-8])|(?:0?[13-9]|1[0-2])\1(?:29|30)|(?:0?[13578]|1[02])\1(?:31))|(?:(?:1[6-9]|[2-9][0-9])(?:0[48]|[2468][048]|[13579][26])|(?:16|[2468][048]|[3579][26])00)([-/.]?)0?2\2(?:29))$/;
+            if (!reg.test(date)) {
+                return false;
+                //日期格式有误
+            }
+            return true;
+        }
+
+
+        /**
+         * 银行卡号校验
+         * Description:  银行卡号Luhm校验
+         * Luhm校验规则：16位银行卡号（19位通用）:
+         * 1.将未带校验位的 15（或18）位卡号从右依次编号 1 到 15（18），位于奇数位号上的数字乘以 2。
+         * 2.将奇位乘积的个十位全部相加，再加上所有偶数位上的数字。
+         * 3.将加法和加上校验位能被 10 整除。
+         */
+        function luhmCheck(bankno) {
+            if (bankno.length < 16 || bankno.length > 19) {
+                //$("#banknoInfo").html("银行卡号长度必须在16到19之间");
+                return false;
+            }
+            var num = /^\d*$/; //全数字
+            if (!num.exec(bankno)) {
+                //$("#banknoInfo").html("银行卡号必须全为数字");
+                return false;
+            }
+            //开头6位
+            var strBin =
+                "10,18,30,35,37,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,58,60,62,65,68,69,84,87,88,94,95,98,99";
+            if (strBin.indexOf(bankno.substring(0, 2)) == -1) {
+                //$("#banknoInfo").html("银行卡号开头6位不符合规范");
+                return false;
+            }
+            var lastNum = bankno.substr(bankno.length - 1, 1); //取出最后一位（与luhm进行比较）
+
+            var first15Num = bankno.substr(0, bankno.length - 1); //前15或18位
+            var newArr = new Array();
+            for (var i = first15Num.length - 1; i > -1; i--) { //前15或18位倒序存进数组
+                newArr.push(first15Num.substr(i, 1));
+            }
+            var arrJiShu = new Array(); //奇数位*2的积 <9
+            var arrJiShu2 = new Array(); //奇数位*2的积 >9
+
+            var arrOuShu = new Array(); //偶数位数组
+            for (var j = 0; j < newArr.length; j++) {
+                if ((j + 1) % 2 == 1) { //奇数位
+                    if (parseInt(newArr[j]) * 2 < 9)
+                        arrJiShu.push(parseInt(newArr[j]) * 2);
+                    else
+                        arrJiShu2.push(parseInt(newArr[j]) * 2);
+                } else //偶数位
+                    arrOuShu.push(newArr[j]);
+            }
+
+            var jishu_child1 = new Array(); //奇数位*2 >9 的分割之后的数组个位数
+            var jishu_child2 = new Array(); //奇数位*2 >9 的分割之后的数组十位数
+            for (var h = 0; h < arrJiShu2.length; h++) {
+                jishu_child1.push(parseInt(arrJiShu2[h]) % 10);
+                jishu_child2.push(parseInt(arrJiShu2[h]) / 10);
+            }
+
+            var sumJiShu = 0; //奇数位*2 < 9 的数组之和
+            var sumOuShu = 0; //偶数位数组之和
+            var sumJiShuChild1 = 0; //奇数位*2 >9 的分割之后的数组个位数之和
+            var sumJiShuChild2 = 0; //奇数位*2 >9 的分割之后的数组十位数之和
+            var sumTotal = 0;
+            for (var m = 0; m < arrJiShu.length; m++) {
+                sumJiShu = sumJiShu + parseInt(arrJiShu[m]);
+            }
+
+            for (var n = 0; n < arrOuShu.length; n++) {
+                sumOuShu = sumOuShu + parseInt(arrOuShu[n]);
+            }
+
+            for (var p = 0; p < jishu_child1.length; p++) {
+                sumJiShuChild1 = sumJiShuChild1 + parseInt(jishu_child1[p]);
+                sumJiShuChild2 = sumJiShuChild2 + parseInt(jishu_child2[p]);
+            }
+            //计算总和
+            sumTotal = parseInt(sumJiShu) + parseInt(sumOuShu) + parseInt(sumJiShuChild1) + parseInt(sumJiShuChild2);
+
+            //计算Luhm值
+            var k = parseInt(sumTotal) % 10 == 0 ? 10 : parseInt(sumTotal) % 10;
+            var luhm = 10 - k;
+
+            if (lastNum == luhm) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        /**
+         * 固定电话号码校验
+         */
+        function telephoneCheck(telephone) {
+            var reg = /^((0\d{2,3})-)(\d{7,8})(-(\d{3,}))?$/;
+            if (!reg.test(telephone)) {
+                return false;
+                //日期格式有误
+            }
+            return true;
+        }
+    </script>
+</body>
+
+</html>

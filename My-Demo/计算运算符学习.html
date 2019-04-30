@@ -1,0 +1,69 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+
+<script>
+    //-----------------题目1 计算两个打印结果
+
+var a = (10 * 3 -4 / 2+1) % 2,  //29 % 2 余1 ---  a = 1
+    b=3;
+
+b %= a+3;  // 3%4 赋给b  商0 余3  --- b = 3
+
+document.write(a++); // 这是 2还是1 ？？      别忘了++后置！！
+document.write(--b);
+
+
+
+document.write("<br>")
+
+
+
+
+//--------------------题目2
+
+//var a =123; var b = 234; 请交换a,b的值
+
+var a =123;
+var b =234;
+
+document.write(a);
+document.write(b);
+
+
+
+//我的方法1：
+
+a += 111;
+b -= 111;
+
+
+//成哥-方法2， 增加一个变量
+
+var c = a;  //c等于a的值，此时c里面存着a, 现在a可以被改变
+a = b;  //a可以被改变，所以现在a放b的值，不用担心a的值被顶替掉，因为a的值已经被储存在c里面了
+b = c; //然后让b的值等于c的值， 此时调换位置完成
+
+//成哥-方法3， 通用式，抽象规律【层层递进！】
+
+a = a + b; // 把123 234相加
+b = a - b; // 现在这里的a不是123了，而是前面的值，也就是 123+234
+a = a - b; // 这里的b也不是最上面var b 里面的值了，而是上面一步的 123+234-234
+
+document.write(a, b); // 234 123
+
+
+
+</script>
+
+    
+</body>
+</html>

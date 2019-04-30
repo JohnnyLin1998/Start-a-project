@@ -1,0 +1,34 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr = [11, 55, 99, 66, 77, 88, 22, 33, 44, 5656, 54651, 1003, 8746841, 010212, 03156, 61651];
+
+        function shuffle(arr) {
+
+            var i = arr.length, temp, j;
+
+            while (i) {
+                j = Math.floor(Math.random() * i--);
+
+                temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+
+            return arr
+
+        }
+
+        console.log(shuffle(arr))
+    </script>
+</body>
+
+</html>

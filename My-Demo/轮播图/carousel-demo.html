@@ -1,0 +1,97 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>轮播demo</title>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    #carousel {
+      position: relative;
+      width: 300vw;
+      height: 40vw;
+  
+      overflow: hidden;
+
+    }
+
+    .pic {
+      position: absolute;
+      left: 0;
+      width: 100vw;
+      height: 40vw;
+  
+
+      animation-name: total;
+      animation-duration: 10s;
+      animation-iteration-count: infinite;
+
+    }
+
+    .pic li {
+      width: 100vw;
+      height: 40vw;
+      float: left;
+    }
+
+    .pic li img {
+      width: 100%;
+    }
+
+
+    @keyframes total {
+
+      0%,
+      28.33% {
+        left: 0;
+      }
+
+      33.33%,
+      61.33% {
+        left: -100vw;
+      }
+
+      66.33%,
+      95% {
+        left: -200vw;
+      }
+
+
+      /* 75%,
+      95% {
+        left: -2880px;
+      } */
+
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div id="carousel">
+    <ul class="pic">
+
+      <li><img src="./pic/background.png" alt=""></li>
+      <li><img src="./pic/background2.png" alt=""></li>
+      <li><img src="./pic/background3.png" alt=""></li>
+
+
+    </ul>
+  </div>
+
+
+
+</body>
+
+</html>

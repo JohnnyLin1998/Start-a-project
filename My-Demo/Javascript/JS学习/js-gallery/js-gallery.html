@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Image Gallery</title>
+
+</head>
+
+<body>
+	<h1>This all the pics are my favorite</h1>
+	<ul>
+
+		<li>
+			<a href="fu.jpg" title="A Chinese tradition culture---FU">FU</a>
+		</li>
+
+		<li>
+			<a href="tower.jpg" title="Eiffel Towel, a landmark building">Eiffel Tower</a>
+		</li>
+
+		<li>
+			<a href="scenery.jpg" title="Really really fantastic view">Beautiful</a>
+		</li>
+
+		<li>
+			<a href="food.jpg" title="delicious eggtart">Eggtart</a>
+		</li>
+
+	</ul>
+
+	<img id="placeholder" src="placeholder.jpg" alt="My image gallery">
+
+
+
+	<script>
+		// p49--demo1
+		/*	思路：
+				讲一下这一章节主要的任务，做一个Javascript的图库，现在我们已经建好了最基本的图库，几行li，赋有代码，点击后就会跳转相应的图片，
+			但是这样用户体验很差，所以就有了一个想法，能不能在点击链接后，在图片下方直接出现，不需要跳转。
+				所以我们使用了一个空白图片作为“占位符”，就是占坑。设计的思维就是，点击某个图片后，下面的坑自动填上应有的图片，进行移花接木，乾坤大挪移！
+				进一步思考，如何替换掉？
+				我们需要改变这个坑的src属性，——setAttribute就是最佳选择。然后我们利用它写一个函数，且这个函数只有一个参数，就是图片的链接
+				——————通过改变“占位符”图片src属性的办法，将其替换成参数图片。
+
+				step1.给函数起一个好名字，能够很好的描述这个函数的用途——这才叫好名字。 就叫showpicture了——简写showPic   
+				---- 注意！注意！注意这里，两个单词连续，第二个大些开头，这是非常重要的习惯.函数名不能有空格
+				step2.有函数，还要有参数吧，就叫whichpicture——whichpic*/
+
+
+
+				/*whichpic代表着一个 元素节点 ——————指向某个图片的<a>元素
+
+				step3.目前whichpic元素还没有任何语义， 我们通过调用getAttribute,把href作为参数传给getAttribute。
+				
+				step4.现在whichpic已经身负重任——————代表着属性的值 也就是内容，因为这哥们的名字太长不好记，所以我们把它赋值存入变量source*/
+
+
+		function showPic(whichpic) {
+			var source = whichpic.getAttribute("href"); //注意：！  getAttribute()方法不属于document对象，所以类似于 document.getAttribute的写法是错误的。它只能通过元素节点对象调用，所以用whichpic  p43 dom
+			
+
+			document.getElementById("placeholder");//step5.搞定了上面，接下来下面的坑。获取“ 占位符” 图片
+
+
+				/*step6.占位符大佬很重要鸭！但是您老名字能不能再长一点，FUCK。赋值大法降服你！
+				document.getElementById("placeholder")赋给变量placeholder*/
+			var placeholder = document.getElementById("placeholder");
+
+				/*step7.好了，事已至此，两个名字超长的大佬被我封印在了两个变量里。分别是 source placeholder
+
+				  step8.我们将使用setAttribute对placeholder元素的src属性进行更新-----这个方法有两个参数
+				  （1）属性名--就是src本尊 （2）属性值--没错，就是前面那位被我封印的大佬--whichpic-->source
+				*/
+			
+				/*step9.OK，我们开始动工了，setAttribute移花接木大法，让你洗心革面，换个名字
+				*/
+			placeholder.setAttribute("src", source);
+
+				/*step10.Over,这大概就是传说中的，封装函数？ 最终展现函数完整的面目
+
+
+				*/
+
+
+			function showpic(whichpic){
+				var source = whichpic.getAttribute("href");
+				var placeholder = document.getElementById("placeholder");
+				placeholder.setAttribute("src", source);
+			}
+
+			
+
+		}
+	</script>
+
+
+</body>
+
+</html>

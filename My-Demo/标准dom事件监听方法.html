@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>DOM事件监听</title>
+
+</head>
+
+<body>
+    <input type="button" id="test1" value="测试1">
+    <button type="button" id="test2">测试2</button>
+
+
+
+    <script type="text/javascript">
+        function show() {
+            alert("hello");
+        }
+
+        window.onload = function () {
+            var test1 = document.getElementById("test1");
+            var test2 = document.getElementById("test2");
+
+
+            test1.addEventListener("click", show, false); //给第一个按钮注册了onclick事件
+
+
+            /*test2.onclick=function(){//解除第一个按钮的onclick事件(方法一)
+                test1.removeEventListener("click", show, false);
+            }*/
+
+
+            test2.addEventListener("click", function () { //解除第一个按钮的onclick事件(方法二)
+                test1.removeEventListener("click", show, false);
+            }, false); 
+        }
+    </script>
+</body>
+
+</html>

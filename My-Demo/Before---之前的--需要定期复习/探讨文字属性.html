@@ -1,0 +1,116 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body {
+      background-color: bisque;
+    }
+
+    div {
+      width: 800px;
+      height: 300px;
+      background-color: brown;
+      color: #ffffff;
+      font-size: 18px;
+    }
+
+    /* 1.------------------word-spacing & letter-spacing的区别------------------- */
+    /* div p:first-child{
+      word-spacing: 5px;
+    }
+
+    div p:nth-child(2){
+      letter-spacing: 5px;
+    }
+
+    div p:nth-child(4){
+      word-spacing: 10px;
+    } */
+
+
+
+    /* 2.-------------- word-spacing  & white-space 的区别           ----------------------- */
+
+    div p:first-child {
+      white-space: pre-line;
+    }
+
+    div p:nth-child(2) {
+      white-space: pre;
+    }
+
+    div p:nth-child(3) {
+      white-space: pre-wrap;
+    }
+
+
+    div p:nth-child(4) {
+      word-spacing: 10px;
+    }
+
+
+    /*
+
+先总结一句：这两个看上去都有一个space，有点相似，但是用途差的远了。首先明确word-spacing是控制单词与单词之间的距离，
+可以用px rem数据来作为值，例如： word-spacing: 10px /20rem 都是OK的。 但是white-space是不能用数据的，前面的10px/20rem无效，而它有以下这几个值。
+
+	
+nowrap：不换行，除非遇到<br />，n个空格会被压缩为一个。
+
+pre：保留所有空白。其行为方式类似 HTML 中的 <pre> 标签。
+pre-wrap：保留所有空白，但是正常地进行换行 （chrome，FF，IE8+，Opera），在IE6和IE7下等同于normal
+
+
+normal： 默认。空白会被浏览器忽略。
+pre-line：合并空白符序列（合并成一个），但是保留换行符（chrome，FF，IE8+，Opera），在IE6和IE7下面等同于normal
+
+
+我把这几个属性分成三类：
+（1）nowrap——不还行
+（2）pre 、pre-wrap 可以说非常相似的功能了，但是唯一的区别就是后者允许换行
+（3）normal、pre-line 这两位大哥会把空格无视！非常可恶，记住这两个就行
+*/
+
+
+
+
+
+
+    /* 3.-------------word-break:break all   &  word-wrap:break word  双胞胎一样的存在，有何区别？ ------------------------ */
+
+    /*前者是野蛮的直接碰壁切断换行， 后者是温柔体贴的，把你以单词为单位进行换行*/
+  </style>
+</head>
+
+<body>
+  <div>
+<!-- 
+    <p>我今天想给大  海你会接受对方   汉拿山读法姬娜</p>
+
+    <p>我今天想给大海你会接受对方汉拿山读法姬娜</p>
+
+    <p>我今天想给大 海你会接受对方 汉拿山读法姬娜</p> -->
+
+
+    <p>我今天想给大         海你会接受对方          汉拿山读法姬娜</p>
+
+    <p>我今天想给大         海你会接受对方          汉拿山读法姬娜</p>
+
+    <p>我今天想给大         海你会接受对方          汉拿山读法姬娜</p>
+
+    <p>sdsfsda fsfasgvasdv asdvsvcz xvsvjmjkm</p>
+
+    <p>sdsfsdafsfasgvasdvasdvsvczxvsvjmjkm</p>
+
+    <span>我今天想给大海你会接受对方汉拿山读法姬娜</span>
+    <span>我今天想给大海你会接受对方汉拿山读法姬娜</span>
+
+  </div>
+
+</body>
+
+</html>

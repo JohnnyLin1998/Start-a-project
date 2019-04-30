@@ -1,0 +1,136 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../javascript-state-machine-master/dist/state-machine.min.js"></script>
+    <script src="../jquery.3.1/jquery-3.3.1.min.js"></script>
+</head>
+<style>
+    div {
+        display: inline-block;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin: 30px;
+        box-shadow: 7px 7px 7px #A8A8A8;
+        /* outline: blueviolet; */
+        cursor: pointer;
+    }
+
+    .green {
+        background-color: green;
+    }
+
+    .yellow {
+        background-color: yellow;
+    }
+
+    .red {
+        background-color: red;
+    }
+
+    .reset {
+        background-color: pink;
+    }
+
+    div:active {
+        transform: scale(1.1);
+        transition: 0.6s;
+    }
+</style>
+
+<body>
+    <div class="green"></div>
+    <div class="yellow"></div>
+    <div class="red"></div>
+    <div class="reset"></div>
+    <script>
+        // 问题： 第四个“复原”灯的逻辑应该怎么设置？ 设置的逻辑是什么？  颜色直接从xxxx 跳到初始绿色吗
+
+
+
+        //状态机模型
+        var fsm = new StateMachine({
+            //初始状态
+            init: 'green',
+            //状态迁移规则
+
+            transitions: [
+
+                {
+                    name: 'warn', //当前行为的名字
+                    from: 'green', //当前行为从哪个状态来【过渡方法fsm.can】
+                    to: 'yellow' //当前行为执行完，会过渡到哪个状态
+                },
+
+                {
+                    name: 'danger',
+                    from: 'yellow',
+                    to: 'red'
+                },
+
+                {
+                    name: 'calm',
+                    from: 'red',
+                    to: 'green'
+                },
+
+                {
+                    name: 'reset',
+                    from: '',
+                    to: ''
+                },
+            ],
+
+            // transitions, from, to
+
+            //在无效转化情况下的方法
+            methods: {
+                onInvalidTransition: function (transitions, from, to) {
+                    switch (from) {
+                        case "green":
+                            alert("请点击绿色按钮");
+                            break;
+
+                        case "yellow":
+                            alert("请点击黄色按钮");
+                            break;
+
+                        case "red":
+                            alert("请点击红色按钮");
+                            break;
+                    }
+                }
+            }
+        })
+
+
+        //jquery创建点击事件
+        //fsm.can(xxx)方法-------如果过渡方法xxx可以从当前状态触发 【状态机提供的方法】
+
+        $('.green').on('click', function () {
+            console.log(fsm.can('warn'));
+            fsm.warn();
+        })
+
+        $('.yellow').on('click', function () {
+            console.log(fsm.can('danger'));
+            fsm.danger();
+        })
+
+        $('.red').on('click', function () {
+            console.log(fsm.can('calm'));
+            fsm.calm();
+        })
+
+        $('.reset').on('click', function () {
+            console.log(fsm.can('reset'));
+            fsm.reset();
+        })
+    </script>
+</body>
+
+</html>

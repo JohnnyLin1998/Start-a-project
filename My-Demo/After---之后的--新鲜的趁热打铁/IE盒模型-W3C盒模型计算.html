@@ -1,0 +1,44 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BOX盒子大战</title>
+    <style type="text/css">
+
+    /*盒子的大小，由兄弟所有说了算*/
+        .content-box {
+            box-sizing: content-box;
+            width: 100px;
+            height: 100px;
+            padding: 20px;
+            border: 5px solid #E6A43F;
+            background: blue;
+        }
+
+
+        /*盒子的大小，不由padding、border说了算（在一定范围内，本题的padding在45px以内变化，不会更改盒子大小）*/
+        .border-box {
+            box-sizing: border-box;
+            width: 100px;
+            height: 100px;
+            padding: 20px;
+            border: 5px solid #3DA3EF;
+            background: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content-box">
+
+    </div>
+
+    <div class="border-box">
+
+    </div>
+
+</body>
+
+</html>

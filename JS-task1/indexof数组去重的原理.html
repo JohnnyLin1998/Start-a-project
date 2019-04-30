@@ -1,0 +1,55 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+        var arr = [1, 1, 2, 5, 8, 6, 5, 3, 4, 2, 5, 8, 6, 3];
+
+        //indexof在遍历数组的时候，对于同样的数，只会取一次，然后这样就可以做到“数组去重”的效果
+
+        //官方是这样解释的：如果要检索的字符串值没有出现，则该方法返回 -1。
+
+        
+        console.log(arr.indexOf(1)) //0
+        console.log(arr.indexOf(2))//2
+        console.log(arr.indexOf(3))//7
+        console.log(arr.indexOf(4))//8
+        console.log(arr.indexOf(5))//3
+        console.log(arr.indexOf(6))//5
+       
+
+
+/*
+        function random(arr) {
+
+            var newArr = [];
+
+
+            for (var i = 0; i < arr.length; i++) {
+
+                if (newArr.indexOf(arr[i]  == -1 )) {
+
+                    newArr.push(arr[i])
+
+                }
+            }
+
+            return newArr
+
+        }
+
+        console.log(random(arr))
+        */
+    </script>
+</body>
+
+</html>

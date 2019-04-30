@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>getElement应用</title>
+</head>
+
+
+<body>
+    <input type="text" id="iupt" name="ussername" />
+    <button id="btn" onclick="getdata();">获取1</button>
+    <button id="btn1">获取2</button>
+    <button id="btn2">获取3</button>
+    <button id="btn3">获取4</button>
+    <button id="btn4">获取5</button>
+
+
+
+
+    <script type="text/javascript">
+        //第一种方式调用input中的value，在按钮添加onclick调用js定义的方法
+        function getdata() {
+            var str = document.getElementById("iupt");
+            alert("Hello,我是一号");
+        }
+
+ 
+        //第二种方法：先用getElementById获取到按钮的ID，直接在其后添加onclick，再在其后定义方法，在方法中写入方法体
+        document.getElementById("btn1").onclick = function getdata() {
+            var str = document.getElementById("iupt");
+            alert("Hello,我是二号");
+        }
+
+        // document.getElementById("btn1").onclick = function getdata(){
+        //     var aaa = document.getElementById("iupt");
+        // }
+
+
+        //第三种方式：先用getElementById获取到按钮的ID，直接用onclick调用已经定义好的函数
+        document.getElementById("btn2").onclick = getdata;
+
+
+
+        //第四种方式：先用getElementById获取到按钮ID，在其后添加一个事件，调用定义好的方法
+        //addEventListener("触发方式"，"所要触发的方法");
+        document.getElementById("btn3").addEventListener("click", getdata);
+
+
+
+        //第五种方式：先用getElementById获取到按钮ID，在其后添加一个事件,在事件中直接定义方法，写入方法体（常用）
+        document.getElementById("btn4").addEventListener("click", function getdata() {
+            var str = document.getElementById("iupt");
+            alert("Hello,我是五号");
+
+        })
+    </script>
+</body>
+
+</html>

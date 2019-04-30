@@ -1,0 +1,115 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+
+
+  <script>
+    //什么是高阶函数？ 我们先理清楚一个概念，JS中的函数都可以指向某个变量，既然变量可以指向函数，函数也能接受变量
+    //那么一个函数就可以接受另一个函数作为参数，这种函数就称之为 高阶函数
+
+    //高阶函数的简单模型
+
+    //函数add，我们设置三个参数，分别为 x y f, 然后在下面，
+
+    
+
+   // 高阶函数 基本模型 小进化
+    function add(x,y,f){
+          return f(x) * f(y);
+        }
+
+        var sum = add(10, -20, Math.abs)
+
+        console.log(sum)
+
+    
+
+
+
+
+
+
+
+        //模型简单进化，好好体会一下！
+
+    
+        function multiply(x,y){
+          return x*y;
+        }
+
+        function divide(x,y){
+          return x/y;
+        }
+
+        function add(x,y){
+          return x+y;
+        }
+
+        function minus(x,y){
+          return x-y;
+        }
+
+        //调用operation函数，把add minus .. 作为f变量传入，此时的变量f就是上面四个函数
+        //再调用x,y传给这个四个函数
+        function operation(x,y,f){
+          return f(x,y);
+        }
+
+        console.log(operation(3,4,add))
+        console.log(operation(3,4,minus))
+        console.log(operation(3,4,multiply))
+        console.log(operation(3,4,divide))
+
+    */
+
+
+
+
+
+
+
+
+
+
+
+//闭包函数，也是一种高阶函数
+
+//https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/00143449934543461c9d5dfeeb848f5b72bd012e1113d15000
+
+//闭包用起来简单，但是实现起来不容易。有一个大坑就是————返回的函数不会立即执行，而是在调用f()后才执行
+
+//下面是一个栗子
+
+
+    function count() {
+      var arr = [];
+      for (var i = 1; i <= 3; i++) {
+        arr.push(function () {
+          return i * i;
+        });
+      }
+
+      return arr;
+    }
+
+    var results = count();
+    var f1 = results[0];
+    var f2 = results[1];
+    var f3 = results[2];
+
+    console.log(f1(),f2(),f3())//全部都是16，原因在于上面的i，按正常本以为是2，4，9
+
+
+  </script>
+</body>
+
+</html>

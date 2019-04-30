@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>玩家匹配</title>
+    <link rel="stylesheet" type="text/css" href="../scss/player.css">
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <a href="../html/homepage.html"></a>
+    </header>
+    <main>
+        <h4>玩家匹配</h4>
+        <div class="role">
+            <div class="killing">
+                <img src="../img/shashou.png" width="20px" height="25px">
+                <div class="killerr">杀手
+                    <span id="killer">2</span>
+                    人</div>
+            </div>
+            <div class="c">
+                <img src="../img/nongmin.png" width="20px" height="25px">
+                <div class="farmer">平民
+                    <span id="civilian">6</span>
+                    人</div>
+            </div>
+        </div>
+        <div class="blank"></div>
+        <div class="playersNumber">
+            <div>
+                <strong>请输入玩家的数量</strong>
+                <input type="text" id="players" value="8" maxlength="2" />
+                <p>玩家数量为</p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <button type="button">去发牌</button>
+    </footer>
+    <script>
+        var players; //玩家总量
+        var killer; //杀手
+        var civilian; //平民
+        var playersArray = []; //玩家数组
+        function getInput() {
+            if (players == undefined) {
+                players = 8;
+            } else {
+                players = $("#players").val();
+            }
+        }
+
+
+
+
+        //用oninpu事件设定input的属性
+        $("#players").on("input", function () {
+            var x = /\D/g; //定义正则，非数字规则
+            this.value = this.value.replace(x, ""); //为非数字时替换成空
+        });
+
+
+
+
+        //分配杀手和平民的数量
+        function distribution() {
+            getInput();
+            if (players > 18 || players < 4) {
+                killer = " ";
+                civilian = " ";
+                return;
+            }
+            if (players >= 4 && players < 6) {
+                killer = 1;
+                civilian = players - killer;
+            } else if (players >= 6 && players < 9) {
+                killer = 2;
+                civilian = players - killer;
+            } else if (players >= 9 && players < 12) {
+                killer = 3;
+                civilian = players - killer;
+            } else if (players >= 12 && players < 16) {
+                killer = 4;
+                civilian = players - killer;
+            } else {
+                killer = 5;
+                civilian = players - killer;
+            }
+            
+            console.log(players)
+            console.log(killer)
+     
+        }
+      
+
+
+
+        //生成一个有序数组
+        function makeArray() {
+            for (x = 0; x < civilian; x++) {
+                for (y = 0; y < killer; y++) {
+                    playersArray[y] = "杀手";
+                }
+                playersArray[killer + x] = "平民";
+            }
+        }
+
+
+
+        //数组乱序
+        function randomArray() {
+            for (var i = playersArray.length; i > 0; i--) {
+                var number = Math.floor(Math.random() * i);
+
+
+                var temp = playersArray[i - 1];
+                playersArray[i - 1] = playersArray[number];
+                playersArray[number] = temp;
+            }
+
+        }
+    
+
+
+        //调用
+        function start() {
+            distribution();
+            players = Number(players);
+            killer = Number(killer);
+            civilian = Number(civilian);
+
+
+            $("#killer").text(killer);  //value
+            $("#civilian").text(civilian);
+            makeArray();
+            randomArray();
+            // console.log(players)
+            // console.log(killer)
+            // console.log(civilian)
+            // console.log(playersArray)
+
+            //存储
+            sessionStorage.setItem("playersArray", JSON.stringify(playersArray));
+            sessionStorage.setItem("players", players);
+            sessionStorage.setItem("killer", killer);
+            sessionStorage.setItem("civilian", civilian);
+        }
+
+
+
+        //监听
+        document.addEventListener("input", function () {
+            start();
+        })
+
+
+
+        //按钮
+        $("button").click(function () {
+            start();
+            if (players >= 4 && players <= 18) {
+                location.href = "see.html";
+            } else {
+                alert("请输入正确的玩家数量");
+            }
+        })
+    </script>
+    <!-- <script src="../js/player.js"></script> -->
+</body>
+
+</html>

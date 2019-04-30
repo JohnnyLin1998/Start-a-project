@@ -1,0 +1,111 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    html {
+      font-size: 625%;
+    }
+
+    body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      /*给外部的滚动条隐藏，并在main中添加内部滚动条，为了适配手机端*/
+    }
+
+    header {
+      z-index: 5;
+      position: fixed;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      top: 0;
+      width: 100%;
+      height: .6rem;
+      -ms-flex-line-pack: center;
+      align-content: center;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      font-size: .19rem;
+      background-color: #5fc0cd;
+    }
+
+    header label {
+      margin-top: .1rem;
+      width: .8rem;
+      height: .4rem;
+      line-height: .4rem;
+      cursor: pointer;
+      border-radius: 10px;
+      text-align: center;
+      font-size: .16rem;
+      color: #fff;
+      background-color: #55a8b3;
+    }
+
+    /*input必须在label之前被checked触发*/
+
+    /* header label:checked + input {
+      color: #5fc0cd;
+      background-color: #fff;
+    }
+     */
+
+
+
+    header input[type="radio"]:checked+label {
+      color: #5fc0cd;
+      background-color: #fff;
+    } 
+
+
+  </style>
+
+</head>
+
+<body>
+
+
+  <header>
+
+    <!-- input在label之上，是正常显示状态。 反之，点击效果不正常 -->
+
+
+
+    <label for="host">找雇主
+      <input type="radio" name="btn" id="host" checked>
+    </label>
+
+
+
+    <!-- <input type="radio" name="btn" id="host" checked> -->
+
+
+
+    <label for="worker"> 找护工
+      <input type="radio" name="btn" id="worker">
+    </label>
+
+
+
+
+    <!-- <input type="radio" name="btn" id="worker"> -->
+
+
+
+  </header>
+
+
+
+
+
+
+</body>
+
+</html>

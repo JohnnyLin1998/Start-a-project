@@ -1,0 +1,183 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>洗牌算法--二次学习</title>
+</head>
+
+<body>
+    <script>
+        //-------方法一： 最常见的方法
+        //缺点：经过Node.JS6执行，一个10000次的排序，数组中每个数字出现的位置分布非常不均匀，差距达到2000
+        // 具体测试是如何进行的，我有待验证  (上面的结论，仅针对于数组长度为10的情况)
+
+        // let n = 20;
+
+        // let arr = [22, 33, 44, 55, 66, 77, 88, 99, 111, 222];
+
+
+        // //ES6写法
+        // function shuffle(arr) {
+
+        //     for (let i = 0; i < n; i++) {
+
+        //         arr.sort(() => Math.random() - 0.5);
+
+        //     }
+        //     return arr
+        // }
+        // console.log(shuffle(arr));
+
+
+        ES5写法
+        function shuffle(arr) {
+
+            for (let i = 0; i < n; i++) {
+
+                arr.sort(function () {
+                    return Math.random() - 0.5; //return必须有
+                });
+            }
+            return arr
+        }
+        console.log(shuffle(arr));
+
+
+
+
+        //-------方法一的改造：针对方法一的缺陷，我们可以进行数组元素的改造，将它改造成一个对象
+        //原来的值存储在键v中，同时增加键r，值为一个随机数，然后排序比较这个随机数
+        //最终结果，多次验证后，每个值出现在每个位置的次数均匀，误差不超过100
+        //关键: arr.sort((a, b) => a.r - b.r);
+
+
+        //对了，我还不知道是什么造成了方法一的缺陷？ 关乎到v8引擎内部随机算法的机制
+        //翻看v8引擎数组部分的源码，注意到它出于对性能的考虑，对短数组（例如长度小于10）使用的是插入排序，对长数组则使用了快速排序，
+        //至此，也就能理解为什么() => Math.random() - 0.5并不能真正随机打乱数组排序了。
+
+        //2019.4.20   下次继续探讨 https://blog.oldj.net/2017/01/23/shuffle-an-array-in-javascript/
+
+        /*
+                function shuffle(arr) {
+                    let new_arr = arr.map(i => ({
+                        v: 1,
+                        r: Math.random()
+                    }));
+                    new_arr.sort((a, b) => a.r - b.r);
+                    arr.splice(0, arr.length, ...new_arr.map(i => i.v));
+                }
+
+                let a = [22, 33, 44, 55, 66, 77, 88, 99, 111, 222, 333, 444, 555, 6666, 7777, 8888, 101010, 15151515];
+                let n = 30;
+                //  let count = (new Array(a.length)).fill(0);
+
+                for (let i = 0; i < n; i++) {
+                    shuffle(a);
+                    //  count[a.indexOf('a')]++;
+                }
+
+                console.log(count);
+        */
+
+
+
+
+
+        //------------方法二: Fisher-Yates-shuffle  比较正统的乱序方法 费舍 耶特
+
+
+        let arr = [22, 33, 44, 55, 66, 77, 88, 99, 111, 222, 333, 444, 555, 6666, 7777, 8888, 101010, 15151515];
+
+
+        //ES6写法
+        // function shuffle(arr){
+        //     let i = arr.length;
+        //     while(i){
+        //         let j = Math.floor(Math.random() * i--);
+        //         [arr[j], arr[i]] = [arr[i], arr[j]];
+        //     }
+        // }
+
+
+
+        //ES5写法
+        function shuffle(arr) {
+            var i;
+            // var temp;  //while循环需要用到
+            var randomIndex;
+
+            //for循环做法
+            for (i = arr.length; i > 0; i--) {
+                randomIndex = Math.floor(Math.random() *i ); //这里有歧义，到底是用 i还是 (i+1) -->我觉得 (i + 1)会出现一个问题：假如数组内有18项，那么索引值其实是0-17，而Math.floor(Math.random() * 18)的随机范围刚好是0-17，这在swap函数中arr[indexB]刚好可以取最大arr[17]；一旦变成18 + 1 ，那么最大随机范围会变成1--18，这样一来arr[18]的值是没有的
+                swap(arr, i - 1, randomIndex);
+            }
+
+            //封装一个 交换函数 ————>这个写法应该涉及到高阶函数，有空去研究这种把参数和参数之间联系利用的写法； 还有这里的一个参数其实是把 整个arr数组放进来了
+            function swap(arr, indexA, indexB) {
+                var temp;
+
+                temp = arr[indexA];
+                arr[indexA] = arr[indexB];
+                arr[indexB] = temp;
+            }
+
+            return arr;
+
+
+            //while循环做法
+            // while(i){  
+
+            //     randomIndex = Math.floor(Math.random() * i--);
+            //     temp = arr[i];
+
+            //     arr[i] = arr[randomIndex];
+            //     arr[randomIndex] = temp;
+            // }
+
+            // return arr
+
+        }
+
+
+        //-------------------------------------------------------
+
+        //underscore的源码大哥的洗牌做法————利用的是splice+push的结合，好好体会一下
+        
+
+        // var a = [1,25,46,12,31,54,13,8,65,56,31,10]
+
+        // function shuffle(a){
+        //   var random = [];
+
+        //   while(a){
+        //     var index = ~~(Math.random()* a.length);  //~~在这里里等同于Math.floor，向下取整
+        //     random.push(a[index]);
+        //     a.splice(index,1);
+        //   }
+
+        //   return random;
+        // }
+
+        // console.log(shuffle(a))
+
+
+
+
+
+
+        //本次学习2019.4.21，  继续探究 https://www.rayjune.me/2018/03/13/see-code-taste-from-shuffle/
+
+        //疑问： 1. 如何保证 randomIndex = Math.floor(Math.random() * i);  每次随机到的数不会重复？？ fisher yates方法核心点就在这里，利用随机到的索引和倒序遍历出来的数组进行交换------突然想到，如果说我在第一次和最后一次分别都随机到第5个索引，但其实在中间的交换过程中，其五个索引可能早就被交换过一次甚至多次了！ 位置一直在变化，难道这就是关键？所以说同时随机到一个索引两次并不会影响到整个随机（前提是数组长度足够大呀，如果只有0-1-2那么Math.random*3重复的概率还是很大的）
+
+        //      2.  普通方法的 math.random - 0.5能达到简单的随机效果，原理是什么？？  -0.5为什么？？
+
+
+
+
+        console.log(shuffle(arr))
+    </script>
+</body>
+
+</html>

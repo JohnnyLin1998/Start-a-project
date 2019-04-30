@@ -1,0 +1,100 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>旋转小按钮</title>
+  <style>
+
+    input{
+      display: none;
+    }
+
+    section{
+      position: relative;
+      height: 500px;
+    }
+
+
+    .round {
+      display: block;
+      /* 不为block，margin不管用 --但是 absolute可以块级化，有了这个可以不用转化*/
+
+      position: absolute; /* 四方为零，居中矩阵 */
+      top:0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+
+      width: 150px;
+      height: 150px;
+      line-height: 150px;
+      border: 10px solid #808080;
+
+      border-radius: 50%;
+
+      text-align: center;
+
+      font-size: 18px;
+      font-weight: bold;
+      color: blueviolet;
+
+      transition: all 1.5s linear;/* 控制触控回来的速度 */
+      
+      cursor: pointer;
+
+
+
+    }
+
+
+    /* 用：active是长按的时候，不是点击一次的效果 */
+
+    .round:hover {
+
+      transition: all 2s linear;
+      /* 控制触控后的效果 */
+     
+      /* transform: scale(1.5); */    /*放大效果*/
+
+      transform: rotate(180deg);     /* 旋转效果 */
+
+      border: 10px solid #808080;
+      color: #000;
+      background-color: #f12;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <section>
+
+
+  <input type="checkbox" name="circle" id="round">
+
+  <label for="round" class="round">
+
+
+    <!-- 
+  <div class="round"> -->
+
+
+
+    <span>我是小圆</span>
+
+  </label>
+
+  <!-- </div> -->
+
+</section>
+
+
+
+
+</body>
+
+</html>

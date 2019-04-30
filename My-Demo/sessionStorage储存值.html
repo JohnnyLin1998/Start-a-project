@@ -1,0 +1,40 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+//键值对的添加， localStorage.setItem(key, value) ——语义： 把value值存在键key上
+
+//注意： key和value必须是字符串形式，如果不是就调用toString() 方法 转化成字符串再存储
+//      存储的对象应该转化成可识别的字符串格式，比如JSON格式，再存储
+
+
+//我想把用户名Johnny 存储在name的键上，有三种写法
+
+
+        localStorage.setItem('name', 'Johnny');
+
+        localStorage.name = "Johnny";
+
+        localStorage['name'] = "Johnny";
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,117 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        //我们看一下这三句话，你认为会发生什么
+
+        //let is disallowed as a lexically bound name  报错信息--let是不允许词句名称绑定的
+
+        //'use strict'  
+
+        //严格模式下，报错信息会不同：语法错误：不能使用保留字 Uncaught SyntaxError: Unexpected strict mode reserved word
+
+        //
+
+
+
+        // let let = 1;
+        // console.log(let);
+
+
+
+        // const let = 1;
+        // console.log(let);
+
+
+
+        // var let = 1; // 在非严格模式下，var可以声明let；但是在严格模式use strict下就不行了
+        // console.log(let);
+
+
+        //---接上一条，所以下面两条式子，非严格模式下，完全正常
+
+        // var let = 1;
+        // console.log(let);
+
+        // let a = 2;
+        // console.log(a);
+
+
+
+
+
+        //------------var const let 声明变量的覆盖问题
+
+
+        // let a = 1;
+        // let a = 2;
+        // console.log(a);
+
+
+        var b = 1;
+        var b = 2;
+        //  let b = 3;
+        console.log(b);
+
+        // const c = 1;
+        // const c = 2;
+        // console.log(c);
+
+        // 总结：
+        // 1.只有var才支持重复 声明同样的变量名 
+        // 2. const,let声明的变量名在同一个作用域内是唯一的
+        // 3. let 也无法覆盖var后的声明
+
+
+
+
+
+
+
+
+
+        //-----------------------严格模式下的参数---------------------------
+
+       // 'use strict'
+
+        //1. 关于arguments参数-- 非严格模式下，修改命名参数的值会反应到argument对象中
+
+        //   在非严格模式下，dad argument[0]值相同
+
+      //  function family(dad1, dad2) {
+
+            // 'use strict'  //严格模式下，dad1=88 修改的值 不会被反应到arguments中 //55,66             
+            //非严格模式， dad1 = 88 的值就显示在了 arguments中 // 88,66  
+        //     dad1 = 88;
+        //     console.log(arguments[0], dad2);
+        // }
+        // family(55, 66)
+
+
+
+        //2. 关于函数--在严格模式下，函数的参数 parameter 必须是唯一
+        //  下面这种情况，严格模式下就会报错；非严格模式下，值等于oooooo
+
+
+        // function family(dad, dad) {
+
+        //     var dad = "hahahah";
+
+        //     var dad = "ooooooooooooo";
+
+        //     console.log(dad);
+
+        // }
+        // family()
+    </script>
+</body>
+
+</html>

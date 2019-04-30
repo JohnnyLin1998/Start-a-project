@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>example</title>
+</head>
+
+<body>
+    <!--文本输入框-->
+    <input type="text" id="input">
+    <br>
+
+
+    <!--通过点击click按钮，弹窗中显示文本框内用户输入的内容-->
+
+    <!-- 两种做按钮的方法  1.用input表单的type属性button  2.直接上button来做 -->
+
+    <!-- <input type="button" value="click" id="btn" onclick="start()"> -->
+
+    <button onclick="start()" id="btn">click</button>
+
+
+
+
+    <script>
+        function start() {
+            var onon = document.getElementById("input").value; //通过document.getElementById(“id名”).value来获取value值。
+            // alert(onon);
+            console.log(onon)
+        }
+
+    </script>
+</body>
+
+</html>

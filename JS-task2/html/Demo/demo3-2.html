@@ -1,0 +1,177 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>demo3-2</title>
+</head>
+
+<body>
+
+    <header>
+        <i class="back-icon" id="backBtn"></i>
+        <span class="result">玩家显示</span>
+        <i class="close-icon"></i>
+    </header>
+    <main>
+        <strong class="num" id="playerNum"></strong>
+        <div class="players-show">
+            <img src="img/show.png" class="show-img" alt="">
+            <span id="playId"></span>
+            <img src="img/hide.png" alt="" class="hide-img">
+        </div>
+    </main>
+    <footer>
+
+        <button type="button" id="checkBtn" class="skipBtn"></button>
+    </footer>
+
+    
+    <!-- 法官日记 -->
+
+    <header>
+        <i class="back-icon" id="backBtn"></i>
+        <span class="result">法官日记</span>
+        <i class="close-icon"></i>
+    </header>
+    <main>
+        <div class="vote-body">
+            <span class="v-title"></span>
+            <div class="gamer-vote" id="gamersVote">
+
+            </div>
+        </div>
+    </main>
+    <footer>
+        <button class="vote-kill" id="btn-skip">开始游戏</button>
+    </footer>
+    <script src="js/jq.js"></script>
+    <script src="js/judeState.js"></script>
+
+
+
+
+    <script>
+        var log = console.log;
+
+        //头部信息
+        $('#backBtn').on('click', function () {
+            $(location).attr('href', 'allot.html');
+        });
+        $('.close-icon').on('click', function () {
+            var r = confirm("您确定离开游戏吗？");
+            if (r == true) {
+                window.location.href = "headerPage.html";
+            }
+
+        })
+
+        //看到jQuery取id和class值，是真的真的方便！
+
+        $(function () {
+            var gameMsgstr = sessionStorage.getItem('allMsg'); //页面一，储存的所有数据，先提取
+            var gameMsg = JSON.parse(gameMsgstr); //页面一，提取后，parse转化回来
+
+            var stepNum = $('#playerNum'), //数字编号
+                showImg = $('.show-img'), //翻盘图片
+                hideImg = $('.hide-img'), //身份图片
+                skipBtn = $('#checkBtn'), //跳转按钮
+                playId = $('#playId'), //玩家身份
+                index = 1; //初始化使用
+
+
+            //初始化赋值数字为1   
+            stepNum.text(index);
+            skipBtn.text('查看1号身份');
+
+            //给按钮添加点击事件
+            skipBtn.on('click', function () {
+                var players = gameMsg.players;
+
+                //通过toggle方法操作图片显示隐藏
+                showImg.toggle();
+                hideImg.toggle();
+
+
+                //判断是否是整数
+                if (index % 1) {
+                    index += 0.5;
+                    if (index === players.length + 1) {
+                        $(location).attr('href', 'judeState.html');
+                        return;
+                    }
+                    stepNum.text(index);
+                    $(this).text('查看' + (index) + '号身份');
+                } else {
+                    playId.text(players[index - 1].id);
+                    $(this).text('隐藏并传递给' + (index + 1) + '号');
+                    index += 0.5;
+                    if (players.length + 0.5 === index) {
+                        $(this).text('法官查看');
+                    }
+                }
+            });
+        });
+
+
+        //---------------------------法官日记----------------------
+
+
+        var log = console.log;
+        $(function () {
+
+            $('backBtn').on('click', function () {
+                $(location).attr('href', 'allot.html');
+            });
+            $('.close-icon').on('click', function () {
+                var r = confirm("您确定离开游戏吗？");
+                if (r == true) {
+                    window.location.href = "headerPage.html";
+                }
+            })
+
+            var gameMsgstr = sessionStorage.getItem('allMsg');
+            var gameMsg = JSON.parse(gameMsgstr);
+            var players = gameMsg.players,
+                playersBox = $('#gamersVote'),  // # jq获取类名
+                btn = $('#btn-skip'),
+                str;
+            log(gameMsg);
+            for (let i = 0; i < players.length; i++) {
+                str += `
+        <div class="vote-container">
+                <div class="gamer">
+                    <span class="gamer-id">${players[i].id}</span>
+                    <span class="gamer-num">${players[i].index +1}号</span>
+                    <div class="gamer-select">
+                        <i class="kill"></i>
+                    </div>
+                 </div>                  
+        </div>`
+            }
+
+
+
+            playersBox.html(str);
+            playerId = $('.gamer-id');
+            
+
+            if (gameMsg.goLog) {
+                for (let i = 0; i < players.length; i++) {
+                    if (players[i].state === 'dead') {
+                        $(playerId[i]).css('background-color', 'red');
+                    }
+                }
+                btn.text('返回');
+            }
+
+
+            btn.on('click', function () {
+                $(location).prop('href', 'judePlay.html');
+            });
+        });
+    </script>
+</body>
+
+</html>

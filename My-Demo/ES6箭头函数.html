@@ -1,0 +1,74 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        //参数 => 函数体
+        //基本用法：
+
+        // var f = v => v;
+
+        // console.log( f(1));
+
+        //------------等价写法-------------
+
+        // var f = function (a) {
+        //     return a;
+        // }
+
+        // console.log( f(1));
+
+        //--------------------------------------------------------
+
+        //当箭头函数没有参数或者有多个参数，要用 () 括起来。
+
+
+
+        // var f = (a, b) => a + b;
+        // console.log(f(6, 2));
+
+
+        //--------ES6/5写法分割线
+
+
+        // var fff = function (a, b) {
+        //     let combine = a + b;
+        //     return combine;
+        // }
+        // console.log(fff(6, 2))
+
+
+
+
+        //-----------------------------------------------------
+
+        // 像这种只有一行语句 var f = (a, b) => a + b;  可以省略{}
+        //当有多行语句的时候，就需要用{}包裹起来
+
+        var f = (a, b) => {
+
+            let combine = a + b;
+            return combine;
+        }
+
+        console.log(f(6, 2));
+
+
+        //本次学习2019.4.20  继续学习--菜鸟教程
+        
+        //疑问：  1.还是搞不懂ES5的普通写法 如何简略写成箭头函数， 这个return一会要一会不要的   function的值一会写 一会不写的
+
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,109 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>速度测试</title>
+</head>
+
+<body>
+    <script>
+      //  速度测试1：
+
+        console.time('Math.floor');
+        r = Math.floor(Math.random() * 256);
+        g = Math.floor(Math.random() * 256);
+        b = Math.floor(Math.random() * 256);
+        console.timeEnd('Math.floor');
+
+
+        console.time('~~');
+        r = ~~(Math.random() * 256);
+        g = ~~(Math.random() * 256);
+        b = ~~(Math.random() * 256);
+        console.timeEnd('~~');
+
+
+        console.time('parseInt');
+        r = parseInt(Math.random() * 256);
+        g = parseInt(Math.random() * 256);
+        b = parseInt(Math.random() * 256);
+        console.timeEnd('parseInt');
+
+
+        //  总结：（1）Math.floor的速度相对稳定  0.0x 左右
+        //       （2） ~~ 速度 波动较大  0.00x   0.x  都有
+        //       （3） ParseInt 速度 情况类似于~~  速度不相上下
+
+
+
+
+
+        //--------------------------------------------------------------------
+
+
+        //速度测试2： for循环内进行
+
+         var time1 = +new Date();
+        var count = 5000000;
+        var xx = 1;
+        var hh = 1.01
+
+        console.time('parseInt');
+        for (var i = count; i > 0; i--) {
+            parseInt(hh);
+        }
+        console.timeEnd('parseInt');
+
+
+        console.time('~~');
+        for (var i = count; i > 0; i--) {
+            ~~hh;
+        }
+        console.timeEnd('~~');
+
+
+        // 总结： ~~的速度明显快于parseInt
+
+
+
+        //--------------------------------------------------------------------
+
+        //速度测试3：      //测试索引的搜索速度
+
+        // ~按位非  一个可以判断数值中是否有某元素
+
+
+        // var arr = [1, 2, 4, 5, 6, 7, 8, 9];
+        // var xx = 1;
+        // var hh = 1.01
+
+
+
+        // console.time('arr.indexOf(xx) > -1');
+        // if (arr.indexOf(hh) > -1) { //indexOf遍历数组，如果没找到则返回-1，找到了则返回相应的索引值
+        //     console.log("OKOKOK")
+        // }
+        // console.timeEnd('arr.indexOf(xx) > -1');
+
+
+
+
+        // console.time('~arr.indexOf(xx)');
+        // if (~arr.indexOf(hh)) {
+        //     console.log("HAHAHAHAHA")
+        // }
+        // console.timeEnd('~arr.indexOf(xx)');
+
+
+        //  按位非的本质就是操作数的负值减1
+
+        //  -x-1  ————>   - arr.indexOf() - 1 > 0  ————>  -arr.indexOf() > 1  
+
+
+        //    总结：~按位非 速度更快
+    </script>
+</body>
+
+</html>

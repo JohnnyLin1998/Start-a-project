@@ -1,0 +1,66 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>数组去重</title>
+</head>
+
+<body>
+    <script>
+        //方法一：  没研究懂
+        /*
+                function unique(a) {
+
+                    var res = [];
+                    var len = a.length;
+
+                    for (var i = 0; i < len; i++) {
+                        var item = a[i];
+
+                        for (var j = 0, jLen = res.length; j < jLen; j++) {
+                            if (res[j] === item)
+                                break;
+                        }
+                        if (j === jLen)
+                            res.push(item);
+
+                        return res;
+                    }
+                }
+
+                var a = [1, 5, 5, 2, 3, 3, 1, "1", "2", 1];
+                var ans = unique(a);
+
+                console.log(ans);
+        */
+
+
+
+        //方法二： 最简单的一个去重方法，用到Index的特性
+
+
+        var arr = [2, 5, 3, 4, 5, 6, 5, 2, 1, 2, 3, 5, 8, 9, 6, 4, 1, 3];
+
+        function select(arr) {
+
+            var newArr = [];
+
+            for (var i = 0; i < arr.length; i++) {
+
+                if (newArr.indexOf(arr[i]) == -
+                    1) { //确定arr2里面没arr1的，就添加到arr2里     如果要检索的字符串值没有出现，则该方法返回 -1。而只要indexof选择了一个数之后，第二次就会忽略，我俗称：只选一次
+                    newArr.push(arr[i])
+                }
+            }
+
+            return newArr
+
+        }
+
+        console.log(select(arr))
+    </script>
+</body>
+
+</html>

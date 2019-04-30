@@ -1,0 +1,117 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>IF语句</title>
+
+  <style>
+    body {
+      background-color: cornflowerblue;
+    }
+
+    h3 {
+      margin-top: 15%;
+      text-align: center;
+      font-size: 15px;
+      color: #fff;
+    }
+
+    article {
+      display: flex;
+      margin-top: 50px;
+      flex-direction: row;
+      /* align-items: center; */    /*不知为何，加上这个就飞了*/
+      width: 450px;
+      height: 200px;
+    }
+
+    section {
+      /* width: 300px;
+      height: 150px; */
+      flex-basis: 80%;
+      background-color: #ff1122;
+    }
+
+    div {
+      /* width: 150px;
+      height: 150px; */
+      flex-basis: 20%;
+      background-color: #fff;
+
+      display: none;
+    }
+
+
+
+    button {
+      margin-top: 30px;
+      margin-left: 150px;
+      height: 50px;
+      width: 150px;
+      border-style: none;
+      color: #fff;
+      font-size: 15px;
+      background-color: blue
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <h3>之前书上看到的都是简单if语句，今天突然查到，原来用这么个小东西，就可以完成控制JS点击，达到隐藏，出现的效果！</h3>
+
+
+  <article>
+
+    <section></section>
+
+    <div id="gogo"> </div>
+
+
+  </article>
+
+  <button onclick="btn()">点我试试！</button>  
+
+  <!-- onclick里面给的是一个函数，函数的格式 xx () 特别注意！ -->
+
+
+
+  <script>
+    //之前看到的都是这样的if语句
+    /*
+    var i = "john";
+
+    if( i > 30){
+      alert("I MISS U");
+    }else if( i <10){
+      alert("I HATE UUU");
+    }else{
+      alert("HI! GO AWAY")
+    }
+    */
+
+    //然而，今天遇到的是这样的！ 配合DOM节点获取，可以迸发出巨大了能量！
+    //整理一下思路。刚刚自己思考过后做了一遍，漏了很多关键的东西 （1） onclick后面没有给函数，仅仅给了一个字符串！ 
+    //（2） else后面直接就是{  } 进行执行语句，if后面才需要(  )进行判断
+    //（3） ==  和 =  不能混用， if （ ） 里面是判断当前状态 所以需要 恒等于 == ， 而后面的{ }里表示的是运行时的一瞬间情况，不存在恒等于
+
+
+    function btn(){
+      if( abc = document.getElementById("gogo").style.display == "block"){
+        document.getElementById("gogo").style.display = "none"
+      }else{ 
+        document.getElementById("gogo").style.display = "block"
+        }
+    }
+
+
+
+
+
+  </script>
+</body>
+
+</html>

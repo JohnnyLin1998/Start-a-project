@@ -1,0 +1,135 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <!DOCTYPE html>
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+      /* .parent>section:first-child p {
+        color: red;
+      }  */
+
+
+      /* .parent p:nth-child(3) {
+        color: orange;
+      } */
+
+      /* 注意这个child(3)会选择两个，一个是section里面的第三个， 另一个是parent里的第三个（section算第一个）  */
+
+
+
+      /*选择parent后面每个p元素的首字母*/
+      
+      .parent p::first-letter{
+        color: red;
+      }
+
+
+
+
+
+
+
+
+
+
+    </style>
+  </head>
+
+  <body>
+
+
+
+    <div class="parent">
+      <section>
+        <p>这是段落标签</p>
+        <p>这是段落标签</p>
+        <p>这是段落标签</p>
+        <p>这是段落标签</p>
+      </section>
+      <p>这是段落标签</p>
+      <p>这是段落标签</p>
+      <span>这是段落标签</span>
+      <span>这是段落标签</span>
+    </div>
+
+
+
+    <div class="parent">
+
+      <section>
+        <p>这是段落标签</p>
+        <p>这是段落标签</p>
+      </section>
+
+      <p>这是段落标签</p>
+      <p>这是段落标签</p>
+      <h3>这是标题标签</h3>
+      <p>这是段落标签</p>
+
+      <section>
+        <p>这是段落标签</p>
+        <p>这是段落标签</p>
+      </section>
+
+      <span>这是段落标签</span>
+      <p>这是段落标签</p>
+    </div>
+
+
+
+    <div class="parent">
+      <p>这是段落标签</p>
+      <p>这是段落标签</p>
+      <h3 class="h3">这是标题标签</h3>
+      <p>这是段落标签</p>
+      <span>这是段落标签</span>
+      <h3>这是标题标签</h3>
+      <p>这是段落标签</p>
+
+      <div>
+        <span>这是儿砸段落标签</span>
+        <span>这是儿砸段落标签</span>
+      </div>
+
+      <p>这是段落标签</p>
+      <p>这是段落标签</p>
+    </div>
+  </body>
+
+  </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

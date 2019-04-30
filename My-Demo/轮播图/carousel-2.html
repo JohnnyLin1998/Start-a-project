@@ -1,0 +1,87 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>轮播图DEMO</title>
+  <style>
+    body {
+      margin: 0;
+    }
+
+
+    .carousel{
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap; 
+      /* 强制不换行--关键！  why?不加这个，图片会换行 */
+      /*经过观察，不加这个的话，*/
+    }
+
+    img {
+      padding: 0;
+      margin: 0;
+      width: 100vw;
+    }
+
+
+    .carousel-pic{
+      width: 300vw;
+      position: relative;
+      animation: pic-scroll 12s linear infinite normal;
+    }
+
+    @keyframes pic-scroll {
+
+      0% {
+        left: 0;
+      }
+
+      10% {
+        left: 0;
+      }
+
+      30% {
+        left: -100vw;
+      }
+
+      40% {
+        left: -100vw;
+      }
+
+      60% {
+        left: -200vw;
+      }
+
+      70% {
+        left: -200vw;
+      }
+
+      90% {
+        left: -300vw;
+      }
+
+      100% {
+        left: -300vw;
+      } 
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="carousel">
+    <div class="carousel-pic">
+      <img src="./pic/background111.png"><img src="./pic/background222.png"><img src="./pic/background333.png"><img src="./pic/background111.png">
+    </div>
+  </div>
+
+
+
+
+</body>
+
+</html>
