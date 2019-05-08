@@ -11,6 +11,10 @@ header {
   background-color: #29bde0;
 }
 
+main {
+  margin-bottom: 100px;
+}
+
 .dayNum {
   width: 99%;
   height: 2rem;
@@ -28,7 +32,6 @@ header {
 .gameStep {
   position: relative;
   width: 99%;
-  height: 12rem;
   margin: auto;
   margin-top: .5rem;
   background-color: #fff;
@@ -57,12 +60,13 @@ header {
           flex-direction: column;
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 20px 60px;
 }
 
 .gameStep ul::before {
   content: '';
   position: absolute;
+  top: 0;
   left: 30px;
   width: 1px;
   height: 100%;
@@ -71,9 +75,8 @@ header {
 
 .gameStep ul li {
   position: relative;
-  width: 60%;
-  height: 1.8rem;
-  line-height: 1.8rem;
+  width: 100%;
+  line-height: 2rem;
   margin: auto;
   margin-top: .85rem;
   text-align: center;
@@ -81,8 +84,7 @@ header {
   background-color: #29bde0;
 }
 
-.gameStep ul li::before {
-  content: '';
+.gameStep ul li .arrow {
   position: absolute;
   top: 9.5px;
   left: -16px;
@@ -91,10 +93,10 @@ header {
   border-color: transparent #29bde0 transparent transparent;
 }
 
-.gameStep ul .sun {
+.gameStep ul .murder::after {
+  content: '';
   position: absolute;
-  top: 18px;
-  left: 15px;
+  left: -45px;
   width: 30px;
   height: 30px;
   border-radius: 50%;
@@ -102,15 +104,26 @@ header {
   background: #fff url(../pic/sun.png) no-repeat center/60%;
 }
 
-.gameStep ul .moon {
+.gameStep ul .ghost::after {
+  content: '';
   position: absolute;
-  top: 73px;
-  left: 15px;
+  left: -45px;
   width: 30px;
   height: 30px;
   border-radius: 50%;
   border: 1px solid #c9c9c9;
   background: #fff url(../pic/moon.png) no-repeat center/50%;
+}
+
+.gameStep ul .kill-result,
+.gameStep ul .vote-result {
+  color: #000;
+  background-color: #fff;
+}
+
+.gameStep ul .kill-result::before,
+.gameStep ul .vote-result::before {
+  border-color: #fff;
 }
 
 footer {

@@ -1,0 +1,53 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset = utf-8" />
+    <style>
+        a {
+            color: #999;
+        }
+    </style>
+</head>
+
+<body>
+
+    <a href="javascript:void(0)">菜单A</a>
+    <a href="javascript:void(0)">菜单B</a>
+    <a href="javascript:void(0)">菜单C</a>
+    <a href="javascript:void(0)">菜单D</a>
+
+
+
+
+
+
+    <script type="text/javascript">
+        document.onclick = function (e) {
+            var target = e.target
+            init()
+            target.style.color = 'red'
+
+
+
+        }
+
+     
+
+        function init() {
+            var nodes = [...new Set(document.getElementsByTagName('a'))]
+
+            // var nodes = document.getElementsByTagName('a');
+            nodes.forEach(item => {
+                item.style.color = '#999'
+            })
+        }
+
+
+
+
+
+    </script>
+</body>
+
+</html>
+

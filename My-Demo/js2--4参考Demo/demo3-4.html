@@ -61,22 +61,6 @@
         gamersVote.html(str);
 
 
-        //循环出已死的玩家
-        
-
-        //获取一个所有 平民+杀手的卡片数组
-        let gamerId = $('.gamer-id');
-        for (let i = 0; i < players.length; i++) {
-            //判断玩家状态是否死亡
-            if (players[i].state === 'dead') {
-                $(gamerId[players[i].index]).attr('state', 'dead');
-                $(gamerId[players[i].index]).css('background-color', 'red');
-            }
-        }
-
-
-
-
 
         //控制杀人页面的抬头显示
         if (state == 'kill') {
@@ -96,8 +80,23 @@
 
 
 
+        //循环出已死的玩家
+        
+        //获取一个所有 平民+杀手的卡片数组
+        let gamerId = $('.gamer-id');
+        for (let i = 0; i < players.length; i++) {
+            //判断玩家状态是否死亡
+            if (players[i].state === 'dead') {
+                $(gamerId[players[i].index]).attr('state', 'dead');
+                $(gamerId[players[i].index]).css('background-color', 'red');
+            }
+        }
+
+
+
         //控制点击 盒子变色+小图标
         $('.vote-container').on('click', function (e) {
+
             //背景变色
             //保证已经死亡的人不变色
             for (let i = 0; i < gamerId.length; i++) {
@@ -129,13 +128,12 @@
 
 
 
-
-
         //确定杀的人后，点击确认，进行判断 1.杀手杀的是不是自己  2.有没有选择杀的对象  3.目前杀手和平民的数量有没有达到游戏结束的要求  杀手=0 平民胜 ； 杀手=平民 杀手胜
 
 
-
         skip.on('click', function () {
+
+
             var index = killed[0];
             //判断有没有杀人
             if (killed.length) {
@@ -144,7 +142,8 @@
                     return;
                 }
             }
-            //杀手杀人
+
+            //杀手杀人操作
             if (state == 'kill') {
                 //判断是否杀人
                 if (!killed.length) {
@@ -160,6 +159,9 @@
                 players[index].deadReason = "killed";
                 initialMsg.popsNum--;
 
+
+
+                //投票投死操作
             } else if (state == 'vote') {
                 //判断投票,本轮必须投票
                 if (!killed.length) {
@@ -177,6 +179,8 @@
                 initialMsg.dayNum++;
                 players[index].deadReason = "voted";
             }
+
+
             // log('平民人数：', initialMsg.popsNum,'杀手人数：',initialMsg.killersNum)
             // alert(1);
             killed.length = 0;
@@ -190,6 +194,8 @@
                 alert('游戏结束，平民胜利');
                 $(location).attr('href', 'result-1.html');
                 return;
+
+                
             } else if (initialMsg.killersNum >= initialMsg.popsNum) {
                 //杀手胜利
                 initialMsg.result = 'killWin';
@@ -198,6 +204,8 @@
                 $(location).attr('href', 'result-1.html');
                 return;
             }
+
+
             sessionStorage.setItem('allMsg', JSON.stringify(initialMsg));
             location.href = 'judePlay.html';
         });

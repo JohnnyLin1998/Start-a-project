@@ -13,8 +13,13 @@ function back_dealing() {
 var allMsgstr = sessionStorage.getItem('allMsg'); //提取
 var allMsg = JSON.parse(allMsgstr); //提取后，JSON.parse把数据从字符串格式转化回来
 
+
 console.log(allMsg.playerArr) // 用.可以在Msg对象里获取相应的数据
 console.log('总人数：', allMsg.playerNum)
+// console.log(allMsg.dayNum)
+// console.log(allMsg.killed)
+
+
 
 var headNum = document.getElementById('id-num'); //头部数字编号
 var showPic = document.getElementById('show-pic'); //封面图片
@@ -33,6 +38,9 @@ skipBtn.onclick = function () {
     var players = allMsg.playerArr; //存放角色的数组
 
 
+    // console.log(players)
+
+
     //控制隐藏切换---可用jQuery-toggle()方法
     if (showPic.style.visibility === "visible" && hidePic.style.visibility === "hidden") {
         showPic.style.visibility = "hidden", hidePic.style.visibility = "visible"
@@ -46,21 +54,36 @@ skipBtn.onclick = function () {
         this.innerHTML = `查看${index}号身份`; //底部文字
         index += 0.5; //进入非整数执行
 
+
     } else {
-        playId.innerHTML = players[index - 0.5]; //显示玩家身份--身份为索引第一位的值
-        this.innerHTML = `隐藏并传递给${index-0.5 + 1}号`;
 
         if (index === players.length + 0.5) { //当索引值 = 玩家总数数组，则发牌完毕，进入法官查看
             this.innerHTML = "法官查看"
+
+            index += 0.5;
+
+            if (index === players.length + 1) { //进入法官查看后再点击一次，跳转页面
+                window.location = "../html/judger.html"
+            }
         }
+
+
+        playId.innerHTML = (players[index - 0.5].id); //显示玩家身份--身份为索引第一位的值
+        this.innerHTML = `隐藏并传递给${index + 0.5}号`;
+
+        // console.log(playId.innerHTML)
+
+
 
         index += 0.5; //循环进入整数执行
 
-        if (index === players.length + 1) { //进入法官查看后再点击一次，跳转页面
-            window.location = "../html/judger.html"
-        }
+
     }
 }
+
+
+
+
 
 
 

@@ -53,7 +53,7 @@ main .container .game {
   border: .15rem solid #fff;
 }
 
-main .container .game .box-1 {
+main .container .game .box1 {
   z-index: 2;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -71,7 +71,7 @@ main .container .game .box-1 {
   color: #000;
 }
 
-main .container .game .box-2 {
+main .container .game .box2 {
   z-index: 2;
   display: -webkit-box;
   display: -ms-flexbox;

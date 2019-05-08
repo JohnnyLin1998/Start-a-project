@@ -54,11 +54,11 @@
 
         //状态机模型
         var fsm = new StateMachine({
-            //初始状态
-            init: 'green',
-            //状态迁移规则
+          
+            init: 'green',  //初始状态
+           
 
-            transitions: [
+            transitions: [ //状态迁移规则
 
                 {
                     name: 'warn', //当前行为的名字
@@ -85,11 +85,18 @@
                 },
             ],
 
-            // transitions, from, to
-
-            //在无效转化情况下的方法
+            
             methods: {
-                onInvalidTransition: function (transitions, from, to) {
+                onInvalidTransition: function (transitions, from, to) { //在无效转化情况下的方法
+
+                    //switch语句 等价于 if语句
+                    /*
+                    if(from == "green"){
+                        alert("请点击绿色按钮");
+                    } else(from == "yellow"){
+                        alert("请点击黄色按钮");
+                    }
+                    */
                     switch (from) {
                         case "green":
                             alert("请点击绿色按钮");
@@ -113,7 +120,7 @@
 
         $('.green').on('click', function () {
             console.log(fsm.can('warn'));
-            fsm.warn();
+            fsm.warn();  //触发行为
         })
 
         $('.yellow').on('click', function () {

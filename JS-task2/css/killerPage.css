@@ -23,7 +23,6 @@ main {
 main .start {
   position: relative;
   width: 100%;
-  height: 2rem;
   line-height: 2rem;
   font-size: .8rem;
   color: black;
@@ -102,16 +101,20 @@ article .container {
 }
 
 article .container .row {
+  position: relative;
   display: inline-block;
   width: 31.3%;
   margin: 1%;
-  margin-bottom: 1.5rem;
+  margin-bottom: 8%;
   text-align: center;
 }
 
 article .container .row .kill-pic {
+  position: absolute;
   display: none;
-  margin-top: 1vw;
+  top: 24vw;
+  left: 0;
+  right: 0;
 }
 
 article .container .row .kill-pic img {
@@ -137,7 +140,7 @@ article .container .game {
   border: .15rem solid #fff;
 }
 
-article .container .game .box-1 {
+article .container .game .boxUp {
   z-index: 2;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -155,7 +158,7 @@ article .container .game .box-1 {
   color: #000;
 }
 
-article .container .game .box-2 {
+article .container .game .boxDown {
   z-index: 2;
   display: -webkit-box;
   display: -ms-flexbox;

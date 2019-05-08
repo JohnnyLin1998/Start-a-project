@@ -76,7 +76,7 @@ header .right-x::after {
 }
 
 header .square-logo {
-  position: fixed;
+  position: absolute;
   top: 15px;
   left: 10px;
   width: 21px;

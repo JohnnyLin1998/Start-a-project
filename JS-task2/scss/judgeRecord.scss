@@ -11,6 +11,10 @@ header {
     background-color: rgba(41, 189, 224, 1);
 }
 
+main{
+    margin-bottom: 100px;
+}
+
 .dayNum {
     width: 99%;
     height: 2rem;
@@ -28,7 +32,7 @@ header {
 .gameStep {
     position: relative;
     width: 99%;
-    height: 12rem;
+    // height: 12rem;
     margin: auto;
     margin-top: .5rem;
     background-color: #fff;
@@ -53,12 +57,13 @@ header {
         flex-direction: column;
         list-style: none;
         margin: 0;
-        padding: 0;
+        padding: 20px 60px; //固定内容块-圆形图标-竖线的关键
 
         //线条
         &::before {
             content: '';
             position: absolute;
+            top: 0;
             left: 30px;
             width: 1px;
             height: 100%;
@@ -67,9 +72,9 @@ header {
 
         li {
             position: relative;
-            width: 60%;
-            height: 1.8rem;
-            line-height: 1.8rem;
+            width: 100%; //固定内容块-圆形图标-竖线的关键
+            // height: 1.8rem;
+            line-height: 2rem;
             margin: auto;
             margin-top: .85rem;
             text-align: center;
@@ -77,8 +82,18 @@ header {
             background-color: rgba(41, 189, 224, 1);
 
             //小三角
-            &::before {
-                content: '';
+            // &::before {
+            //     content: '';
+            //     position: absolute;
+            //     top: 9.5px;
+            //     left: -16px;
+            //     border-width: .4rem;
+            //     border-style: solid;
+            //     border-color: transparent rgba(41, 189, 224, 1) transparent transparent;
+            // }
+
+            //小三角
+            .arrow {
                 position: absolute;
                 top: 9.5px;
                 left: -16px;
@@ -86,12 +101,14 @@ header {
                 border-style: solid;
                 border-color: transparent rgba(41, 189, 224, 1) transparent transparent;
             }
+
         }
 
-        .sun {
+        //用伪元素装小图标，当内容添加的时候，会随之向下移动
+        .murder::after {
+            content: '';
             position: absolute;
-            top: 18px;
-            left: 15px;
+            left: -45px;
             width: 30px;
             height: 30px;
             border-radius: 50%;
@@ -99,16 +116,30 @@ header {
             background: #fff url(../pic/sun.png) no-repeat center / 60%;
         }
 
-        .moon {
+        .ghost::after {
+            content: '';
             position: absolute;
-            top: 73px;
-            left: 15px;
+            left: -45px;
             width: 30px;
             height: 30px;
             border-radius: 50%;
             border: 1px solid #c9c9c9;
             background: #fff url(../pic/moon.png) no-repeat center / 50%;
         }
+
+        //更改结果提示的背景色
+        .kill-result,
+        .vote-result {
+            color: #000;
+            background-color: #fff;
+        }
+
+        //隐藏小三角颜色
+        .kill-result::before,
+        .vote-result::before {
+            border-color: #fff;
+        }
+
 
 
     }

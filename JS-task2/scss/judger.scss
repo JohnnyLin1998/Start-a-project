@@ -47,7 +47,7 @@ main {
                 justify-content: center;
             }
 
-            .box-1 {
+            .box1 {
                 @include link-box;
                 flex-basis: 80%;
                 background-color: #F5C97B;
@@ -55,7 +55,7 @@ main {
                 color: #000;
             }
 
-            .box-2 {
+            .box2 {
                 @include link-box;
                 flex-basis: 20%;
                 background-color: #1A99B7;

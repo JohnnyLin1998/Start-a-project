@@ -71,6 +71,8 @@
 
         for (var i = 0; i < ul_lis.length; i++) {
             ul_lis[i].index = i;
+
+
             ul_lis[i].onclick = function () {
                 for (var i = 0; i < ul_lis.length; i++) {
                     if (Oplayer[i].state == "survival") {
@@ -78,24 +80,34 @@
                         ul_lis[i].getElementsByTagName("i")[0].style.display = "none";
                     }
                 }
+
                 j = this.index;
 
                 console.log(j);
+
                 if (Oplayer[j].state == "survival") {
                     ul_lis[j].style.borderColor = "#999";
                     ul_lis[j].getElementsByTagName("i")[0].style.display = "inline-block";
                 }
             }
         }
+
+
+
         if (initial == "vote") {
             headerSpan.innerHTML = "投票";
             clue1.innerHTML = "发言讨论结束";
             clue2.innerHTML = "点击得票数最多的人的头像";
+
+
             bBtn.onclick = function () {
                 if (!(j == undefined)) {
+
                     if (Oplayer[j].state == "die") {
                         alert("请选择一个目标");
-                    } else {
+                    } 
+                    
+                    else {
                         Oplayer[j].state = "die";
                         Oplayer[j].ady = num;
                         byvote.push(Oplayer[j]);
@@ -104,15 +116,24 @@
                         sessionStorage.player = playered;
                         sessionStorage.byvote = JSON.stringify(byvote);
                         sessionStorage.j = JSON.stringify(j);
+
+
                         var filterOplayer1 = Oplayer.filter(function (item, index, array) {
                             return (item.role == "平民" && item.state == "die");
                         });
+
+
                         var filterOplayer2 = Oplayer.filter(function (item, index, array) {
                             return (item.role == "杀手" && item.state == "die");
                         });
+
+
+
                         if (filterOplayer1.length == change[1] || filterOplayer2.length == change[0]) {
                             location = "result.html";
-                        } else {
+                        } 
+                        
+                        else {
                             console.log(filterOplayer1.length == change[1] || filterOplayer2.length == change[0]);
                             num++;
                             sessionStorage.num = JSON.stringify(num);
@@ -124,12 +145,15 @@
                     alert("选择一个玩家")
                 }
             }
-        } else {
+        } 
+        
+        
+        else {
             bBtn.onclick = function () {
                 if (!(j == undefined)) {
                     if (Oplayer[j].role == "杀手") {
                         alert("不能杀死自己");
-
+ 
 
                     } else if (Oplayer[j].state == "die") {
                         alert("请选择一个目标");
