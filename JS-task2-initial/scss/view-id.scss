@@ -1,0 +1,106 @@
+html {
+    font-size: 20px;
+}
+
+body {
+    margin: 0;
+    background-color: rgba(41, 189, 224, 1);
+}
+
+
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+
+    .card-box {
+        position: relative;
+        width: 90%;
+        height: 400px;
+        margin-top: 40px;
+        border: 3.5px solid #fff;
+
+        background-color: rgba(255, 237, 197, 1);
+
+    }
+
+    .round {
+        position: absolute;
+        margin: auto;
+        left: 0;
+        right: 0;
+        top: -8px;
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+        text-align: center;
+        font-size: 25px;
+        font-weight: bold;
+        border-radius: 50%;
+        background-color: #fff;
+        color: red;
+    }
+
+    .show-pic {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background:url(../pic/emperor.png)center/100% no-repeat;
+        visibility: visible;
+    }
+
+    .hide-pic{
+        position: absolute;
+        display: flex;
+        margin-top: 37px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 200px;
+        height: 300px;
+        visibility: hidden;
+
+
+        .role-pic{
+        display: inline-block;
+        width: 200px;
+        height: 200px;
+        background:url(../pic/wow.png)center/100% no-repeat;
+        }
+
+        .role-word{
+            font-size: 23px;
+            font-weight: bold;
+            color: rgba(41, 189, 224, 1);
+            
+        }
+
+        
+    }
+
+
+
+}
+
+
+
+footer {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+
+    button {
+        width: 90%;
+        height: 45px;
+        outline: none;
+        border-style: none;
+        font-size: 1rem;
+        cursor: pointer;
+        outline: none;
+        color: rgba(255, 255, 255, 1);
+        background-color: rgba(250, 179, 68, 1)
+    }
+
+}

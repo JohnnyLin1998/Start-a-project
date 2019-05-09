@@ -21,14 +21,12 @@ var killCount = document.getElementById('killNum'),
 againBtn = document.getElementById('again');
 
 
-
 //插入剩余玩家结果
 killCount.innerHTML = `<span id="killNum">杀 手${killerNum}人</span>`
 manCount.innerHTML = `<span id="manNum">平 民${manNum}人</span>`
 
 var gameDetail = document.getElementsByClassName('gameDetail')[0];
 var str = "";
-
 
 
 //根据天数循环出相应结果
@@ -40,20 +38,14 @@ for (var i = 0; i < days - 1; i++) {
 
     for (var j = 0; j < players.length; j++) {
 
-        if (players[j].deadDay == i + 1 && players[j].deadReason == 'killed') {
+        if (players[j].deadDay == i + 1 && players[j].deadReason == 'killed') { //死亡天数和死亡原因相同的玩家，确定唯一
             night = `<p>晚上： ${players[j].index+1}号被杀手杀死，${players[j].index+1}号是水民</p>`;
-
-
         }
 
         if (players[j].deadDay == i + 1 && players[j].deadReason == 'voted') {
             daytime = `<p>白天： ${players[j].index+1}号被全民投票投死，${players[j].index+1}号是${players[j].id}</p>`;
-
-
         }
     }
-
-
     str +=
         `<div class="content">
             <h3>第${titleChinese(i + 1)}天</h3>
@@ -61,12 +53,7 @@ for (var i = 0; i < days - 1; i++) {
             ${daytime}
         </div>`
 }
-
-
 gameDetail.innerHTML = str;
-
-
-
 
 // 根据天数显示出相应的中文数值
 function titleChinese(value) {
@@ -81,12 +68,6 @@ function titleChinese(value) {
         return arr[10] + arr[(value) - 10];
     }
 }
-
-
-
-
-
-
 
 againBtn.onclick = function () {
     var answer = confirm('再来一局，GO！')

@@ -1,8 +1,8 @@
 var closeBtn = document.getElementById('right-x'); //XX按钮
 
 closeBtn.onclick = function () { //关闭--增加确认按钮
-    var r = confirm("您确定离开页面吗？");
-    if (r == true) {
+    var answer = confirm("您确定离开页面吗？");
+    if (answer == true) {
         window.location = "../html/homePage.html"
     }
 };
@@ -12,9 +12,6 @@ var log = console.log;
 var gameMsgstr = sessionStorage.getItem('allMsg'); //打包所有数据，放在一个对象里面----提取页面一的数据
 initialMsg = JSON.parse(gameMsgstr);
 
-// log(initialMsg)
-
-
 
 var skipBtn = document.getElementById('skipBtn'), //确定-跳转按钮
     boxContainer = document.getElementById('container'), //游戏大容器
@@ -23,10 +20,6 @@ var skipBtn = document.getElementById('skipBtn'), //确定-跳转按钮
     titleUp = document.getElementById('titleUp'), //大标题
     titleDown = document.getElementById('titleDown'); //小标题
 
-
-
-
-//***注释掉下面这组声明，了解一下存在的意义
 
 //声明一个变量，保存所有数据
 var {
@@ -46,7 +39,6 @@ log(initialMsg)
 // log(days)
 // log(killed)
 // log(players)
-
 
 
 //根据不同状态进入界面，判断显示不同抬头文字
@@ -75,48 +67,28 @@ for (var i = 0; i < players.length; i++) { // for循环的次数生成相应个�
     `
 }
 
-//jQuery-- boxContainer.html(creatbox);
 boxContainer.innerHTML = creatBox; //容器内添加盒子
 
-
-
-// var clickBox = document.querySelectorAll('row');
-// var smallBox = document.getElementsByClassName('game')[0]; //盒子
 let roleBox = $('.boxUp'); //角色
-
 
 //点击盒子事件
 $('.row').on('click', function () {
 
     for (let i = 0; i < roleBox.length; i++) {
-        // if ($(roleBox[i]).attr('state') === 'alive') { //$ attr 添加属性的方法
-        //     $(roleBox[i]).css('background-color', '#F5C97B') //保证处于活着的玩家是橙色
-        // }
 
         if (players[i].state === 'alive') { //保证处于活着的玩家是橙色
             $(roleBox[i]).css('background-color', '#F5C97B')
         }
     }
 
-
-    // for (var i = 0; i < players.length; i++) {
-    //     if (players[i].state === "dead") {
-    //         $(roleBox[i]).css('background-color', 'red')
-    //     }
-    // }
-
-
     $(this).find('.boxUp').css('background-color', 'red'); //当点击某个小盒子时，变色
     $('.kill-pic').hide(); //小刀全部隐藏
-    // $('.kill-pic').show();  //小刀全部显示--显然不行
-    $(this).find('.kill-pic').show(); //$ find()大法--点击选中
+    $(this).find('.kill-pic').show(); //点击选中显示
 
 
-    //进入相应状态的页面，选中方块时，如何显示相应的下标？
     if (state == 'kill') { //杀手杀人
         killed[0] = $(this).index();
     }
-
 
     if (state == 'vote') { //投票投死
         killed[0] = $(this).index();
@@ -125,7 +97,6 @@ $('.row').on('click', function () {
     log('选中的被杀下标是：', killed[0])
 })
 
-
 //显示已经挂掉的玩家
 for (var i = 0; i < players.length; i++) { 
     if (players[i].state === "dead") {
@@ -133,20 +104,15 @@ for (var i = 0; i < players.length; i++) {
     }
 }
 
-
-
 //确定键，准备跳转+判断杀人是否有效
 $('#skipBtn').on('click', function () {
 
     var index = killed[0]; //被杀的人的下标值
 
-    // if (killed.length) {
         if (players[index].state == 'dead') {
             alert('此玩家已被杀，请选择别的玩家');
             return;
         }
-    // }
-
 
     if (state == 'kill') { //杀手杀人
 
@@ -159,14 +125,10 @@ $('#skipBtn').on('click', function () {
             return;
         }
 
-
-        players[index].deadReason = "killed";
+        players[index].deadReason = "killed";  //被‘杀死’的状态
         players[index].state = 'dead';
         players[index].deadDay = days
         initialMsg.manNum--;
-
-
-
 
 
     } else if (state == 'vote') { //投票投死
@@ -180,32 +142,19 @@ $('#skipBtn').on('click', function () {
 
         } else {
             initialMsg.manNum--;
-
         }
 
         log(initialMsg.dayNum)
         log(days)
 
-        players[index].deadReason = 'voted';
+        players[index].deadReason = 'voted';  //被‘投死’的状态
         players[index].state = 'dead';
         players[index].deadDay = days
         // initialMsg.manNum--;
         initialMsg.dayNum++; //天数加一
-
-
-        log(initialMsg.dayNum)
-        log(days)
     }
 
-
-
-
-    log('平民人数：',manNum, '杀手人数：',killerNum)
-
-
-
-    log('当前平民人数：',initialMsg.manNum, '当前杀手人数：',initialMsg.killerNum)
-
+        //如果杀手为0，则平民胜出
     if (initialMsg.killerNum === 0) { //平民胜利
 
         initialMsg.result = "manWin"
@@ -215,7 +164,7 @@ $('#skipBtn').on('click', function () {
         return;
 
 
-
+        //如果平民人数为1，并且杀手人数大于等于1，那么判为杀手胜利
     } else if (initialMsg.killerNum >= initialMsg.manNum && initialMsg.manNum === 1) { //杀手胜利
 
         initialMsg.result = "killWin"
@@ -224,8 +173,6 @@ $('#skipBtn').on('click', function () {
         window.location = "../html/gameOver.html"
         return;
     }
-
-
 
     initialMsg.dayNum;
 

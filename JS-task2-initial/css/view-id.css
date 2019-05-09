@@ -1,0 +1,112 @@
+html {
+  font-size: 20px;
+}
+
+body {
+  margin: 0;
+  background-color: #29bde0;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 30px;
+}
+
+main .card-box {
+  position: relative;
+  width: 90%;
+  height: 400px;
+  margin-top: 40px;
+  border: 3.5px solid #fff;
+  background-color: #ffedc5;
+}
+
+main .round {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: -8px;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  border-radius: 50%;
+  background-color: #fff;
+  color: red;
+}
+
+main .show-pic {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: url(../pic/emperor.png) center/100% no-repeat;
+  visibility: visible;
+}
+
+main .hide-pic {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 37px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 200px;
+  height: 300px;
+  visibility: hidden;
+}
+
+main .hide-pic .role-pic {
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  background: url(../pic/wow.png) center/100% no-repeat;
+}
+
+main .hide-pic .role-word {
+  font-size: 23px;
+  font-weight: bold;
+  color: #29bde0;
+}
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+footer button {
+  width: 90%;
+  height: 45px;
+  outline: none;
+  border-style: none;
+  font-size: 1rem;
+  cursor: pointer;
+  outline: none;
+  color: white;
+  background-color: #fab344;
+}

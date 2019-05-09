@@ -3,16 +3,12 @@ function back_home() {
 }
 
 
-
-
 //获取杀手 平民 总人数的值value
 var player = document.getElementById("player"), //输入框--总人数
     killer = document.getElementById("killer"), //杀手
     man = document.getElementById("man"), //平民
     slider = document.getElementsByName("slider")[0], //获取滑动块
     playerArr = []; //创建一个玩家数组
-
-
 
 
 slider.oninput = function startSlider() { //监听滑动条
@@ -54,9 +50,7 @@ function destribute() {
 
 
 function newArr() {
-    //  console.log(playerArr.length); //找bug的时候，这里才发现，每次for循环后的数组值只会增加，不会减少
-
-    playerArr = []; //重点！ 数组清空--没有清空的情况，每次循环后，值只增不减
+    playerArr = []; //清空数组
 
     for (var i = 0; i < manNum; i++) {
         playerArr[i] = "平民";
@@ -64,8 +58,6 @@ function newArr() {
     for (var j = manNum; j < (killerNum + manNum); j++) {
         playerArr[j] = "杀手"; //直接在i的基础上增加到j，之间的范围就是“杀手”的数量
     }
-
-    // console.log(playerArr);
 }
 
 
@@ -77,9 +69,7 @@ function shuffle(arr) { //新赋值的参数arr，在监听内与playerArr交接
 
     for (i = arr.length; i > 0; i--) {
         randomIndex = Math.floor(Math.random() * i); //随机一个数，随机索引值
-        //console.log(randomIndex);
-        //Fisher-Yates的核心---遍历每一个+随机索引互换
-        temp = arr[i - 1];
+        temp = arr[i - 1];  
         arr[i - 1] = arr[randomIndex];
         arr[randomIndex] = temp;
     }
@@ -100,44 +90,11 @@ function shuffle(arr) { //新赋值的参数arr，在监听内与playerArr交接
             deadDay: null,
         }
         playerSave.push(add)
-
-        // console.log(playerSave[0].id) //平民/杀手
     }
-
-
-    // //while--for循环的简化版
-    // while (i < arr.length) {
-    //     var add = {
-    //         id: arr[i],
-    //         index: index++,
-    //         state: 'alive',
-    //         deadReason: null,
-    //         deadDay: null
-    //     }
-    //     i++;
-    //     playerSave.push(arr)
-    // }
-
-    //    //  ES6迭代器 of写法
-    //     for (var i of arr) {
-    //         var arr = {
-    //             id: i,
-    //             index: index++,
-    //             state: 'alive',
-    //             deadReason: null,
-    //             deadDay: null
-    //         }
-    //         playerSave.push(arr);
-    //     }
-
 
     console.log(playerSave);
     return playerSave; //把值传给函数的参数 arr ——> playerArr
 }
-
-// console.log(arr)
-
-
 
 //按钮跳转页面--把上面的数据进行储存
 document.getElementById('go').onclick = function () {
@@ -148,13 +105,6 @@ document.getElementById('go').onclick = function () {
     if (playerNum < 4 || playerNum > 18) {
         alert("请输入正确的玩家数")
     } else {
-        // sessionStorage.setItem("playerArr", JSON.stringify(playerArr)); //数组转化为字符串JSON格式
-        // sessionStorage.setItem("player", player);
-
-        //打包所有数据，放在一个对象里面,之后的页面方便调用
-
-        //对象-字面量表示法 (相比下面的写法更简洁)
-        //playerArr --直接把shuffle函数传进来，而不是光playerArr一个参数
         let allMsg = {
             playerArr: shuffle(playerArr),
             // playerArr:arr,//报错
@@ -167,22 +117,8 @@ document.getElementById('go').onclick = function () {
 
         console.log(allMsg.playerArr)
 
-        /*
-                allMsg.playerArr = playerArr; //随机后的数组
-                allMsg.playerNum = playerNum; //玩家总人数
-                allMsg.killerNum = killerNum; //杀手人数
-                allMsg.manNum = manNum; //平民人数
-                //又回来了，在--法官台本--页面进行杀人-亡灵-玩家-投票四步骤的时候，需要用到天数、被杀的人的数据
-                allMsg.killed = [];
-                allMsg.dayNum = 1;
-        */
-
         var allMsgstr = JSON.stringify(allMsg); //把allMsg转化成字符串格式，存入allMsgstr
         sessionStorage.setItem('allMsg', allMsgstr); //把字符串格式的allMsgstr转化成allMsg进行存储
         window.location.href = "view-id.html"; //跳转
     }
 }
-// player.value = slider.value;
-// console.log(player.value);
-// console.log(slider.value);
-// startInput();

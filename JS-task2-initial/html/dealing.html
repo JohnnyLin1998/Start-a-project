@@ -1,0 +1,73 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../css/go-dealing.css">
+  <title>--玩家分配--</title>
+</head>
+
+<body>
+  <header>
+    <div class="left-arrow" onclick="back_home()"></div>
+
+    <span>
+      参数设置
+    </span>
+
+    <div class="right-help">
+      <img src="../pic/circled-help.png" alt="">
+    </div>
+
+  </header>
+  <main>
+    <section>
+      <div class="player-assigned">
+        <span class="assigned-size"> 玩家分配</span>
+      </div>
+
+      <div class="player-show">
+        <div class="kill-man">
+          <img src="../pic/wolf.png" alt="">
+          <span class="kill-word">杀手<i id="killer">2</i>人</span>
+        </div>
+
+        <div class="common-man">
+          <img src="../pic/people.png" alt="">
+          <span class="common-word">平民<i id="man">6</i>人</span>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="slider">
+        <i class="minus"></i>
+        <input type="range" name="slider" value="8" min="4" max="18">
+        <i class="add"></i>
+
+      </div>
+
+
+    </section>
+    <section>
+      <div>
+        <div class="player-num">
+          玩家人数
+          <input type="text" maxlength="2" name="Input" id="player" value="8" oninput="value=value.replace(/[^\d]/g,'')">
+          人
+        </div>
+      </div>
+
+      <!-- 进度条 -->
+    </section>
+  </main>
+  <footer>
+    <button id="go">去发牌</button>
+  </footer>
+
+  <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+  <script src="../js/dealing.js"></script>
+</body>
+
+</html>
+

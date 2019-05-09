@@ -1,0 +1,154 @@
+html {
+  font-size: 20px;
+}
+
+body {
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+header {
+  background-color: #29bde0;
+}
+
+main {
+  margin-bottom: 100px;
+}
+
+.dayNum {
+  width: 99%;
+  height: 2rem;
+  line-height: 2rem;
+  margin: auto;
+  margin-top: .5rem;
+  text-align: center;
+  border: 1px solid #c9c9c9;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #fff;
+  color: #29bde0;
+}
+
+.gameStep {
+  position: relative;
+  width: 99%;
+  margin: auto;
+  margin-top: .5rem;
+  background-color: #fff;
+  border: 1px solid #c9c9c9;
+  font-size: .8rem;
+  color: #fff;
+}
+
+.gameStep::after {
+  content: '';
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  border-width: 8px;
+  border-style: solid;
+  border-color: transparent transparent #fff transparent;
+}
+
+.gameStep ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 20px 60px;
+}
+
+.gameStep ul::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 30px;
+  width: 1px;
+  height: 100%;
+  background-color: #c9c9c9;
+}
+
+.gameStep ul li {
+  position: relative;
+  width: 100%;
+  line-height: 2rem;
+  margin: auto;
+  margin-top: .85rem;
+  text-align: center;
+  border-radius: 2px;
+  background-color: #29bde0;
+}
+
+.gameStep ul li .arrow {
+  position: absolute;
+  top: 9.5px;
+  left: -16px;
+  border-width: .4rem;
+  border-style: solid;
+  border-color: transparent #29bde0 transparent transparent;
+}
+
+.gameStep ul .murder::after {
+  content: '';
+  position: absolute;
+  left: -45px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid #c9c9c9;
+  background: #fff url(../pic/sun.png) no-repeat center/60%;
+}
+
+.gameStep ul .ghost::after {
+  content: '';
+  position: absolute;
+  left: -45px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid #c9c9c9;
+  background: #fff url(../pic/moon.png) no-repeat center/50%;
+}
+
+.gameStep ul .kill-result,
+.gameStep ul .vote-result {
+  color: #000;
+  background-color: #fff;
+}
+
+.gameStep ul .kill-result::before,
+.gameStep ul .vote-result::before {
+  border-color: #fff;
+}
+
+footer {
+  z-index: 55;
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  bottom: 0;
+  width: 100%;
+  padding: 14px 0;
+  background-color: rgba(41, 189, 224, 0.6);
+}
+
+footer button {
+  width: 40%;
+  height: 45px;
+  outline: none;
+  border-style: none;
+  font-size: 1rem;
+  cursor: pointer;
+  outline: none;
+  border-radius: 10px;
+  color: white;
+  background-color: #fab344;
+}

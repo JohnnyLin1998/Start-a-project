@@ -1,0 +1,228 @@
+html {
+  font-size: 20px;
+}
+
+body {
+  margin: 0;
+  background-color: rgba(240, 240, 240, 1);
+}
+
+
+header {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 55px;
+
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: #fff;
+  font-weight: bold;
+  background-color: rgba(41, 189, 224, 1);
+
+  .left-arrow {
+    position: absolute;
+    left: 14px;
+
+    width: 10px;
+    height: 10px;
+    border-style: solid;
+    border-width: 3.5px;
+    border-color: #fff transparent transparent #fff;
+
+    cursor: pointer;
+    transform: rotate(-45deg);
+  }
+
+  .right-help {
+    position: absolute;
+    right: 11px;
+    width: 25px;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+
+main {
+  margin: auto;
+  padding-top: 40px;
+  width: 90%;
+  height: 500px;
+
+
+  section {
+    background-color: #fff;
+  }
+
+  section:first-child {
+    display: flex;
+    flex-direction: column;
+    height: 350px;
+
+    span {
+      margin: auto;
+      font-size: .8rem;
+    }
+
+  }
+
+  section:nth-child(2) {
+    height: 40px;
+    margin-top: 8px;
+  }
+
+  section:last-child {
+    display: flex;
+    height: 70px;
+    margin-top: 8px;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  .player-assigned {
+    display: flex;
+    flex-basis: 20%;
+    flex-direction: column;
+    border-bottom: 1.5px solid rgba(217, 217, 217, 1);
+
+    .assigned-size {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+  }
+
+
+  .player-show {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-basis: 80%;
+    font-size: .6rem;
+    // align-items: center;
+    // justify-content: center;
+    color: rgba(161, 161, 161, 1);
+
+    i {
+      display: inline-block;
+      height: 17px;
+      width: 17px;
+      font-style: normal;
+    }
+
+    .kill-man {
+      width: 100%;
+      margin-bottom: 110px;
+      text-align: center;
+
+      img {
+        margin-right: 15px;
+        width: 48px;
+        border-radius: 10px;
+      }
+
+      .kill-word {
+        vertical-align: 19px;
+        word-spacing: 15px;
+      }
+    }
+
+    .common-man {
+      width: 100%;
+      text-align: center;
+
+      img {
+        margin-right: 15px;
+        width: 48px;
+        border-radius: 10px;
+      }
+
+      .common-word {
+        vertical-align: 17px;
+        word-spacing: 15px;
+      }
+    }
+
+  }
+
+  .player-num {
+    word-spacing: 10px;
+
+    input {
+      width: 30px;
+      height: 23px;
+      text-align: center;
+      border-style: none;
+      outline: none;
+      vertical-align: 3px;
+      background-color: rgba(237, 238, 238, 1);
+    }
+  }
+}
+
+section:nth-child(2) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider {
+
+  input[type=range] {
+    width:250px;
+    appearance: none; //隐藏默认样式
+    border-radius: 3px;
+  }
+
+  // 滑块样式
+  input[type=range]::-webkit-slider-thumb {
+    height: 20px;
+    width: 30px;
+    margin-top: -8px;
+    border-radius: 5px;
+    background-color: rgba(250, 179, 68, 1);
+    border: 1.5px solid rgba(250, 179, 68, 1);
+
+    appearance: none; //隐藏默认样式
+
+
+  }
+
+  //轨道样式
+  input[type=range]::-webkit-slider-runnable-track {
+    height: 1px;
+
+    // border-radius: 3px;
+    box-shadow: 0 1px 1px orange, inset 0 1px 1px orange; //轨道内置阴影效果
+    background: rgba(255, 230, 190, 1)
+  }
+
+  //去除点击时显示的亮框效果
+  input[type=range]:focus {
+    outline: none
+  }
+
+}
+
+
+footer {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+
+  button {
+    width: 90%;
+    height: 45px;
+    outline: none;
+    border-style: none;
+    font-size: 1rem;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 1);
+    background-color: rgba(250, 179, 68, 1)
+  }
+
+}

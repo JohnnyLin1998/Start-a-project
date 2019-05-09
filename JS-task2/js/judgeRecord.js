@@ -15,19 +15,13 @@ let {
     voted,
 } = initialMsg;
 
-//等于 let initialMsg.days,
-//         initialMsg.players...  
-
 log('所有信息：', initialMsg)
 log('当前被杀：', killed)
 log('所有玩家：', players)
-// log(initialMsg.playerArr)// 等同于log(players)
-
 
 
 //生成内部游戏步骤台本的个数
-var main = document.getElementsByTagName('main')[0]; //[0]!!!
-
+var main = document.getElementsByTagName('main')[0]; 
 var str = "";
 
 
@@ -48,8 +42,6 @@ function titleChinese(value) {
 for (let i = 0; i < days; i++) {
     let killStr = '';
     let voteStr = '';
-
-    // log(days)
 
 
     for (let j = 0; j < players.length; j++) {
@@ -84,7 +76,6 @@ for (let i = 0; i < days; i++) {
 main.innerHTML = str //插入HTML
 
 
-
 var dayNum = document.getElementsByClassName('dayNum'), //抬头天数
     gameContainer = document.getElementsByClassName('gameStep'), //大容器
     murder = document.getElementsByClassName('murder'), //杀手杀人
@@ -93,15 +84,6 @@ var dayNum = document.getElementsByClassName('dayNum'), //抬头天数
     voter = document.getElementsByClassName('voter'), //投票
     gameOver = document.getElementById('game-over'), //游戏结束按钮
     skipJudger = document.getElementById('skip-judger'); //跳转法官日志按钮
-// dayclick = document.getElementById('dayclick')
-
-
-// log(murder[0])
-
-
-
-
-
 
 //抬头返回和xx按键
 backBtn.onclick = function () {
@@ -114,26 +96,6 @@ closeBtn.onclick = function () { //关闭--增加确认按钮
         window.location = "../html/gameOver.html"
     }
 };
-
-
-
-// //隐藏第x天下面的内容
-// dayNum[i].onclick = function () {
-//     if (gameContainer.style.display === "block"){
-//         gameContainer.style.display = "none"
-//     }else{
-//         gameContainer.style.display = "block"
-//     }
-
-//     //JQ方法
-//     // $('.gamestep').toggle();
-
-// }
-
-
-
-
-
 
 
 //有限状态机--杀手--亡灵-玩家-投票 点击顺序
@@ -191,7 +153,6 @@ var fsm = new StateMachine({
         },
 
 
-
         //触发"行为"的点击事件
         onMurder: function () {
             initialMsg.state = "kill"; //kill状态跳转进入杀人界面后， 根据state = kill来判断显示的抬头文字
@@ -212,55 +173,25 @@ var fsm = new StateMachine({
             initialMsg.step = 4;
             initialMsg.state = "vote"; //点击跳入投票页面，天数加一，vote状态为true
             changeColor(voter[days - 1]);
-
             sessionStorage.setItem('allMsg', JSON.stringify(initialMsg))
             window.location.href = "../html/killerPage.html";
-
-
-
-            // log(initialMsg);
-
-            // var gameMsg = JSON.stringify(initialMsg);
-            // sessionStorage.setItem('allMsg', gameMsg);
-            // window.location.href = "../html/killerPage.html";
         }
     },
 });
 
-// for (let i = 0; i < days; i++) {
-//     log(i)
-// dayNum[i].onclick = function () {
-//     log(i)
-//     // var gameContainer = document.getElementsByClassName('gameStep')
-//     if (gameContainer[i].style.display === 'block') {
-//         gameContainer[i].style.display = 'none'
-//     } else {
-//         gameContainer[i].style.display = 'block'
-//     }
-// }
-// }
 
+for (let i = 0; i < days; i++) { 
 
-
-
-for (let i = 0; i < days; i++) { //for循环这个这个var i = 0的坑！
-
-    log('当前循环次数：', i, '当前天数：', days)
-
-    // log(i)
+    // log('当前循环次数：', i, '当前天数：', days)
 
     dayNum[i].onclick = function () {
-        // log(i)
 
-
-        // var gameContainer = document.getElementsByClassName('gameStep')
         if (gameContainer[i].style.display === 'block') {
             gameContainer[i].style.display = 'none'
         } else {
             gameContainer[i].style.display = 'block'
         }
     }
-
 
     if (i < days - 1) { //小于当前天数的
 
@@ -284,16 +215,12 @@ for (let i = 0; i < days; i++) { //for循环这个这个var i = 0的坑！
         changeColor(ghost[i])
         changeColor(gamer[i])
         changeColor(voter[i])
-
     }
-
-
 
 
     //在当前天数
     if (i === days - 1) {
 
-        // **注释之后体会一下作用
         switch (initialMsg.step) {
             case 1:
                 changeColor(murder[days - 1]); //杀手杀人点击变色放这里
@@ -301,13 +228,11 @@ for (let i = 0; i < days; i++) { //for循环这个这个var i = 0的坑！
                 break;
 
             case 2:
-                // changeColor(murder[days - 1]);
                 fsm.murder();
                 fsm.ghost();
                 break;
 
             case 3:
-                // changeColor(murder[days - 1]);
                 fsm.murder();
                 fsm.ghost();
                 fsm.gamer();
@@ -317,21 +242,15 @@ for (let i = 0; i < days; i++) { //for循环这个这个var i = 0的坑！
 
 
         //杀手杀人
-        $('.murder').eq(i).on('click', function () { //给四个按钮添加点击事件  //注意eq(i)，每次需要选中当前天数的内容，不然点到其他天数也会触发事件然后跳转
+        $('.murder').eq(i).on('click', function () { //给四个按钮添加点击事件
 
-            fsm.murder(); //----- initial ——> firstStep
+            fsm.murder(); 
 
             if (state == 'kill') {
                 return;
             }
-
             sessionStorage.setItem('allMsg', JSON.stringify(initialMsg));
             window.location = "../html/killerPage.html"
-            // if (fsm.state === 'firstStep') {
-            //     var gameMsg = JSON.stringify(initialMsg); //跳转杀人页面+数据传输
-            //     sessionStorage.setItem('allMsg', gameMsg);
-            //     window.location.href = '../html/killerPage.html';
-            // }
         });
 
 
@@ -360,35 +279,7 @@ for (let i = 0; i < days; i++) { //for循环这个这个var i = 0的坑！
 
         });
     }
-
 }
-
-// log(days);
-
-
-// //隐藏第x天下面的内容
-// dayNum[days - 1].onclick = function () {
-//     if (gameContainer.style.display === "block") {
-//         gameContainer.style.display = "none"
-//     } else {
-//         gameContainer.style.display = "block"
-//     }
-
-//     //JQ方法
-//     // $('.gamestep').toggle();
-
-// }
-
-
-
-// $('main').on('click', function(){
-
-//     $(this).find('.gameStep').toggle();
-// })
-
-
-
-
 
 //改变颜色
 function changeColor(aaa) {
@@ -402,10 +293,7 @@ skipJudger.onclick = function () {
     initialMsg.judgeShow; //创建新的initialMsg数据， judgeShow就是在法官日志页面显示
     sessionStorage.setItem('allMsg', JSON.stringify(initialMsg))
     location.href = "../html/judger.html"
-
 }
-
-
 
 
 gameOver.onclick = function () {
@@ -414,5 +302,4 @@ gameOver.onclick = function () {
     if (answer) {
         window.location = "../html/homePage.html"
     }
-
 }

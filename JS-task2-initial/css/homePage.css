@@ -1,0 +1,243 @@
+@charset "UTF-8";
+html {
+  font-size: 625%;
+}
+
+body {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin: 0;
+  background-color: #f0f0f0;
+  /*左拉菜单*/
+}
+
+body input {
+  display: none;
+}
+
+body .inner {
+  position: absolute;
+  left: -45%;
+  width: 45%;
+  height: 6.2rem;
+  font-size: .16rem;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  opacity: 0;
+  color: #29bde0;
+  background-color: #fff;
+}
+
+body .inner ul {
+  padding: 0;
+  text-indent: 8px;
+  list-style: none;
+}
+
+body .inner ul li {
+  line-height: 2.2;
+  border-bottom: 1px solid #e1e5e7;
+}
+
+body .inner ul li img {
+  height: .22rem;
+  vertical-align: -.05rem;
+}
+
+body .inner ul li .menu-arrow {
+  float: right;
+  margin-top: .12rem;
+  margin-right: .3rem;
+  width: .1rem;
+  height: .1rem;
+  border-top: 0.02rem solid #29bde0;
+  border-right: 0.02rem solid #29bde0;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+body input[type="checkbox"]:checked + label {
+  left: 0;
+  opacity: 1;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+article {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+article header {
+  z-index: 5;
+  width: 100%;
+  height: .5rem;
+  background-color: #29bde0;
+}
+
+article header .head-logo {
+  position: relative;
+  cursor: pointer;
+}
+
+article header .head-logo i {
+  display: block;
+}
+
+article header .head-logo .logo-line-1 {
+  position: absolute;
+  top: 17px;
+  left: 20px;
+  width: 23px;
+  height: 5px;
+  border-top: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+}
+
+article header .head-logo .logo-line-2 {
+  position: absolute;
+  top: 33px;
+  left: 20px;
+  width: 23px;
+  height: 5px;
+  border-top: 2px solid #fff;
+}
+
+article .last-game {
+  position: relative;
+  margin-top: .15rem;
+  width: 92%;
+  height: .5rem;
+  line-height: .5rem;
+  text-align: center;
+  font-size: .17rem;
+  border: .01rem solid #C9C9C9;
+  color: #9a9a9a;
+  background-color: #ffffff;
+}
+
+article .last-game i {
+  position: absolute;
+  top: 35%;
+  right: 3%;
+  width: .13rem;
+  height: .13rem;
+  border-top: 0.03rem solid #e7e7e7;
+  border-right: 0.03rem solid #e7e7e7;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+article main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 92%;
+  height: 4.5rem;
+  margin-top: .5rem;
+  background-color: #ffffff;
+  border: .01rem solid #C9C9C9;
+}
+
+article main h3 {
+  font-size: .12rem;
+  color: #787878;
+}
+
+article main .game-begin {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 10%;
+  width: 90%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-bottom: .01rem solid #FBB435;
+}
+
+article main .game-begin .game-btn {
+  width: 100%;
+  border-style: none;
+  font-size: .19rem;
+  outline: none;
+  color: #FBB435;
+  background-color: #fff;
+}
+
+article main .edition {
+  position: relative;
+  margin-top: .2rem;
+  width: 80%;
+  height: 15%;
+  outline: none;
+  border-style: none;
+  cursor: pointer;
+  color: #fff;
+  background-color: #69D1E9;
+}
+
+article main .arrow {
+  position: absolute;
+  right: -1px;
+  top: 47%;
+  height: 0;
+  width: 0;
+  border-width: 13px;
+  border-style: solid;
+  border-color: transparent transparent transparent #FBB435;
+}
+
+article main .bottom-circle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: .3rem;
+  width: .6rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+article main .bottom-circle .circle {
+  margin-left: .03rem;
+  width: .1rem;
+  height: .1rem;
+  border-radius: 50%;
+  background-color: #F0F0F0;
+}
+
+article main .bottom-circle .circle:hover {
+  background-color: #69D1E9;
+}
+
+input[type="checkbox"]:checked ~ article {
+  margin-left: 45%;
+}
