@@ -1,0 +1,124 @@
+html {
+    font-size: 20px;
+}
+
+body {
+    background: url('../pic/background.png')no-repeat center/cover
+}
+
+
+.container {
+    display: flex;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    align-items: center;
+    justify-content: center;
+    padding: 6rem 0;
+
+    // .row {}
+
+
+    .content {
+        position: relative;
+        width: 19rem;
+        height: 16rem;
+
+        border-radius: 5px;
+        background-color: #fff;
+    }
+
+    .logo {
+        position: absolute;
+        top: -2rem;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 4rem;
+        height: 4rem;
+
+        border-radius: 50%;
+        background: url('../pic/logo.png')no-repeat center/cover;
+    }
+
+
+    .panel{
+        padding: 4.2rem 0;
+    }
+
+    .user {
+        position: relative;
+        width: 80%;
+        margin: auto;
+        margin-bottom: .9rem;
+        text-align: center;
+        border-radius: 10px;
+        border: 1px solid #4682B4;
+
+
+        .input-user {         
+            height: 2.5rem;
+            font-size: .8rem;
+            border-style: none;
+            outline: none;
+        }
+
+
+        .user-icon{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 1rem;
+            margin: auto;
+            width: 1.3rem;
+            height: 1.3rem;
+            background: url('../pic/user.png')no-repeat center/80%;
+        }
+
+    }
+
+
+    .password {
+        @extend .user ;
+
+        .input-pass {
+            @extend .input-user ;
+        }
+
+        .pass-icon{
+            @extend .user-icon ;
+            background: url('../pic/password.png')no-repeat center/80%;
+        }
+    }
+
+    .alert{
+        margin-top: 0;
+        text-align: center;
+        font-size: .9rem;
+        color: red;
+
+    }
+
+
+    button {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: .8rem;
+        margin: auto;
+
+        width: 80%;
+        height: 2.4rem;
+        color: #fff;
+        font-size: 1rem;
+
+        border-style: none;
+        border-radius: 8px;
+        cursor: pointer;
+        background-color:#4682B4;
+    }
+
+
+}

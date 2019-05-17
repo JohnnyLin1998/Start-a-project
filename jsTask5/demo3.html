@@ -1,0 +1,124 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./scss/task5.css">
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h3>后台登录系统</h3>
+        <form>
+            <div class="form-group">
+                <input class="form-control" type="text" placeholder="用户名" /></div>
+            <div class="form-group">
+                <input class="form-control" type="password" placeholder="密码" /></div>
+        </form>
+        <p></p>
+        <button>登录</button>
+    </div>
+    <script>
+        var user = document.getElementsByClassName("form-control")[0];
+        var password = document.getElementsByClassName("form-control")[1];
+        var button = document.getElementsByTagName("button")[0];
+        var hint = document.getElementsByTagName("p")[0];
+        var username; //用户名
+        var passwordd; //密码
+        //当输入框失去焦点时把输入值赋值给用户名、密码
+        user.onchange = function () {
+            username = user.value;
+        }
+        password.onchange = function () {
+            passwordd = password.value;
+        }
+        //当输入时提示消失
+        user.oninput = function () {
+            hint.innerHTML = "";
+        }
+        password.oninput = function () {
+            hint.innerHTML = "";
+        }
+        //创建ajax的XHR对象
+        var xhr = new XMLHttpRequest();
+        button.onclick = function () {
+            // 创建post请求的数据形式
+            var data = "name=" + username + "&pwd=" + passwordd;
+            // console.log(data)
+            //如果用户名或密码没有定义或为空时
+            if (username == undefined || username == "" || passwordd == undefined || passwordd == "") {
+                hint.innerHTML = "请输入账号密码";
+            } else if (username != undefined && passwordd != undefined) {
+                // ajax状态改变事件
+                // 当输入账号密码点击登录按钮发起post请求,并返回数据
+                xhr.onreadystatechange = function () {
+                    console.log(xhr)
+                    if (xhr.readyState === 4) {
+                        console.log(xhr.status)
+                        if (xhr.status === 200) {
+                            let arr = [];
+                            arr = JSON.parse(xhr.responseText); // 把服务器响应的数据转换到arr数组
+                            console.log(arr.code)
+                            console.log(arr.message)
+                            console.log(xhr.response)
+                            // 根据返回的不同数据提示报错信息
+                            if (arr.code == "-5003" && arr.message == "用户不存在") {
+                                hint.innerText = arr.message;
+                            } else if (arr.code == "-5004" && arr.message == "密码错误") {
+                                hint.innerText = arr.message;
+                            } else if (arr.code == "0" && arr.message == "success") {
+                                hint.innerText = "登录成功";
+                                location.href = ('http://dev.admin.carrots.ptteng.com/');
+                            }
+                        }
+                    }
+                }
+                
+                // 发起post请求
+                xhr.open("POST", "/carrots-admin-ajax/a/login", true);
+                // 定义header信息，post请求没有header信息就会报错
+                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                xhr.send(data); //发起获取的用户名和密码的值
+            }
+        }
+        // $("button").eq(0).on("click", function () {
+        //     var name = $(".form-control").eq(0).val();
+        //     var pwd = $(".form-control").eq(1).val();
+        //     if (name == "" || name == undefined) {
+        //         $("p").text("用户名不能为空");
+        //         $("p").css("color", "red");
+        //         return false;
+        //     }
+        //     if (pwd == "" || pwd == undefined) {
+        //         $("p").text("密码不能为空");
+        //         $("p").css("color", "red");
+        //         return false;
+        //     }
+        //     $("p").css("color", "black");
+        //     var userTemp = "name=" + name + "&pwd=" + pwd;
+        //     console.log(userTemp);
+        //     $.ajax({
+        //         type: "POST",
+        //         url: "/carrots-admin-ajax/a/login",
+        //         data: userTemp,
+        //         dataType: "json",
+        //         success: function (result, status, xhr) {
+        //             if (result.message == "success") {
+        //                 $("p").text("登陆成功");
+        //                 location.href = "http://dev.admin.carrots.ptteng.com/"
+        //             } else {
+        //                 $("p").text(result.message);
+        //             }
+        //         },
+        //         error: function (xhr) {
+        //             alert(xhr.status);
+        //         }
+        //     })
+        // })
+    </script>
+</body>
+
+</html>
